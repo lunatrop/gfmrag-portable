@@ -2,6 +2,11 @@ import os
 from typing import Any
 
 from langchain_community.chat_models import ChatLlamaCpp, ChatOllama
+<<<<<<< Updated upstream
+=======
+#from langchain_ollama import ChatOllama
+from langchain_nvidia_ai_endpoints import ChatNVIDIA
+>>>>>>> Stashed changes
 from langchain_openai import ChatOpenAI
 from langchain_together import ChatTogether
 
@@ -42,8 +47,8 @@ def init_langchain_model(
         )
     elif llm == "ollama":
         # https://python.langchain.com/v0.1/docs/integrations/chat/ollama/
-
-        return ChatOllama(model=model_name)  # e.g., 'llama3'
+        return ChatOllama(model=model_name)
+                           
     elif llm == "llama.cpp":
         # https://python.langchain.com/v0.2/docs/integrations/chat/llamacpp/
 

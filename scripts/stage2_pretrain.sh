@@ -6,7 +6,7 @@ BATCH_PER_EPOCH=30000
 START_N=0
 END_N=19
 BATCH_SIZE=4
-DATA_NAME_LIST="hotpotqa_train musique_train 2wikimultihopqa_train"
+DATA_NAME_LIST="hotpotqa_train_example" #"hotpotqa_train musique_train 2wikimultihopqa_train"
 TRAIN_DATA_NAME_LIST=""
 for DATA_NAME in ${DATA_NAME_LIST}; do
     for i in $(seq ${START_N} ${END_N}); do

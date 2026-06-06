@@ -1,7 +1,7 @@
 # Batch inference for QA on the test set.
 N_GPU=4
 DATA_ROOT="data"
-DATA_NAME="hotpotqa" # hotpotqa musique 2wikimultihopqa
+DATA_NAME="hotpotqa_test" # hotpotqa musique 2wikimultihopqa
 LLM="gpt-4o-mini"
 DOC_TOP_K=5
 N_THREAD=10

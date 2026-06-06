@@ -9,11 +9,11 @@ def test_llm_ner_model_parallel() -> None:
     cfg = OmegaConf.create(
         {
             "_target_": "gfmrag.kg_construction.openie_model.LLMOPENIEModel",
-            "llm_api": "openai",
-            "model_name": "gpt-4o-mini",
+            "llm_api": "ollama",
+            "model_name": "gemma:2b"
         }
     )
-    num_processes = 5
+    num_processes = 10
 
     dotenv.load_dotenv()
     openie_model = instantiate(cfg)

@@ -1,0 +1,7422 @@
+[
+	{
+		"id": "5abc553a554299700f9d7871",
+		"question": "Kyle Ezell is a professor at what School of Architecture building at Ohio State?",
+		"answer": "Knowlton Hall",
+		"supporting_facts": [
+			"Knowlton Hall",
+			"Kyle Ezell"
+		],
+		"question_entities": [
+			"kyle ezell",
+			"architectural association school of architecture",
+			"ohio state"
+		],
+		"supporting_entities": [
+			"10 million donation",
+			"2004",
+			"architecture",
+			"austin e  knowlton",
+			"austin e  knowlton school of architecture",
+			"bachelor s in architectural engineering",
+			"city and regional planning",
+			"columbus  ohio  united states",
+			"ives hall",
+			"july 2002",
+			"knowlton hall",
+			"ksa",
+			"landscape architecture",
+			"ohio",
+			"replacement for ives hall",
+			"the ohio state university",
+			"the ohio state university in 1931",
+			"american urban planning practitioner",
+			"expressing local culture",
+			"knowlton school",
+			"kyle ezell",
+			"lawrenceburg  tennessee",
+			"professor",
+			"the ohio state university",
+			"theorist",
+			"undergraduate planning program",
+			"vibrant downtowns",
+			"writer"
+		]
+	},
+	{
+		"id": "5a790d8f554299029c4b5eec",
+		"question": "Which English musician is known for both the songs \"See Yourself\" and \"Withing You Without You\"?",
+		"answer": "George Harrison",
+		"supporting_facts": [
+			"Within You Without You",
+			"See Yourself"
+		],
+		"question_entities": [
+			"english",
+			"musician",
+			"see yourself",
+			"within you without you"
+		],
+		"supporting_entities": [
+			"album cover",
+			"asian music circle",
+			"dilruba",
+			"george harrison",
+			"harrison s endorsement of",
+			"hindu philosophy",
+			"india",
+			"love you to",
+			"lyrics reflects",
+			"members of",
+			"paramahansa yogananda",
+			"ravi shankar",
+			"september october 1966",
+			"sgt  pepper s lonely hearts club band",
+			"sitar",
+			"song features",
+			"tabla",
+			"vedas",
+			"within you without you",
+			"yogis",
+			"1966",
+			"beatles",
+			"george harrison",
+			"john lennon",
+			"lsd",
+			"paul mccartney",
+			"see yourself",
+			"song",
+			"song in 1967",
+			"thirty three   1 3"
+		]
+	},
+	{
+		"id": "5adf1b8a5542995534e8c750",
+		"question": "What band did Gator Country guitarist that co-wrote Bloody Reunion come from?",
+		"answer": "Molly Hatchet",
+		"supporting_facts": [
+			"Duane Roland",
+			"Gator Country"
+		],
+		"question_entities": [
+			"gator country",
+			"bloody reunion"
+		],
+		"supporting_entities": [
+			"american guitarist",
+			"bloody reunion",
+			"boogie no more",
+			"duane roland",
+			"gator country",
+			"mid 1970s",
+			"molly hatchet",
+			"southern rock allstars",
+			"bruce crump",
+			"davie  florida",
+			"duane roland",
+			"ex members of molly hatchet",
+			"gator country",
+			"hit song  gator country",
+			"jimmy farrar",
+			"riff west",
+			"steve holland"
+		]
+	},
+	{
+		"id": "5a86ed6155429960ec39b6d9",
+		"question": "In what year was the American country rock band who's number one song was done as a cover on the album \"What If?\" founded?",
+		"answer": "1966",
+		"supporting_facts": [
+			"Nitty Gritty Dirt Band",
+			"What If? (Emerson Drive album)"
+		],
+		"question_entities": [
+			"american",
+			"american country rock band",
+			"if"
+		],
+		"supporting_entities": [
+			"2004",
+			"21 on billboard country charts",
+			"41 on billboard country charts",
+			"canada",
+			"canadian country music band",
+			"dreamworks records nashville",
+			"emerson drive",
+			"fishin  in the dark",
+			"fishin  in the dark  cover",
+			"if you were my girl",
+			"last one standing",
+			"nitty gritty dirt band",
+			"november",
+			"still got yesterday",
+			"u s",
+			"what if   emerson drive album",
+			"1966",
+			"1976 to 1981",
+			"2001",
+			"american country rock band",
+			"bob carpenter",
+			"contemporary country and roots music",
+			"jeff hanna",
+			"jimmie fadden",
+			"john mceuen",
+			"long beach  california",
+			"nitty gritty dirt band"
+		]
+	},
+	{
+		"id": "5ae1faf15542997f29b3c1e3",
+		"question": "William Davis Ticknor, Sr. served on the board of a chemical and biotechnology company created in what year?",
+		"answer": "1919",
+		"supporting_facts": [
+			"William Davis Ticknor, Sr.",
+			"Commercial Solvents Corporation"
+		],
+		"question_entities": [
+			"william davis ticknor  sr"
+		],
+		"supporting_entities": [
+			"1919",
+			"american company",
+			"commercial solvents corporation",
+			"commercial pigments corporation",
+			"commercial solvents corporation",
+			"january 11  1881",
+			"march 24  1938",
+			"william davis ticknor  sr"
+		]
+	},
+	{
+		"id": "5a8ff6635542995651fb5086",
+		"question": "Who currently has more store locations? Bearno's or Patxi's Chicago Pizza?",
+		"answer": "Bearno's Pizza",
+		"supporting_facts": [
+			"Patxi's Chicago Pizza",
+			"Bearno's"
+		],
+		"question_entities": [
+			"bearno s",
+			"patxi s chicago pizza"
+		],
+		"supporting_entities": [
+			"14 locations",
+			"bearno s",
+			"indiana",
+			"kentucky",
+			"louisville  kentucky",
+			"pizza franchise",
+			"10 00 cheese pizzas",
+			"april  2014",
+			"box",
+			"campbell",
+			"chicago style pizza",
+			"denver",
+			"francisco  patxi  azpiroz",
+			"greenbrae",
+			"lafayette",
+			"little nero s",
+			"november 6  2015",
+			"palo alto",
+			"patxi s",
+			"patxi s chicago pizza",
+			"pizzeria chain",
+			"san francisco",
+			"san francisco bay area",
+			"san jose",
+			"seattle",
+			"sixty new stores over the next five years",
+			"twenty fifth anniversary of the release of the comedy film home alone",
+			"ubereats",
+			"william freeman"
+		]
+	},
+	{
+		"id": "5ae6097c55429929b0807a9a",
+		"question": "The Sentinelese language is the language of people of one of which Islands in the Bay of Bengal?",
+		"answer": "Andaman Islands",
+		"supporting_facts": [
+			"Sentinelese language",
+			"North Sentinel Island"
+		],
+		"question_entities": [
+			"sentinelese language",
+			"bay of bengal"
+		],
+		"supporting_entities": [
+			"andaman islands",
+			"bay of bengal",
+			"contact with the outside world",
+			"last people worldwide",
+			"north sentinel island",
+			"sentinelese",
+			"untouched by modern civilization",
+			"andaman and nicobar islands",
+			"north sentinel island",
+			"outsiders",
+			"past three centuries",
+			"rest of the world",
+			"sentinelese language",
+			"sentinelese people"
+		]
+	},
+	{
+		"id": "5adf86355542993344016cbd",
+		"question": "Which rugby league team which Rory Kostjasyn played for is based in Melbourne, Victoria?",
+		"answer": "Melbourne Storm",
+		"supporting_facts": [
+			"Rory Kostjasyn",
+			"Melbourne Storm"
+		],
+		"question_entities": [
+			"rory kostjasyn",
+			"melbourne",
+			"victoria"
+		],
+		"supporting_entities": [
+			"2015 nrl premiership winning side",
+			"2016 world club challenge winning side",
+			"6 june 1987",
+			"australian professional rugby league footballer",
+			"five eighth",
+			"hooker",
+			"irish international",
+			"lock",
+			"melbourne storm",
+			"new south wales country representative",
+			"north queensland cowboys",
+			"rory kostjasyn",
+			"1997",
+			"1998",
+			"1999",
+			"2012",
+			"2017",
+			"aami park",
+			"melbourne",
+			"melbourne storm",
+			"national netball league",
+			"national rugby league",
+			"netball",
+			"nrl s under 20s competition",
+			"several more",
+			"sunshine coast lightning",
+			"university of the sunshine coast",
+			"victoria"
+		]
+	},
+	{
+		"id": "5ae515bb55429913cc204584",
+		"question": "When did the British philosopher whose works inspired Kate Horsley's interest in Zen die?",
+		"answer": "16 November 1973",
+		"supporting_facts": [
+			"Kate Horsley",
+			"Alan Watts"
+		],
+		"question_entities": [
+			"british",
+			"kate horsley",
+			"zen"
+		],
+		"supporting_entities": [
+			"1952",
+			"alan watts",
+			"albuquerque",
+			"central new mexico community college",
+			"english",
+			"historical fiction",
+			"kate horsley",
+			"kate parker",
+			"old west",
+			"zen",
+			"16 november 1973",
+			"6 january 1915",
+			"alan watts",
+			"american academy of asian studies",
+			"british philosopher",
+			"california",
+			"episcopal priest in 1945",
+			"master s degree in theology",
+			"ministry in 1950",
+			"new york",
+			"seabury western theological seminary",
+			"speaker",
+			"united states in 1938",
+			"writer"
+		]
+	},
+	{
+		"id": "5a7b413a5542992d025e67c4",
+		"question": "What sport do Straight Blast Gym - Ireland and John Kavanagh have in common?",
+		"answer": "martial arts",
+		"supporting_facts": [
+			"Straight Blast Gym - Ireland",
+			"John Kavanagh (martial artist)"
+		],
+		"question_entities": [
+			"straight blast gym   ireland",
+			"john kavanagh"
+		],
+		"supporting_entities": [
+			"brazilian jiu jitsu practitioner",
+			"conor mcgregor",
+			"former professional mixed martial artist",
+			"gunnar nelson",
+			"irish",
+			"january 18  1977",
+			"john kavanagh",
+			"martial arts coach",
+			"conor mcgregor",
+			"dublin  ireland",
+			"ireland",
+			"john kavanagh",
+			"mixed martial arts academy",
+			"straight blast gym   ireland",
+			"straight blast gym international",
+			"ufc lightweight champion"
+		]
+	},
+	{
+		"id": "5a893fc855429951533612f0",
+		"question": "Are the Chien Fran\u00e7ais Blanc et Orange and Cretan Hound both used for hunting in packs?",
+		"answer": "no",
+		"supporting_facts": [
+			"Cretan Hound",
+			"Chien Fran\u00e7ais Blanc et Orange"
+		],
+		"question_entities": [
+			"chien fran ais blanc et orange",
+			"cretan hound"
+		],
+		"supporting_entities": [
+			"cretan hound",
+			"crete",
+			"greece",
+			"greek",
+			"hunting breed of dog",
+			"kritikos lagonikos",
+			"chien fran ais blanc et orange",
+			"dog",
+			"fci no 316",
+			"france",
+			"hound of saintonge",
+			"scenthound type"
+		]
+	},
+	{
+		"id": "5adfc77b554299603e4183ab",
+		"question": "Is Edison Sault Power Canal somehow linked with or used with the Cayuga\u2013Seneca Canal?",
+		"answer": "no",
+		"supporting_facts": [
+			"Edison Sault Power Canal",
+			"Cayuga\u2013Seneca Canal"
+		],
+		"question_entities": [
+			"edison sault power canal",
+			"cayuga seneca canal"
+		],
+		"supporting_entities": [
+			"1983",
+			"cloverland electric cooperative",
+			"edison sault power canal",
+			"historic civil engineering landmark",
+			"june 1902",
+			"saint marys falls hydropower plant",
+			"sault ste  marie  michigan",
+			"september 1898",
+			"cayuga seneca canal",
+			"new york",
+			"new york state canal system",
+			"united states"
+		]
+	},
+	{
+		"id": "5adbfaa655429947ff173888",
+		"question": "Adena Friedman was formerly the managing director and CFO of a company that specializes in what four key business areas?",
+		"answer": "corporate private equity, real assets, global market strategies, and investment solutions.",
+		"supporting_facts": [
+			"The Carlyle Group",
+			"Adena Friedman"
+		],
+		"question_entities": [
+			"adena friedman"
+		],
+		"supporting_entities": [
+			"1969",
+			"adena t  friedman",
+			"adena t  friedman as ceo in november 2016",
+			"american businessperson",
+			"ceo of nasdaq",
+			"cfo of the carlyle group",
+			"global corporate and information technology solutions",
+			"managing director of the carlyle group",
+			"nasdaq",
+			"nasdaq omx",
+			"nasdaq omx in may 2014",
+			"part of nasdaq",
+			"president of nasdaq",
+			"alternative asset management",
+			"american multinational corporation",
+			"carlyle",
+			"financial services",
+			"global market strategies",
+			"investment solutions",
+			"private equity",
+			"the carlyle group"
+		]
+	},
+	{
+		"id": "5a8a5c9855429970aeb702be",
+		"question": "Why I Write was penned by which English novelist and critic?",
+		"answer": "Eric Arthur Blair",
+		"supporting_facts": [
+			"George Orwell",
+			"Why I Write"
+		],
+		"question_entities": [
+			"why i write",
+			"english",
+			"novelist",
+			"critic"
+		],
+		"supporting_entities": [
+			"1946",
+			"charles neil",
+			"gangrel",
+			"george orwell",
+			"j b pick",
+			"why i write",
+			"21 january 1950",
+			"25 june 1903",
+			"awareness of social injustice",
+			"critic",
+			"english novelist",
+			"eric arthur blair",
+			"eric arthur blair s work",
+			"essayist",
+			"george orwell",
+			"journalist",
+			"lucid prose",
+			"opposition to totalitarianism",
+			"outspoken support of democratic socialism"
+		]
+	},
+	{
+		"id": "5a74bdce55429929fddd84e1",
+		"question": "Who died last Vladimir Arnold or Georg Cantor?",
+		"answer": "Vladimir Igorevich Arnold",
+		"supporting_facts": [
+			"Georg Cantor",
+			"Vladimir Arnold"
+		],
+		"question_entities": [
+			"vladimir arnold",
+			"georg cantor"
+		],
+		"supporting_entities": [
+			"cantor",
+			"cantor s work",
+			"cardinal numbers",
+			"fundamental theory in mathematics",
+			"georg cantor",
+			"germany",
+			"great philosophical interest",
+			"importance of one to one correspondence",
+			"infinite and well ordered sets",
+			"march 3  1845",
+			"ordinal numbers",
+			"real numbers are more numerous than natural numbers",
+			"set theory",
+			"12 june 1937",
+			"3 june 2010",
+			"ade classification problem",
+			"algebraic geometry",
+			"catastrophe theory",
+			"classical mechanics",
+			"differential equations",
+			"dynamical systems theory",
+			"hilbert s thirteenth problem",
+			"hydrodynamics",
+			"kolmogorov arnold moser theorem",
+			"russian mathematician",
+			"singularity theory",
+			"soviet mathematician",
+			"symplectic geometry",
+			"topology",
+			"vladimir arnold"
+		]
+	},
+	{
+		"id": "5abe03635542991f661060a5",
+		"question": "What is the middle name of the former Stanford Cardinals player who caught 57 passes for 1010 yards and 14 TDs?",
+		"answer": "David",
+		"supporting_facts": [
+			"James Lofton",
+			"1977 Stanford Cardinals football team"
+		],
+		"question_entities": [
+			"stanford cardinals"
+		],
+		"supporting_entities": [
+			"buffalo bills",
+			"former american football player",
+			"green bay packers",
+			"james lofton",
+			"los angeles raiders",
+			"los angeles rams",
+			"ncaa champion in long jump",
+			"philadelphia eagles",
+			"pro football hall of fame in 2003",
+			"stanford university",
+			"years in the national football league",
+			"1977 stanford cardinals football team",
+			"ap second team all american",
+			"bill walsh",
+			"darrin nelson",
+			"freshman running back",
+			"gordy ceresino",
+			"guy benjamin",
+			"james lofton",
+			"junior linebacker",
+			"nea second team all american",
+			"sammy baugh trophy",
+			"stanford cardinals",
+			"stanford s head coach",
+			"stanford university"
+		]
+	},
+	{
+		"id": "5a8463545542990548d0b2a3",
+		"question": "What was the position of Jean Baptiste Androuet du Cerceau under the man who was King of the Polish-Lithuanian Commonwealth from 1573 to 1575?",
+		"answer": "supervisor of the royal works",
+		"supporting_facts": [
+			"Henry III of France",
+			"Jean Baptiste Androuet du Cerceau"
+		],
+		"question_entities": [
+			"jean baptiste androuet du cerceau",
+			"monarch of polish lithuanian commonwealth"
+		],
+		"supporting_entities": [
+			"19 september 1551",
+			"2 august 1589",
+			"alexandre  douard de france",
+			"france",
+			"french monarch",
+			"henrikas valua",
+			"henry iii",
+			"henryk walezy",
+			"house of valois",
+			"polish lithuanian commonwealth",
+			"h tel d angoul me",
+			"h tel de lamoignon",
+			"h tel de mayenne",
+			"historical library of the city of paris",
+			"jean baptiste androuet du cerceau",
+			"pediments of its piano nobile windows superposed on the frieze above",
+			"pont neuf",
+			"rhythmically varied dormer windows",
+			"the royal works"
+		]
+	},
+	{
+		"id": "5ab3c53955429969a97a81b9",
+		"question": "Who won the special election in 2014 to replace Bill Young?",
+		"answer": "David Jolly",
+		"supporting_facts": [
+			"Rod Smith (politician)",
+			"Alex Sink"
+		],
+		"question_entities": [
+			"bill young",
+			"special election",
+			"2014"
+		],
+		"supporting_entities": [
+			"2010 florida gubernatorial election",
+			"alex sink",
+			"american politician",
+			"chief financial officer for the state of florida",
+			"david jolly",
+			"democratic nominee for governor of florida",
+			"democratic party",
+			"fill the vacancy created by the death of u s  representative bill young",
+			"june 5  1948",
+			"march 11  2014",
+			"republican nominee",
+			"rick scott",
+			"special election",
+			"treasurer on the board of trustees of the florida state board of administration",
+			"u s  representative bill young",
+			"unsuccessful democratic candidate in the special election",
+			"alex sink",
+			"florida democratic party",
+			"florida senate",
+			"gainesville",
+			"governor of florida in 2006 election",
+			"jim davis",
+			"keith perry",
+			"keith perry in 2016",
+			"lieutenant governor of florida in 2010",
+			"november 15  1949",
+			"politician",
+			"republican",
+			"rod smith",
+			"state representative",
+			"u s  state of florida"
+		]
+	},
+	{
+		"id": "5a8463945542992ef85e23d9",
+		"question": "The Dying Swan is a famous solo associated with Anna Pavlova. Whose music is it based on?",
+		"answer": "Camille Saint-Sa\u00ebns",
+		"supporting_facts": [
+			"The Dying Swan",
+			"Anna Pavlova"
+		],
+		"question_entities": [
+			"the dying swan",
+			"anna pavlova"
+		],
+		"supporting_entities": [
+			"anna pavlova",
+			"ballet",
+			"ballets russes",
+			"february 12  1881",
+			"imperial russian ballet",
+			"january 23  1931",
+			"prima ballerina",
+			"the dying swan",
+			"the world",
+			"1905",
+			"4 000 times",
+			"anna pavlova",
+			"camille saint sa ns",
+			"le carnaval des animaux",
+			"le cygne",
+			"mikhail fokine",
+			"modern interpretations of odette in swan lake",
+			"non traditional interpretations and adaptations",
+			"st  petersburg  russia",
+			"swan lake",
+			"tchaikovsky",
+			"the dying swan"
+		]
+	},
+	{
+		"id": "5ab3063e554299753aec58fe",
+		"question": "Which goal scoring player in the 1992 FA Cup Final was Welsh?",
+		"answer": "Ian Rush",
+		"supporting_facts": [
+			"1992 FA Cup Final",
+			"Ian Rush"
+		],
+		"question_entities": [
+			"1992 fa cup final",
+			"welsh"
+		],
+		"supporting_entities": [
+			"1992 fa cup final",
+			"ian rush",
+			"liverpool",
+			"michael thomas",
+			"sunderland",
+			"wembley",
+			"1980 1987",
+			"1988 1996",
+			"20 october 1961",
+			"25 goals versus everton f c",
+			"28 goals",
+			"346 goals",
+			"all time leading goalscorer",
+			"his country",
+			"ian rush",
+			"liverpool f c",
+			"merseyside derby",
+			"wales national football team"
+		]
+	},
+	{
+		"id": "5a7f87755542994857a76769",
+		"question": "Belle Gold is a fictional character portrayed by an actress of what nationality?",
+		"answer": "Australian",
+		"supporting_facts": [
+			"Emilie de Ravin",
+			"Belle (Once Upon a Time)"
+		],
+		"question_entities": [
+			"belle gold"
+		],
+		"supporting_entities": [
+			"27 december 1981",
+			"australian actress",
+			"belle french on once upon a time",
+			"claire littleton on lost",
+			"emilie de ravin",
+			"series regular beginning with season two",
+			"tess harding on roswell",
+			"1991 film",
+			"abc",
+			"beauty and the beast",
+			"belle gold",
+			"disney princess",
+			"emilie de ravin",
+			"fictional character",
+			"french",
+			"jeanne marie leprince de beaumont",
+			"lacey",
+			"once upon a time",
+			"television series"
+		]
+	},
+	{
+		"id": "5a79240955429974737f79a4",
+		"question": "Which dog is native to France, the Basset Bleu de Gascogne or the Bulldog?",
+		"answer": "Basset Bleu de Gascogne",
+		"supporting_facts": [
+			"Bulldog",
+			"Basset Bleu de Gascogne"
+		],
+		"question_entities": [
+			"basset bleu de gascogne",
+			"bulldog",
+			"france"
+		],
+		"supporting_entities": [
+			"alain bourbon",
+			"basset bleu de gascogne",
+			"blue gascony basset",
+			"f d ration cynologique internationale",
+			"french native breed",
+			"grand bleu de gascogne",
+			"the kennel club",
+			"uk",
+			"united kennel club",
+			"united states",
+			"akc",
+			"american kennel club",
+			"basset hound",
+			"bluetick coonhound",
+			"breeding records",
+			"british bulldog",
+			"bulldog",
+			"english bulldog",
+			"finnish lapphund",
+			"fourth most popular purebreed in us in 2007",
+			"irish wolfhound",
+			"medium sized breed of dog",
+			"muscular dog",
+			"pushed in nose",
+			"small greek domestic dog",
+			"the kennel club",
+			"ukc",
+			"united kennel club",
+			"wrinkled face"
+		]
+	},
+	{
+		"id": "5ab2f45d5542991669774151",
+		"question": "What is the name of the place in The Chronicles of Narnia where Lucy Pevensie and Mr. Tumnus meet?",
+		"answer": "Lantern Waste",
+		"supporting_facts": [
+			"Lantern Waste",
+			"Mr. Tumnus"
+		],
+		"question_entities": [
+			"the chronicles of narnia",
+			"lucy pevensie",
+			"mr  tumnus"
+		],
+		"supporting_entities": [
+			"c  s  lewis",
+			"lucy pevensie",
+			"mr  tumnus",
+			"narnia",
+			"the chronicles of narnia",
+			"the entire narnia series",
+			"the horse and his boy",
+			"the last battle",
+			"the lion  the witch and the wardrobe",
+			"books on narnia",
+			"c  s  lewis",
+			"duke of lantern waste",
+			"fictional place",
+			"iconic image of narnia",
+			"king edmund",
+			"lamppost",
+			"lantern waste",
+			"lucy pevensie",
+			"mr  tumnus",
+			"question of origin",
+			"the chronicles of narnia",
+			"wood"
+		]
+	},
+	{
+		"id": "5ac524e55542994611c8b3d0",
+		"question": "Which number in the Final Fantasy series was created by Hiroyuki Ito and allows the player control of the artificial intelligence of the characters in battle?",
+		"answer": "Final Fantasy XII",
+		"supporting_facts": [
+			"Hiroyuki Ito",
+			"Final Fantasy XII"
+		],
+		"question_entities": [
+			"final fantasy",
+			"hiroyuki ito"
+		],
+		"supporting_entities": [
+			"1994",
+			"2000",
+			"2006",
+			"active time battle  atb",
+			"active time battle  atb  system",
+			"designer",
+			"director",
+			"final fantasy ix",
+			"final fantasy series",
+			"final fantasy vi",
+			"final fantasy xii",
+			"hiroyuki ito",
+			"hiroyuki itou",
+			"japanese game producer",
+			"square enix",
+			"2006",
+			"abilities and equipment used by characters",
+			"chocobos",
+			"controllable camera",
+			"customizable  gambit  system",
+			"fantasy role playing video game",
+			"final fantasy xii",
+			"license  system",
+			"moogles",
+			"open world split into zones",
+			"playstation 2",
+			"previous games in the series",
+			"seamless battle system",
+			"square enix",
+			"twelfth title in the mainline  final fantasy  series"
+		]
+	},
+	{
+		"id": "5abfd83f5542997ec76fd45c",
+		"question": "Which genus has more species, Quesnelia or Honeysuckle?",
+		"answer": "Honeysuckle",
+		"supporting_facts": [
+			"Honeysuckle",
+			"Quesnelia"
+		],
+		"question_entities": [
+			"quesnelia",
+			"honeysuckle"
+		],
+		"supporting_entities": [
+			"22 known species",
+			"billbergiopsis",
+			"bromeliaceae",
+			"bromelioideae",
+			"eastern brazil",
+			"french consul to french guiana",
+			"m  quesnel",
+			"quesnelia",
+			"type subgenus",
+			"100 species in china",
+			"20 species in europe",
+			"20 species in india",
+			"20 species in north america",
+			"adam lonicer",
+			"approximately 180 species",
+			"caprifoliaceae",
+			"caprifolium",
+			"chinese honeysuckle",
+			"coral honeysuckle",
+			"edible sweet nectar",
+			"flowers",
+			"honeysuckle",
+			"honeysuckles",
+			"hummingbirds",
+			"japanese honeysuckle",
+			"l  ciliosa",
+			"lonicera",
+			"lonicera japonica",
+			"lonicera periclymenum",
+			"lonicera sempervirens",
+			"mill",
+			"northern hemisphere",
+			"orange honeysuckle",
+			"renaissance botanist",
+			"trumpet honeysuckle",
+			"tubular flowers",
+			"white honeysuckle",
+			"woodbine",
+			"woodbine honeysuckle"
+		]
+	},
+	{
+		"id": "5aba9e235542994dbf019984",
+		"question": "Are both Weberocereus and Conospermum part of the same genus?",
+		"answer": "no",
+		"supporting_facts": [
+			"Conospermum",
+			"Weberocereus"
+		],
+		"question_entities": [
+			"weberocereus",
+			"conospermum"
+		],
+		"supporting_entities": [
+			"australia",
+			"conospermum",
+			"cut flower industry",
+			"proteaceae",
+			"puffs of smoke",
+			"smokebushes",
+			"western australia",
+			"cacti",
+			"costa rica",
+			"green and white flower",
+			"nicaragua",
+			"weberocereus"
+		]
+	},
+	{
+		"id": "5a84ad3a5542992a431d1a8b",
+		"question": "What notable work from French music video director Yoann Lemoine features an apology and plea for forgiveness?",
+		"answer": "Back to December",
+		"supporting_facts": [
+			"Back to December",
+			"Yoann Lemoine"
+		],
+		"question_entities": [
+			"yoann lemoine"
+		],
+		"supporting_entities": [
+			"16 march 1983",
+			"graphic designer",
+			"katy perry",
+			"lana del rey",
+			"music video director",
+			"mystery jets",
+			"singer songwriter",
+			"taylor swift",
+			"yoann lemoine",
+			"2010",
+			"about taylor lautner",
+			"back to december",
+			"country radio",
+			"november 15  2010",
+			"orchestral country pop ballad",
+			"remorseful plea for forgiveness",
+			"song",
+			"speak now",
+			"taylor lautner",
+			"taylor swift"
+		]
+	},
+	{
+		"id": "5ae0111e55429906c02daabc",
+		"question": "Kyle York is the Chief Strategy Officer of a company that was aqured by what corporation in 2016?",
+		"answer": "Oracle Corporation",
+		"supporting_facts": [
+			"Dyn (company)",
+			"Kyle York (entrepreneur)"
+		],
+		"question_entities": [
+			"kyle york",
+			"chief strategy officer"
+		],
+		"supporting_entities": [
+			"domain registration services",
+			"dyn  inc",
+			"email products",
+			"internet performance management company",
+			"oracle corporation in 2016",
+			"products to control online infrastructure",
+			"products to monitor online infrastructure",
+			"products to optimize online infrastructure",
+			"cisco",
+			"cloudapp",
+			"cognizant",
+			"datanyze",
+			"dyn",
+			"internet entrepreneur",
+			"kyle york",
+			"new relic",
+			"november 26  1982",
+			"oracle",
+			"sophos",
+			"york athletics mfg"
+		]
+	},
+	{
+		"id": "5a85f8665542994775f606ce",
+		"question": "Runaway Scrape events of the Texas Revolution, culminating in this Battle, was a fight that lasted how long?",
+		"answer": "18 minutes",
+		"supporting_facts": [
+			"Runaway Scrape",
+			"Battle of San Jacinto"
+		],
+		"question_entities": [
+			"runaway scrape",
+			"texas revolution",
+			"battle"
+		],
+		"supporting_entities": [
+			"april 21  1836",
+			"battle of san jacinto",
+			"general antonio l pez de santa anna",
+			"general sam houston",
+			"harris county",
+			"mexican army",
+			"texas revolution",
+			"texian army",
+			"1824 constitution of mexico",
+			"ad interim government",
+			"antonio l pez de santa anna",
+			"battle of san jacinto",
+			"battle of the alamo",
+			"commander in chief of the provisional army of texas",
+			"martial law in coahuila y tejas",
+			"mexican army of operations",
+			"mexican forces",
+			"military force",
+			"population against troops led by santa anna",
+			"provisional army of texas",
+			"republic of texas",
+			"runaway scrape",
+			"sam houston",
+			"september 1835 and april 1836",
+			"texas residents",
+			"texians"
+		]
+	},
+	{
+		"id": "5a80b9ae5542992bc0c4a7eb",
+		"question": "What Canadian actress was on the cover of Saturday Night Magazine?",
+		"answer": "Shenae Grimes-Beech",
+		"supporting_facts": [
+			"Shenae Grimes",
+			"Saturday Night Magazine (U.S.)"
+		],
+		"question_entities": [
+			"canadian",
+			"actress",
+			"saturday night magazine"
+		],
+		"supporting_entities": [
+			"18  to 29 year olds",
+			"2004",
+			"23",
+			"40th issue in november 2008",
+			"amber heard",
+			"audrina patridge",
+			"emma stone",
+			"heidi montag",
+			"katie couric",
+			"katy perry",
+			"los angeles",
+			"malin  kerman",
+			"michael ritter",
+			"phoenix",
+			"san diego",
+			"san francisco",
+			"saturday night magazine",
+			"scarlett johansson",
+			"tucson",
+			"u s",
+			"university of southern california",
+			"90210",
+			"annie wilson",
+			"beverly hills  90210",
+			"canadian actress",
+			"darcy edwards",
+			"degrassi",
+			"naturally  sadie",
+			"october 24  1989",
+			"scream 4",
+			"shenae grimes beech"
+		]
+	},
+	{
+		"id": "5abd245555429924427fcf0f",
+		"question": "Under which ring name does the wrestler who participated in a taser match with Bam Bam Bigelow, associate himself with in the World Wrestling Federation?",
+		"answer": "Razor Ramon",
+		"supporting_facts": [
+			"Scott Hall",
+			"Ladder match"
+		],
+		"question_entities": [
+			"bam bam bigelow",
+			"world wrestling federation"
+		],
+		"supporting_entities": [
+			"bam bam bigelow",
+			"bam bam bigelow vs  scott hall taser match",
+			"contestant who climbs a ladder and retrieves the item",
+			"falls from the top of the ladder",
+			"item hung above the ring",
+			"ladder as a launching pad",
+			"ladder as a weapon",
+			"ladder match",
+			"matches",
+			"professional wrestling",
+			"ring",
+			"scott hall",
+			"striking the opponent with the taser",
+			"taser",
+			"title belt",
+			"winner",
+			"wrestlers",
+			"american",
+			"october 20  1958",
+			"razor ramon",
+			"scott hall",
+			"scott oliver hall",
+			"world championship wrestling",
+			"world wrestling federation",
+			"wwe"
+		]
+	},
+	{
+		"id": "5a824e0b554299676cceb254",
+		"question": "Where is the origin of Tie Domi who was a player for the Maple Leafs?",
+		"answer": "Albanian origin",
+		"supporting_facts": [
+			"Ontario Raiders",
+			"Tie Domi"
+		],
+		"question_entities": [
+			"tie domi",
+			"maple leafs"
+		],
+		"supporting_entities": [
+			"albanian origin",
+			"more penalty minutes than any other player in the history of maple leafs",
+			"new york rangers",
+			"november 1  1969",
+			"retired professional ice hockey player",
+			"third overall in penalty minutes in nhl history",
+			"tie domi",
+			"toronto maple leafs",
+			"winnipeg jets",
+			"1998 nll season",
+			"bill watters",
+			"bobby orr",
+			"buffalo bandits",
+			"chris fritz",
+			"copps coliseum",
+			"group including bill watters  paul beeston  tie domi  and bobby orr",
+			"hamilton  ontario",
+			"jim veltman",
+			"les bartley",
+			"maple leaf sports   entertainment",
+			"maple leafs",
+			"national lacrosse league",
+			"ontario raiders",
+			"paul beeston",
+			"raiders  captain",
+			"the team",
+			"tie domi",
+			"toronto blue jays",
+			"toronto maple leafs",
+			"toronto rock",
+			"toronto s maple leaf gardens"
+		]
+	},
+	{
+		"id": "5abcc818554299658360048b",
+		"question": "In which event did Tyson Gay and Rodney Martin both represent the United States at the 2008 Beijing Olympics?",
+		"answer": "4 x 100 metre relay",
+		"supporting_facts": [
+			"Tyson Gay",
+			"Rodney Martin (athlete)"
+		],
+		"question_entities": [
+			"tyson gay",
+			"rodney martin",
+			"the united states",
+			"2008 beijing olympics"
+		],
+		"supporting_entities": [
+			"1st at 2007 world championships in osaka  japan",
+			"3rd at 2007 world championships in osaka  japan",
+			"4th place at 2007 world championships in osaka  japan",
+			"american sprinter",
+			"bronze medal to wallace spearmon jr  by 100th of a second",
+			"december 22  1982",
+			"first leg of 4 x 100 metre relay in beijing china",
+			"first olympic team in 2008",
+			"gold medal as an alternate",
+			"indoor 200m school record",
+			"las vegas  nevada",
+			"outdoor 200m school record",
+			"rodney martin",
+			"three time all american",
+			"tyson gay",
+			"university of south carolina",
+			"wallace spearmon jr",
+			"western high school",
+			"100 meters dash",
+			"19 58",
+			"200 meters dash",
+			"9 69 seconds",
+			"american track and field sprinter",
+			"august 9  1982",
+			"one year ban",
+			"received one year ban",
+			"second fastest athlete with usain bolt",
+			"sixth fastest athlete in 200 meters dash",
+			"tyson gay"
+		]
+	},
+	{
+		"id": "5ab2bc6b554299545a2cfa40",
+		"question": "Pablo Jose Ozuna is the cousin of a Dominican professional baseball left fielder who made his MLB debut in what year?",
+		"answer": "2013",
+		"supporting_facts": [
+			"Marcell Ozuna",
+			"Pablo Ozuna"
+		],
+		"question_entities": [
+			"pablo jos  ozuna",
+			"dominican republic",
+			"mlb"
+		],
+		"supporting_entities": [
+			"2013",
+			"dominican professional baseball left fielder",
+			"major league baseball  mlb",
+			"marcell ozuna",
+			"miami marlins",
+			"november 12  1990",
+			"august 25  1974",
+			"chicago white sox",
+			"colorado rockies",
+			"dominican republic",
+			"florida marlins",
+			"los angeles dodgers",
+			"marcell ozuna",
+			"miami marlins",
+			"pablo jos  ozuna"
+		]
+	},
+	{
+		"id": "5adbf69c55429947ff173871",
+		"question": "Tolex and General Tire manufacture very different products, but both make accessories for what type of transportation vehicle?",
+		"answer": "automobiles",
+		"supporting_facts": [
+			"General Tire",
+			"Tolex"
+		],
+		"question_entities": [
+			"tolex",
+			"general tire"
+		],
+		"supporting_entities": [
+			"american manufacturer",
+			"motor vehicles",
+			"the general tire and rubber company",
+			"tires",
+			"ambulances",
+			"august 30  1945",
+			"case covering for speakers and amplifiers",
+			"chris craft boats",
+			"general tire",
+			"hearses",
+			"marine applications",
+			"other watercraft",
+			"packard automobiles",
+			"plastic sheet and film material for book binding",
+			"tolex"
+		]
+	},
+	{
+		"id": "5a80b52f554299485f5986d6",
+		"question": "What prominent director worked with Orion Pictures and was born in December of 1935?",
+		"answer": "Heywood \"Woody\" Allen",
+		"supporting_facts": [
+			"Orion Pictures",
+			"Woody Allen"
+		],
+		"question_entities": [
+			"orion pictures",
+			"december 1  1935"
+		],
+		"supporting_entities": [
+			"actor",
+			"american filmmaker",
+			"comedian",
+			"december 1  1935",
+			"heywood allen",
+			"musician",
+			"woody allen",
+			"writer",
+			"1978",
+			"1999",
+			"academy awards for best picture",
+			"amadeus",
+			"american motion picture producer",
+			"dances with wolves",
+			"films",
+			"hannah and her sisters",
+			"high reputation for hollywood quality",
+			"james cameron",
+			"jonathan demme",
+			"metro goldwyn mayer",
+			"mississippi burning",
+			"oliver stone",
+			"orion pictures corporation",
+			"platoon",
+			"syndication",
+			"television production",
+			"the silence of the lambs",
+			"the studio",
+			"warner bros  and three former top level executives of united artists",
+			"woody allen"
+		]
+	},
+	{
+		"id": "5ae1e6d95542997283cd22c3",
+		"question": "Keanu is a 2016 American action comedy film directed by Peter Atencio and written by who?",
+		"answer": "Jordan Peele",
+		"supporting_facts": [
+			"Jordan Peele",
+			"Keanu (film)"
+		],
+		"question_entities": [
+			"keanu",
+			"peter atencio"
+		],
+		"supporting_entities": [
+			"american actor",
+			"being a cast member on madtv",
+			"comedian",
+			"director",
+			"fargo in 2014",
+			"february 21  1979",
+			"get out in 2017",
+			"jordan peele",
+			"producer",
+			"starring in key   peele",
+			"writer",
+			"15 million",
+			"20 million",
+			"alex rubens",
+			"american action comedy film",
+			"april 29  2016",
+			"filming",
+			"jordan peele",
+			"june 2015",
+			"keanu",
+			"keegan michael key",
+			"march 13  2016",
+			"method man",
+			"new orleans  louisiana",
+			"nia long",
+			"north america",
+			"peter atencio",
+			"positive reviews from critics",
+			"south by southwest festival",
+			"will forte"
+		]
+	},
+	{
+		"id": "5adddce05542992200553b70",
+		"question": "Graham Linehan was the creator of the Ash Atalla-produced sitcom for what UK channel?",
+		"answer": "Channel 4",
+		"supporting_facts": [
+			"The IT Crowd",
+			"Graham Linehan"
+		],
+		"question_entities": [
+			"graham linehan",
+			"ash atalla",
+			"uk tv channel"
+		],
+		"supporting_entities": [
+			"ash atalla",
+			"british sitcom",
+			"channel 4",
+			"chris o dowd",
+			"graham linehan",
+			"katherine parkinson",
+			"matt berry",
+			"richard ayoade",
+			"the it crowd",
+			"22 may 1968",
+			"arthur mathews",
+			"big train",
+			"black books",
+			"brass eye",
+			"count arthur strong",
+			"director",
+			"father ted",
+			"graham linehan",
+			"irish television comedy writer",
+			"the fast show",
+			"the it crowd"
+		]
+	},
+	{
+		"id": "5a74d7685542996c70cfae0a",
+		"question": "Who was the murderer sent to \"Old Smokey\" for allegedly commiting \"The Crime of the Century\"?",
+		"answer": "Richard Hauptmann",
+		"supporting_facts": [
+			"Old Smokey",
+			"Richard Hauptmann"
+		],
+		"question_entities": [
+			"old smokey",
+			"the crime of the century"
+		],
+		"supporting_entities": [
+			"1936",
+			"20 month old son",
+			"abduction and murder",
+			"anne morrow lindbergh",
+			"charles lindbergh",
+			"electric chair",
+			"first degree murder",
+			"lindbergh kidnapping",
+			"new jersey state prison",
+			"november 26  1899",
+			"richard hauptmann",
+			"the crime of the century",
+			"the end",
+			"the lindbergh kidnapping",
+			"1932",
+			"abducting and killing charles augustus lindbergh  jr",
+			"anne morrow lindbergh",
+			"charles augustus lindbergh",
+			"charles lindbergh",
+			"euphemistic name",
+			"lindbergh kidnapping",
+			"new jersey",
+			"new jersey state police museum",
+			"old smokey",
+			"richard hauptmann"
+		]
+	},
+	{
+		"id": "5adf49935542993a75d26491",
+		"question": "Are Power Grid and Vanished Planet both cooperative board games?",
+		"answer": "no",
+		"supporting_facts": [
+			"Vanished Planet",
+			"Power Grid"
+		],
+		"question_entities": [
+			"power grid",
+			"vanished planet",
+			"cooperative board game"
+		],
+		"supporting_entities": [
+			"2003",
+			"all",
+			"certain number of goals",
+			"cooperative board game",
+			"players",
+			"time limit",
+			"time limit is reached",
+			"vanished planet",
+			"world boardgaming championships",
+			"2004",
+			"english language edition",
+			"friedemann friese",
+			"funkenschlag",
+			"multiplayer german style board game",
+			"power grid",
+			"rio grande games"
+		]
+	},
+	{
+		"id": "5ae1467a554299422ee99659",
+		"question": "Rebecca M. Bergman is the President of a college affliated with what church?",
+		"answer": "Evangelical Lutheran Church",
+		"supporting_facts": [
+			"Gustavus Adolphus College",
+			"Rebecca M. Bergman"
+		],
+		"question_entities": [
+			"rebecca m  bergman"
+		],
+		"supporting_entities": [
+			"1862",
+			"board of trustees",
+			"gustavus adolphus college",
+			"gustavus adolphus college s board of trustees from 2007 to 2014",
+			"july 2014",
+			"medtronic",
+			"rebecca m  bergman",
+			"st  peter  minnesota",
+			"1862",
+			"coeducational college",
+			"evangelical lutheran church in america",
+			"gustavus adolphus college",
+			"gustavus adolphus college as 64th best liberal arts college",
+			"gustavus adolphus college as no  38 for liberal arts colleges",
+			"nobel conference",
+			"nobel laureates",
+			"payscale s 2016 17",
+			"private college",
+			"swedish americans",
+			"u s  news   world report"
+		]
+	},
+	{
+		"id": "5a8f15ec554299458435d552",
+		"question": "The 2006 NCAA Wrestling Championships crowned Jake Rosholt and another athlete known for powerful punches from what hand?",
+		"answer": "left",
+		"supporting_facts": [
+			"2006 NCAA Wrestling Championships",
+			"Johny Hendricks"
+		],
+		"question_entities": [
+			"2006 ncaa wrestling championships",
+			"jake rosholt"
+		],
+		"supporting_entities": [
+			"2 individual champions",
+			"2006 ncaa wrestling team championship",
+			"34th ncaa team wrestling championship overall",
+			"4th consecutive ncaa tournament victory",
+			"64 teams",
+			"all americans",
+			"dominant victory in the tournament",
+			"individual championship at 165 pounds",
+			"individual championship at 197 pounds",
+			"jake rosholt",
+			"johny hendricks",
+			"march 16",
+			"march 18  2006",
+			"ncaa team championship",
+			"oklahoma city",
+			"oklahoma state university",
+			"victory in the tournament",
+			"american",
+			"johny harvey hendricks",
+			"johny hendricks",
+			"september 12  1983",
+			"ufc middleweight division",
+			"ufc welterweight champion"
+		]
+	},
+	{
+		"id": "5ae4accf5542995ad6573e19",
+		"question": "The actress that plays Julia McNamara in the series \"Nip/Tuck\" also appears with Laurence Fishburne in a 1997 horror film directed by who?",
+		"answer": "Paul W. S. Anderson",
+		"supporting_facts": [
+			"Event Horizon (film)",
+			"Joely Richardson"
+		],
+		"question_entities": [
+			"julia mcnamara",
+			"nip tuck",
+			"laurence fishburne"
+		],
+		"supporting_entities": [
+			"101 dalmatians",
+			"9 january 1965",
+			"anonymous",
+			"endless love",
+			"english actress",
+			"event horizon",
+			"fx drama series",
+			"hollywood film adaptation",
+			"joely richardson",
+			"nip tuck",
+			"remake of endless love",
+			"return to me",
+			"role as julia mcnamara",
+			"role in nip tuck",
+			"showtime series",
+			"the girl with the dragon tattoo",
+			"the patriot",
+			"the tudors",
+			"1997",
+			"andrew kevin walker",
+			"british american science fiction horror film",
+			"event horizon",
+			"laurence fishburne",
+			"paul w  s  anderson",
+			"philip eisner",
+			"sam neill"
+		]
+	},
+	{
+		"id": "5ade914b55429939a52fe8f9",
+		"question": "What is the tagline of the roller coaster that utilizes the same ride system as Manta?",
+		"answer": "\"Discover Pure Energy\"",
+		"supporting_facts": [
+			"Blue Fire",
+			"Manta (SeaWorld San Diego)"
+		],
+		"question_entities": [
+			"manta"
+		],
+		"supporting_entities": [
+			"2009",
+			"blue fire",
+			"europa park",
+			"mack rides",
+			"manta",
+			"may 26  2012",
+			"san diego  california  united states",
+			"seaworld san diego",
+			"steel family launched roller coaster",
+			"2009",
+			"blue fire",
+			"discover pure energy",
+			"europa park",
+			"first roller coaster with inversions",
+			"iceland themed expansion",
+			"launched roller coaster",
+			"mack rides",
+			"roller coaster",
+			"tenth roller coaster"
+		]
+	},
+	{
+		"id": "5ab3d764554299233954ffc7",
+		"question": "Who made a spoof of the Radiohead's fourth studio album?",
+		"answer": "The Shirehorses",
+		"supporting_facts": [
+			"Our Kid Eh",
+			"Kid A"
+		],
+		"question_entities": [
+			"radiohead"
+		],
+		"supporting_entities": [
+			"2 october 2000",
+			"20th century classical music",
+			"amnesiac",
+			"brass instruments",
+			"copenhagen",
+			"drum machines",
+			"electronic music",
+			"england",
+			"following year",
+			"fourth studio album",
+			"gloucestershire",
+			"jazz",
+			"kid a",
+			"krautrock",
+			"nigel godrich",
+			"ok computer",
+			"ondes martenot",
+			"over 20 tracks",
+			"oxford",
+			"paris",
+			"radical change",
+			"radiohead",
+			"rock sound with synthesisers",
+			"sessions",
+			"string orchestras",
+			"the work",
+			"thom yorke",
+			"two albums",
+			"album",
+			"bbc radio 1 dj",
+			"kid a",
+			"marc riley",
+			"mark and lard",
+			"mark radcliffe",
+			"our kid eh",
+			"radiohead s album",
+			"spoof band",
+			"the shirehorses"
+		]
+	},
+	{
+		"id": "5a7a3bed5542996c55b2dd45",
+		"question": "Which California band, whose debut album Adrenaline appeared in 1995, has been referred to as \"the Radiohead of metal\"?",
+		"answer": "Deftones",
+		"supporting_facts": [
+			"Adrenaline (album)",
+			"Deftones"
+		],
+		"question_entities": [
+			"california",
+			"adrenaline",
+			"radiohead"
+		],
+		"supporting_entities": [
+			"1995",
+			"adrenaline",
+			"album",
+			"american band deftones",
+			"debut studio album",
+			"fist",
+			"maverick records",
+			"ross robinson",
+			"terry date",
+			"1988",
+			"1990",
+			"1999",
+			"abe cunningham",
+			"american alternative metal band",
+			"band s bassist",
+			"chi cheng",
+			"chino moreno",
+			"deftones",
+			"dominic garcia",
+			"frank delgado",
+			"one of the most experimental groups",
+			"sacramento  california  u s",
+			"stephen carpenter",
+			"the group in 1993",
+			"the radiohead of metal"
+		]
+	},
+	{
+		"id": "5ae2c4d75542991a06ce98d0",
+		"question": "Who has a wider scope of profession, Pete Dexter or Elie Wiesel?",
+		"answer": "Eliezer \"Elie\" Wiesel KBE",
+		"supporting_facts": [
+			"Pete Dexter",
+			"Elie Wiesel"
+		],
+		"question_entities": [
+			"pete dexter",
+			"elie wiesel"
+		],
+		"supporting_entities": [
+			"american novelist",
+			"july 22  1943",
+			"pete dexter",
+			"57 books",
+			"american",
+			"auschwitz",
+			"buchenwald",
+			"elie wiesel",
+			"english",
+			"french",
+			"literature",
+			"night",
+			"romanian",
+			"unknown"
+		]
+	},
+	{
+		"id": "5a8a2e465542996c9b8d5e32",
+		"question": "In what county did Michael Ola attend high school?",
+		"answer": "Clayton County, Georgia, United States",
+		"supporting_facts": [
+			"Michael Ola",
+			"Riverdale, Georgia"
+		],
+		"question_entities": [
+			"michael ola"
+		],
+		"supporting_entities": [
+			"april 19  1988",
+			"buffalo bills",
+			"chicago bears",
+			"detroit lions",
+			"hampton university",
+			"jacksonville sharks",
+			"miami dolphins",
+			"michael ola",
+			"montreal alouettes",
+			"national football league",
+			"new york giants",
+			"riverdale  georgia",
+			"riverdale high school",
+			"san diego chargers",
+			"seattle seahawks",
+			"12 478 in 2000",
+			"15 134 at the 2010 census",
+			"atlanta metropolitan area",
+			"clayton county  georgia  united states",
+			"hartsfield jackson atlanta international airport",
+			"population",
+			"riverdale",
+			"suburb"
+		]
+	},
+	{
+		"id": "5a78ce79554299029c4b5ea1",
+		"question": "Jacques Coghen is a direct ancestor to the spouse of which Belgian Queen?",
+		"answer": "Queen Mathilde",
+		"supporting_facts": [
+			"Philippe of Belgium",
+			"Jacques Coghen"
+		],
+		"question_entities": [
+			"count jacques andres coghen",
+			"seventh king of the belgians"
+		],
+		"supporting_entities": [
+			"1831 1832",
+			"brussels",
+			"count jacques andres coghen",
+			"minister of finance of the kingdom of belgium",
+			"philippe of belgium",
+			"15 april 1960",
+			"21 july 2013",
+			"albert ii",
+			"countess mathilde d udekem d acoz",
+			"first in the line of succession",
+			"four children",
+			"health reasons",
+			"king albert ii",
+			"philippe of belgium",
+			"princess elisabeth",
+			"queen mathilde",
+			"seventh king of the belgians"
+		]
+	},
+	{
+		"id": "5a78d35e55429974737f78c3",
+		"question": "Between two bands Audioslave and Bodyjar, which group formed earlier?",
+		"answer": "Bodyjar",
+		"supporting_facts": [
+			"Bodyjar",
+			"Audioslave"
+		],
+		"question_entities": [
+			"audioslave",
+			"bodyjar"
+		],
+		"supporting_entities": [
+			"1990",
+			"album  you can t hold me down",
+			"bastard squad",
+			"ben petterson",
+			"bodyjar",
+			"cameron baines",
+			"charles zerafa",
+			"grant relf",
+			"helium",
+			"name bodyjar",
+			"ross hetherington",
+			"shane wakker",
+			"swamp rats",
+			"tom read",
+			"1970s hard rock with 1990s alternative rock",
+			"audioslave",
+			"audioslave s sound",
+			"brad wilk",
+			"chris cornell",
+			"combination of soundgarden and rage against the machine",
+			"establishing a separate identity by the band s second album",
+			"los angeles",
+			"morello",
+			"producing all sounds on their albums using only guitar  bass  drums  and vocals",
+			"rage against the machine",
+			"rage against the machine member",
+			"soundgarden lead singer rhythm guitarist",
+			"tim commerford",
+			"tom morello",
+			"unconventional guitar solos into the mix"
+		]
+	},
+	{
+		"id": "5a87b6215542996e4f3088d6",
+		"question": "Are Yoo-hoo and Faygo both carbonated drinks?",
+		"answer": "no",
+		"supporting_facts": [
+			"Faygo",
+			"Yoo-hoo"
+		],
+		"question_entities": [
+			"yoo hoo",
+			"faygo"
+		],
+		"supporting_entities": [
+			"1907",
+			"american fizz",
+			"central southern regions of the united states",
+			"detroit  michigan",
+			"europe",
+			"faygo",
+			"faygo beverages  inc",
+			"faygo pop",
+			"feigenson brothers bottling works",
+			"mid atlantic",
+			"midwest",
+			"national beverage corporation",
+			"southern canada",
+			"started in detroit  michigan",
+			"wholly owned subsidiary of national beverage corporation",
+			"1926",
+			"american brand",
+			"dr  pepper snapple group",
+			"new jersey",
+			"yoo hoo"
+		]
+	},
+	{
+		"id": "5a85018d5542997b5ce3ff98",
+		"question": "Which host of Straight to the Heart is an American actress and producer?",
+		"answer": "Barbara Niven",
+		"supporting_facts": [
+			"Straight to the Heart (game show)",
+			"Barbara Niven"
+		],
+		"question_entities": [
+			"straight to the heart"
+		],
+		"supporting_entities": [
+			"1989",
+			"american",
+			"barbara lee alexander",
+			"game show",
+			"march 20",
+			"michael burger",
+			"september 8",
+			"straight to the heart",
+			"2012",
+			"a perfect ending",
+			"american actress",
+			"barbara niven",
+			"cedar cove",
+			"february 26  1953",
+			"one life to live",
+			"performances in lifetime movies"
+		]
+	},
+	{
+		"id": "5abffdec554299012d1db55d",
+		"question": "Which client of Lindka Cierach played Queen Elizabeth II in \"The Queen\"?",
+		"answer": "Helen Mirren",
+		"supporting_facts": [
+			"Helen Mirren",
+			"Lindka Cierach"
+		],
+		"question_entities": [
+			"lindka cierach",
+			"queen elizabeth ii",
+			"the queen"
+		],
+		"supporting_entities": [
+			"26 july 1945",
+			"academy award",
+			"bafta awards",
+			"emmy awards",
+			"english actor",
+			"helen mirren",
+			"jane tennison",
+			"olivier award",
+			"peter morgan",
+			"prime suspect",
+			"queen elizabeth ii",
+			"royal shakespeare company",
+			"the audience",
+			"the queen",
+			"tony award",
+			"triple crown of acting",
+			"west end",
+			"british couturier",
+			"british royal families",
+			"cherie blair",
+			"european royal families",
+			"fashion designer",
+			"helen mirren",
+			"lady victoria hervey",
+			"lindka cierach"
+		]
+	},
+	{
+		"id": "5ab1e75f554299340b525422",
+		"question": "What is the name of the director from a country which has only one-tenth of its historical boundaries?",
+		"answer": "Serhiy Paradzhanov",
+		"supporting_facts": [
+			"Armenia",
+			"Cinema of Ukraine"
+		],
+		"question_entities": [
+			"director"
+		],
+		"supporting_entities": [
+			"armenian film director",
+			"avant garde documentaries",
+			"cinema",
+			"dovzhenko film studios",
+			"dzyha vertov",
+			"enthusiasm  symphony of the donbass",
+			"man with a movie camera",
+			"moscow to ukraine",
+			"oleksandr dovzhenko",
+			"own cinematic style",
+			"prominent ukrainian director",
+			"serhiy paradzhanov",
+			"significant contributions to georgian cinema",
+			"significant contributions to ukrainian cinema",
+			"socialist realism",
+			"the eleventh year",
+			"ukraine",
+			"ukrainian poetic cinema",
+			"armenia",
+			"azerbaijan",
+			"de facto independent",
+			"eurasia",
+			"georgia",
+			"hayastani hanrapetut yun",
+			"iran",
+			"nagorno karabakh republic",
+			"nakhchivan",
+			"one tenth of historical armenia",
+			"republic of armenia",
+			"turkey",
+			"west asia"
+		]
+	},
+	{
+		"id": "5ae5c7fd554299546bf82f5b",
+		"question": "Notable works of Bailee Madison includes a 2011 American Romantic comedy film that was directed by Dennis Dugan, and written by Allan Loeb and who?",
+		"answer": "Timothy Dowling",
+		"supporting_facts": [
+			"Just Go with It",
+			"Bailee Madison"
+		],
+		"question_entities": [
+			"bailee madison",
+			"2011 british romantic comedy drama film",
+			"dennis dugan",
+			"allan loeb"
+		],
+		"supporting_entities": [
+			"american actress",
+			"bailee madison",
+			"bridge to terabithia",
+			"don t be afraid of the dark",
+			"good witch",
+			"grace russell",
+			"harper simmons",
+			"just go with it",
+			"maryalice",
+			"maxine",
+			"may belle aarons",
+			"merry christmas drake   josh",
+			"october 15  1999",
+			"once upon a time",
+			"parental guidance",
+			"wizards of waverly place",
+			"younger version of snow white",
+			"abe burrows",
+			"adam sandler",
+			"allan loeb",
+			"brooklyn decker",
+			"cactus flower",
+			"dennis dugan",
+			"earlier broadway stage play",
+			"french play fleur de cactus",
+			"jennifer aniston",
+			"just go with it",
+			"nick swardson",
+			"nicole kidman",
+			"romantic comedy film",
+			"timothy dowling"
+		]
+	},
+	{
+		"id": "5a8a231a55429930ff3c0cb4",
+		"question": "Kasimir Bileski was a noted stamp dealer based in a Canadian province that is bordered by which 2 US states?",
+		"answer": "North Dakota and Minnesota",
+		"supporting_facts": [
+			"Kasimir Bileski",
+			"Manitoba"
+		],
+		"question_entities": [
+			"kasimir bileski",
+			"canadian province"
+		],
+		"supporting_entities": [
+			"1 3 million people",
+			"649950 km2",
+			"longitudinal centre of canada",
+			"manitoba",
+			"minnesota",
+			"north dakota",
+			"northwest territories",
+			"nunavut",
+			"ontario",
+			"prairie provinces",
+			"province",
+			"saskatchewan",
+			"canadian philatelist",
+			"discovery of seaway inverted stamps",
+			"january 19  2005",
+			"kasimir bileski",
+			"promotion of seaway inverted stamps",
+			"september 14  1908",
+			"stamp dealer",
+			"winnipeg  manitoba  canada"
+		]
+	},
+	{
+		"id": "5adcfc135542990d50227d87",
+		"question": "The Legendary A&M Sessions contain five songs by the singer whose work was conducted with what band?",
+		"answer": "Magic Band",
+		"supporting_facts": [
+			"Captain Beefheart",
+			"The Legendary A&amp;M Sessions"
+		],
+		"question_entities": [
+			"the legendary a m sessions"
+		],
+		"supporting_entities": [
+			"american singer",
+			"artist",
+			"blues in his music",
+			"captain beefheart",
+			"december 17  2010",
+			"don van vliet",
+			"free jazz in his music",
+			"harmonica",
+			"january 15  1941",
+			"magic band",
+			"musician",
+			"psychedelia in his music",
+			"rock in his music",
+			"saxophone",
+			"songwriter",
+			"supporting musicians",
+			"1984",
+			"a m records",
+			"captain beefheart",
+			"captain beefheart   his magic band",
+			"five songs",
+			"the legendary a m sessions"
+		]
+	},
+	{
+		"id": "5ac2b2e2554299218029dafa",
+		"question": "In \"Bon Cop, Bad Cop\", Canadian actor Rick Howland played the role of Harry Buttman (a parody of Gary Beltman), who is the current commissioner of what National sports league? ",
+		"answer": "National Hockey League (NHL)",
+		"supporting_facts": [
+			"Gary Bettman",
+			"Rick Howland"
+		],
+		"question_entities": [
+			"bon cop  bad cop",
+			"rick howland",
+			"harry buttman",
+			"gary oldman",
+			"national league"
+		],
+		"supporting_entities": [
+			"cornell university",
+			"february 1  1993",
+			"gary bettman",
+			"general counsel to national basketball association",
+			"national hockey league",
+			"new york university school of law",
+			"senior vice president to national basketball association",
+			"canadian actor",
+			"gary bettman",
+			"harry buttman",
+			"rick howland",
+			"role as harry buttman in bon cop  bad cop",
+			"role as trick on lost girl"
+		]
+	},
+	{
+		"id": "5adc459255429944faac24ad",
+		"question": "Which member of the research project conducted by the Creation Research Society and the Institute for Creation Research between 1997 and 2005 was Kevin R. Henke most critical of? ",
+		"answer": "Russell Humphreys",
+		"supporting_facts": [
+			"RATE project",
+			"Kevin Henke"
+		],
+		"question_entities": [
+			"creation research society",
+			"institute for creation research",
+			"kevin henke"
+		],
+		"supporting_entities": [
+			"2 000",
+			"250 000 challenge to prove evolution",
+			"challenge",
+			"contract on talk origins",
+			"geochemist",
+			"john woodmorappe",
+			"kent hovind",
+			"kevin henke",
+			"rate project s results",
+			"russell humphreys",
+			"scientific arguments for a young earth",
+			"university of kentucky s center for applied energy research",
+			"university of kentucky s department of geology",
+			"young earth creationism",
+			"1997",
+			"2005",
+			"andrew snelling",
+			"creation research society",
+			"donald b  deyoung",
+			"eugene f  chaffin",
+			"institute for creation research",
+			"john baumgardner",
+			"larry vardiman",
+			"over  1 million in donations",
+			"radiometric dating",
+			"rate project",
+			"rate team",
+			"russell humphreys",
+			"steven a  austin",
+			"steven w  boyd"
+		]
+	},
+	{
+		"id": "5abbc4d255429931dba144fe",
+		"question": "Which genus of plant grows originally in Mexico and Guatemala, Phylica or Weldenia?",
+		"answer": "Weldenia",
+		"supporting_facts": [
+			"Weldenia",
+			"Phylica"
+		],
+		"question_entities": [
+			"mexico",
+			"guatemala",
+			"phylica",
+			"weldenia"
+		],
+		"supporting_entities": [
+			"1829",
+			"commelinaceae",
+			"genus of flowering plant",
+			"guatemala",
+			"mexico",
+			"weldenia",
+			"weldenia candida",
+			"about 150 species",
+			"fynbos",
+			"gough island",
+			"le amsterdam",
+			"madagascar",
+			"majority of phylica species",
+			"mascarene islands",
+			"phylica",
+			"phylica species",
+			"rhamnaceae",
+			"saint helena",
+			"south africa",
+			"tristan da cunha"
+		]
+	},
+	{
+		"id": "5abf877c5542990832d3a147",
+		"question": "Are the Kabata\u015f Erkek Lisesi school and the K\u00fc\u00e7\u00fcksu Palace located in the same city?",
+		"answer": "yes",
+		"supporting_facts": [
+			"Kabata\u015f Erkek Lisesi",
+			"K\u00fc\u00e7\u00fcksu Palace"
+		],
+		"question_entities": [
+			"kabata  erkek lisesi",
+			"k   ksu palace"
+		],
+		"supporting_entities": [
+			"anadoluhisar  and the fatih sultan mehmet bridge",
+			"asian shore of the bosphorus",
+			"hunting",
+			"istanbul  turkey",
+			"k   ksu neighborhood",
+			"k   ksu palace",
+			"ottoman sultans",
+			"summer stays",
+			"bosphorus",
+			"high school",
+			"istanbul",
+			"kabata  erkek lisesi",
+			"ortak y",
+			"ottoman turkish",
+			"turkey"
+		]
+	},
+	{
+		"id": "5adec4695542992fa25da83a",
+		"question": "The Collective for Living Cinema of Lower Manhattan featured work from what filmmaker also known as Denis Kaufman?",
+		"answer": "Dziga Vertov",
+		"supporting_facts": [
+			"Collective for Living Cinema",
+			"Dziga Vertov"
+		],
+		"question_entities": [
+			"collective for living cinema",
+			"lower manhattan",
+			"denis kaufman"
+		],
+		"supporting_entities": [
+			"12 february 1954",
+			"2 january 1896",
+			"active from 1968 to 1972",
+			"cin ma v rit  style",
+			"cinema theorist",
+			"denis kaufman",
+			"dziga vertov",
+			"dziga vertov group",
+			"newsreel director",
+			"soviet pioneer documentary film director",
+			"binghamton university",
+			"christine vachon",
+			"collective for living cinema",
+			"dziga vertov",
+			"founders",
+			"johan van der keuken",
+			"ken jacobs",
+			"lower manhattan",
+			"scholarly journals on film",
+			"united states of america",
+			"white street",
+			"yvonne rainer"
+		]
+	},
+	{
+		"id": "5ab9625e55429970cfb8eaa9",
+		"question": "Fort Snelling spurred growth of Saint Paul was located in this county?",
+		"answer": "Hennepin County",
+		"supporting_facts": [
+			"Fort Snelling",
+			"History of Saint Paul, Minnesota"
+		],
+		"question_entities": [
+			"fort snelling",
+			"saint paul"
+		],
+		"supporting_entities": [
+			"fort saint anthony",
+			"fort snelling",
+			"hennepin county  minnesota",
+			"historic fort snelling",
+			"minnesota and mississippi rivers",
+			"mississippi national river and recreation area",
+			"national park service",
+			"saint paul",
+			"upper mississippi river"
+		]
+	},
+	{
+		"id": "5ac1ff2255429964131be2b3",
+		"question": "In the 2011 census what was the population of suburban area in which BA Connect is headquartered ?",
+		"answer": "26,788",
+		"supporting_facts": [
+			"Didsbury",
+			"BA Connect"
+		],
+		"question_entities": [
+			"2011 census",
+			"ba connect"
+		],
+		"supporting_entities": [
+			"ba connect",
+			"buy on board  programme",
+			"didsbury  manchester  england",
+			"fully owned subsidiary airline of british airways",
+			"london city airport",
+			"low cost carrier",
+			"united kingdom",
+			"2011 census",
+			"26 788 in didsbury",
+			"didsbury",
+			"manchester  england",
+			"river mersey"
+		]
+	},
+	{
+		"id": "5a8e68b15542995085b3742d",
+		"question": "When was the earliest known pottery created in the country which was the native land of Admiral Yi Sun-sin, who conducted the Battle of Happo? ",
+		"answer": "around 8000 BC",
+		"supporting_facts": [
+			"History of Korea",
+			"Battle of Happo"
+		],
+		"question_entities": [
+			"admiral yi sun sin",
+			"battle of happo"
+		],
+		"supporting_entities": [
+			"1592",
+			"battle of happo",
+			"halting the japanese invasion",
+			"japanese",
+			"japanese invasions of korea  1592 1598",
+			"joseon",
+			"korean admiral",
+			"legendary figure in korean history",
+			"may 7  1592",
+			"naval campaigns of 1592",
+			"naval engagement",
+			"toyotomi hideyoshi",
+			"yi sun sin",
+			"400 bc",
+			"6000 bc",
+			"800 bc",
+			"around 8000 bc",
+			"bronze age",
+			"iron age",
+			"korea",
+			"korean peninsula",
+			"korean pottery",
+			"lower paleolithic",
+			"lower paleolithic era",
+			"neolithic period"
+		]
+	},
+	{
+		"id": "5a8f6e295542992414482ac6",
+		"question": "The manufacturer that owns the company that currently produced and marketed Skittles is headquartered in what US state?",
+		"answer": "Virginia",
+		"supporting_facts": [
+			"Skittles (confectionery)",
+			"Mars, Incorporated"
+		],
+		"question_entities": [
+			"skittles"
+		],
+		"supporting_entities": [
+			"6th largest privately held company in the united states by forbes",
+			"american global manufacturer",
+			"chocolate  hackettstown  new jersey",
+			"drinks  west chester  pennsylvania",
+			"food  rancho dominguez  california",
+			"mars",
+			"mars family",
+			"mclean  unincorporated fairfax county  virginia  us",
+			"petcare  brussels  belgium",
+			"petcare  poncitl n and jalisco  mexico",
+			"symbioscience  germantown  maryland",
+			"us 33 billion in 2015",
+			"wm  wrigley jr  company  chicago  illinois",
+			"fruit flavoured sweets",
+			"mars  inc",
+			"skittles",
+			"wrigley company"
+		]
+	},
+	{
+		"id": "5a77101d5542994aec3b71d7",
+		"question": "Who was born in 1922 and published a book in 1985 by Delacorte Press?",
+		"answer": "Kurt Vonnegut",
+		"supporting_facts": [
+			"Gal\u00e1pagos (novel)",
+			"Kurt Vonnegut"
+		],
+		"question_entities": [
+			"1922",
+			"1985",
+			"delacorte press"
+		],
+		"supporting_entities": [
+			"1985",
+			"american author",
+			"charles darwin",
+			"darwin s theory",
+			"delacorte press",
+			"evolutionary perspective",
+			"evolutionary theory",
+			"gal pagos",
+			"kurt vonnegut",
+			"merit of human brain",
+			"novel",
+			"reference to islands",
+			"title",
+			"tribute to charles darwin",
+			"vonnegut",
+			"14 novels",
+			"1969",
+			"american writer",
+			"april 11  2007",
+			"five plays",
+			"five works of non fiction",
+			"kurt vonnegut jr",
+			"november 11  1922",
+			"slaughterhouse five",
+			"three short story collections"
+		]
+	},
+	{
+		"id": "5ae0613d5542993d6555eb22",
+		"question": "Castle Hill is a plantation near what primary residence of Thomas Jefferson?",
+		"answer": "Monticello",
+		"supporting_facts": [
+			"Castle Hill (Virginia)",
+			"Monticello"
+		],
+		"question_entities": [
+			"castle hill",
+			"thomas jefferson"
+		],
+		"supporting_entities": [
+			"5000 acre plantation",
+			"charlottesville  virginia",
+			"cultivation of mixed crops",
+			"monticello",
+			"national historic landmark",
+			"piedmont region",
+			"thomas jefferson",
+			"tobacco cultivation",
+			"unesco world heritage site",
+			"united states coin",
+			"university of virginia",
+			"virginia",
+			"wheat cultivation",
+			"albemarle county  virginia",
+			"castle hill  virginia",
+			"charlottesville",
+			"dr  thomas walker",
+			"mildred thornton meriwether",
+			"monticello",
+			"national register of historic places",
+			"peter jefferson",
+			"thomas jefferson",
+			"virginia landmarks register"
+		]
+	},
+	{
+		"id": "5ac55e835542993e66e82375",
+		"question": "Thomas Fitch defended John Henry Holliday when he was accused of killing men during the gunfight at the o.k. corral, when was that?",
+		"answer": "October 25, 1881",
+		"supporting_facts": [
+			"Thomas Fitch (politician)",
+			"Doc Holliday"
+		],
+		"question_entities": [
+			"thomas fitch",
+			"holliday",
+			"gunfight at the o k  corral"
+		],
+		"supporting_entities": [
+			"american lawyer",
+			"billy clanton",
+			"brigham young",
+			"church leaders",
+			"doc holliday",
+			"frank mclaury",
+			"gunfight at o k  corral",
+			"january 27  1838",
+			"morgan",
+			"november 12  1923",
+			"o k  corral",
+			"october 25  1881",
+			"president brigham young",
+			"the church of jesus christ of latter day saints",
+			"thomas fitch",
+			"tom",
+			"virgil",
+			"wyatt earp",
+			"american",
+			"august 14  1851",
+			"dentist",
+			"doc holliday",
+			"gambler",
+			"gunfight at the o k  corral",
+			"gunfighter",
+			"november 8  1887",
+			"temporary deputy marshal",
+			"wyatt earp"
+		]
+	},
+	{
+		"id": "5ae3376455429928c4239688",
+		"question": "What NFL Team, undefeated in 1972, had on their staff the coach of the 2004 Florida Atlantic Owls football team?",
+		"answer": "Miami Dolphins",
+		"supporting_facts": [
+			"Howard Schnellenberger",
+			"2004 Florida Atlantic Owls football team"
+		],
+		"question_entities": [
+			"nfl",
+			"1972",
+			"2004",
+			"florida atlantic owls",
+			"football team"
+		],
+		"supporting_entities": [
+			"1972 miami dolphins",
+			"american football coach",
+			"baltimore colts",
+			"florida atlantic university",
+			"howard schnellenberger",
+			"joe namath to alabama for bear bryant in 1961",
+			"march 16  1934",
+			"miami in 1983",
+			"university of louisville",
+			"university of miami",
+			"university of oklahoma",
+			"2004 florida atlantic owls football team",
+			"conference championship",
+			"division i a",
+			"division i aa",
+			"florida",
+			"florida atlantic university",
+			"fort lauderdale  florida",
+			"howard schnellenberger",
+			"lockhart stadium",
+			"ncaa division i a",
+			"postseason bowl berth",
+			"transition",
+			"transition program"
+		]
+	},
+	{
+		"id": "5abb207d5542992ccd8e7f1d",
+		"question": "Wincenty Gostkowski was a lawyer for the watch manufacturer Patek Philippe & Co. in which city in Switzerland?",
+		"answer": "Geneva, Switzerland",
+		"supporting_facts": [
+			"Wincenty Gostkowski",
+			"Patek Philippe &amp; Co."
+		],
+		"question_entities": [
+			"wincenty gostkowski",
+			"patek philippe   co",
+			"switzerland"
+		],
+		"supporting_entities": [
+			"adrien philippe",
+			"antoni patek",
+			"august 29  1884",
+			"geneva  switzerland",
+			"lawyer",
+			"march 29  1807",
+			"patek philippe   co",
+			"wincenty gostkowski",
+			"1851",
+			"geneva",
+			"movements",
+			"patek philippe   co",
+			"prestigious watch manufacturer",
+			"swiss watch manufacturer",
+			"timepieces",
+			"vall e de joux"
+		]
+	},
+	{
+		"id": "5a74872655429979e2882978",
+		"question": "What singer song writer born on December 13, 1989 wears jewelry from Porter Lyons?",
+		"answer": "Taylor Swift",
+		"supporting_facts": [
+			"Porter Lyons",
+			"Taylor Swift"
+		],
+		"question_entities": [
+			"december 13  1989",
+			"porter lyons"
+		],
+		"supporting_entities": [
+			"ashley porter",
+			"cameron diaz",
+			"elle",
+			"jennifer lawrence",
+			"jessica alba",
+			"new orleans  louisiana",
+			"november 2012",
+			"porter lyons",
+			"taylor swift",
+			"w magazine",
+			"american singer songwriter",
+			"december 13  1989",
+			"narrative songs",
+			"personal life",
+			"taylor swift",
+			"widespread media coverage"
+		]
+	},
+	{
+		"id": "5a8c5794554299240d9c2131",
+		"question": "Are Willard Mack and Subhash Ghai both involved in film?",
+		"answer": "yes",
+		"supporting_facts": [
+			"Willard Mack",
+			"Subhash Ghai"
+		],
+		"question_entities": [
+			"willard mack",
+			"subhash ghai",
+			"film"
+		],
+		"supporting_entities": [
+			"wilbur mack",
+			"willard mack",
+			"1982",
+			"24 january 1945",
+			"hindi cinema",
+			"iifa award",
+			"iifa award in 2015",
+			"indian film director",
+			"mukta arts private limited",
+			"mumbai",
+			"national film award",
+			"national film award in 2006",
+			"outstanding contribution to indian cinema",
+			"producer",
+			"producing the film  iqbal",
+			"public company in 2000",
+			"screenwriter",
+			"subhash ghai",
+			"subhash ghai as executive chairman",
+			"whistling woods international",
+			"whistling woods international in 2006"
+		]
+	},
+	{
+		"id": "5ae7eb3c5542994a481bbe20",
+		"question": "The Panel with striding lion  was one of many that lined the way north of the gate to the inner city of what location?",
+		"answer": "Babylon",
+		"supporting_facts": [
+			"Panel with striding lion",
+			"Ishtar Gate"
+		],
+		"question_entities": [
+			"panel with striding lion"
+		],
+		"supporting_entities": [
+			"dated to 604 562 b c",
+			"ishtar gate",
+			"ma 31 13 1",
+			"many panels",
+			"met",
+			"metropolitan museum of art",
+			"metropolitan museum of art  new york",
+			"neo babylonian glazed ceramic bricks",
+			"new york",
+			"panel with striding lion",
+			"processional way",
+			"r  koldewey",
+			"staatliche museen zu berlin",
+			"575 bce",
+			"babylon",
+			"berlin",
+			"early 20th century",
+			"ishtar gate",
+			"king nebuchadnezzar ii",
+			"pergamon museum",
+			"pergamon museum  berlin"
+		]
+	},
+	{
+		"id": "5ac4f2e755429924173fb503",
+		"question": "Chiang Chungcheng was involved involved in what battle in 1942?",
+		"answer": "Battle of Prome",
+		"supporting_facts": [
+			"Battle of Prome (1942)",
+			"Chiang Kai-shek"
+		],
+		"question_entities": [
+			"chiang chungcheng",
+			"1942"
+		],
+		"supporting_entities": [
+			"1942",
+			"as long as the british hold prome  we hold toungoo",
+			"battle of prome",
+			"british",
+			"chiang kai shek",
+			"china",
+			"china s generalissimo",
+			"japanese",
+			"japanese conquest of burma",
+			"prome",
+			"april 5  1975",
+			"chiang chieh shih",
+			"chiang chungcheng",
+			"chiang kai shek",
+			"chinese statesman",
+			"military leader",
+			"october 31  1887",
+			"political leader",
+			"republic of china"
+		]
+	},
+	{
+		"id": "5ab2f88755429976abd1bbe0",
+		"question": "Were Thinking Fellers Union Local 282 and the Smiths, who had a lead singer of Morrissey, both active in 1986?",
+		"answer": "yes",
+		"supporting_facts": [
+			"Morrissey",
+			"Thinking Fellers Union Local 282"
+		],
+		"question_entities": [
+			"thinking fellers union local 282",
+			"the smiths",
+			"morrissey"
+		],
+		"supporting_entities": [
+			"1986",
+			"iowa",
+			"san francisco  california",
+			"thinking fellers union local 282",
+			"1982 to 1987",
+			"22 may 1959",
+			"author",
+			"english singer",
+			"morrissey",
+			"songwriter",
+			"steven patrick morrissey",
+			"the smiths",
+			"uk singles chart"
+		]
+	},
+	{
+		"id": "5a87a47c5542994846c1cdbd",
+		"question": "What is the name of this French former footballer whom football fans refer the football player Wilfred Bamnjo to as?",
+		"answer": "Mak\u00e9l\u00e9l\u00e9",
+		"supporting_facts": [
+			"Claude Mak\u00e9l\u00e9l\u00e9",
+			"Wilfred Bamnjo"
+		],
+		"question_entities": [
+			"wilfred bamnjo"
+		],
+		"supporting_entities": [
+			"18 february 1973",
+			"claude mak l l",
+			"french former footballer",
+			"premier league club",
+			"swansea city",
+			"27 march 1980",
+			"cameroon",
+			"defensive midfielder",
+			"happy valley",
+			"hong kong first division league",
+			"wilfred bamnjo"
+		]
+	},
+	{
+		"id": "5adbe1c5554299438c868cc4",
+		"question": "Was 9/11: Press for Truth released prior to Chasing Coral?",
+		"answer": "yes",
+		"supporting_facts": [
+			"9/11: Press for Truth",
+			"Chasing Coral"
+		],
+		"question_entities": [
+			"9 11 disaster relief",
+			"chasing coral"
+		],
+		"supporting_entities": [
+			"2017 sundance film festival",
+			"chasing coral",
+			"disappearance of coral reefs",
+			"documentary film",
+			"exposure labs",
+			"jeff orlowski",
+			"july 2017",
+			"netflix",
+			"team of divers",
+			"team of photographers",
+			"team of scientists",
+			"9 11",
+			"paul thompson",
+			"ray nowosielski",
+			"september 11 attacks",
+			"the terror timeline",
+			"united states"
+		]
+	},
+	{
+		"id": "5abaa954554299232ef4a362",
+		"question": "Are the writing from Maurice Level and Alice Hoffman focused on different audieces?",
+		"answer": "yes",
+		"supporting_facts": [
+			"Maurice Level",
+			"Alice Hoffman"
+		],
+		"question_entities": [
+			"maurice level",
+			"alice hoffman"
+		],
+		"supporting_entities": [
+			"1995",
+			"1998 film",
+			"alice hoffman",
+			"american novelist",
+			"march 16  1952",
+			"practical magic",
+			"april 15  1926",
+			"august 29  1875",
+			"french writer",
+			"maurice level",
+			"paris newspapers",
+			"pigalle district  paris",
+			"short stories of the macabre",
+			"th  tre du grand guignol"
+		]
+	},
+	{
+		"id": "5a8ced46554299441c6b9f82",
+		"question": "When was the father of the professional ice hockey player with the middle name \"Fosgaard\" born?",
+		"answer": "June 13, 1960",
+		"supporting_facts": [
+			"Olaf Eller",
+			"Lars Eller"
+		],
+		"question_entities": [
+			"ice hockey player",
+			"fosforito"
+		],
+		"supporting_entities": [
+			"2007 nhl entry draft",
+			"8 may 1989",
+			"danish professional ice hockey player",
+			"lars eller",
+			"national hockey league  nhl",
+			"st  louis blues",
+			"washington capitals",
+			"danish ice hockey coach",
+			"denmark men s national junior ice hockey team",
+			"edmonton oil kings",
+			"gentofte stars in danish metal ligaen",
+			"june 13  1960",
+			"lars eller",
+			"mads eller",
+			"memorial cup with edmonton oil kings",
+			"olaf eller",
+			"st  louis blues",
+			"washington capitals",
+			"western hockey league"
+		]
+	},
+	{
+		"id": "5a89dfcc55429946c8d6e9f0",
+		"question": "Are Cryptanthus and Gagea, both a genus?",
+		"answer": "yes",
+		"supporting_facts": [
+			"Gagea",
+			"Cryptanthus"
+		],
+		"question_entities": [
+			"cryptanthus",
+			"gagea",
+			"genus"
+		],
+		"supporting_entities": [
+			"brazil",
+			"bromeliaceae",
+			"bromelioideae",
+			"cryptanthus",
+			"earth star",
+			"greek",
+			"hoplocryptanthus",
+			"type subgenus",
+			"eurasia",
+			"gagea",
+			"lily family",
+			"north africa",
+			"north america",
+			"spring flowers"
+		]
+	},
+	{
+		"id": "5abc23c45542993a06baf896",
+		"question": "Which region of Austria means 'Estate of the Salt Chamber' and covers the village of Obertraun, a popular destination for skiing and snowboarding in the winter?",
+		"answer": "Salzkammergut",
+		"supporting_facts": [
+			"Salzkammergut",
+			"Obertraun"
+		],
+		"question_entities": [
+			"austria",
+			"imperial salt chamber",
+			"obertraun"
+		],
+		"supporting_entities": [
+			"hallst tter see",
+			"hoher dachstein",
+			"kayaking",
+			"mountain biking",
+			"obertraun",
+			"salzkammergut",
+			"skiing",
+			"snowboarding",
+			"swimming",
+			"upper austria",
+			"austria",
+			"city of salzburg",
+			"dachstein mountains",
+			"federal states of salzburg",
+			"federal states of styria",
+			"federal states of upper austria",
+			"imperial salt chamber",
+			"right tributary of danube",
+			"salt mines of habsburg monarchy",
+			"salzkammergut",
+			"traun",
+			"unesco world heritage site"
+		]
+	},
+	{
+		"id": "5ab5ec795542997d4ad1f252",
+		"question": "What abbey, founded in 598, was Clarembald a monk at?",
+		"answer": "St Augustine's Abbey",
+		"supporting_facts": [
+			"Clarembald",
+			"St Augustine's Abbey"
+		],
+		"question_entities": [
+			"clarembald",
+			"abbey"
+		],
+		"supporting_entities": [
+			"1538",
+			"1848",
+			"598",
+			"abbey ruins",
+			"benedictine monastery",
+			"canterbury  kent  england",
+			"educational purposes",
+			"historical value",
+			"part of the site",
+			"st augustine s abbey",
+			"benedictine monk",
+			"canterbury  kent",
+			"clarembald",
+			"st augustine s abbey"
+		]
+	},
+	{
+		"id": "5ab7ba7555429928e1fe38b5",
+		"question": "The Dukes of Hazzard was inspired by the 1975 film starring whom?",
+		"answer": "James Mitchum",
+		"supporting_facts": [
+			"The Dukes of Hazzard",
+			"Moonrunners"
+		],
+		"question_entities": [
+			"the dukes of hazzard",
+			"1975 film"
+		],
+		"supporting_entities": [
+			"147 episodes",
+			"1975",
+			"american action comedy television series",
+			"cbs",
+			"february 8  1985",
+			"gy waldron",
+			"identical or similar character names and concepts",
+			"january 26  1979",
+			"moonrunners",
+			"seven seasons",
+			"the dukes of hazzard",
+			"1973",
+			"1975 film",
+			"in thunder road",
+			"james mitchum",
+			"moonrunners",
+			"moonshine running bootleggers",
+			"outlaw music boom of the 1970s",
+			"over a year",
+			"robert mitchum",
+			"southern family",
+			"television series",
+			"the dukes of hazzard",
+			"thunder road"
+		]
+	},
+	{
+		"id": "5a79fe3b5542994f819ef119",
+		"question": "What is the financial group which created the Sporting Portugal Fund?",
+		"answer": "Esp\u00edrito Santo Financial Group",
+		"supporting_facts": [
+			"Sporting Portugal Fund",
+			"Esp\u00edrito Santo Financial Group"
+		],
+		"question_entities": [
+			"sporting portugal fund"
+		],
+		"supporting_entities": [
+			"3 000 000 units",
+			"5 each",
+			"esaf   esp rito santo fundos de investimento mobili rio s a",
+			"portuguese football investment fund",
+			"sporting cp players",
+			"sporting portugal fund",
+			"1984",
+			"africa",
+			"americas",
+			"asia",
+			"esp rito santo financial group",
+			"espirito santo group",
+			"europe",
+			"luxembourg",
+			"portugal",
+			"portuguese holding company"
+		]
+	},
+	{
+		"id": "5ab2a308554299340b52553b",
+		"question": "What is the nationality of the author of Fifty Shades Freed?",
+		"answer": "English",
+		"supporting_facts": [
+			"Fifty Shades (film series)",
+			"Fifty Shades (novel series)"
+		],
+		"question_entities": [
+			"fifty shades freed"
+		],
+		"supporting_entities": [
+			"anastasia steele",
+			"christian grey",
+			"college graduate",
+			"e  l  james",
+			"fifty shades",
+			"fifty shades darker",
+			"fifty shades freed",
+			"fifty shades of grey",
+			"novel series",
+			"young business magnate",
+			"american film series",
+			"anastasia steele",
+			"christian grey",
+			"dakota johnson",
+			"e  l  james",
+			"fifty shades",
+			"fifty shades trilogy",
+			"first film",
+			"james foley",
+			"jamie dornan",
+			"sam taylor johnson",
+			"second film",
+			"third film",
+			"universal studios"
+		]
+	},
+	{
+		"id": "5a873b0d5542994775f607ad",
+		"question": "How many rooms are in the building built in 1883 at Garden City in Nassau County, New York?",
+		"answer": "500-room",
+		"supporting_facts": [
+			"A. T. Stewart Era Buildings",
+			"St. Paul's School (Garden City, New York)"
+		],
+		"question_entities": [
+			"garden city",
+			"nassau county  new york"
+		],
+		"supporting_entities": [
+			"1871 and 1893",
+			"a  t  stewart era buildings",
+			"alexander turney stewart",
+			"cathedral of the incarnation complex",
+			"cathedral school of st  mary",
+			"civic structures",
+			"commercial structures",
+			"garden city",
+			"garden city water works",
+			"hilton avenue commercial block",
+			"nassau county",
+			"national historic district",
+			"new york",
+			"religious structures",
+			"residential structures",
+			"st  paul s school",
+			"2010",
+			"500 room brick edifice",
+			"demolition",
+			"garden city",
+			"new york",
+			"st  paul s school",
+			"united states",
+			"village of garden city"
+		]
+	},
+	{
+		"id": "5a845d735542996488c2e52e",
+		"question": "Stronger Together was used for the campaign comprised of the Vice Presidential candidate who was a Senator from what state?",
+		"answer": "Virginia",
+		"supporting_facts": [
+			"Stronger Together (book)",
+			"Tim Kaine"
+		],
+		"question_entities": [
+			"stronger together  book",
+			"vice president",
+			"senator"
+		],
+		"supporting_entities": [
+			"2016 book",
+			"2016 u s  presidential election",
+			"america",
+			"hillary clinton",
+			"september 2016",
+			"simon   schuster",
+			"stronger together  book",
+			"tim kaine",
+			"american attorney",
+			"democrat",
+			"february 26  1958",
+			"junior united states senator",
+			"politician",
+			"senate in 2012",
+			"tim kaine",
+			"vice president of the united states in 2016",
+			"virginia"
+		]
+	},
+	{
+		"id": "5ae3e84b5542996836b02bf0",
+		"question": "Which airport, Salt Lake City International Airport or Brainerd Lakes Regional Airport, serves as a commercial airline and is closest to it's respective downtown city?",
+		"answer": "Brainerd Lakes Regional Airport",
+		"supporting_facts": [
+			"Brainerd Lakes Regional Airport",
+			"Salt Lake City International Airport"
+		],
+		"question_entities": [
+			"salt lake city international airport",
+			"brainerd lakes regional airport"
+		],
+		"supporting_entities": [
+			"brainerd",
+			"brainerd lakes regional airport",
+			"brd",
+			"city",
+			"county",
+			"crow wing county",
+			"general aviation",
+			"kbrd",
+			"minnesota",
+			"one commercial airline",
+			"united states",
+			"civil military airport",
+			"downtown salt lake city",
+			"kslc",
+			"more than 2 5 million people",
+			"nearly 1 3 million jobs",
+			"salt lake city international airport",
+			"slc",
+			"united states",
+			"utah"
+		]
+	},
+	{
+		"id": "5a8f5a185542992414482a71",
+		"question": "Of these two publication--B\u00e1iki and Sick--what type of publication is the one that was published most frequently? ",
+		"answer": "satirical-humor magazine",
+		"supporting_facts": [
+			"Sick (magazine)",
+			"B\u00e1iki"
+		],
+		"question_entities": [
+			"b iki",
+			"sick"
+		],
+		"supporting_entities": [
+			"134 issues",
+			"1960",
+			"1980",
+			"magazine",
+			"sick",
+			"30 000 people",
+			"b iki",
+			"community affairs of the sami in north america",
+			"international s mi journal",
+			"north america",
+			"place in sami",
+			"sami",
+			"sami culture",
+			"sami current affairs",
+			"sami history"
+		]
+	},
+	{
+		"id": "5a820897554299676cceb1f4",
+		"question": "Which founding member drew critical acclaim as a bass guitarist with melodic basslines  on Murmur?",
+		"answer": "Mike\" Mills",
+		"supporting_facts": [
+			"Mike Mills",
+			"Murmur (album)"
+		],
+		"question_entities": [
+			"founding member",
+			"bass guitarist",
+			"murmur"
+		],
+		"supporting_entities": [
+			"album",
+			"april 12  1983",
+			"bass guitarist",
+			"guitarist",
+			"i r s  records",
+			"lead singer",
+			"michael stipe",
+			"mike mills",
+			"murmur",
+			"peter buck",
+			"r e m",
+			"american",
+			"backing vocalist",
+			"band s musical compositions",
+			"bass guitar",
+			"composer",
+			"december 17  1958",
+			"guitar",
+			"keyboards",
+			"michael edward mills",
+			"mike mills",
+			"multi instrumentalist",
+			"percussion instruments",
+			"piano",
+			"r e m",
+			"singer"
+		]
+	},
+	{
+		"id": "5adc3a7055429947ff173913",
+		"question": "What is the nationality of the poet who wrote Une Tempete and first performed it in Tunisia?",
+		"answer": "French",
+		"supporting_facts": [
+			"Aim\u00e9 C\u00e9saire",
+			"Une Temp\u00eate"
+		],
+		"question_entities": [
+			"une temp te",
+			"tunisia"
+		],
+		"supporting_entities": [
+			"aim  c saire",
+			"ariel is a mulatto",
+			"avignon",
+			"c saire",
+			"caliban is a black slave",
+			"decolonization",
+			"festival d hammamet",
+			"jean marie serreau",
+			"paris",
+			"power",
+			"prospero is a white master",
+			"race",
+			"the tempest",
+			"tunisia",
+			"une temp te",
+			"17 april 2008",
+			"26 june 1913",
+			"aim  c saire",
+			"aim  c saire s works",
+			"discours sur le colonialisme",
+			"francophone poet",
+			"french poet",
+			"many languages",
+			"martinique",
+			"n gritude movement",
+			"politician",
+			"shakespeare s play the tempest",
+			"strife between colonizers and the colonized"
+		]
+	},
+	{
+		"id": "5a7e3117554299495941991b",
+		"question": "Are the mountains known as Trivor and The Crown both found in Asia?",
+		"answer": "yes",
+		"supporting_facts": [
+			"Trivor",
+			"The Crown (mountain)"
+		],
+		"question_entities": [
+			"trivor",
+			"the crown",
+			"asia"
+		],
+		"supporting_entities": [
+			"7295 m",
+			"china",
+			"crown peak",
+			"huang guan shan",
+			"karakoram mountain range",
+			"the crown",
+			"xinjiang uyghur autonomous region",
+			"yengisogat subrange",
+			"gilgit baltistan",
+			"high peak",
+			"hispar muztagh",
+			"karakoram range",
+			"pakistan",
+			"trivor",
+			"urdu"
+		]
+	},
+	{
+		"id": "5a81c7d15542990a1d231ea9",
+		"question": "Which services did Rock Nominees Ltd and  ISS A/S (Integrated Service Solutions) have in common?",
+		"answer": "cleaning, catering and security",
+		"supporting_facts": [
+			"ISS A/S",
+			"Rock (Nominees) Ltd v RCO Holdings Ltd"
+		],
+		"question_entities": [
+			"rock  nominees  ltd",
+			"iss a s"
+		],
+		"supporting_entities": [
+			"1901",
+			"500 000 employees",
+			"75 countries",
+			"asia",
+			"copenhagen  denmark",
+			"denmark",
+			"dkk 79 1 billion in 2016",
+			"emerging markets",
+			"europe",
+			"facility services company",
+			"iss a s",
+			"latin america",
+			"north america",
+			"pacific",
+			"2 48  stake from rock  nominees  ltd",
+			"201 300 shares for gambier holdings inc",
+			"65 000 shares for kiwi ltd",
+			"96 4  of the shares of rco",
+			"belize company",
+			"british virgin islands company",
+			"business empire of lord ashcroft",
+			"cleaning  catering and security porterage business",
+			"gambier holdings inc",
+			"iss  uk  ltd",
+			"kiwi ltd",
+			"one of rco s subsidiaries transfer its shares to one of iss s subsidiaries for  30 117 784",
+			"petition of unfair prejudice",
+			"rco",
+			"rco  holdings  plc",
+			"rock  nominees  ltd",
+			"transaction at an undervalue",
+			"value of avoiding risk from a sale on the open market",
+			"value to the purchaser of the synergies arising from the sale"
+		]
+	},
+	{
+		"id": "5a737fff554299623ed4abb9",
+		"question": "What was built near the residential neighborhood of Ramsay, Calgary in 1983?",
+		"answer": "Scotiabank Saddledome",
+		"supporting_facts": [
+			"Ramsay, Calgary",
+			"Scotiabank Saddledome"
+		],
+		"question_entities": [
+			"ramsay macdonald"
+		],
+		"supporting_entities": [
+			"alberta",
+			"alyth bonny brook",
+			"calgary",
+			"elbow river",
+			"industrial area",
+			"inglewood",
+			"macleod trail",
+			"ramsay",
+			"scotiabank saddledome",
+			"stampede grounds",
+			"1983",
+			"1988 winter olympics",
+			"alberta",
+			"calgary",
+			"calgary flames",
+			"canada",
+			"figure skating",
+			"ice hockey",
+			"multi use indoor arena",
+			"national hockey league",
+			"scotiabank saddledome",
+			"stampede corral"
+		]
+	},
+	{
+		"id": "5a7a06485542990198eaf04e",
+		"question": "When was the actor who plays Marius Josipovic in Sneaky Pete born?",
+		"answer": "December 17, 1974",
+		"supporting_facts": [
+			"Sneaky Pete",
+			"Giovanni Ribisi"
+		],
+		"question_entities": [
+			"marius josipovic",
+			"sneaky pete"
+		],
+		"supporting_entities": [
+			"american film and television actor",
+			"antonino giovanni ribisi",
+			"december 17  1974",
+			"giovanni ribisi",
+			"adopted identity of marius josipovic",
+			"amazon video",
+			"american crime drama series",
+			"august 7  2015",
+			"bryan cranston",
+			"cell mate of marius josipovic",
+			"david shore",
+			"executive producer",
+			"full series order",
+			"giovanni ribisi",
+			"graham yost",
+			"january 13  2017",
+			"libe barer",
+			"margo martindale",
+			"marin ireland",
+			"marius josipovic",
+			"michael drayer",
+			"pete murphy",
+			"peter gerety",
+			"pilot",
+			"project in early 2016",
+			"released convict",
+			"second season",
+			"september",
+			"series",
+			"shane mcrae",
+			"showrunner",
+			"sneaky pete",
+			"sneaky pete had been renewed for a second season"
+		]
+	},
+	{
+		"id": "5adf0d2d5542993a75d263e1",
+		"question": "Which private Catholic liberal arts college in Standish did  Don Ashley Turlington graduated from ",
+		"answer": "Saint Joseph's College",
+		"supporting_facts": [
+			"Saint Joseph's College of Maine",
+			"Don Ashley Turlington"
+		],
+		"question_entities": [
+			"don ashley turlington",
+			"standish",
+			"catholic",
+			"liberal arts college"
+		],
+		"supporting_entities": [
+			"430 acres",
+			"bachelor s degrees",
+			"maine",
+			"maine s largest city",
+			"master s degrees",
+			"only catholic college",
+			"portland",
+			"private catholic liberal arts college",
+			"saint joseph s college of maine",
+			"sebago lake",
+			"standish",
+			"1972",
+			"2000",
+			"don ashley turlington",
+			"don ashley turlington as notable alumni",
+			"kasenia",
+			"laura",
+			"meliza",
+			"saint augustine  florida",
+			"saint joseph s college of maine",
+			"silver spring  maryland",
+			"standish  maine",
+			"western new mexico university"
+		]
+	},
+	{
+		"id": "5a7a6c1a5542994f819ef1d5",
+		"question": "Which Arab World's car was  used in a  American action film directed by F. Gary Gray and written by Chris Morgan?",
+		"answer": "Lykan Hypersport",
+		"supporting_facts": [
+			"Lykan HyperSport",
+			"The Fate of the Furious"
+		],
+		"question_entities": [
+			"arab world",
+			"american",
+			"f  gary gray",
+			"chris morgan"
+		],
+		"supporting_entities": [
+			"2012",
+			"arab world",
+			"asphalt nitro",
+			"driveclub",
+			"fate of the furious",
+			"forza horizon 3",
+			"forza motorsport 6",
+			"furious 7",
+			"lebanon",
+			"lykan hypersport",
+			"project cars",
+			"united arab emirates",
+			"w motors",
+			"2017 american action film",
+			"charlize theron",
+			"chris  ludacris  bridges",
+			"chris morgan",
+			"cipher",
+			"cyberterrorist",
+			"dominic toretto",
+			"dwayne johnson",
+			"elsa pataky",
+			"f  gary gray",
+			"jason statham",
+			"kurt russell",
+			"letty",
+			"michelle rodriguez",
+			"nathalie emmanuel",
+			"scott eastwood",
+			"the fate of the furious",
+			"tyrese gibson",
+			"vin diesel"
+		]
+	},
+	{
+		"id": "5abfd83f5542997ec76fd45c",
+		"question": "Which genus has more species, Quesnelia or Honeysuckle?",
+		"answer": "Honeysuckle",
+		"supporting_facts": [
+			"Honeysuckle",
+			"Quesnelia"
+		],
+		"question_entities": [
+			"quesnelia",
+			"honeysuckle"
+		],
+		"supporting_entities": [
+			"22 known species",
+			"billbergiopsis",
+			"bromeliaceae",
+			"bromelioideae",
+			"eastern brazil",
+			"french consul to french guiana",
+			"m  quesnel",
+			"quesnelia",
+			"type subgenus",
+			"100 species in china",
+			"20 species in europe",
+			"20 species in india",
+			"20 species in north america",
+			"adam lonicer",
+			"approximately 180 species",
+			"caprifoliaceae",
+			"caprifolium",
+			"chinese honeysuckle",
+			"coral honeysuckle",
+			"edible sweet nectar",
+			"flowers",
+			"honeysuckle",
+			"honeysuckles",
+			"hummingbirds",
+			"japanese honeysuckle",
+			"l  ciliosa",
+			"lonicera",
+			"lonicera japonica",
+			"lonicera periclymenum",
+			"lonicera sempervirens",
+			"mill",
+			"northern hemisphere",
+			"orange honeysuckle",
+			"renaissance botanist",
+			"trumpet honeysuckle",
+			"tubular flowers",
+			"white honeysuckle",
+			"woodbine",
+			"woodbine honeysuckle"
+		]
+	},
+	{
+		"id": "5a7d9bc65542990b8f5039cb",
+		"question": "A wide receiver for the Toronto Argonauts played college football for a team that represents the University of Oklahoma, which belongs to what conference?",
+		"answer": "Big 12 Conference",
+		"supporting_facts": [
+			"Oklahoma Sooners football",
+			"Justin Brown (wide receiver)"
+		],
+		"question_entities": [
+			"toronto argonauts",
+			"university of oklahoma"
+		],
+		"supporting_entities": [
+			"12 passes",
+			"2013 draft",
+			"94 yards",
+			"buffalo bills",
+			"eight games",
+			"injury settlement with buffalo bills",
+			"justin brown",
+			"march 10  1991",
+			"oklahoma",
+			"one lost fumble",
+			"penn state",
+			"steelers",
+			"steelers practice squad",
+			"toronto argonauts",
+			"wide receiver",
+			"154 all americans",
+			"1895",
+			"23 members in college football hall of fame",
+			"45 conference championships",
+			"7 national championships",
+			"big 12 conference",
+			"division i football bowl subdivision",
+			"five heisman trophy winners",
+			"gaylord family oklahoma memorial stadium",
+			"lincoln riley",
+			"longest winning streak in division i history",
+			"national collegiate athletic association",
+			"oklahoma sooners football",
+			"team s head coach",
+			"university of oklahoma"
+		]
+	},
+	{
+		"id": "5a88364c5542994846c1ce2e",
+		"question": "Were Ransom Riggs and John Berry from the same country?",
+		"answer": "yes",
+		"supporting_facts": [
+			"Ransom Riggs",
+			"John Berry (film director)"
+		],
+		"question_entities": [
+			"ransom riggs",
+			"john berry"
+		],
+		"supporting_entities": [
+			"america",
+			"film director",
+			"france",
+			"hollywood blacklist",
+			"john berry",
+			"november 29  1999",
+			"september 6  1917",
+			"american writer",
+			"february 3  1979",
+			"miss peregrine s home for peculiar children",
+			"ransom riggs"
+		]
+	},
+	{
+		"id": "5a84e1095542997175ce1f25",
+		"question": "What city is home to the private research university Jung Seul-ki swam for?",
+		"answer": "Seoul, South Korea",
+		"supporting_facts": [
+			"Yonsei University",
+			"Jung Seul-ki"
+		],
+		"question_entities": [
+			"jung seul ki"
+		],
+		"supporting_entities": [
+			"2006 asian games",
+			"2006 pan pacific championships",
+			"2007 summer universiade",
+			"breaststroke events",
+			"eleventh in the women s 200 m breaststroke at the 2008 summer olympics",
+			"july 13  1988",
+			"jung seul ki",
+			"one gold and three bronze medals",
+			"south korean swimmer",
+			"varsity member of the swimming team at yonsei university",
+			"1885",
+			"korea",
+			"korea s three sky universities",
+			"private research university",
+			"seoul",
+			"seoul  south korea",
+			"south korea",
+			"yonsei university"
+		]
+	},
+	{
+		"id": "5a87bada5542994846c1cddc",
+		"question": "In which city are the headquarters of the American research and scientific development company where Ravi Sethi worked as computer scientist located?",
+		"answer": "Murray Hill",
+		"supporting_facts": [
+			"Ravi Sethi",
+			"Bell Labs"
+		],
+		"question_entities": [
+			"research and development company",
+			"ravi sethi",
+			"computer scientist"
+		],
+		"supporting_entities": [
+			"1947",
+			"avaya labs research",
+			"bell labs",
+			"cise advisory committee",
+			"computer science textbook",
+			"dragon book",
+			"national science foundation",
+			"ravi sethi",
+			"three authors",
+			"at t bell laboratories",
+			"bell labs",
+			"bell telephone laboratories",
+			"murray hill  new jersey",
+			"nokia",
+			"nokia bell labs",
+			"united states"
+		]
+	},
+	{
+		"id": "5ae17cd055429901ffe4aea3",
+		"question": "Between Pinanga and Alopecurus which genus is more common in temperate regions?",
+		"answer": "Alopecurus",
+		"supporting_facts": [
+			"Alopecurus",
+			"Pinanga"
+		],
+		"question_entities": [
+			"pinanga",
+			"alopecurus",
+			"temperate regions"
+		],
+		"supporting_entities": [
+			"arecaceae",
+			"arecaceae family",
+			"asia",
+			"china",
+			"flowering plant",
+			"india",
+			"indonesia",
+			"new guinea",
+			"philippines",
+			"pinanga",
+			"alopecurus",
+			"australia",
+			"eurasia",
+			"northern africa",
+			"plants",
+			"the americas"
+		]
+	},
+	{
+		"id": "5abcd77755429965836004ce",
+		"question": "Where did the steamship company whose former director was an Australian politician born in New South Wales operate for its first 100 years?",
+		"answer": "Australian coast",
+		"supporting_facts": [
+			"Adelaide Steamship Company",
+			"Walter Leslie Duncan"
+		],
+		"question_entities": [
+			"new south wales"
+		],
+		"supporting_entities": [
+			"28 may 1947",
+			"adelaide steamship company",
+			"armidale",
+			"australian politician",
+			"billy hughes",
+			"billy hughes in 1929",
+			"conscription in 1916",
+			"labor council of new south wales",
+			"labor party",
+			"military in 1917",
+			"nationalists",
+			"state schools",
+			"united australia party in 1931",
+			"walter leslie duncan",
+			"1875",
+			"adelaide and melbourne",
+			"adelaide steamship company",
+			"australian coast",
+			"conventional shipping operations",
+			"group of south australian businessmen",
+			"need for efficient and comfortable passenger service",
+			"passenger services"
+		]
+	},
+	{
+		"id": "5a852cd05542997b5ce3ffb0",
+		"question": "The birthplace of George McCall Theal is a port city of what bay?",
+		"answer": "Bay of Fundy",
+		"supporting_facts": [
+			"Saint John, New Brunswick",
+			"George McCall Theal"
+		],
+		"question_entities": [
+			"george mccall theal"
+		],
+		"supporting_entities": [
+			"126 202",
+			"1784",
+			"1785",
+			"2016",
+			"3 362 95 sqkm",
+			"315 82 sqkm",
+			"67 575",
+			"bay of fundy",
+			"break bulk",
+			"britain s king george iii",
+			"caledonia highlands",
+			"canada",
+			"canada s third largest port by tonnage",
+			"canadian province of new brunswick",
+			"city",
+			"colony of nova scotia",
+			"containers",
+			"cruise",
+			"dry and liquid bulk",
+			"metropolitan area",
+			"municipality",
+			"new brunswick",
+			"new colony of new brunswick",
+			"new ireland",
+			"port",
+			"port city",
+			"saint john",
+			"11 april 1837",
+			"17 april 1919",
+			"archivist",
+			"genealogist",
+			"george mccall theal",
+			"historian",
+			"saint john  new brunswick",
+			"south african",
+			"wynberg  cape town"
+		]
+	},
+	{
+		"id": "5ac46c83554299204fd21f45",
+		"question": "In what regions of the United States is the Eastern Market, Detroit located?",
+		"answer": "Great Lakes and Midwestern",
+		"supporting_facts": [
+			"Eastern Market, Detroit",
+			"Michigan"
+		],
+		"question_entities": [
+			"eastern market",
+			"detroit",
+			"the united states"
+		],
+		"supporting_entities": [
+			"chrysler freeway",
+			"detroit",
+			"eastern market",
+			"eastern market corporation",
+			"gratiot avenue",
+			"interstate 75",
+			"lafayette park",
+			"mack avenue",
+			"michigan",
+			"michigan state historic site",
+			"national register of historic places",
+			"st  aubin street",
+			"st  joseph roman catholic church",
+			"united states",
+			"great lakes",
+			"michigan",
+			"midwestern regions",
+			"united states"
+		]
+	},
+	{
+		"id": "5ae25c815542992decbdcccc",
+		"question": "What trio was the songwriter of \"What Are We Doin' Lonesome\" from?",
+		"answer": "trio with his younger brothers Steve and Rudy",
+		"supporting_facts": [
+			"Larry Gatlin",
+			"What Are We Doin' Lonesome"
+		],
+		"question_entities": [
+			"what are we doin  lonesome"
+		],
+		"supporting_entities": [
+			"american singer",
+			"band",
+			"band name",
+			"his younger brothers steve and rudy",
+			"larry gatlin",
+			"larry gatlin   the gatlin brothers",
+			"may 2  1948",
+			"songwriter",
+			"southern gospel singer",
+			"thirty three top 40 singles",
+			"4 on hot country singles   tracks chart",
+			"american music chart",
+			"billboard",
+			"gatlin brothers band",
+			"hot country singles   tracks chart",
+			"larry gatlin",
+			"larry gatlin   the gatlin brothers band",
+			"not guilty",
+			"october 1981",
+			"what are we doin  lonesome"
+		]
+	},
+	{
+		"id": "5ade0fb95542997545bbbe39",
+		"question": "How long is the river for which Frenchmans Creek is a tributary?",
+		"answer": "2844 km",
+		"supporting_facts": [
+			"Frenchmans Creek (New South Wales)",
+			"Darling River"
+		],
+		"question_entities": [
+			"frenchmans creek"
+		],
+		"supporting_entities": [
+			"48 m",
+			"54 4 m",
+			"7 51 km",
+			"darling river",
+			"frenchmans creek",
+			"new south wales",
+			"pooncarie  new south wales",
+			"1472 km",
+			"darling river",
+			"murray river",
+			"new south wales",
+			"wentworth  new south wales"
+		]
+	},
+	{
+		"id": "5ac2cb3e5542996773102627",
+		"question": "What is the population of the settlement that is next smaller than the city with a population of 67,038 on the Argentine side of Tierra del Fuego?",
+		"answer": "1,382",
+		"supporting_facts": [
+			"R\u00edo Grande, Tierra del Fuego",
+			"Tolhuin"
+		],
+		"question_entities": [
+			"67 038",
+			"tierra del fuego",
+			"argentine"
+		],
+		"supporting_entities": [
+			"67 038",
+			"argentina",
+			"industrial capital of tierra del fuego province",
+			"isla grande de tierra del fuego",
+			"r o grande",
+			"tierra del fuego province",
+			"2001 census",
+			"argentina",
+			"isla grande de tierra del fuego",
+			"lake fagnano",
+			"r o grande",
+			"the southern part of the isla grande de tierra del fuego",
+			"tierra del fuego",
+			"tierra del fuego  argentina",
+			"tolhuin",
+			"ushuaia"
+		]
+	},
+	{
+		"id": "5ab446875542990594ba9bea",
+		"question": "What was the first film scored by the man who composed the soundtrack for Udhayam NH4?",
+		"answer": "Veyyil",
+		"supporting_facts": [
+			"G. V. Prakash Kumar",
+			"Udhayam NH4"
+		],
+		"question_entities": [
+			"udhayam nh4"
+		],
+		"supporting_entities": [
+			"19 april 2013",
+			"ashrita shetty",
+			"bangalore  karnataka",
+			"debutant",
+			"dialogues",
+			"film",
+			"film s background score",
+			"film s soundtrack",
+			"g  v  prakash kumar",
+			"highway nh4",
+			"indian tamil romantic action thriller film",
+			"kannada",
+			"kannada version",
+			"manimaran",
+			"nh4",
+			"screenplay",
+			"script",
+			"siddharth",
+			"story",
+			"telugu",
+			"udhayam nh4",
+			"vetrimaaran",
+			"2006",
+			"acting",
+			"actor",
+			"film production",
+			"g  v  prakash kumar",
+			"indian film score and soundtrack composer",
+			"s pictures",
+			"s pictures  veyyil",
+			"singer",
+			"tamil cinema by the early 2010s",
+			"tamil films",
+			"veyyil"
+		]
+	},
+	{
+		"id": "5ab9d44255429939ce03dc36",
+		"question": "The History of Ranching is a mural that was originally located at an American brewery that in 1999 began trasfering its production to who?",
+		"answer": "Miller Brewing",
+		"supporting_facts": [
+			"Pearl Brewing Company",
+			"The History of Ranching (Winn)"
+		],
+		"question_entities": [
+			"the history of ranching",
+			"american brewery"
+		],
+		"supporting_entities": [
+			"ads featuring judge roy bean s jersey lilly",
+			"ads featuring the last fight of manolete",
+			"ads with sketches  drawings  or paintings",
+			"artistic advertisement",
+			"collage",
+			"judge roy bean s jersey lilly",
+			"large printed pictures",
+			"local artists",
+			"mural",
+			"pearl",
+			"pearl brewery",
+			"pearl s ads",
+			"pubs and bars",
+			"san antonio  texas",
+			"texas artists",
+			"the history of ranching",
+			"the last fight of manolete",
+			"1883",
+			"2001",
+			"all breweries",
+			"downtown san antonio  texas  usa",
+			"former brewery",
+			"miller brewing",
+			"miller s ft  worth  texas facility",
+			"pabst",
+			"pabst brewing company",
+			"pearl beer",
+			"pearl brewery",
+			"pearl brewing company",
+			"silver ventures  inc",
+			"southern midtown and northern downtown san antonio"
+		]
+	},
+	{
+		"id": "5a85d4395542996432c570f5",
+		"question": "What city, located in Lincoln County, Montana, United States, is Vegepet based in?",
+		"answer": "Troy, Montana",
+		"supporting_facts": [
+			"Troy, Montana",
+			"Vegepet"
+		],
+		"question_entities": [
+			"lincoln county",
+			"montana",
+			"the united states",
+			"vegepet"
+		],
+		"supporting_entities": [
+			"harbingers of a new age",
+			"troy  montana  united states",
+			"vegan dog and cat food",
+			"vegepet",
+			"lincoln county  montana  united states",
+			"troy"
+		]
+	},
+	{
+		"id": "5a8bbb8c5542995d1e6f142e",
+		"question": "From what countries are Gauhar Ali and Iftikhar Ahmed from?",
+		"answer": "Pakistan",
+		"supporting_facts": [
+			"Iftikhar Ahmed (cricketer, born 1990)",
+			"Gauhar Ali"
+		],
+		"question_entities": [
+			"gauhar ali",
+			"iftikhar ahmed"
+		],
+		"supporting_entities": [
+			"145 not out in the final of 2016 17 regional one day cup",
+			"5 may 1989",
+			"gauhar ali",
+			"iftikhar ahmed",
+			"pakistani first class cricketer",
+			"peshawar",
+			"11 august 2016",
+			"13 november 2015",
+			"3 september 1990",
+			"england",
+			"iftikhar ahmed",
+			"pakistan a",
+			"pakistani cricketer"
+		]
+	},
+	{
+		"id": "5ab3bb7b55429969a97a8198",
+		"question": "The actor that plays Joe MacMillan in \"Halt and Catch Fire\" also starred with Carrie Coon in what 2017 horror film?",
+		"answer": "The Keeping Hours",
+		"supporting_facts": [
+			"Lee Pace",
+			"The Keeping Hours"
+		],
+		"question_entities": [
+			"joe macmillan",
+			"halt and catch fire",
+			"carrie coon"
+		],
+		"supporting_entities": [
+			"american actor",
+			"golden globe award",
+			"guardians of the galaxy",
+			"halt and catch fire",
+			"joe macmillan",
+			"lee pace",
+			"march 25  1979",
+			"ned",
+			"primetime emmy award",
+			"pushing daisies",
+			"ronan the accuser",
+			"roy walker",
+			"the fall",
+			"the hobbit",
+			"thranduil",
+			"2017",
+			"america",
+			"carrie coon",
+			"karen moncrieff",
+			"lee pace",
+			"rebecca sonnenshine",
+			"supernatural romantic horror film",
+			"the keeping hours"
+		]
+	},
+	{
+		"id": "5a7a954855429941d65f26cd",
+		"question": "What album did John Lennon release before the one that contained the song \"How?\"",
+		"answer": "John Lennon/Plastic Ono Band",
+		"supporting_facts": [
+			"Imagine (John Lennon album)",
+			"How? (song)"
+		],
+		"question_entities": [
+			"john lennon",
+			"how"
+		],
+		"supporting_entities": [
+			"1971",
+			"contemplative song",
+			"how",
+			"imagine",
+			"john lennon",
+			"personal questions",
+			"primal therapy",
+			"questions",
+			"world in general",
+			"yoko ono",
+			"1971",
+			"imagine",
+			"john lennon",
+			"john lennon plastic ono band",
+			"second studio album"
+		]
+	},
+	{
+		"id": "5a8efef05542997ba9cb3178",
+		"question": "In what city did Jack J. Stephans coach from 1979 to 1980?",
+		"answer": "New York City",
+		"supporting_facts": [
+			"Jack Stephans",
+			"Fordham University"
+		],
+		"question_entities": [
+			"jack j  stephans"
+		],
+		"supporting_entities": [
+			"1841",
+			"catholic diocese of new york",
+			"fordham university",
+			"new york city",
+			"northeastern united states",
+			"private university",
+			"fordham university",
+			"former american football coach",
+			"jack j  stephans",
+			"jersey city state college",
+			"march 1  1939",
+			"new jersey city university",
+			"wayne township  new jersey",
+			"william paterson university"
+		]
+	},
+	{
+		"id": "5ae09d6155429945ae9593d4",
+		"question": "Lee Sung-jae stars in the film Barking Dogs Never Bite which is what film genre?",
+		"answer": "comedy-drama",
+		"supporting_facts": [
+			"Lee Sung-jae",
+			"Barking Dogs Never Bite"
+		],
+		"question_entities": [
+			"lee sung jae",
+			"barking dogs never bite"
+		],
+		"supporting_entities": [
+			"",
+			"2000",
+			"2003",
+			"2006",
+			"2013",
+			"a dog of flanders",
+			"a higher animal",
+			"barking dogs never bite",
+			"bong joon ho",
+			"dark comedy drama film",
+			"dog of flanders",
+			"european pet story",
+			"korean title",
+			"memories of murder",
+			"popular in parts of east asia",
+			"snowpiercer",
+			"the host",
+			"a wife s credentials",
+			"art museum by the zoo",
+			"attack the gas station",
+			"august 23  1970",
+			"barking dogs never bite",
+			"kick the moon",
+			"lee sung jae",
+			"lie",
+			"south korean actor"
+		]
+	},
+	{
+		"id": "5a902d5155429933b8a2048d",
+		"question": "Where is a television transmitter located in Topeka, KS?",
+		"answer": "on Windy Hill Road in Maple Hill",
+		"supporting_facts": [
+			"WIBW-DT2",
+			"WIBW-TV"
+		],
+		"question_entities": [
+			"topeka  kansas"
+		],
+		"supporting_entities": [
+			"cbs",
+			"commerce place",
+			"gray television",
+			"topeka  kansas  united states",
+			"uhf channel 44",
+			"wibw ld",
+			"wibw tv",
+			"windy hill road  maple hill",
+			"commerce place",
+			"gray television",
+			"interchange of i 70  i 470  us 40  us 75 and k 4",
+			"metv",
+			"mynetworktv",
+			"second digital subchannel of wibw tv",
+			"topeka",
+			"topeka  kansas  united states",
+			"vhf channel 13 2",
+			"wibw dt2",
+			"wibw tv",
+			"windy hill road in maple hill"
+		]
+	},
+	{
+		"id": "5ab29426554299545a2cf99f",
+		"question": "Calvin Murphy's record of being the shortest NBA player to play in an All-Star Game was tied by a player who was sent to what team in 2017?",
+		"answer": "Cavaliers",
+		"supporting_facts": [
+			"Calvin Murphy",
+			"Isaiah Thomas (basketball)"
+		],
+		"question_entities": [
+			"calvin murphy",
+			"nba",
+			"all star game"
+		],
+		"supporting_entities": [
+			"5 ft",
+			"american retired professional basketball player",
+			"basketball hall of fame",
+			"calvin murphy",
+			"houston rockets  root sports tv broadcast team",
+			"isaiah thomas",
+			"may 9  1948",
+			"nba all star game",
+			"nba s san diego houston rockets from 1970 to 1983",
+			"playing in an nba all star game in 2016",
+			"all nba team honors",
+			"american professional basketball player",
+			"boston celtics",
+			"celtics to the first seed in the eastern conference",
+			"cleveland cavaliers",
+			"february 7  1989",
+			"five player trade",
+			"isaiah thomas",
+			"national basketball association",
+			"nba all star nods",
+			"phoenix suns",
+			"sacramento kings",
+			"washington huskies"
+		]
+	},
+	{
+		"id": "5a90bb4e55429916514e7536",
+		"question": "When was the town Emma Gramatica given its current name?",
+		"answer": "1927",
+		"supporting_facts": [
+			"Emma Gramatica",
+			"Fidenza"
+		],
+		"question_entities": [
+			"emma gramatica"
+		],
+		"supporting_entities": [
+			"1919 and 1962",
+			"25 october 1874",
+			"29 films",
+			"8 november 1965",
+			"borgo san donnino",
+			"emma gramatica",
+			"fidenza",
+			"italian stage and film actress",
+			"ostia",
+			"province of parma",
+			"1927",
+			"around 24 000",
+			"borgo san donnino",
+			"emilia romagna region",
+			"fidentia",
+			"fidenza",
+			"italy",
+			"province of parma",
+			"town"
+		]
+	},
+	{
+		"id": "5ac2381355429951e9e684a9",
+		"question": "Which conference is the team for which Justin Bannan played college football currently a member of?",
+		"answer": "Pac-12 Conference",
+		"supporting_facts": [
+			"Justin Bannan",
+			"Colorado Buffaloes football"
+		],
+		"question_entities": [
+			"justin bannan"
+		],
+		"supporting_entities": [
+			"2016 season",
+			"23rd on all time win list",
+			"30th in all time winning percentage",
+			"5th down conversion",
+			"all time ncaa leader in 4th down conversions",
+			"all time record",
+			"big 12 conference",
+			"big eight conference",
+			"college football level",
+			"colorado buffaloes football",
+			"cornell",
+			"cu football team",
+			"folsom field",
+			"football program",
+			"football team",
+			"national championship",
+			"ncaa division i fbs",
+			"pac 12 conference",
+			"university of colorado boulder",
+			"valero alamo bowl",
+			"2002 nfl draft",
+			"april 18  1979",
+			"buffalo bills",
+			"colorado",
+			"fifth round",
+			"former american football defensive tackle",
+			"justin bannan"
+		]
+	},
+	{
+		"id": "5a865bbf5542991e77181615",
+		"question": "what movie starring Melissa McCarthy features a character named Slimer?",
+		"answer": "Ghostbusters: Answer the Call",
+		"supporting_facts": [
+			"Slimer",
+			"Ghostbusters (2016 film)"
+		],
+		"question_entities": [
+			"melissa mccarthy",
+			"slimer"
+		],
+		"supporting_entities": [
+			"adam ray",
+			"extreme ghostbusters",
+			"frank welker",
+			"ghostbusters  1984",
+			"ghostbusters  answer the call  2016",
+			"ghostbusters  mascot",
+			"ghostbusters franchise",
+			"ghostbusters ii  1989",
+			"ivan reitman",
+			"slimer",
+			"the real ghostbusters",
+			"video games",
+			"andy garc a",
+			"cecily strong",
+			"chris hemsworth",
+			"four women",
+			"ghost catching business",
+			"ghostbusters  2016 film",
+			"kate mckinnon",
+			"katie dippold",
+			"kristen wiig",
+			"leslie jones",
+			"melissa mccarthy",
+			"neil casey",
+			"new york city",
+			"paul feig",
+			"reboot of series",
+			"third feature film in franchise"
+		]
+	},
+	{
+		"id": "5a88bd1d554299206df2b357",
+		"question": "When did the character on Grey's Anatomy, played by the same actor who portrayed Rev James Lawson in \"Lee Daniel's The Butler\", debut?",
+		"answer": "season six, episode 5, \"Invasion\"",
+		"supporting_facts": [
+			"Jackson Avery",
+			"Jesse Williams (actor)"
+		],
+		"question_entities": [
+			"grey s anatomy",
+			"rev  james lawson",
+			"lee daniels  the butler"
+		],
+		"supporting_entities": [
+			"2013 film",
+			"american actor",
+			"august 5  1981",
+			"brooklyn s finest",
+			"dr  jackson avery",
+			"grey s anatomy",
+			"holden",
+			"jesse williams",
+			"lee daniels  the butler",
+			"leo",
+			"officer eddie quinlan",
+			"rev  james lawson",
+			"the cabin in the woods",
+			"the sisterhood of the traveling pants 2",
+			"actor",
+			"april kepner",
+			"catherine",
+			"current chairman of grey sloan memorial hospital",
+			"fictional character",
+			"grey s anatomy",
+			"grey sloan memorial hospital",
+			"harriett",
+			"jackson avery",
+			"jesse williams",
+			"lexie grey",
+			"mercy west medical center",
+			"samuel avery",
+			"season six  episode 5   invasion",
+			"seattle grace hospital",
+			"shonda rhimes",
+			"stephanie edwards"
+		]
+	},
+	{
+		"id": "5a7555215542996c70cfaee1",
+		"question": "Which came to market first, \"Hey Pa! There's a Goat on the Roof\" or \"Poleconomy\"",
+		"answer": "Hey Pa! There's a Goat on the Roof",
+		"supporting_facts": [
+			"Hey Pa! There's a Goat on the Roof",
+			"Poleconomy"
+		],
+		"question_entities": [
+			"hey pa  there s a goat on the roof",
+			"poleconomy"
+		],
+		"supporting_entities": [
+			"1966",
+			"children s board game",
+			"goat on the roof",
+			"hey pa  there s a goat on the roof",
+			"pa",
+			"parker brothers",
+			"1980",
+			"bruce e  hatherley",
+			"companies",
+			"monopoly",
+			"poleconomy",
+			"to teach players some of the fundamentals of economics",
+			"to teach players the ways in which the economy and the government interact"
+		]
+	},
+	{
+		"id": "5a7cc28f554299452d57ba1c",
+		"question": "The 1996 AT&T Challenge was a tennis tournament played in a city that in 2017 ranked third on the \"USA TODAY\" list of what?",
+		"answer": "50 best cities to live in",
+		"supporting_facts": [
+			"Johns Creek, Georgia",
+			"1996 AT&amp;T Challenge"
+		],
+		"question_entities": [
+			"1996 at t challenge",
+			"2017",
+			"usa today"
+		],
+		"supporting_entities": [
+			"2010 u s  census",
+			"2017",
+			"50 best cities to live in",
+			"76 728",
+			"atlanta",
+			"city",
+			"fulton county",
+			"georgia",
+			"johns creek",
+			"population 76 728",
+			"u s",
+			"usa today",
+			"usa today list",
+			"1996 at t challenge",
+			"1996 atp tour",
+			"april 29",
+			"atlanta athletic club",
+			"georgia",
+			"johns creek",
+			"may 5",
+			"united states"
+		]
+	},
+	{
+		"id": "5a7d3f895542995f4f402248",
+		"question": "Pandora- The World of Avatar includes a ride that allows guest to take flight on what animal?",
+		"answer": "mountain Banshee",
+		"supporting_facts": [
+			"Pandora \u2013 The World of Avatar",
+			"Avatar Flight of Passage"
+		],
+		"question_entities": [
+			"pandora   the world of avatar"
+		],
+		"supporting_entities": [
+			"12 acres",
+			"alien wildlife",
+			"avatar",
+			"avatar flight of passage",
+			"bay lake  florida",
+			"bioluminescent plants",
+			"disney s animal kingdom theme park",
+			"exoplanetary moon  pandora",
+			"na vi river journey",
+			"orlando",
+			"pandora   the world of avatar",
+			"pandora s floating mountains",
+			"walt disney world resort",
+			"3d augmented reality flying simulator attraction",
+			"avatar flight of passage",
+			"banshee",
+			"disney s animal kingdom",
+			"may 27  2017",
+			"mountain banshee",
+			"pandora",
+			"the world of avatar"
+		]
+	},
+	{
+		"id": "5adc6ca85542994650320ce1",
+		"question": "The 1998\u201399 Los Angeles Lakers season included the signing of the rebounding specialist who had what nickname?",
+		"answer": "The Worm",
+		"supporting_facts": [
+			"1998\u201399 Los Angeles Lakers season",
+			"Dennis Rodman"
+		],
+		"question_entities": [
+			"1998 99 los angeles lakers season",
+			"rebounding abilities"
+		],
+		"supporting_entities": [
+			"american",
+			"chicago bulls",
+			"dallas mavericks",
+			"defensive abilities",
+			"dennis rodman",
+			"detroit pistons",
+			"los angeles lakers",
+			"may 13  1961",
+			"nba",
+			"rebounding abilities",
+			"san antonio spurs",
+			"the worm",
+			"1998 99 los angeles lakers season",
+			"39th season in los angeles",
+			"51st season in nba",
+			"b j  armstrong",
+			"charlotte hornets",
+			"chicago bulls",
+			"dennis rodman",
+			"derek harper",
+			"detroit pistons",
+			"eddie jones",
+			"elden campbell",
+			"glen rice",
+			"great western forum",
+			"j r  reid",
+			"kobe bryant",
+			"lakers",
+			"lakers after 23 games",
+			"orlando magic",
+			"second on the team in scoring"
+		]
+	},
+	{
+		"id": "5adbfb6b55429947ff17388d",
+		"question": "What IBF Light Flyweight Championship winner was related to the Mexican boxer born on May 28, 1986 in Mexico City?",
+		"answer": "Ricardo \u201cEl Finito\u201d L\u00f3pez Nava",
+		"supporting_facts": [
+			"Alonso L\u00f3pez",
+			"Ricardo L\u00f3pez (boxer)"
+		],
+		"question_entities": [
+			"ibf light flyweight championship",
+			"mexican",
+			"may 28  1986",
+			"mexico city"
+		],
+		"supporting_entities": [
+			"alonso l pez",
+			"flyweight division",
+			"former world boxing champion",
+			"may 28  1986",
+			"mexico",
+			"mexico city",
+			"professional boxer",
+			"ricardo l pez",
+			"alonso l pez",
+			"boxer",
+			"ibf light flyweight championship",
+			"july 25  1966",
+			"lineal championship",
+			"mexican",
+			"ricardo l pez",
+			"wba championship",
+			"wbc strawweight championship",
+			"wbo championship"
+		]
+	},
+	{
+		"id": "5ab322b1554299194fa93570",
+		"question": "Which type of character is featured by the P.L. Travers's third book and last novel in the \"Mary Poppins\" series?",
+		"answer": "fictional character",
+		"supporting_facts": [
+			"Mary Poppins Opens the Door",
+			"Mary Poppins (character)"
+		],
+		"question_entities": [
+			"p  l  travers",
+			"mary poppins"
+		],
+		"supporting_entities": [
+			"accent and vocabulary of real london nanny",
+			"banks children",
+			"banks children valuable lessons",
+			"east wind",
+			"fictional character",
+			"magical touch",
+			"mary poppins",
+			"number seventeen cherry tree lane  london",
+			"p  l  travers  books",
+			"strangled gentility",
+			"1943",
+			"agnes sims",
+			"children s fantasy novel",
+			"harcourt  brace   world  inc",
+			"magical english nanny",
+			"mary poppins",
+			"mary poppins opens the door",
+			"mary shepard",
+			"p l  travers"
+		]
+	},
+	{
+		"id": "5a7f2d3e5542993067513675",
+		"question": "The Bellagio resort owned by MGM Resorts international is located in which US city?",
+		"answer": "Las Vegas",
+		"supporting_facts": [
+			"Bellagio (resort)",
+			"MGM Resorts International"
+		],
+		"question_entities": [
+			"bellagio",
+			"mgm resorts international",
+			"the us"
+		],
+		"supporting_entities": [
+			"50 percent of citycenter",
+			"aria resort   casino",
+			"bellagio",
+			"citycenter",
+			"detroit",
+			"gaming resort in cotai",
+			"las vegas",
+			"mandalay bay",
+			"mgm china holdings limited",
+			"mgm grand",
+			"mgm growth properties",
+			"mgm macau",
+			"mgm national harbor",
+			"mgm resorts international",
+			"mgm springfield",
+			"mississippi",
+			"new jersey",
+			"real estate investment trust",
+			"the mirage",
+			"8 acre lake",
+			"bellagio",
+			"dunes hotel and casino",
+			"elegance",
+			"fountains of bellagio",
+			"lake como town of bellagio in italy",
+			"large dancing water fountain",
+			"las vegas strip",
+			"mgm resorts international",
+			"music"
+		]
+	},
+	{
+		"id": "5abff9905542997d64295980",
+		"question": "Egremont Castle is located in what market town, civil parish, and two electoral wards in the Borough of Copeland in Cumbria, England?",
+		"answer": "Egremont",
+		"supporting_facts": [
+			"Egremont, Cumbria",
+			"Egremont Castle"
+		],
+		"question_entities": [
+			"egremont castle",
+			"borough of copeland",
+			"cumbria",
+			"england"
+		],
+		"supporting_entities": [
+			"cumbria",
+			"egremont",
+			"egremont castle",
+			"7 444 in 2001",
+			"8 194 at the 2011 census",
+			"borough of copeland",
+			"civil parish",
+			"cumberland",
+			"cumbria",
+			"dent fell",
+			"egremont",
+			"england",
+			"market town",
+			"river ehen",
+			"uldale valley"
+		]
+	},
+	{
+		"id": "5ac02b325542992a796decb9",
+		"question": "How tall was one of Drew Barry's brothers? ",
+		"answer": "6 ft",
+		"supporting_facts": [
+			"Drew Barry",
+			"Brent Barry"
+		],
+		"question_entities": [
+			"drew william barry",
+			"brothers"
+		],
+		"supporting_entities": [
+			"american retired professional basketball player",
+			"basketball hall of famer",
+			"brent",
+			"bruce hale",
+			"drew william barry",
+			"february 17  1973",
+			"jon",
+			"lynn barry",
+			"miami of florida",
+			"nba",
+			"rick barry",
+			"scooter",
+			"1996 nba slam dunk contest",
+			"american",
+			"brent barry",
+			"december 31  1971",
+			"nba",
+			"retired professional basketball player",
+			"rick barry",
+			"san antonio spurs",
+			"shooting guard"
+		]
+	},
+	{
+		"id": "5a8b231055429949d91db4c9",
+		"question": "On what network did the series that Bradley Thompson started working on in 2014 premiere?",
+		"answer": "FX",
+		"supporting_facts": [
+			"The Strain (TV series)",
+			"Bradley Thompson"
+		],
+		"question_entities": [
+			"bradley thompson"
+		],
+		"supporting_entities": [
+			"american television writer",
+			"battlestar galactica",
+			"bradley thompson",
+			"david weddle",
+			"falling skies",
+			"novel series by guillermo del toro and chuck hogan",
+			"the strain",
+			"the twilight zone",
+			"atx television festival",
+			"austin  texas",
+			"carlton cuse",
+			"chuck hogan",
+			"executive producer",
+			"fx",
+			"guillermo del toro",
+			"july 13  2014",
+			"june 2014",
+			"november 19  2013",
+			"pilot episode",
+			"showrunner",
+			"the strain",
+			"thirteen episode",
+			"tv series"
+		]
+	},
+	{
+		"id": "5a7ce444554299683c1c63c1",
+		"question": "Who played the crime boss considered the father of modern organized crime in the 1997 drama Hoodlum?",
+		"answer": "Andy Garc\u00eda",
+		"supporting_facts": [
+			"Hoodlum (film)",
+			"Lucky Luciano"
+		],
+		"question_entities": [
+			"1997",
+			"hoodlum"
+		],
+		"supporting_entities": [
+			"1920s",
+			"1930s",
+			"1997",
+			"american",
+			"black gangsters of harlem",
+			"dutch schultz",
+			"ellsworth  bumpy  johnson",
+			"film",
+			"gang war",
+			"hoodlum",
+			"italian jewish mafia alliance",
+			"lucky luciano",
+			"portrayed by andy garc a",
+			"portrayed by laurence fishburne",
+			"portrayed by tim roth",
+			"development of national crime syndicate",
+			"father of modern organized crime in the united states",
+			"first commission",
+			"genovese crime family",
+			"italian american mobster",
+			"january 26  1962",
+			"lucky luciano",
+			"november 24  1897"
+		]
+	},
+	{
+		"id": "5a7db0915542990b8f503a30",
+		"question": "What German philosopher, economist and political theorist was Jakob Lukas Schabelitz a friend and associate of?",
+		"answer": "Karl Marx",
+		"supporting_facts": [
+			"Karl Marx",
+			"Jakob Lukas Schabelitz"
+		],
+		"question_entities": [
+			"german",
+			"jakob lukas schabelitz"
+		],
+		"supporting_entities": [
+			"14 march 1883",
+			"5 may 1818",
+			"economist",
+			"german philosopher",
+			"journalist",
+			"karl marx",
+			"political theorist",
+			"revolutionary socialist",
+			"sociologist",
+			"1827",
+			"1899",
+			"bookseller",
+			"communist league",
+			"frederick engels",
+			"jakob lukas schabelitz",
+			"karl marx",
+			"publisher",
+			"switzerland"
+		]
+	},
+	{
+		"id": "5a70f4c45542994082a3e437",
+		"question": "Which Italian-American composer and librettist wrote the English language opera, Maria Golovin?",
+		"answer": "Gian Carlo Menotti",
+		"supporting_facts": [
+			"Gian Carlo Menotti",
+			"Maria Golovin"
+		],
+		"question_entities": [
+			"italian american",
+			"composer",
+			"opera librettist",
+			"maria golovin"
+		],
+		"supporting_entities": [
+			"amahl and the night visitors",
+			"classic christmas opera",
+			"february 1  2007",
+			"gian carlo menotti",
+			"italian american composer and librettist",
+			"july 7  1911",
+			"blind recluse",
+			"donato",
+			"encounter with donato",
+			"european country",
+			"gian carlo menotti",
+			"maria golovin",
+			"nbc opera theatre",
+			"opera",
+			"peter herman adler",
+			"recent war"
+		]
+	},
+	{
+		"id": "5a8da2b05542994ba4e3dcdc",
+		"question": "The Grieg crater is named for a Norwegian composer who composed during what era?",
+		"answer": "Romantic",
+		"supporting_facts": [
+			"Edvard Grieg",
+			"Grieg (crater)"
+		],
+		"question_entities": [
+			"grieg",
+			"norwegian"
+		],
+		"supporting_entities": [
+			"15 june 1843",
+			"4 september 1907",
+			"anton n dvo  k",
+			"edvard grieg",
+			"helping to develop a national identity in bohemia",
+			"helping to develop a national identity in finland",
+			"jean sibelius",
+			"norway",
+			"norway in the international spectrum",
+			"norwegian composer",
+			"norwegian folk music",
+			"pianist",
+			"1843 to 1907",
+			"1985",
+			"65 kilometers",
+			"edvard grieg",
+			"grieg",
+			"international astronomical union",
+			"mercury",
+			"norwegian composer"
+		]
+	},
+	{
+		"id": "5ae51b495542993aec5ec146",
+		"question": "On December 4, 1872, the ship Mary Celeste, captained by Benjamin Briggs, was found unmanned and drifting in the Altantic Ocean near what location?",
+		"answer": "Straits of Gibraltar",
+		"supporting_facts": [
+			"Mary Celeste",
+			"Benjamin Briggs"
+		],
+		"question_entities": [
+			"december 4  1872",
+			"mary celeste",
+			"benjamin briggs",
+			"alta lake"
+		],
+		"supporting_entities": [
+			"atlantic ocean",
+			"azores islands",
+			"canadian brigantine",
+			"december 5  1872",
+			"dei gratia",
+			"genoa",
+			"mary celeste",
+			"new york city",
+			"november 7",
+			"april 24  1835",
+			"atlantic ocean",
+			"benjamin briggs",
+			"captain of mary celeste",
+			"crew",
+			"december 4  1872",
+			"experienced united states seaman",
+			"mary celeste",
+			"master mariner",
+			"sarah",
+			"sophia matilda",
+			"straits of gibraltar"
+		]
+	},
+	{
+		"id": "5a7c6bcc55429935c91b519c",
+		"question": "Rock Springs is a collection of short stories by an author born in what year?",
+		"answer": "1944",
+		"supporting_facts": [
+			"Richard Ford",
+			"Rock Springs (short story collection)"
+		],
+		"question_entities": [
+			"rock springs"
+		],
+		"supporting_entities": [
+			"1987",
+			"author",
+			"richard ford",
+			"rock springs",
+			"short story collection",
+			"american novelist",
+			"february 16  1944",
+			"independence day",
+			"let me be frank with you",
+			"richard ford",
+			"rock springs",
+			"the lay of the land",
+			"the sportswriter"
+		]
+	},
+	{
+		"id": "5abc9fb055429959677d6ac9",
+		"question": "What is the nationality of the dancer who partnered Tom Chambers in the sixth season of Strictly Come Dancing ?",
+		"answer": "Danish",
+		"supporting_facts": [
+			"Tom Chambers (actor)",
+			"Camilla Dallerup"
+		],
+		"question_entities": [
+			"tom chambers"
+		],
+		"supporting_entities": [
+			"bbc",
+			"camilla dallerup",
+			"casualty",
+			"english actor",
+			"holby city",
+			"max tyler",
+			"role as max tyler",
+			"role as sam strachan",
+			"sam strachan",
+			"sixth season",
+			"strictly come dancing",
+			"tom chambers",
+			"waterloo road",
+			"6 april 1974",
+			"author",
+			"camilla dallerup",
+			"danish ballroom dancer",
+			"life coach"
+		]
+	},
+	{
+		"id": "5ac23f5655429951e9e684d9",
+		"question": "Both the Pulandian District and Hailar District are located within which country?",
+		"answer": "China",
+		"supporting_facts": [
+			"Pulandian District",
+			"Hailar District"
+		],
+		"question_entities": [
+			"pulandian district",
+			"hailar district"
+		],
+		"supporting_entities": [
+			"de facto city",
+			"hailar",
+			"hailar district",
+			"hulunbuir",
+			"inner mongolia",
+			"mainly grassland and rural",
+			"northeastern inner mongolia  china",
+			"prefecture level city",
+			"urban area",
+			"urban area around the hailar district",
+			"urban district",
+			"2769 90 km",
+			"741 230",
+			"dalian",
+			"liaoning province",
+			"people s republic of china",
+			"pulandian district",
+			"yingkou"
+		]
+	},
+	{
+		"id": "5ac0d9a35542992a796ded90",
+		"question": "Are Hungry Hungry Hippos and Parcheesi both published by Parker Brothers?",
+		"answer": "no",
+		"supporting_facts": [
+			"Hungry Hungry Hippos",
+			"Parcheesi"
+		],
+		"question_entities": [
+			"hungry hungry hippos",
+			"parcheesi",
+			"parker brothers"
+		],
+		"supporting_entities": [
+			"1978",
+			"2016 micro machines",
+			"battle level based on the game",
+			"donnie darko",
+			"elefun and friends",
+			"fred kroll",
+			"game",
+			"hasbro",
+			"hungry hungry hippos",
+			"idea for the game",
+			"milton bradley",
+			"tabletop game",
+			"toy story 3",
+			"american adaptation",
+			"indian board game",
+			"pachisi",
+			"parcheesi",
+			"parker brothers",
+			"winning moves"
+		]
+	},
+	{
+		"id": "5a713ea95542994082a3e6e4",
+		"question": "Alvaro Mexia had a diplomatic mission with which tribe of indigenous people?",
+		"answer": "Apalachees",
+		"supporting_facts": [
+			"Alvaro Mexia",
+			"Indigenous peoples of Florida"
+		],
+		"question_entities": [
+			"alvaro mexia",
+			"indigenous tribe"
+		],
+		"supporting_entities": [
+			"ais native population",
+			"alvaro mexia",
+			"cape canaveral area",
+			"cartographer",
+			"diplomatic mission to ais native population",
+			"diplomatic mission to cape canaveral area",
+			"spanish",
+			"spanish explorer",
+			"st augustine",
+			"apalachees",
+			"apalachees to cuba and mexico",
+			"cuba",
+			"early 18th century",
+			"europeans",
+			"few apalachees",
+			"florida",
+			"indigenous peoples of florida",
+			"louisiana",
+			"mexico",
+			"miccosukee",
+			"more than 12 000 years",
+			"seminole",
+			"spanish"
+		]
+	},
+	{
+		"id": "5a796c805542990784727805",
+		"question": "The brother of Ferdinand Alfred Friedrich Jodl served as what position in World War II?",
+		"answer": "Chief of the Operations Staff of the Armed Forces High Command",
+		"supporting_facts": [
+			"Alfred Jodl",
+			"Ferdinand Jodl"
+		],
+		"question_entities": [
+			"ferdinand jodl",
+			"world war ii"
+		],
+		"supporting_entities": [
+			"10 may 1890",
+			"16 october 1946",
+			"alfred jodl",
+			"armed forces high command",
+			"chief of the operations staff",
+			"german general",
+			"oberkommando der wehrmacht",
+			"world war ii",
+			"alfred jodl",
+			"chief of the operations staff of the okw",
+			"ferdinand jodl",
+			"german court",
+			"german general",
+			"mountain corps norway",
+			"petsamo kirkenes offensive",
+			"world war ii"
+		]
+	},
+	{
+		"id": "5a87d8215542994775f60800",
+		"question": "This American crime film set in South Los Angeles was written and directed by the same director and writer of screenwriter of \"Street Kings\", \"End of Watch\", \"Sabotage\", \"Fury\" and what other film? ",
+		"answer": "Suicide Squad",
+		"supporting_facts": [
+			"David Ayer",
+			"Harsh Times"
+		],
+		"question_entities": [
+			"south los angeles",
+			"street kings",
+			"end of watch",
+			"sabotage",
+			"fury"
+		],
+		"supporting_entities": [
+			"american",
+			"david ayer",
+			"end of watch",
+			"film director",
+			"fury",
+			"harsh times",
+			"january 18  1968",
+			"producer",
+			"sabotage",
+			"screenwriter",
+			"street kings",
+			"suicide squad",
+			"training day",
+			"2005 american crime film",
+			"academy award winning 2001 film  training day",
+			"bauer martinez entertainment",
+			"christian bale",
+			"david ayer",
+			"freddy rodriguez",
+			"harsh times",
+			"metro goldwyn mayer",
+			"south central",
+			"south los angeles",
+			"the film s characters"
+		]
+	},
+	{
+		"id": "5abc081e5542993f40c73c54",
+		"question": "Are Wake Forest University and Pennsylvania State University both located in the US?",
+		"answer": "yes",
+		"supporting_facts": [
+			"Wake Forest University",
+			"Pennsylvania State University"
+		],
+		"question_entities": [
+			"wake forest university",
+			"pennsylvania state university",
+			"the us"
+		],
+		"supporting_entities": [
+			"19 commonwealth campuses",
+			"5 special mission campuses",
+			"carlisle",
+			"college of medicine",
+			"dickinson law",
+			"hershey",
+			"penn state",
+			"penn state law",
+			"pennsylvania state university",
+			"psu",
+			"public ivies",
+			"state college",
+			"threefold mission of teaching  research  and public service",
+			"university park campus",
+			"1834",
+			"ardmore neighborhood",
+			"biotech plaza at innovation quarter",
+			"center for nanotechnology and molecular materials",
+			"charlotte  north carolina",
+			"graduate school of management",
+			"main campus in winston salem",
+			"main campus of wake forest university",
+			"private university",
+			"reynolda campus",
+			"two locations",
+			"wake forest",
+			"wake forest baptist medical center campus",
+			"wake forest innovation quarter downtown",
+			"wake forest university",
+			"winston salem",
+			"winston salem  north carolina",
+			"winston salem in 1956"
+		]
+	},
+	{
+		"id": "5a8a5dd055429970aeb702c7",
+		"question": "Domestic Disturbance stars an actor who voiced what character in \"Monsters, Inc.\"?",
+		"answer": "Randall Boggs",
+		"supporting_facts": [
+			"Steve Buscemi",
+			"Domestic Disturbance"
+		],
+		"question_entities": [
+			"domestic disturbance",
+			"monsters  inc"
+		],
+		"supporting_entities": [
+			"2001",
+			"american psychological thriller film",
+			"domestic disturbance",
+			"harold becker",
+			"john travolta",
+			"matt o leary",
+			"steve buscemi",
+			"teri polo",
+			"vince vaughn",
+			"american actor",
+			"armageddon",
+			"big fish",
+			"coen brothers films",
+			"con air",
+			"december 13  1957",
+			"desperado",
+			"ghost world",
+			"monsters  inc",
+			"mystery train",
+			"new york stories",
+			"parting glances",
+			"randall boggs",
+			"reservoir dogs",
+			"steve buscemi",
+			"the grey zone",
+			"the sopranos"
+		]
+	},
+	{
+		"id": "5a7b4bc35542992d025e67e0",
+		"question": "What country does Eric A. Sykes and Eccles, Greater Manchester have ion common?",
+		"answer": "England",
+		"supporting_facts": [
+			"Eccles, Greater Manchester",
+			"Eric A. Sykes"
+		],
+		"question_entities": [
+			"eric a  sykes",
+			"eccles",
+			"greater manchester  england"
+		],
+		"supporting_entities": [
+			"12 may 1945",
+			"5 february 1883",
+			"barton upon irwell",
+			"british army",
+			"british close quarters battle",
+			"east asia",
+			"eric a  sykes",
+			"fairbairn sykes fighting knife",
+			"inspector",
+			"shanghai municipal police",
+			"smp",
+			"western front",
+			"world war i",
+			"world war ii",
+			"eccles",
+			"england",
+			"greater manchester",
+			"m602 motorway",
+			"manchester city centre",
+			"manchester ship canal",
+			"salford"
+		]
+	},
+	{
+		"id": "5a88d745554299206df2b378",
+		"question": "What occupation was shared by David Yates and Pietro Germi?",
+		"answer": "director",
+		"supporting_facts": [
+			"David Yates",
+			"Pietro Germi"
+		],
+		"question_entities": [
+			"david yates",
+			"pietro germi"
+		],
+		"supporting_entities": [
+			"14 september 1914",
+			"5 december 1974",
+			"director",
+			"genoa",
+			"italian actor",
+			"liguria",
+			"pietro germi",
+			"screenwriter",
+			"1963",
+			"david yates",
+			"english filmmaker"
+		]
+	},
+	{
+		"id": "5a7131565542994082a3e64f",
+		"question": "Q: Which actor played a role in the comedy series \"30 Rock\" as well as the drama series \"Mad Men\"? A: Jon Hamm",
+		"answer": "Jon Hamm",
+		"supporting_facts": [
+			"Live Show",
+			"Jon Hamm"
+		],
+		"question_entities": [
+			"30 rock",
+			"mad men",
+			"jon hamm"
+		],
+		"supporting_entities": [
+			"beth mccarthy miller",
+			"bill hader",
+			"east coast television audience",
+			"jon hamm",
+			"julia louis dreyfus",
+			"live show",
+			"matt damon",
+			"nbc",
+			"october 14  2010",
+			"rachel dratch",
+			"robert carlock",
+			"tina fey",
+			"united states",
+			"west coast television audience",
+			"amc",
+			"american actor",
+			"director",
+			"don draper",
+			"jon hamm",
+			"mad men",
+			"march 10  1971",
+			"television producer"
+		]
+	},
+	{
+		"id": "5ac50dd05542994611c8b343",
+		"question": "Phil Lloyd played Tim Mathieson, the partner of this prime minister who was the 27th Prime Minister of Australia from 2010 to when",
+		"answer": "2013",
+		"supporting_facts": [
+			"Julia Gillard",
+			"Phil Lloyd (actor)"
+		],
+		"question_entities": [
+			"phil lloyd",
+			"tim mathieson",
+			"27th prime minister of australia"
+		],
+		"supporting_entities": [
+			"acting role as myles barlow",
+			"acting role in review with myles barlow",
+			"at home with julia",
+			"australia",
+			"australian actor",
+			"julia gillard",
+			"jungleboys",
+			"phil lloyd",
+			"scriptwriter",
+			"tim mathieson",
+			"13th deputy prime minister of australia",
+			"27th prime minister of australia",
+			"29 september 1961",
+			"first woman to hold positions of deputy prime minister  prime minister and leader of a major party in australia",
+			"former australian politician",
+			"julia gillard",
+			"leader of the australian labor party",
+			"minister for education",
+			"minister for employment and workplace relations",
+			"minister for social inclusion"
+		]
+	},
+	{
+		"id": "5a74524455429979e28828f6",
+		"question": "which star of Hwarang: The Poet Warrior Youth was born on November 16, 1991 ?",
+		"answer": "Park Hyung-Sik",
+		"supporting_facts": [
+			"Hwarang: The Poet Warrior Youth",
+			"Park Hyung-sik"
+		],
+		"question_entities": [
+			"hwarang  the poet warrior youth",
+			"november 16  1991"
+		],
+		"supporting_entities": [
+			"actor",
+			"high society",
+			"hyungsik",
+			"november 16  1991",
+			"park hyung sik",
+			"south korean boy group",
+			"south korean singer",
+			"strong woman do bong soon",
+			"the heirs",
+			"ze a five",
+			"57 b c",
+			"a d  935",
+			"december 19  2016",
+			"february 21  2017",
+			"friendship",
+			"go a ra",
+			"hwarang",
+			"hwarang  the poet warrior youth",
+			"kbs2",
+			"love",
+			"park hyung sik",
+			"park seo joon",
+			"passions",
+			"silla kingdom",
+			"south korean television series"
+		]
+	},
+	{
+		"id": "5a7cc58f554299452d57ba45",
+		"question": "How many times has the national team Joseph Raich Garriga played for in 1941 participated in FIFA World Cups?",
+		"answer": "14",
+		"supporting_facts": [
+			"Josep Raich",
+			"Spain national football team"
+		],
+		"question_entities": [
+			"josep raich garriga",
+			"1941",
+			"fifa world cup"
+		],
+		"supporting_entities": [
+			"10 of 15 uefa european championships",
+			"14 of 20 fifa world cups",
+			"1909",
+			"1920",
+			"euro 2016",
+			"fifa in 1904",
+			"julen lopetegui",
+			"royal spanish football federation",
+			"spain",
+			"spain national football team",
+			"spain s national team",
+			"spanish football federation",
+			"vicente del bosque",
+			"1941",
+			"25 july 1988",
+			"august 28  1913",
+			"catalan ethnicity",
+			"ce j piter",
+			"fc barcelona",
+			"fc s te",
+			"former spanish footballer",
+			"france",
+			"josep raich garriga",
+			"joventut fc",
+			"spain",
+			"troyes ac"
+		]
+	},
+	{
+		"id": "5abcf46255429959677d6b6b",
+		"question": "The composer for the music in the film \"A Clockwork Orange\" was born in which state?",
+		"answer": "Rhode Island",
+		"supporting_facts": [
+			"Wendy Carlos",
+			"A Clockwork Orange (soundtrack)"
+		],
+		"question_entities": [
+			"a clockwork orange"
+		],
+		"supporting_entities": [
+			"american musician",
+			"brown university",
+			"columbia princeton electronic music center",
+			"columbia university",
+			"composer",
+			"moog synthesizer",
+			"new york city in 1962",
+			"november 14  1939",
+			"robert moog",
+			"wendy carlos",
+			"a clockwork orange",
+			"beethoven",
+			"berlin philharmonic",
+			"chor der st  hedwigskathedrale",
+			"deutsche grammophon",
+			"dietrich fischer dieskau",
+			"edward elgar",
+			"ernst haefliger",
+			"ferenc fricsay",
+			"henry purcell",
+			"irmgard seefried",
+			"ludwig van beethoven",
+			"maureen forrester",
+			"queen mary",
+			"released in 1971",
+			"stanley kubrick",
+			"walter carlos",
+			"wendy carlos",
+			"westminster abbey"
+		]
+	},
+	{
+		"id": "5add1aa65542990d50227de1",
+		"question": "Who was the director of the 2007 American fantasy comedy film in which the actor best known for playing Michael Scott on the the American version of \"The Office\" starred?",
+		"answer": "Tom Shadyac",
+		"supporting_facts": [
+			"Steve Carell",
+			"Evan Almighty"
+		],
+		"question_entities": [
+			"2007",
+			"american",
+			"american fantasy comedy film",
+			"michael scott",
+			"the office"
+		],
+		"supporting_entities": [
+			"2005",
+			"2011",
+			"american actor",
+			"american version",
+			"august 16  1962",
+			"michael scott",
+			"steve carell",
+			"the office",
+			"2007",
+			"american fantasy comedy film",
+			"bruce almighty",
+			"characters created by mark o keefe",
+			"characters created by steve koren",
+			"evan almighty",
+			"john goodman",
+			"lauren graham",
+			"morgan freeman",
+			"steve carell",
+			"steve oedekerk",
+			"tom shadyac"
+		]
+	},
+	{
+		"id": "5a8c5be0554299653c1aa04b",
+		"question": "The player also known as  \"O Fen\u00f4meno\" is responsible for popularized a soccer move first reported to be used by what player?",
+		"answer": "Law Adam",
+		"supporting_facts": [
+			"Ronaldo (Brazilian footballer)",
+			"Step over"
+		],
+		"question_entities": [
+			"o fen meno"
+		],
+		"supporting_entities": [
+			"1930s",
+			"adam the scissorsman",
+			"amedeo biavati",
+			"cristiano ronaldo",
+			"dribbling move",
+			"dutch",
+			"early 1900s",
+			"europe",
+			"feint",
+			"football",
+			"italy",
+			"late 1920s early 1930s",
+			"law adam",
+			"mid 1990s",
+			"pedro calomino",
+			"ronaldo",
+			"step over",
+			"18 september 1976",
+			"brazilian footballer",
+			"clinical finishing",
+			"dribbling at speed",
+			"feints",
+			"o fen meno",
+			"ronaldo",
+			"ronaldo lu s naz rio de lima"
+		]
+	},
+	{
+		"id": "5a8ac4dd5542992d82986f76",
+		"question": "Which town near the county border with North Yorkshire was this Lancashire mill (closed in 1979 and demolished) located?",
+		"answer": "Barnoldswick",
+		"supporting_facts": [
+			"Bancroft Shed",
+			"Barnoldswick"
+		],
+		"question_entities": [
+			"lancashire",
+			"north yorkshire"
+		],
+		"supporting_entities": [
+			"1914",
+			"1920",
+			"1979",
+			"bancroft shed",
+			"barnoldswick",
+			"boilers",
+			"chimneys",
+			"engine house",
+			"england",
+			"james nutter   sons limited",
+			"lancashire",
+			"last steam driven weaving shed",
+			"last to close",
+			"working steam museum",
+			"11 005",
+			"barnoldswick",
+			"forest of bowland area of outstanding natural beauty",
+			"lancashire  england",
+			"north yorkshire",
+			"river ribble",
+			"stock beck",
+			"town",
+			"weets hill",
+			"yorkshire dales national park"
+		]
+	},
+	{
+		"id": "5abd09585542996e802b469b",
+		"question": "What year did the musical premiere that was based on the 2007 Irish romantic musical film of the same name?",
+		"answer": "2011",
+		"supporting_facts": [
+			"Once (musical)",
+			"Once (film)"
+		],
+		"question_entities": [
+			"2007",
+			"irish"
+		],
+		"supporting_entities": [
+			"1 october 2013",
+			"2007 film",
+			"2012 drama desk award",
+			"2013 grammy award",
+			"broadway",
+			"eight 2012 tony awards",
+			"eleven 2012 tony award nominations",
+			"glen hansard",
+			"london production",
+			"mark ta irglov",
+			"new york theatre workshop",
+			"north american tour",
+			"once",
+			"2007",
+			"dublin  ireland",
+			"film",
+			"glen hansard",
+			"irish romantic musical film",
+			"john carney",
+			"mark ta irglov",
+			"musician",
+			"once",
+			"original songs",
+			"swell season"
+		]
+	},
+	{
+		"id": "5a7e618155429949594199b0",
+		"question": "New York State Route 9R rejoins its parent in a hamlet located  in what New York County?",
+		"answer": "Albany",
+		"supporting_facts": [
+			"New York State Route 9R",
+			"Boght Corners, New York"
+		],
+		"question_entities": [
+			"new york state route 9r",
+			"new york",
+			"hamlet",
+			"county"
+		],
+		"supporting_entities": [
+			"albany county  new york  united states",
+			"boght corners",
+			"c  1939",
+			"cohoes",
+			"colonie",
+			"latham",
+			"new york state route 9r",
+			"north south state highway",
+			"ny 470",
+			"u s  route 9",
+			"albany county",
+			"boght",
+			"boght community fire district",
+			"boght community fire district s station",
+			"boght corners",
+			"boght hills elementary school",
+			"boght road",
+			"colonie",
+			"community",
+			"hamlet",
+			"intersection of route 9 and boght road",
+			"new york",
+			"north colonie central school district",
+			"ny route 9r",
+			"route 9",
+			"town of colonie",
+			"u s  route 9"
+		]
+	},
+	{
+		"id": "5ac4c16b5542997ea680cab4",
+		"question": "Are Mick Jagger and Brett Scallions both musicians?",
+		"answer": "yes",
+		"supporting_facts": [
+			"Brett Scallions",
+			"Mick Jagger"
+		],
+		"question_entities": [
+			"mick jagger",
+			"brett scallions",
+			"musicians"
+		],
+		"supporting_entities": [
+			"american",
+			"brett scallions",
+			"december 21  1971",
+			"fuel",
+			"lead vocalist",
+			"lyricist",
+			"musician",
+			"rhythm guitarist",
+			"26 july 1943",
+			"admitted drug use",
+			"countercultural figure",
+			"distinctive voice",
+			"english singer songwriter",
+			"influential frontmen in rock   roll",
+			"keith richards",
+			"member of rolling stones",
+			"mick jagger",
+			"performance",
+			"rolling stones",
+			"romantic involvements"
+		]
+	},
+	{
+		"id": "5ac282875542996773102546",
+		"question": "Is James Bourne a band member of both McBusted and The Auteurs?",
+		"answer": "no",
+		"supporting_facts": [
+			"James Bourne",
+			"The Auteurs"
+		],
+		"question_entities": [
+			"james bourne",
+			"mcbusted",
+			"the auteurs"
+		],
+		"supporting_entities": [
+			"13 september 1983",
+			"2013",
+			"2015",
+			"busted",
+			"english singer songwriter",
+			"future boy",
+			"james elliot bourne",
+			"matt willis",
+			"mcbusted",
+			"mcfly",
+			"rochford",
+			"son of dork",
+			"1990s",
+			"british alternative rock band",
+			"guitar",
+			"luke haines",
+			"piano",
+			"the auteurs"
+		]
+	},
+	{
+		"id": "5adc57325542996e6852531b",
+		"question": " \"Quando m'en vo' \" is a soprano from an Opera composed by who ?",
+		"answer": "Giacomo Puccini",
+		"supporting_facts": [
+			"Quando me'n vo'",
+			"La boh\u00e8me"
+		],
+		"question_entities": [
+			"quando me n vo",
+			"soprano",
+			"opera"
+		],
+		"supporting_entities": [
+			"1 february 1896",
+			"arturo toscanini",
+			"giacomo puccini",
+			"la boh me",
+			"los angeles",
+			"luigi illica and giuseppe giacosa",
+			"sc nes de la vie de boh me by henri murger",
+			"standard italian opera repertory",
+			"turin",
+			"worldwide",
+			"3 4 time",
+			"act 2",
+			"la boh me",
+			"marcello",
+			"musetta",
+			"musetta s waltz",
+			"puccini",
+			"quando me n vo"
+		]
+	},
+	{
+		"id": "5a898872554299669944a540",
+		"question": "What was the name of Kalyanji Virji Shah's brother who won the Filmfare Award for Best Music Director?",
+		"answer": "Anandji Virji Shah",
+		"supporting_facts": [
+			"Kalyanji\u2013Anandji discography",
+			"Anandji Virji Shah"
+		],
+		"question_entities": [
+			"kalyanji virji shah",
+			"filmfare award",
+			"best music video director"
+		],
+		"supporting_entities": [
+			"1975 filmfare award for best music director",
+			"anandji virji shah",
+			"indian music director",
+			"kalyanji anandji",
+			"kalyanji anandji duo",
+			"padma shri in 1992",
+			"46 years",
+			"anandji virji shah",
+			"bollywood composer duo",
+			"kalyanji anandji",
+			"kalyanji virji shah",
+			"over 200 films"
+		]
+	},
+	{
+		"id": "5a857cf35542994c784ddb1d",
+		"question": "What is the name of the city located near the historical region known as Margian\u1e17 in Greek?",
+		"answer": "Mary",
+		"supporting_facts": [
+			"Merv",
+			"Margiana"
+		],
+		"question_entities": [
+			"margian  in greek"
+		],
+		"supporting_entities": [
+			"historical region",
+			"margian  in greek",
+			"margiana",
+			"margu  in old persian",
+			"marv in middle persian",
+			"minor satrapy within achaemenid satrapy of bactria",
+			"oasis of merv",
+			"parthian empire",
+			"sasanian empire",
+			"seleucid empire",
+			"successors of achaemenid empire",
+			"",
+			"achaemenid satrapy of margiana",
+			"alexandria",
+			"antiochia in margiana",
+			"mary",
+			"merv",
+			"merw",
+			"silk road",
+			"turkmenistan"
+		]
+	},
+	{
+		"id": "5ac3b39e554299204fd21e09",
+		"question": "Do Dillingham Airport and Rafael Hern\u00e1ndez Airport both handle civilian (passenger) service?",
+		"answer": "yes",
+		"supporting_facts": [
+			"Dillingham Airport",
+			"Rafael Hern\u00e1ndez Airport"
+		],
+		"question_entities": [
+			"dillingham airport",
+			"rafael hern ndez airport",
+			"passenger services"
+		],
+		"supporting_entities": [
+			"aguadilla  puerto rico",
+			"bqn",
+			"coast guard air station borinquen",
+			"focus city for pawa dominicana",
+			"joint civil military airport",
+			"puerto rican westerners living in the eastern region of the united states",
+			"rafael hern ndez airport",
+			"rafael hern ndez mar n",
+			"second largest international airport in puerto rico",
+			"tjbq",
+			"alaska",
+			"dillingham",
+			"dillingham airport",
+			"dillingham census area",
+			"dlg",
+			"padl",
+			"public use airport",
+			"state of alaska",
+			"u s"
+		]
+	},
+	{
+		"id": "5a8ece2e5542995085b37497",
+		"question": "The Out of Control Tour began in an indoor arena above what?",
+		"answer": "Manchester Victoria station",
+		"supporting_facts": [
+			"Out of Control Tour",
+			"Manchester Arena"
+		],
+		"question_entities": [
+			"multi purpose indoor arena"
+		],
+		"supporting_entities": [
+			"24 april 2009",
+			"6 june 2009",
+			"british girl group",
+			"fifth concert tour",
+			"girls aloud",
+			"ireland",
+			"manchester arena",
+			"newcastle s metro radio arena",
+			"november 2008",
+			"out of control",
+			"out of control tour",
+			"thirty two dates",
+			"united kingdom",
+			"england",
+			"manchester",
+			"manchester arena",
+			"manchester victoria station"
+		]
+	},
+	{
+		"id": "5ac3e0f7554299194317388b",
+		"question": "Which actor does American Beauty and American Beauty have in common?",
+		"answer": "Kevin Spacey",
+		"supporting_facts": [
+			"American Beauty (1999 film)",
+			"American Beauty (soundtrack)"
+		],
+		"question_entities": [
+			"american beauty"
+		],
+		"supporting_entities": [
+			"1999 film",
+			"advertising executive",
+			"alan ball",
+			"allison janney",
+			"american beauty",
+			"angela",
+			"annette bening",
+			"beauty",
+			"carolyn",
+			"chris cooper",
+			"jane",
+			"kevin spacey",
+			"lester burnham",
+			"lester s daughter",
+			"lester s wife",
+			"materialism",
+			"mena suvari",
+			"midlife crisis",
+			"paternal love",
+			"redemption",
+			"romantic love",
+			"sam mendes",
+			"satire of american middle class notions of beauty",
+			"self liberation",
+			"sexuality",
+			"thora birch",
+			"wes bentley",
+			"1999",
+			"american beauty",
+			"annette bening",
+			"kevin spacey",
+			"music from the original motion picture soundtrack",
+			"soundtrack",
+			"soundtrack album"
+		]
+	},
+	{
+		"id": "5a7bcc0f554299042af8f7e2",
+		"question": "How many top 20 singles did the singer that released the 1990 album \"Reputation\" have?",
+		"answer": "six",
+		"supporting_facts": [
+			"Reputation and Rarities",
+			"Dusty Springfield"
+		],
+		"question_entities": [
+			"1990",
+			"reputation"
+		],
+		"supporting_entities": [
+			"british singer",
+			"dusty springfield",
+			"dusty springfield s 1990 studio album",
+			"repackaged re released version",
+			"reputation",
+			"reputation and rarities",
+			"16 april 1939",
+			"1950s",
+			"1990s",
+			"2 march 1999",
+			"best female rock artists of all time",
+			"billboard",
+			"blue eyed soul singer",
+			"distinctive sensual mezzo soprano sound",
+			"dusty springfield",
+			"english pop singer",
+			"flamboyant performances",
+			"icon of the swinging sixties",
+			"mary isobel catherine bernadette o brien",
+			"peroxide blonde bouffant hairstyle",
+			"record producer",
+			"six top 20 singles on the us  billboard  hot 100",
+			"sixteen singles on the uk singles chart",
+			"uk music halls of fame",
+			"us  billboard  hot 100",
+			"us rock and roll hall of fame"
+		]
+	},
+	{
+		"id": "5a7f732d5542992e7d278d02",
+		"question": "Who was born first, Adrian McLaren or Ryan McLaren?",
+		"answer": "Adrian Peter McLaren",
+		"supporting_facts": [
+			"Ryan McLaren",
+			"Adrian McLaren"
+		],
+		"question_entities": [
+			"adrian mclaren",
+			"ryan mclaren"
+		],
+		"supporting_entities": [
+			"21 april 1980",
+			"4 hundreds",
+			"62 07",
+			"807 runs",
+			"adrian mclaren",
+			"first class cricketer",
+			"griqualand west",
+			"kimberley",
+			"northern cape",
+			"right handed batsman",
+			"ryan mclaren",
+			"south africa",
+			"south african",
+			"9 february 1983",
+			"cricketer",
+			"international level",
+			"kimberley  cape province  south africa",
+			"left handed batsman",
+			"right arm medium fast bowler",
+			"ryan mclaren",
+			"south africa"
+		]
+	},
+	{
+		"id": "5ab3849a55429969a97a8170",
+		"question": "What part did Dan Lewis play for Arsenal Football Club?",
+		"answer": "goalkeeper",
+		"supporting_facts": [
+			"Arsenal F.C.",
+			"Dan Lewis (footballer)"
+		],
+		"question_entities": [
+			"dan lewis",
+			"arsenal football club"
+		],
+		"supporting_entities": [
+			"13 fa cups",
+			"13 league titles",
+			"15 fa community shields",
+			"arsenal f c",
+			"fa community shields",
+			"highbury  london  england",
+			"inter cities fairs cup",
+			"league centenary trophy",
+			"premier league",
+			"second most top flight matches in english football history",
+			"two league cups",
+			"uefa cup winners  cup",
+			"unbeaten 38 match league season",
+			"11 december 1902",
+			"1927 fa cup final",
+			"1965",
+			"arsenal",
+			"cardiff city",
+			"dan lewis",
+			"footballer",
+			"welsh"
+		]
+	},
+	{
+		"id": "5ab2958a554299449642c911",
+		"question": "3:10 to Yuma starred what American actor also known for his role as Hoban Washburne?",
+		"answer": "Alan Tudyk",
+		"supporting_facts": [
+			"Alan Tudyk",
+			"3:10 to Yuma (2007 film)"
+		],
+		"question_entities": [
+			"3 10 to yuma",
+			"hoban  wash  washburne"
+		],
+		"supporting_entities": [
+			"2007 film",
+			"3 10 to yuma",
+			"alan tudyk",
+			"ben foster",
+			"cathy konrad",
+			"christian bale",
+			"dallas roberts",
+			"drought impoverished rancher",
+			"elmore leonard s short story",
+			"gretchen mol",
+			"james mangold",
+			"logan lerman",
+			"new mexico",
+			"notorious outlaw",
+			"peter fonda",
+			"positive reviews from critics",
+			"russell crowe",
+			"september 7  2007",
+			"united states",
+			"vinessa shaw",
+			"abc sitcom suburgatory",
+			"alan tudyk",
+			"alpha",
+			"american actor",
+			"film 42",
+			"film a knight s tale",
+			"film rogue one  a star wars story",
+			"hoban  wash  washburne",
+			"march 16  1971",
+			"tucker mcgee",
+			"walt disney animation studios film wreck it ralph",
+			"web series con man"
+		]
+	},
+	{
+		"id": "5a7109e95542994082a3e4fa",
+		"question": "What town did Sean Robert Francis play in as part of the most successful club in the Republic of Ireland?",
+		"answer": "Tallaght, South Dublin",
+		"supporting_facts": [
+			"Shamrock Rovers F.C.",
+			"Sean Francis (footballer)"
+		],
+		"question_entities": [
+			"sean robert francis",
+			"republic of ireland"
+		],
+		"supporting_entities": [
+			"fai cup 24 times",
+			"intercity cup 7 times",
+			"league of ireland premier division",
+			"league of ireland title 17 times",
+			"republic of ireland",
+			"republic of ireland national football team",
+			"shamrock rovers f c",
+			"tallaght  south dublin",
+			"1 august 1972",
+			"birmingham city",
+			"cobh ramblers",
+			"football league",
+			"former footballer",
+			"forward",
+			"league of ireland",
+			"longford town",
+			"northampton town",
+			"sean robert francis",
+			"shamrock rovers"
+		]
+	},
+	{
+		"id": "5a72239a55429971e9dc92cf",
+		"question": "Who was soldier Archie A. Peck's commanding officer during the Meuse-Argonne Offensive?",
+		"answer": "Major Charles White Whittlesey",
+		"supporting_facts": [
+			"Lost Battalion (World War I)",
+			"Archie A. Peck"
+		],
+		"question_entities": [
+			"archie a  peck",
+			"meuse argonne offensive"
+		],
+		"supporting_entities": [
+			"archie a  peck",
+			"behind german lines",
+			"bloodiest battle of the war",
+			"medal of honor",
+			"medal of honor for actions during world war i",
+			"meuse argonne offensive",
+			"soldier in the united states army",
+			"the lost battalion",
+			"us 77th division",
+			"us troops",
+			"194 remaining men",
+			"77th division",
+			"92nd division",
+			"americans",
+			"argonne",
+			"argonne forest",
+			"division",
+			"french advance",
+			"french forces",
+			"german forces",
+			"lost battalion",
+			"major charles white whittlesey",
+			"october 1918",
+			"rest of the allied line",
+			"roughly 554 men",
+			"several attacks by the germans",
+			"six days"
+		]
+	},
+	{
+		"id": "5ade982f554299728e26c753",
+		"question": "Where was the rapper in 13 Dead Men from?",
+		"answer": "New Orleans",
+		"supporting_facts": [
+			"Mystikal",
+			"13 Dead Men"
+		],
+		"question_entities": [
+			"13 dead men"
+		],
+		"supporting_entities": [
+			"american",
+			"michael lawrence tyler",
+			"mystikal",
+			"new orleans  louisiana",
+			"september 22  1970",
+			"13 dead men",
+			"2003",
+			"art camacho",
+			"lorenzo lamas",
+			"mystikal"
+		]
+	},
+	{
+		"id": "5abd6bf055429933744ab7c8",
+		"question": "What Division was the college footbal team that fired their head coach on November 24, 2006?",
+		"answer": "NCAA Division I FBS football",
+		"supporting_facts": [
+			"2006 Miami Hurricanes football team",
+			"Larry Coker"
+		],
+		"question_entities": [
+			"college football team",
+			"head coach",
+			"miami on november 24  2006"
+		],
+		"supporting_entities": [
+			"2001",
+			"2011",
+			"2nd head coach to win national championship in first season",
+			"american football coach",
+			"bennie oosterbaan",
+			"coker",
+			"consensus national champion in 2001",
+			"dennis erickson were last 2 head coaches to win national championship in first season",
+			"head coach at university of miami",
+			"head coach for utsa",
+			"june 23  1948",
+			"larry coker",
+			"larry coker on november 24  2006",
+			"miami on november 24  2006",
+			"miami team",
+			"rose bowl over nebraska",
+			"television analyst for espnu",
+			"university of miami",
+			"utsa",
+			"utsa coach on january 5  2016",
+			"2006 miami hurricanes football team",
+			"2006 ncaa division i fbs football season",
+			"larry coker",
+			"university of miami"
+		]
+	},
+	{
+		"id": "5ade99ad554299728e26c75d",
+		"question": "How many acts is the ballet Rita Sangalli premiered in, in the year 1876?",
+		"answer": "two or three acts",
+		"supporting_facts": [
+			"Sylvia (ballet)",
+			"Rita Sangalli"
+		],
+		"question_entities": [
+			"rita sangalli",
+			"1876"
+		],
+		"supporting_entities": [
+			"1876",
+			"arcadian setting",
+			"l o delibes",
+			"louis m rante",
+			"sylvia",
+			"antegnate",
+			"asti",
+			"carpesino d arcellasco",
+			"flick flock",
+			"her majesty s theatre",
+			"italy",
+			"la scala",
+			"metropolitan opera house",
+			"milan",
+			"namouna",
+			"new york city",
+			"paris opera ballet",
+			"piacenza",
+			"rita sangalli",
+			"sylvia",
+			"the black crook",
+			"turin",
+			"yedda"
+		]
+	},
+	{
+		"id": "5aba14195542994dbf0198a9",
+		"question": "How many animals does the wall running between the West Gate Lodge and Cardiff Castle depict?",
+		"answer": "15",
+		"supporting_facts": [
+			"West Lodge, Cardiff Castle",
+			"Animal Wall"
+		],
+		"question_entities": [
+			"west lodge",
+			"cardiff castle"
+		],
+		"supporting_entities": [
+			"animal wall",
+			"cardiff",
+			"cardiff castle",
+			"grade ii  listed building",
+			"tea room",
+			"west lodge",
+			"15 animals",
+			"animal wall",
+			"cardiff",
+			"castle quarter",
+			"grade i",
+			"mur anifeiliaid",
+			"wales"
+		]
+	},
+	{
+		"id": "5a74e5aa5542996c70cfae2e",
+		"question": "Which cloth town in the high Middle Ages gives the name to the dye associated with the man who is said to rob from the rich and give to the poor?",
+		"answer": "Lincoln",
+		"supporting_facts": [
+			"Robin Hood",
+			"Lincoln green"
+		],
+		"question_entities": [
+			"middle ages"
+		],
+		"supporting_entities": [
+			"film",
+			"heroic outlaw",
+			"late middle ages",
+			"lincoln green",
+			"literature",
+			"merry men",
+			"poor",
+			"rich",
+			"robin hood",
+			"sheriff of nottingham",
+			"sherwood forest",
+			"skilled archer",
+			"swordsman",
+			"television",
+			"coventry blue",
+			"dyed woollen cloth",
+			"dyers  broom",
+			"dyers of english towns",
+			"genista tinctoria",
+			"isatis tinctoria",
+			"kendall green",
+			"lincoln",
+			"lincoln green",
+			"middle ages",
+			"reseda luteola",
+			"robin hood",
+			"sherwood forest",
+			"weld",
+			"woad"
+		]
+	},
+	{
+		"id": "5a7a3dbb5542996a35c17157",
+		"question": "My First Mister co-stars an actor who was best known for his role as what character on the TV series Roseanne?",
+		"answer": "Dan Conner",
+		"supporting_facts": [
+			"My First Mister",
+			"John Goodman"
+		],
+		"question_entities": [
+			"my first mister",
+			"roseanne"
+		],
+		"supporting_entities": [
+			"american actor",
+			"barton fink",
+			"coen brothers",
+			"dan conner",
+			"golden globe award",
+			"inside llewyn davis",
+			"john goodman",
+			"june 20  1952",
+			"monsters  inc",
+			"monsters university",
+			"o brother  where art thou",
+			"pacha",
+			"pixar",
+			"raising arizona",
+			"roseanne",
+			"sulley",
+			"the big lebowski",
+			"the emperor s new groove",
+			"albert brooks",
+			"alienated teen",
+			"carol kane",
+			"christine lahti",
+			"desmond harrington",
+			"jill franklyn",
+			"john goodman",
+			"leelee sobieski",
+			"lonely clothing store manager",
+			"michael mckean",
+			"my first mister"
+		]
+	},
+	{
+		"id": "5a888abc5542997e5c09a604",
+		"question": "Which was released first, Kolejka or Ghettopoly?",
+		"answer": "Ghettopoly",
+		"supporting_facts": [
+			"Kolejka (game)",
+			"Ghettopoly"
+		],
+		"question_entities": [
+			"kolejka",
+			"ghettopoly"
+		],
+		"supporting_entities": [
+			"board game",
+			"communism",
+			"february 2011",
+			"hardships under communism",
+			"institute of national remembrance",
+			"karol madaj",
+			"kolejka",
+			"monopoly",
+			"poland",
+			"poland s institute of national remembrance",
+			"shortage economy",
+			"2003",
+			"atmosphere of united states ghetto",
+			"david chang",
+			"ghettopoly",
+			"monopoly"
+		]
+	},
+	{
+		"id": "5abe92de5542993f32c2a16b",
+		"question": "Which feature does the G-shock watch have that is tested by a leakage test?",
+		"answer": "water resistance",
+		"supporting_facts": [
+			"Water Resistant mark",
+			"G-Shock"
+		],
+		"question_entities": [
+			"casio g shock line of watches",
+			"leakage current test"
+		],
+		"supporting_entities": [
+			"backlight",
+			"casio",
+			"countdown timer",
+			"g shock",
+			"gravitational shock",
+			"mechanical shock",
+			"military activities",
+			"outdoors oriented activities",
+			"sports",
+			"stopwatch feature",
+			"vibration",
+			"water resistance",
+			"atmospheres",
+			"equivalent water depth in feet",
+			"equivalent water depth in metres",
+			"how well a watch is sealed against water ingress",
+			"indication of static test pressure",
+			"static test pressure",
+			"units of pressure such as bar",
+			"water resistant",
+			"wrist watches"
+		]
+	},
+	{
+		"id": "5a8af28555429951533613b5",
+		"question": "1956 Night Series Cup games were played at what inner suburb of Melbourne that is 3km south of Melbourne's central business district?",
+		"answer": "Albert Park",
+		"supporting_facts": [
+			"1956 Night Series Cup",
+			"Albert Park, Victoria"
+		],
+		"question_entities": [
+			"1956 night series cup",
+			"melbourne"
+		],
+		"supporting_entities": [
+			"1956",
+			"1956 night series cup",
+			"20 000",
+			"32 450 watched the first night grand final",
+			"albert park",
+			"august",
+			"lake oval",
+			"september",
+			"south melbourne",
+			"vfl night premiership cup",
+			"victorian football league teams",
+			"2011 census",
+			"3 km south of melbourne s central business district",
+			"5 955",
+			"albert park",
+			"australia",
+			"city of port phillip",
+			"suburb of melbourne",
+			"victoria"
+		]
+	},
+	{
+		"id": "5a7efd2f5542994959419a9c",
+		"question": "Which band opened for more major international acts, Blessid Union of Souls or Blue Peter?",
+		"answer": "Blue Peter",
+		"supporting_facts": [
+			"Blessid Union of Souls",
+			"Blue Peter (band)"
+		],
+		"question_entities": [
+			"blessid union of souls",
+			"blue peter"
+		],
+		"supporting_entities": [
+			"1978",
+			"blue peter",
+			"canadian new wave synthpop band",
+			"chris wardman",
+			"don t walk past",
+			"markham  ontario",
+			"mtv",
+			"mtv in the united states",
+			"muchmusic s top videos of the century list",
+			"paul humphrey",
+			"police",
+			"rob quartly",
+			"simple minds",
+			"united states",
+			"1990",
+			"american alternative rock band",
+			"blessid union of souls",
+			"cincinnati  ohio",
+			"eliot sloan",
+			"jeff pence"
+		]
+	},
+	{
+		"id": "5ac2927b5542996366519a17",
+		"question": "Are Danie Visser and Oliver Marach both Grand Slam tennis tournament winners at doubles?",
+		"answer": "no",
+		"supporting_facts": [
+			"Oliver Marach",
+			"Danie Visser"
+		],
+		"question_entities": [
+			"danie visser",
+			"oliver marach",
+			"grand slam",
+			"tennis tournament",
+			"doubles"
+		],
+		"supporting_entities": [
+			"16 july 1980",
+			"august 7  2005",
+			"austrian",
+			"no  8",
+			"no  82",
+			"october 18  2010",
+			"oliver marach",
+			"tennis player",
+			"1 us open title",
+			"2 australian open titles",
+			"26 july 1961",
+			"3 grand slam men s doubles titles",
+			"danie visser",
+			"january 1990",
+			"south africa",
+			"visser",
+			"world no  1 doubles ranking"
+		]
+	},
+	{
+		"id": "5ab5e024554299494045f097",
+		"question": "Were Joss Whedon and Norman Mailer both Americans?",
+		"answer": "yes",
+		"supporting_facts": [
+			"Norman Mailer",
+			"Joss Whedon"
+		],
+		"question_entities": [
+			"joss whedon",
+			"norman mailer",
+			"americans"
+		],
+		"supporting_entities": [
+			"1948",
+			"actor",
+			"american novelist",
+			"armies of the night",
+			"essayist",
+			"film maker",
+			"january 31  1923",
+			"journalist",
+			"national book award",
+			"norman mailer",
+			"norman mailer s best known work",
+			"november 10  2007",
+			"playwright",
+			"political activist",
+			"pulitzer prize for fiction",
+			"pulitzer prize for non fiction",
+			"renown to norman mailer",
+			"the executioner s song",
+			"the naked and the dead",
+			"agents of s h i e l d",
+			"american",
+			"angel",
+			"bellwether pictures",
+			"buffy the vampire slayer",
+			"comic book writer",
+			"composer",
+			"director",
+			"dollhouse",
+			"firefly",
+			"joss whedon",
+			"june 23  1964",
+			"mutant enemy productions",
+			"producer",
+			"screenwriter"
+		]
+	},
+	{
+		"id": "5ac3ac8255429939154138ad",
+		"question": "APB and Sleeper are both from britain?",
+		"answer": "yes",
+		"supporting_facts": [
+			"APB (band)",
+			"Sleeper (band)"
+		],
+		"question_entities": [
+			"apb",
+			"sleeper",
+			"britain"
+		],
+		"supporting_entities": [
+			"1990s",
+			"1998",
+			"2017",
+			"band",
+			"eight uk top 40 hit singles",
+			"frontwoman",
+			"london",
+			"louise wener",
+			"pop cultural hit movie",
+			"sleeper",
+			"three uk top 10 albums",
+			"trainspotting",
+			"uk",
+			"1979",
+			"apb",
+			"franz ferdinand",
+			"funk rock",
+			"new wave music",
+			"punk rock",
+			"red hot chili peppers",
+			"scottish post punk band",
+			"the rapture"
+		]
+	},
+	{
+		"id": "5a8f533d5542992414482a4c",
+		"question": "The runner-up in The Celebrity Apprentice 2 has written an autobiography titled what?",
+		"answer": "\"How I Raised, Folded, Bluffed, Flirted, Cursed, and Won Millions at the World Series of Poker\"",
+		"supporting_facts": [
+			"Annie Duke",
+			"The Apprentice (U.S. season 8)"
+		],
+		"question_entities": [
+			"the celebrity apprentice 2"
+		],
+		"supporting_entities": [
+			"2004 world series of poker tournament of champions",
+			"american professional poker player",
+			"annie duke",
+			"decide to play great poker",
+			"how i raised  folded  bluffed  flirted  cursed  and won millions at the world series of poker in 2005",
+			"leading money winner among women in wsop history",
+			"national heads up poker championship in 2010",
+			"september 13  1965",
+			"the middle zone",
+			"title now held by vanessa selbst",
+			"vanessa selbst",
+			"wsop gold bracelet from 2004",
+			"11th",
+			"7th",
+			"9th",
+			"all star celebrity apprentice",
+			"annie duke",
+			"brande roderick",
+			"claudia jordan",
+			"dennis rodman",
+			"joan rivers",
+			"march 1  2009",
+			"runner up",
+			"sundays",
+			"the apprentice 8",
+			"the celebrity apprentice 2",
+			"winner"
+		]
+	},
+	{
+		"id": "5a7e96f655429934daa2fc39",
+		"question": "What is the name of the actress who played as Blair Cramer from the daytime drama series \"One Life to Live\" for 20 years who is also currently playing as Eve Donovan on \"Days of Our Lives\"?",
+		"answer": "Kassie DePaiva",
+		"supporting_facts": [
+			"Kassie DePaiva",
+			"Blair Cramer"
+		],
+		"question_entities": [
+			"blair cramer",
+			"one life to live",
+			"eve donovan",
+			"days of our lives"
+		],
+		"supporting_entities": [
+			"american actress",
+			"blair cramer on abc s  one life to live",
+			"chelsea reardon on  guiding light",
+			"eve donovan on nbc s  days of our lives",
+			"kassie depaiva",
+			"march 21  1961",
+			"singer",
+			"work in american daytime soap operas",
+			"abc daytime",
+			"abc daytime serial",
+			"american daytime drama series",
+			"blair cramer",
+			"december 3  2012",
+			"dr  dorian cramer lord",
+			"general hospital",
+			"january 13  2012",
+			"kassie depaiva",
+			"mia korf",
+			"one life to live"
+		]
+	},
+	{
+		"id": "5ac3e68b5542997ea680c98b",
+		"question": "What do Susan Stafford and Vanna White have in common?",
+		"answer": "\"Wheel of Fortune\"",
+		"supporting_facts": [
+			"Susan Stafford",
+			"Vanna White"
+		],
+		"question_entities": [
+			"susan stafford",
+			"vanna white"
+		],
+		"supporting_entities": [
+			"1982",
+			"american television personality",
+			"february 18  1957",
+			"film actress",
+			"vanna marie rosich",
+			"vanna white",
+			"wheel of fortune",
+			"american",
+			"january 27  1942",
+			"susan stafford",
+			"vanna white",
+			"wheel of fortune",
+			"wheel of fortune in 1986",
+			"wheel of fortune on october 22  1982"
+		]
+	},
+	{
+		"id": "5a7a19765542996a35c170cf",
+		"question": "Pashto is the main language among a diaspora that has it's largest community in which country ?",
+		"answer": "Pakistan",
+		"supporting_facts": [
+			"Pashto",
+			"Pashtun diaspora"
+		],
+		"question_entities": [
+			"pashto"
+		],
+		"supporting_entities": [
+			"australia",
+			"bahrain",
+			"european union",
+			"indians",
+			"iran",
+			"kuwait",
+			"middle east",
+			"north america",
+			"oman",
+			"pakistan",
+			"pashtun diaspora",
+			"pashtun homeland",
+			"pashtunistan",
+			"qatar",
+			"saudi arabia",
+			"south of amu river in afghanistan",
+			"united arab emirates",
+			"west of indus river in pakistan",
+			"45 60 million people worldwide",
+			"afgh ni",
+			"afghanistan",
+			"afghans",
+			"almost 100  pashto speaking",
+			"eastern iranian language",
+			"fata",
+			"majority language of khyber pakhtunkhwa",
+			"majority language of northern districts of balochistan",
+			"official language of afghanistan",
+			"pa h n",
+			"pakistan",
+			"pashto",
+			"pashtun diaspora",
+			"pashtuns",
+			"pathans",
+			"pukhtuns",
+			"regional language of pakistan",
+			"south central asian language"
+		]
+	},
+	{
+		"id": "5a8bf0835542995d1e6f146b",
+		"question": "What variety of mockingbird is the mascot of the University of Tennessee at Chattanooga?",
+		"answer": "northern mockingbird",
+		"supporting_facts": [
+			"Scrappy Moc",
+			"Northern mockingbird"
+		],
+		"question_entities": [
+			"university of tennessee at chattanooga"
+		],
+		"supporting_entities": [
+			"bird",
+			"europe",
+			"mimus polyglottos",
+			"north america",
+			"northern mockingbird",
+			"a c  scrappy moore",
+			"legendary former chattanooga football coach",
+			"mockingbird",
+			"scrappy moc",
+			"state bird of tennessee",
+			"university of tennessee at chattanooga"
+		]
+	},
+	{
+		"id": "5a790364554299029c4b5ee6",
+		"question": "For what reason did Gustavo Rodolfo Mendoza Hernandex resign to the first Jesuit pope?",
+		"answer": "his age",
+		"supporting_facts": [
+			"Pope Francis",
+			"Gustavo Rodolfo Mendoza Hern\u00e1ndez"
+		],
+		"question_entities": [
+			"gustavo rodolfo mendoza hern ndez",
+			"first jesuit pope"
+		],
+		"supporting_entities": [
+			"11 november 2016",
+			"19 october 1934",
+			"archbishopric of guatemala",
+			"emeritus roman catholic auxiliary bishop",
+			"guatemala city",
+			"guatemalan clergyman",
+			"gustavo rodolfo mendoza hern ndez",
+			"july 9  2004",
+			"pope francis",
+			"pope john paul ii",
+			"titular bishop of selemselae",
+			"17 december 1936",
+			"266th and current pope of the catholic church",
+			"bishop of rome",
+			"first from the americas",
+			"first from the southern hemisphere",
+			"first jesuit pope",
+			"first pope from outside europe since the syrian gregory iii  who reigned in the 8th century",
+			"first to choose a name not used by a predecessor since lando in 913 ad",
+			"pope francis",
+			"saint francis of assisi",
+			"sovereign of vatican city"
+		]
+	},
+	{
+		"id": "5ac308135542990b17b154f4",
+		"question": "Christopher I of Denmark succeeded his brother, who was king during what period?",
+		"answer": "1241 until his death in 1250",
+		"supporting_facts": [
+			"Christopher I of Denmark",
+			"Eric IV of Denmark"
+		],
+		"question_entities": [
+			"christopher i",
+			"denmark"
+		],
+		"supporting_entities": [
+			"1252 and 1259",
+			"abel",
+			"christmas day 1252",
+			"christoffer i",
+			"christopher i",
+			"danish",
+			"death of abel",
+			"denmark",
+			"eric iv plovpenning",
+			"infanta bereng ria of portugal",
+			"king of denmark",
+			"lund cathedral",
+			"valdemar ii of denmark",
+			"10 august 1250",
+			"1216",
+			"abel",
+			"berengaria of portugal",
+			"christopher i",
+			"denmark",
+			"eric iv",
+			"eric ploughpenny",
+			"eric plowpenny",
+			"erik plovpenning",
+			"valdemar ii"
+		]
+	},
+	{
+		"id": "5ab926bc554299131ca42285",
+		"question": "Alexis Arg\u00fcello mentored Rom\u00e1n Gonz\u00e1lez, who became first boxer to do what?",
+		"answer": "win world titles in four weight classes",
+		"supporting_facts": [
+			"Rom\u00e1n Gonz\u00e1lez (boxer)",
+			"Alexis Arg\u00fcello"
+		],
+		"question_entities": [
+			"alexis arg ello",
+			"rom n gonz lez",
+			"boxer"
+		],
+		"supporting_entities": [
+			"alexis arg ello",
+			"chocolatito",
+			"country",
+			"flyweight",
+			"former three weight world champion",
+			"four weight classes",
+			"idol",
+			"june 17  1987",
+			"light flyweight",
+			"mentor",
+			"minimumweight",
+			"nicaragua",
+			"professional boxer",
+			"rom n gonz lez",
+			"super flyweight",
+			"1968",
+			"1995",
+			"aaron pryor",
+			"alexis arg ello",
+			"april 19  1952",
+			"july 1  2009",
+			"light welterweight world titles",
+			"lineal featherweight titles",
+			"lineal lightweight title",
+			"nicaraguan professional boxer",
+			"politician",
+			"ring lightweight title",
+			"ring magazine featherweight titles",
+			"wba featherweight title",
+			"wbc lightweight title",
+			"wbc super featherweight title"
+		]
+	},
+	{
+		"id": "5ae6368a5542992ae0d16284",
+		"question": "When was the American patriot Hamilton, New York Wass named after born?",
+		"answer": "January 11, 1755 or 1757July",
+		"supporting_facts": [
+			"Alexander Hamilton",
+			"Hamilton, New York"
+		],
+		"question_entities": [
+			"hamilton  new york"
+		],
+		"supporting_entities": [
+			"6 690 at the 2010 census",
+			"alexander hamilton",
+			"hamilton",
+			"madison county",
+			"new york",
+			"new york  united states",
+			"population",
+			"town"
+		]
+	},
+	{
+		"id": "5ae457a95542996836b02c85",
+		"question": "Who directed and wrote the 2016 film featuring the voice of Townsend Coleman?",
+		"answer": "Garth Jennings",
+		"supporting_facts": [
+			"Sing (2016 American film)",
+			"Townsend Coleman"
+		],
+		"question_entities": [
+			"2016 film",
+			"townsend coleman"
+		],
+		"supporting_entities": [
+			"2016 american 3d computer animated musical comedy film",
+			"christophe lourdelet",
+			"garth jennings",
+			"group of anthropomorphic animals",
+			"illumination entertainment",
+			"john c  reilly",
+			"koala",
+			"matthew mcconaughey",
+			"reese witherspoon",
+			"scarlett johansson",
+			"seth macfarlane",
+			"sing",
+			"singing competition",
+			"taron egerton",
+			"theater",
+			"tori kelly",
+			"adventure time",
+			"american voice actor",
+			"animaniacs",
+			"camp lazlo",
+			"catdog",
+			"catscratch",
+			"danny phantom",
+			"dave the barbarian",
+			"dexter s laboratory",
+			"fantasia 2000",
+			"foster s home for imaginary friends",
+			"gravity falls",
+			"hi hi puffy amiyumi",
+			"may 28  1954",
+			"my life as a teenage robot",
+			"prostars",
+			"sing",
+			"teenage mutant ninja turtles",
+			"the buzz on maggie",
+			"the fairly oddparents",
+			"the loud house",
+			"the mighty b",
+			"the powerpuff girls",
+			"the replacements",
+			"the tick",
+			"townsend coleman",
+			"where s waldo"
+		]
+	},
+	{
+		"id": "5ae15d70554299422ee9966f",
+		"question": "Who costarred in 1935 American drama film Les Mis\u00e9rables with the husband of Elsa Lanchester?",
+		"answer": "Fredric March",
+		"supporting_facts": [
+			"Charles Laughton",
+			"Les Mis\u00e9rables (1935 film)"
+		],
+		"question_entities": [
+			"1935 american comedy film",
+			"les mis rables",
+			"elsa lanchester"
+		],
+		"supporting_entities": [
+			"1935 film",
+			"20th century fox",
+			"charles laughton",
+			"fox film corporation",
+			"fredric march",
+			"les mis rables",
+			"richard boleslawski",
+			"twentieth century pictures",
+			"victor hugo novel",
+			"w  p  lipscomb",
+			"1 july 1899",
+			"15 december 1962",
+			"1926",
+			"charles laughton",
+			"elsa lanchester",
+			"english stage and film actor",
+			"london",
+			"no children",
+			"royal academy of dramatic art"
+		]
+	},
+	{
+		"id": "5a7f7c285542994857a76746",
+		"question": "California joined the Union due to the passage of a package of how many separate bills?",
+		"answer": "five",
+		"supporting_facts": [
+			"History of California before 1900",
+			"Compromise of 1850"
+		],
+		"question_entities": [
+			"california",
+			"union"
+		],
+		"supporting_entities": [
+			"1848 treaty of guadalupe hidalgo",
+			"about 1 4 million",
+			"american westward expansion",
+			"before 1900",
+			"california",
+			"california gold rush",
+			"california joining union",
+			"compromise of 1850",
+			"europeans",
+			"free state",
+			"indigenous americans",
+			"mexican american war",
+			"mexico",
+			"union",
+			"united states",
+			"1846 1848",
+			"compromise of 1850",
+			"controversy",
+			"democratic senator stephen douglas",
+			"each side",
+			"fugitive slave",
+			"illinois",
+			"kentucky",
+			"mexican american war",
+			"sectional conflict",
+			"september 1850",
+			"slave and free states",
+			"united states congress",
+			"whig senator henry clay"
+		]
+	},
+	{
+		"id": "5a74512b55429974ef308bd5",
+		"question": "Who published the film magazine that Peter Biskind was executive editor of from 1986 to 1996?",
+		"answer": "Hachette Filipacchi",
+		"supporting_facts": [
+			"Premiere (magazine)",
+			"Peter Biskind"
+		],
+		"question_entities": [
+			"peter biskind"
+		],
+		"supporting_entities": [
+			"1976",
+			"1987 and 2010",
+			"france",
+			"hachette filipacchi media u s",
+			"new york city",
+			"premi re",
+			"premiere",
+			"1986",
+			"1996",
+			"2010",
+			"american cultural critic",
+			"biography of director and actor warren beatty",
+			"down and dirty pictures",
+			"easy riders  raging bulls",
+			"film historian",
+			"gods and monsters",
+			"journalist",
+			"peter biskind",
+			"premiere",
+			"seeing is believing",
+			"star  how warren beatty seduced america"
+		]
+	}
+]
