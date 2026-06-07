@@ -1,10 +1,68 @@
 import os
+from types import SimpleNamespace
 from typing import Any
 
+import requests
 from langchain_community.chat_models import ChatLlamaCpp, ChatOllama
 from langchain_nvidia_ai_endpoints import ChatNVIDIA
 from langchain_openai import ChatOpenAI
 from langchain_together import ChatTogether
+
+
+class ChatOllamaNoThink:
+    """Minimal Ollama chat client that disables "thinking" (``think=False``).
+
+    Reasoning models such as Qwen3 emit long ``<think>`` chain-of-thought before
+    answering, which is dramatically slower (≈18x in local tests) and unnecessary
+    for extraction. langchain's ``ChatOllama`` wrappers can't toggle Ollama's
+    top-level ``think`` field, and Qwen3's ``/no_think`` soft switch is ignored by
+    some builds, so we call ``/api/chat`` directly. ``think=False`` is a no-op for
+    non-reasoning models (e.g. Qwen2.5, Llama).
+
+    Implements just the ``invoke(messages)`` interface the OpenIE/NER models use,
+    returning an object with a ``.content`` attribute.
+    """
+
+    _ROLE = {"system": "system", "human": "user", "ai": "assistant"}
+
+    def __init__(
+        self,
+        model: str,
+        temperature: float = 0.0,
+        num_ctx: int | None = None,
+        think: bool = False,
+        base_url: str | None = None,
+        timeout: int = 600,
+        **_: Any,
+    ) -> None:
+        self.model = model
+        self.temperature = temperature
+        self.num_ctx = num_ctx
+        self.think = think
+        self.timeout = timeout
+        host = base_url or os.environ.get("OLLAMA_HOST", "127.0.0.1:11434")
+        if not host.startswith("http"):
+            host = f"http://{host}"
+        self.url = host.rstrip("/") + "/api/chat"
+
+    def invoke(self, messages: Any, **_: Any) -> SimpleNamespace:
+        msgs = [
+            {"role": self._ROLE.get(getattr(m, "type", "user"), "user"), "content": m.content}
+            for m in messages
+        ]
+        options: dict[str, Any] = {"temperature": self.temperature}
+        if self.num_ctx is not None:
+            options["num_ctx"] = self.num_ctx
+        body = {
+            "model": self.model,
+            "messages": msgs,
+            "stream": False,
+            "think": self.think,
+            "options": options,
+        }
+        resp = requests.post(self.url, json=body, timeout=self.timeout)
+        resp.raise_for_status()
+        return SimpleNamespace(content=resp.json()["message"]["content"])
 
 
 def init_langchain_model(
@@ -16,7 +74,7 @@ def init_langchain_model(
     n_ctx: int | None = None,
     low_vram: bool = False,
     **kwargs: Any,
-) -> ChatOpenAI | ChatTogether | ChatOllama | ChatLlamaCpp:
+) -> ChatOpenAI | ChatTogether | ChatOllama | ChatLlamaCpp | ChatOllamaNoThink:
     """
     Initialize a language model from the langchain library.
     :param llm: The LLM to use, e.g., 'openai', 'together'
@@ -55,14 +113,12 @@ def init_langchain_model(
         )
     elif llm == "ollama":
         # https://python.langchain.com/v0.1/docs/integrations/chat/ollama/
-        options = {}
-        if n_ctx is not None:
-            options["num_ctx"] = n_ctx
-
-        return ChatOllama(
-            model=model_name,  # e.g., 'llama3'
+        # Use ChatOllamaNoThink so reasoning models (e.g. Qwen3) answer without
+        # emitting chain-of-thought (think=False) -- far faster, no-op otherwise.
+        return ChatOllamaNoThink(
+            model=model_name,  # e.g., 'qwen3:1.7b'
             temperature=temperature,
-            options=options if options else None,
+            num_ctx=n_ctx,
             **kwargs,
         )
 

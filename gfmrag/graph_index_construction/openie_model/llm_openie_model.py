@@ -253,7 +253,15 @@ class LLMOPENIEModel(BaseOPENIEModel):
         triples = self.openie_post_ner_extract(text, doc_entities)
         res["extracted_entities"] = doc_entities
         try:
-            res["extracted_triples"] = eval(triples)["triples"]
+            parsed = eval(triples)
+            if isinstance(parsed, dict):
+                res["extracted_triples"] = parsed["triples"]
+            elif isinstance(parsed, list):
+                # Some backends (e.g. Ollama) return a bare list of triples
+                # instead of {"triples": [...]}.
+                res["extracted_triples"] = parsed
+            else:
+                raise ValueError("unexpected triples shape")
         except Exception:
             logger.error(f"Error in parsing triples: {triples}")
 
