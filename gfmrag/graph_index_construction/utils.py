@@ -19,19 +19,27 @@ def directory_exists(path: str) -> None:
         os.makedirs(dir)
 
 
-def extract_json_dict(text: str) -> str | dict:
-    pattern = r"\{(?:[^{}]|(?:\{(?:[^{}]|(?:\{[^{}]*\})*)*\})*)*\}"
-    match = re.search(pattern, text)
+def extract_json_dict(text: str) -> str | dict | list:
+    obj_pattern = r"\{(?:[^{}]|(?:\{(?:[^{}]|(?:\{[^{}]*\})*)*\})*)*\}"
+    match = re.search(obj_pattern, text)
 
     if match:
-        json_string = match.group()
         try:
-            json_dict = json.loads(json_string)
-            return json_dict
+            return json.loads(match.group())
+        except json.JSONDecodeError:
+            pass
+
+    # Fall back to a top-level JSON array. Non-OpenAI backends (e.g. Ollama) often
+    # return a bare list (e.g. NER as ["a", "b"]) instead of {"named_entities": [...]}.
+    arr_pattern = r"\[(?:[^\[\]]|(?:\[(?:[^\[\]]|(?:\[[^\[\]]*\])*)*\])*)*\]"
+    match = re.search(arr_pattern, text)
+    if match:
+        try:
+            return json.loads(match.group())
         except json.JSONDecodeError:
             return ""
-    else:
-        return ""
+
+    return ""
 
 
 def generate_uuid(obj: Any) -> str:

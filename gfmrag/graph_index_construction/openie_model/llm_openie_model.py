@@ -147,10 +147,17 @@ class LLMOPENIEModel(BaseOPENIEModel):
                 response_content = chat_completion.content
                 response_content = extract_json_dict(response_content)
 
-            if "named_entities" not in response_content:
-                response_content = []
-            else:
+            if isinstance(response_content, list):
+                # Some backends (e.g. Ollama) return a bare list of entities
+                # instead of {"named_entities": [...]}.
+                pass
+            elif (
+                isinstance(response_content, dict)
+                and "named_entities" in response_content
+            ):
                 response_content = response_content["named_entities"]
+            else:
+                response_content = []
 
         except Exception as e:
             logger.error(f"Error in extracting named entities: {e}")

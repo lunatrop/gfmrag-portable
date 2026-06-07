@@ -4,7 +4,6 @@ import requests
 import torch
 from openai import NOT_GIVEN, OpenAI
 from tqdm import tqdm
-from vllm import LLM, PoolingParams
 
 from .base_model import BaseTextEmbModel
 
@@ -105,8 +104,9 @@ class Qwen3TextEmbModel(BaseTextEmbModel):
         except requests.RequestException:
             return False
 
-    def _start_vllm_server(self) -> LLM:
+    def _start_vllm_server(self) -> "LLM":  # noqa: F821
         """Start a vLLM server for embedding generation."""
+        from vllm import LLM
 
         dist_keys = [
             "RANK",
@@ -214,6 +214,8 @@ class Qwen3TextEmbModel(BaseTextEmbModel):
         ):
             batch = text[i : min(i + self.batch_size, len(text))]
             if self.truncate_dim is not None and self.truncate_dim > 0:
+                from vllm import PoolingParams
+
                 output = self.text_emb_model.embed(
                     batch,
                     pooling_params=PoolingParams(dimensions=self.truncate_dim),
