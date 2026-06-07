@@ -1,0 +1,10 @@
+# Local OpenIE via Ollama + gemma2:2b. Opt-in: select with
+#   openie_model=ollama_gemma
+# The default (llm_openie_model.yaml) still targets OpenAI gpt-4o-mini.
+# Requires a local Ollama server (OLLAMA_HOST, default 127.0.0.1:11434) with the
+# model pulled: `ollama pull gemma2:2b`. Thinking is disabled automatically.
+_target_: gfmrag.graph_index_construction.openie_model.LLMOPENIEModel
+llm_api: ollama
+model_name: gemma2:2b
+max_ner_tokens: 300
+max_triples_tokens: 4096
