@@ -1,0 +1,17 @@
+# Keep the build context small (esp. the multi-GB .venv).
+.venv/
+.git/
+data/
+outputs/
+docs/
+site/
+tests/
+**/__pycache__/
+*.pyc
+.env
+.env.*
+*.deb
+cuda-keyring*
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

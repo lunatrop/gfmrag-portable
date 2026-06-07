@@ -1,0 +1,31 @@
+# gfmrag prompting-service image. Build context = repo root:
+#   gcloud builds submit --tag REGION-docker.pkg.dev/PROJECT/gfmrag/gfmrag-qa:latest -f deploy/docker/Dockerfile.serve .
+FROM python:3.12-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    POETRY_VERSION=2.4.1 \
+    POETRY_VIRTUALENVS_CREATE=false \
+    HF_HOME=/models/hf
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential git curl && \
+    rm -rf /var/lib/apt/lists/* && \
+    pip install --no-cache-dir "poetry==${POETRY_VERSION}"
+
+WORKDIR /app
+
+COPY pyproject.toml poetry.lock README.md ./
+COPY gfmrag ./gfmrag
+RUN poetry install --only main --no-interaction --no-ansi
+
+# Serving deps (not in pyproject).
+RUN pip install --no-cache-dir fastapi "uvicorn[standard]"
+
+COPY deploy/serve/app.py ./app.py
+
+EXPOSE 8000
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+
+# NOTE: needs GPU at runtime (Qwen3-Embedding-8B query encoding + ColBERT EL).
+# The GFM GNN (8M/34M) itself is tiny. Pre-baking the GFM checkpoint into the
+# image (or a GCS/PVC cache) avoids a cold HF download on every pod start.
