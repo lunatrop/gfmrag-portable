@@ -1,15 +1,26 @@
 # gfmrag extractor image. Build context = repo root:
-#   gcloud builds submit --tag REGION-docker.pkg.dev/PROJECT/gfmrag/extractor:latest -f deploy/docker/Dockerfile .
-FROM python:3.12-slim
+#   gcloud builds submit --config deploy/cloudbuild/extractor.yaml --substitutions _IMAGE=... .
+#
+# CUDA *devel* base (not python-slim): ColBERT/pylate's PLAID indexer
+# JIT-compiles CUDA torch extensions at runtime via torch.utils.cpp_extension,
+# which needs nvcc + CUDA headers + CUDA_HOME — pip's nvidia-* runtime libs
+# are not enough.
+FROM nvidia/cuda:12.6.3-devel-ubuntu24.04
 
 ENV PYTHONUNBUFFERED=1 \
     POETRY_VERSION=2.4.1 \
-    POETRY_VIRTUALENVS_CREATE=false
+    POETRY_VIRTUALENVS_CREATE=false \
+    CUDA_HOME=/usr/local/cuda
 
+# python3 on ubuntu24.04 = 3.12. Venv sidesteps PEP 668 (externally-managed).
+# ninja + python3-dev are needed at RUNTIME for the torch JIT compile.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        build-essential git curl && \
+        python3 python3-venv python3-dev build-essential ninja-build git curl && \
     rm -rf /var/lib/apt/lists/* && \
-    pip install --no-cache-dir "poetry==${POETRY_VERSION}"
+    python3 -m venv /venv
+
+ENV PATH="/venv/bin:$PATH"
+RUN pip install --no-cache-dir "poetry==${POETRY_VERSION}"
 
 WORKDIR /app
 
@@ -18,13 +29,9 @@ WORKDIR /app
 COPY pyproject.toml poetry.lock README.md ./
 COPY gfmrag ./gfmrag
 
-# Runtime deps only (no dev/docs groups).
-RUN poetry install --only main --no-interaction --no-ansi
+# Runtime deps only (no dev/docs groups). Cloud image -> GPU faiss.
+RUN poetry install --only main --extras faiss-gpu --no-interaction --no-ansi
 
 # Default command = build the graph index (NER + OpenIE extraction).
-# Override args via the K8s Job (dataset, backend, model).
+# Override args via the job (dataset, backend, model).
 ENTRYPOINT ["python", "-m", "gfmrag.workflow.index_dataset"]
-
-# NOTE: this installs the full dep set (incl. faiss-gpu-cu12 / CUDA torch) because
-# `import gfmrag` pulls them in. For a lean CPU-only extractor image, build a
-# variant that swaps faiss-gpu-cu12 -> faiss-cpu and uses the CPU torch wheel.
