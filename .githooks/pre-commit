@@ -1,9 +1,13 @@
 #!/bin/sh
-# main is for incorporating upstream code only — develop on dev (or a branch).
+# upstream-gfm-rag is for incorporating upstream code only — develop on dev.
 # Deliberate upstream merge: ALLOW_MAIN=1 git commit ...
 branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-if [ "$branch" = "main" ] && [ -z "$ALLOW_MAIN" ]; then
-    echo "blocked: committing on main is disabled (upstream incorporation only)." >&2
-    echo "Use dev, or override deliberately with: ALLOW_MAIN=1 git commit ..." >&2
-    exit 1
-fi
+case "$branch" in
+upstream-gfm-rag | main)
+    if [ -z "$ALLOW_MAIN" ]; then
+        echo "blocked: committing on $branch is disabled (upstream incorporation only)." >&2
+        echo "Use dev, or override deliberately with: ALLOW_MAIN=1 git commit ..." >&2
+        exit 1
+    fi
+    ;;
+esac

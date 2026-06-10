@@ -1,11 +1,15 @@
 #!/bin/sh
-# main is for incorporating upstream code only — block pushes to it.
+# upstream-gfm-rag is for incorporating upstream code only — block pushes to it.
 # Deliberate upstream merge: ALLOW_MAIN=1 git push ...
 while read -r _local_ref _local_sha remote_ref _remote_sha; do
-    if [ "$remote_ref" = "refs/heads/main" ] && [ -z "$ALLOW_MAIN" ]; then
-        echo "blocked: pushing to main is disabled (upstream incorporation only)." >&2
-        echo "Override deliberately with: ALLOW_MAIN=1 git push ..." >&2
-        exit 1
-    fi
+    case "$remote_ref" in
+    refs/heads/upstream-gfm-rag | refs/heads/main)
+        if [ -z "$ALLOW_MAIN" ]; then
+            echo "blocked: pushing to $remote_ref is disabled (upstream incorporation only)." >&2
+            echo "Override deliberately with: ALLOW_MAIN=1 git push ..." >&2
+            exit 1
+        fi
+        ;;
+    esac
 done
 exit 0
