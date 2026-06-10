@@ -80,6 +80,31 @@ resource "google_storage_bucket" "data" {
   force_destroy               = true # scaffolding convenience
 }
 
+# HF model cache: de-ephemeralises the big weight downloads (Qwen LLM ~6-15GB,
+# Qwen3-Embedding-8B ~16GB). First start populates it; later cold starts read
+# intra-region from GCS instead of huggingface.co — and weights stop transiting
+# the instance's RAM-backed filesystem, releasing the 32GiB memory pressure.
+resource "google_storage_bucket" "hf_cache" {
+  name                        = "${var.bucket_name}-hf-cache"
+  location                    = var.region
+  uniform_bucket_level_access = true
+  force_destroy               = true # it's a cache — safe to lose
+}
+
+resource "google_storage_bucket_iam_member" "runtime_hf_cache" {
+  bucket = google_storage_bucket.hf_cache.name
+  role   = "roles/storage.objectAdmin"
+  member = "serviceAccount:${google_service_account.runtime.email}"
+}
+
+# Cloud Build pre-populates the cache (deploy/cloudbuild/prepopulate-hf-cache.yaml)
+# — writing weights through GCS FUSE from an instance is ~1MB/s; this is minutes.
+resource "google_storage_bucket_iam_member" "cloudbuild_hf_cache" {
+  bucket = google_storage_bucket.hf_cache.name
+  role   = "roles/storage.objectAdmin"
+  member = "serviceAccount:${data.google_project.project.number}-compute@developer.gserviceaccount.com"
+}
+
 # --- Workload identity ----------------------------------------------------------
 # One runtime SA for all three gfmrag workloads (mirrors the GKE stack, where
 # the QA pod reused the extractor's identity).

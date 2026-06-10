@@ -4,14 +4,37 @@ Shards: `corpus-shards/` (seed 42, disjoint; 16/64/256/1024/4096/11634 = 17,090 
 Success criterion per rung: every doc yields non-empty entities AND triples; cost
 and sec/doc recorded for extrapolation.
 
-| Rung | Docs | Backend | Wall | sec/doc | Entities | Triples | Malformed | Cost |
-|---|---|---|---|---|---|---|---|---|
-| 0 | 16 | local qwen2.5:3b | 23.3 min | 87 (52–139) | 132 | 140 | 15 (11%) | A$0 |
-| 1 | 64 | vLLM 7B (GCP) | | | | | | |
-| 2 | 256 | vLLM 7B (GCP) | | | | | | |
-| 3 | 1,024 | vLLM 7B (GCP) | | | | | | |
-| 4 | 4,096 | vLLM 7B (GCP) | | | | | | |
-| 5 | 11,634 | vLLM 7B (GCP) | | | | | | |
+| Rung | Docs | Backend | Wall | sec/doc | Fact gate | Suspects | Cost (est) |
+|---|---|---|---|---|---|---|---|
+| 0 | 16 | local qwen2.5:3b | 23.3 min | 87 (52–139) | — (pre-gate) | — | A$0 |
+| 0c | 16 | vLLM 3B (GCP) | ~21 min | 79 | 90% (ABN 56%) | 0 | ~A$1.5 |
+| 1 | 64 | vLLM 3B (GCP) | 21.0 min | 19.7 | 81% (ABN ~45%) | 0 | ~A$1.6 |
+| 2 | 256 | vLLM 3B (GCP) | 21.8 min | 5.1 | 80% (ABN 41%) | 11 | ~A$1.7 |
+| 3 | 1,024 | vLLM (GCP) | | | | | |
+| 4 | 4,096 | vLLM (GCP) | | | | | |
+| 5 | 11,634 | vLLM (GCP) | | | | | |
+
+## Cloud rungs 0c–2 notes (2026-06-10/11)
+
+- *The curve is flat*: 16, 64 and 256 docs all take ~21–22 min. Fixed overhead
+  (image pull + imports + CUDA JIT + ColBERT index ≈ 15 min) dominates; warm
+  vLLM with continuous batching makes marginal extraction ≈ 0.2–0.5 s/doc.
+- *Extrapolation*: rung 3 (1,024) projects ~25–30 min — comfortably inside the
+  1h GPU-task ceiling. Rung 4 (4,096) ~35–45 min, likely fits. Rung 5 (11,634)
+  projects ~1.5h+ → must be split (or run as 2–3 equal shards in parallel).
+  The 1h boundary is NOT the binding constraint up to rung 4.
+- *Cost is overhead-dominated too*: ~A$1.5–1.7/rung regardless of size so far
+  (task ≈ A$0.75 + vLLM active ≈ A$0.85). Full 17k corpus as 3–4 parallel
+  equal shards projects ≈ *A$8–12 total* — consistent with the original
+  A$10–20 estimate.
+- *Quality at scale*: entities 98%, revenue 100%, HQ 100%, periods 99%,
+  sectors 97% at rung 2. Overall drag is *ABN recall (56%→41%)* — joint
+  statements shed parenthetical ABNs; the 3B-vs-7B A/B targets exactly this.
+  First 11 suspect entities at rung 2 (some are gate-parser artifacts:
+  &-joined ABN-less names) — eyeball before lead-gen use.
+- vLLM cold start post-HF-cache: *3m03s* measured (was ~4.5 min downloading).
+- Arity rate not yet instrumented cloud-side (guided decoding claim untested);
+  fact-gate recall is the operative quality metric for cloud rungs.
 
 ## Rung 0 notes (2026-06-10)
 

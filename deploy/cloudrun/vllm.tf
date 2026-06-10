@@ -12,6 +12,12 @@ resource "google_cloud_run_v2_service" "vllm" {
   ingress             = "INGRESS_TRAFFIC_ALL"
   deletion_protection = false # scaffolding only — set true in production
 
+  # First-population cold starts can exceed the provider's 20m default.
+  timeouts {
+    create = "45m"
+    update = "45m"
+  }
+
   template {
     service_account                  = google_service_account.runtime.email
     max_instance_request_concurrency = var.vllm_concurrency
@@ -52,6 +58,27 @@ resource "google_cloud_run_v2_service" "vllm" {
         }
       }
 
+      # De-ephemeralised model weights: cache on GCS instead of re-downloading
+      # ~GBs from huggingface.co on every cold start. Also keeps weights out
+      # of the RAM-backed filesystem (frees the 32GiB cap for bigger models).
+      env {
+        name  = "HF_HOME"
+        value = "/models/hf"
+      }
+
+      # The cache is pre-populated (deploy/cloudbuild/prepopulate-hf-cache.yaml);
+      # offline mode skips hub etag checks and guarantees no runtime downloads
+      # ever crawl through the FUSE write path again.
+      env {
+        name  = "HF_HUB_OFFLINE"
+        value = "1"
+      }
+
+      volume_mounts {
+        name       = "hf-cache"
+        mount_path = "/models/hf"
+      }
+
       resources {
         limits = {
           cpu              = "8"
@@ -61,9 +88,8 @@ resource "google_cloud_run_v2_service" "vllm" {
         startup_cpu_boost = true
       }
 
-      # Cold start = image pull + downloading/loading the 7B model: minutes.
-      # Allow up to ~20 min before declaring the instance dead. To cut this,
-      # bake the weights into a custom image or mount them from GCS.
+      # Cold start = image pull + loading weights (GCS cache after first
+      # start). Allow up to ~20 min before declaring the instance dead.
       startup_probe {
         http_get {
           path = "/health"
@@ -72,6 +98,14 @@ resource "google_cloud_run_v2_service" "vllm" {
         period_seconds    = 15
         timeout_seconds   = 5
         failure_threshold = 80
+      }
+    }
+
+    volumes {
+      name = "hf-cache"
+      gcs {
+        bucket    = google_storage_bucket.hf_cache.name
+        read_only = false
       }
     }
   }

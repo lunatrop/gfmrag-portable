@@ -12,6 +12,12 @@ resource "google_cloud_run_v2_service" "qa" {
   ingress             = "INGRESS_TRAFFIC_ALL"
   deletion_protection = false
 
+  # Model + index load is slow even with a warm cache.
+  timeouts {
+    create = "45m"
+    update = "45m"
+  }
+
   template {
     service_account = google_service_account.runtime.email
 
@@ -88,7 +94,8 @@ resource "google_cloud_run_v2_service" "qa" {
         startup_cpu_boost = true
       }
 
-      # GFM checkpoint + embedding model + index load: allow up to ~20 min.
+      # Checkpoint + 16GB embedding model (FUSE reads) + possible stage-2
+      # rebuild: typical ~7 min, worst observed >20 — allow 35.
       startup_probe {
         http_get {
           path = "/healthz"
@@ -96,20 +103,37 @@ resource "google_cloud_run_v2_service" "qa" {
         }
         period_seconds    = 15
         timeout_seconds   = 5
-        failure_threshold = 80
+        failure_threshold = 140
       }
 
       volume_mounts {
         name       = "index"
         mount_path = "/data"
       }
+
+      volume_mounts {
+        name       = "hf-cache"
+        mount_path = "/models/hf" # = HF_HOME (Dockerfile.serve)
+      }
     }
 
+    # Read-write: from_index WRITES processed/stage2 (graph.pt + embeddings)
+    # back to the bucket — persisted, so later starts skip the rebuild.
     volumes {
       name = "index"
       gcs {
         bucket    = google_storage_bucket.data.name
-        read_only = true
+        read_only = false
+      }
+    }
+
+    # De-ephemeralised HF weights (Qwen3-Embedding-8B etc.) — populated on
+    # first start, read intra-region afterwards.
+    volumes {
+      name = "hf-cache"
+      gcs {
+        bucket    = google_storage_bucket.hf_cache.name
+        read_only = false
       }
     }
   }
@@ -128,4 +152,13 @@ resource "google_cloud_run_v2_service_iam_member" "qa_invoker_benchmark" {
   location = var.region
   role     = "roles/run.invoker"
   member   = "serviceAccount:${google_service_account.benchmark_caller.email}"
+}
+
+resource "google_cloud_run_v2_service_iam_member" "qa_extra_invokers" {
+  for_each = var.qa_enabled ? toset(var.extra_invoker_members) : toset([])
+
+  name     = google_cloud_run_v2_service.qa[0].name
+  location = var.region
+  role     = "roles/run.invoker"
+  member   = each.value
 }

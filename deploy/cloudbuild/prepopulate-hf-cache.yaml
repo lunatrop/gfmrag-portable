@@ -1,0 +1,30 @@
+# One-off: populate the HF cache bucket at datacenter speed. Writing weights
+# through the GCS FUSE mount from a Cloud Run instance crawls (~1MB/s — HF's
+# tmp-file+rename pattern); downloading here and rsyncing is minutes instead.
+#
+#   gcloud builds submit --no-source --config deploy/cloudbuild/prepopulate-hf-cache.yaml \
+#     --substitutions _CACHE_BUCKET=<bucket-name>
+steps:
+  - name: python:3.12-slim
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -e
+        pip install --quiet "huggingface_hub[hf_transfer]"
+        export HF_HOME=/workspace/hf HF_HUB_ENABLE_HF_TRANSFER=1
+        for m in Qwen/Qwen2.5-3B-Instruct Qwen/Qwen2.5-7B-Instruct Qwen/Qwen3-Embedding-8B \
+                 colbert-ir/colbertv2.0 rmanluo/GFM-RAG-8M rmanluo/G-reasoner-34M; do
+          echo "=== downloading $m"
+          hf download "$m"
+        done
+        du -sh /workspace/hf
+# Bucket root = HF_HOME (the volume mounts at /models/hf), so hub/ sits at root.
+  - name: gcr.io/cloud-builders/gsutil
+    args: ["-m", "rsync", "-r", "/workspace/hf", "gs://${_CACHE_BUCKET}"]
+timeout: 3600s
+options:
+  machineType: E2_HIGHCPU_8
+  diskSizeGb: 200
+substitutions:
+  _CACHE_BUCKET: ""
