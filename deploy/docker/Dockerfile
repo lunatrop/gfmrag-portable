@@ -19,7 +19,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/* && \
     python3 -m venv /venv
 
-ENV PATH="/venv/bin:$PATH"
+# VIRTUAL_ENV makes poetry treat /venv as the active env — without it,
+# virtualenvs.create=false resolves to the SYSTEM python (base prefix) and
+# deps land where the runtime python never looks.
+ENV VIRTUAL_ENV=/venv \
+    PATH="/venv/bin:$PATH"
 RUN pip install --no-cache-dir "poetry==${POETRY_VERSION}"
 
 WORKDIR /app
@@ -31,6 +35,9 @@ COPY gfmrag ./gfmrag
 
 # Runtime deps only (no dev/docs groups). Cloud image -> GPU faiss.
 RUN poetry install --only main --extras faiss-gpu --no-interaction --no-ansi
+
+# Fail the BUILD (not the GPU job) if deps didn't land in the runtime env.
+RUN python -c "import numpy, torch, transformers; print('deps ok:', torch.__version__)"
 
 # Default command = build the graph index (NER + OpenIE extraction).
 # Override args via the job (dataset, backend, model).
