@@ -5,7 +5,7 @@ shard-0 of the modern-slavery corpus). Results these steps reproduce:
 `corpus-tuples/local-8m-test-2026-06-10.md`, `local-34m-test-2026-06-10.md`,
 `smoke-test-2026-06-10.md`, `ladder-results.md`.
 
-## The two golden rules on this box
+## The three golden rules on this box
 
 1. **`CUDA_VISIBLE_DEVICES=""` for every torch process.** torch ≥2.8 detects
    the GTX 960M but ships no sm_50 kernels — anything that touches the GPU dies
@@ -15,6 +15,13 @@ shard-0 of the modern-slavery corpus). Results these steps reproduce:
    (`export PATH="$HOME/repo/gfm-rag/.venv/bin:$PATH"`). ColBERT JIT-compiles a
    C++ extension at startup and needs `ninja` discoverable — calling
    `.venv/bin/python` directly is not enough.
+3. **Start Ollama with `OLLAMA_VULKAN=false`.** Ollama ≥0.30 auto-enables the
+   Vulkan backend on the 960M (CUDA needs Windows driver ≥570; this box has
+   556) and Vulkan generation is silently broken — query-NER deterministically
+   returns `[]` for everything. Symptom of a poisoned server: previously-good
+   prompts suddenly extract nothing. Fix: restart with
+   `OLLAMA_VULKAN=false ollama serve`. (Updating the Windows NVIDIA driver to
+   ≥570 would restore CUDA and make Ollama several-fold faster.)
 
 ## 0. One-time prerequisites checklist
 
