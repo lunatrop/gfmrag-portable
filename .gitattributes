@@ -1,0 +1,4 @@
+# Normalize all text files to LF — this repo lives in WSL but gets edited
+# from Windows tools too; without this, CRLF writes show up as whole-file
+# phantom diffs (see corpus/* churn).
+* text=auto eol=lf
