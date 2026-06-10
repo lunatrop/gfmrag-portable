@@ -1,0 +1,152 @@
+#+TITLE: Big cloud downloads & warmups — gfmrag Cloud Run deployment
+#+AUTHOR: eugene@tautsec.com (generated with Claude)
+#+DATE: 2026-06-10
+#+STARTUP: overview
+
+Dependency graph of every large artifact the =deploy/cloudrun= stack pulls,
+builds, or warms — what it is, where it lives, why it matters, and when you
+pay for it. Sizes are approximate; timings are measured from the first
+shard-0 deployment run.
+
+* Dependency graph (who needs what)
+
+#+begin_example
+  corpus-shards/shard-N/raw/documents.json  (local, KBs)
+        |  gsutil cp
+        v
+  [GCS bucket] ──────────────────────────────┐
+        |                                     | read-only volume (QA)
+        v                                     v
+  ┌─ gfmrag-extract job (L4 GPU) ─┐    ┌─ gfmrag-qa service (L4 GPU) ─┐
+  │ needs: extractor image        │    │ needs: qa image               │
+  │   ├─ CUDA devel base          │    │   ├─ CUDA devel base          │
+  │   ├─ torch cu12 + faiss-gpu   │    │   ├─ (same dep layer)         │
+  │   └─ nvcc JIT (warmup)        │    │   ├─ GFM checkpoint   (HF)    │
+  │ needs: colbertv2.0     (HF)   │    │   ├─ Qwen3-Embedding-8B (HF)  │
+  │ calls: vLLM ───────────┐      │    │   └─ colbertv2.0       (HF)   │
+  └────────────────────────┼──────┘    │ calls: vLLM ──────────┐       │
+                           v           └───────────────────────┼───────┘
+              ┌─ gfmrag-vllm service (L4 GPU) ─────────────────┘
+              │ needs: vllm/vllm-openai image (Docker Hub via AR proxy)
+              │ needs: Qwen2.5-3B-Instruct weights (HF, every cold start)
+              └─ serves /v1 (OpenAI protocol) to both callers
+#+end_example
+
+* Container images
+
+** Extractor image (the 15–18 GB one)
+:PROPERTIES:
+:PATH: us-central1-docker.pkg.dev/tautsec-graph-crawler/gfmrag/extractor:latest
+:BUILT_BY: deploy/cloudbuild/extractor.yaml (Cloud Build, E2_HIGHCPU_8, ~16–40 min)
+:SOURCE: deploy/docker/Dockerfile
+:END:
+What's inside, biggest layers first:
+- =nvidia/cuda:12.6.3-devel-ubuntu24.04= base (~7–8 GB): full CUDA toolkit —
+  nvcc, headers, =CUDA_HOME=. Required because ColBERT/pylate's PLAID indexer
+  JIT-compiles CUDA C++ extensions *at runtime* (first failure mode of the
+  deployment: =python:3.12-slim= lacked the toolkit and the job died in
+  =el_model.index=).
+- CUDA-enabled PyTorch wheel (~2.5 GB) + pip =nvidia-*= runtime libs
+  (cuDNN, cuBLAS…, ~3–4 GB).
+- =faiss-gpu-cu12=, transformers, pylate, the rest of gfmrag's deps.
+Used by: every =gfmrag-extract= task. Pulled from Artifact Registry on task
+start — *~10 min on a fresh instance*, then cached by Cloud Run, so
+subsequent executions start much faster.
+Importance: this IS the extraction pipeline (NER → OpenIE → entity linking).
+No image, no tuples.
+
+** QA serving image
+:PROPERTIES:
+:PATH: us-central1-docker.pkg.dev/tautsec-graph-crawler/gfmrag/gfmrag-qa:latest
+:BUILT_BY: deploy/cloudbuild/serve.yaml
+:SOURCE: deploy/docker/Dockerfile.serve
+:END:
+Same base and dependency layer as the extractor (same JIT requirement —
+ColBERT runs at QA startup too) plus fastapi/uvicorn and =deploy/serve/app.py=.
+Not built yet — needed when =qa_enabled=true=.
+
+** vLLM serving image
+:PROPERTIES:
+:PATH: us-central1-docker.pkg.dev/tautsec-graph-crawler/dockerhub/vllm/vllm-openai:v0.6.6
+:UPSTREAM: docker.io/vllm/vllm-openai:v0.6.6 (~9 GB)
+:END:
+Cloud Run cannot pull from Docker Hub, so an Artifact Registry *remote repo*
+(=dockerhub/=) proxies and caches it. First vLLM cold start paid the
+Hub→AR→instance pull; the AR cache now absorbs the Hub leg permanently.
+Importance: the GPU inference engine. Continuous batching is why one L4
+serves parallel extraction tasks.
+
+* Model weights (downloaded at runtime, not baked in)
+
+** Qwen2.5-3B-Instruct — the extraction LLM
+:PROPERTIES:
+:SOURCE: https://huggingface.co/Qwen/Qwen2.5-3B-Instruct (~6 GB)
+:LANDS_IN: vLLM instance RAM-backed filesystem (ephemeral!)
+:END:
+Downloaded by vLLM *on every cold start* — Cloud Run instances have no
+persistent disk, so scale-to-zero means re-downloading. This dominated the
+measured 272 s first-request cold start. The 3B (vs 7B, ~15 GB) was chosen
+deliberately: weights + vLLM host RSS must fit the 32 GiB RAM cap, since the
+filesystem IS memory.
+Mitigation when it matters: bake weights into a custom image, or mount a GCS
+volume as the HF cache.
+
+** colbertv2.0 — entity-linking encoder
+:PROPERTIES:
+:SOURCE: https://huggingface.co/colbert-ir/colbertv2.0 (~0.4 GB)
+:LANDS_IN: extractor/QA task HF cache (ephemeral per task)
+:END:
+Pulled by pylate when EL indexing starts. Small but on the critical path:
+EL is what turns raw OpenIE phrases into a linked KG, and it's where the
+fact-verification quality gate lives (the =WOOLWORTHHS= typo lesson).
+
+** Qwen3-Embedding-8B — stage-2 text embeddings (QA phase only)
+:PROPERTIES:
+:SOURCE: https://huggingface.co/Qwen/Qwen3-Embedding-8B (~16 GB)
+:LANDS_IN: QA instance HF cache (=HF_HOME=/models/hf=, ephemeral)
+:END:
+The largest runtime download in the whole system, and the main reason the QA
+service's startup probe allows ~20 min. Needed by =GFMRetriever.from_index=
+to (re)build stage-2 node/relation embeddings and to encode queries. Worth
+pre-baking into the QA image before enabling =qa_enabled= seriously.
+
+** GFM-RAG checkpoints — the actual graph foundation model
+:PROPERTIES:
+:SOURCE: https://huggingface.co/rmanluo/GFM-RAG-8M (~tens of MB); 34M G-Reasoner variant TBC
+:END:
+Ironically the cheapest download in the system — the 8M/34M GNN is tiny.
+Swapping 8M ↔ 34M is a config change (=gfm_model_path=), not an
+infrastructure event.
+
+* Warmups (time paid, nothing downloaded)
+
+** CUDA JIT compile of PLAID codecs
+:PROPERTIES:
+:LANDS_IN: task ~/.cache/torch_extensions (ephemeral)
+:COST: O(1 min) per task, needs nvcc+ninja in-image
+:END:
+=torch.utils.cpp_extension.load= compiles =decompress_residuals_cpp= & co.
+the first time EL indexing runs on GPU. This is a *warmup masquerading as a
+dependency*: it's why the image carries an 8 GB devel toolchain.
+
+** vLLM cold-start chain (measured 272 s end-to-end)
+instance allocation → image pull (AR cache) → Qwen weights download →
+GPU load → =/health= 200. Scale-to-zero makes this the recurring toll of the
+near-zero idle architecture. For nightly benchmarking: fire a warm-up request
+before the batch, or temporarily set =min_instances=1=.
+
+** Extractor task first start
+image pull (~10 min, then Cloud-Run-cached) → python imports (heavy: torch,
+faiss) → OpenIE over vLLM (16 docs ≈ 2 min warm) → colbert download → JIT →
+PLAID index → stage-1 CSVs to GCS.
+
+* Data artifacts (small but load-bearing)
+
+| Artifact            | Path                                                          | Size       | Role                              |
+|---------------------+---------------------------------------------------------------+------------+-----------------------------------|
+| Corpus shards (in)  | gs://tautsec-graph-crawler-gfmrag-data/shard-N/raw/           | KBs–MBs    | extraction input ({title: passage}) |
+| Tuples/index (out)  | gs://tautsec-graph-crawler-gfmrag-data/shard-N/processed/     | MBs        | nodes/edges/relations CSVs + index |
+| Build context       | gs://tautsec-graph-crawler_cloudbuild/source/                 | ~276 KB    | allowlisted by .gcloudignore       |
+
+Copy =processed/= back to =corpus-tuples/= *before* =terraform destroy= — the
+bucket has =force_destroy=true= and dies with the stack.
