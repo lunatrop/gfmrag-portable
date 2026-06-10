@@ -1,0 +1,11 @@
+#!/bin/sh
+# main is for incorporating upstream code only — block pushes to it.
+# Deliberate upstream merge: ALLOW_MAIN=1 git push ...
+while read -r _local_ref _local_sha remote_ref _remote_sha; do
+    if [ "$remote_ref" = "refs/heads/main" ] && [ -z "$ALLOW_MAIN" ]; then
+        echo "blocked: pushing to main is disabled (upstream incorporation only)." >&2
+        echo "Override deliberately with: ALLOW_MAIN=1 git push ..." >&2
+        exit 1
+    fi
+done
+exit 0
