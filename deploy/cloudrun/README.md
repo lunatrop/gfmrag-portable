@@ -10,7 +10,7 @@ and Artifact Registry names.
 | Workload | GKE stack (`../terraform`) | This stack |
 |---|---|---|
 | vLLM (OpenAI API) | Deployment + internal LB + HPA on L4 node pool | `gfmrag-vllm` Cloud Run GPU service, `min_instances=0` |
-| Extractor (batch NER+OpenIE) | Indexed Job on CPU pool, `JOB_COMPLETION_INDEX` | `gfmrag-extract` Cloud Run Job, `CLOUD_RUN_TASK_INDEX` |
+| Extractor (batch NER+OpenIE) | Indexed Job on CPU pool, `JOB_COMPLETION_INDEX` | `gfmrag-extract` Cloud Run Job on L4 (GPU faiss + fast EL), `CLOUD_RUN_TASK_INDEX` |
 | QA prompting (`/retrieve`, `/answer`) | GPU Deployment + LB + HPA (deferred) | `gfmrag-qa` Cloud Run GPU service (deferred, `qa_enabled`) |
 | Idle cost | ~A$240/mo (GKE fee + lingering CPU node) | ~A$0 (storage only) |
 

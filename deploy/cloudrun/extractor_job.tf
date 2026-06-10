@@ -19,6 +19,15 @@ resource "google_cloud_run_v2_job" "extractor" {
       timeout         = var.extractor_task_timeout
       max_retries     = 3
 
+      # The image is built with --extras faiss-gpu (cloud deployments use GPU
+      # faiss), so each task gets an L4: native faiss-gpu + fast ColBERT EL.
+      # Each parallel task takes one GPU — size extractor_datasets against the
+      # regional L4 allocation that vLLM also draws from.
+      gpu_zonal_redundancy_disabled = true
+      node_selector {
+        accelerator = "nvidia-l4"
+      }
+
       containers {
         image = local.extractor_image
 
@@ -60,8 +69,9 @@ resource "google_cloud_run_v2_job" "extractor" {
 
         resources {
           limits = {
-            cpu    = var.extractor_cpu
-            memory = var.extractor_memory
+            cpu              = var.extractor_cpu
+            memory           = var.extractor_memory
+            "nvidia.com/gpu" = "1"
           }
         }
 
