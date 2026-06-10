@@ -19,13 +19,13 @@ output "data_bucket" {
 }
 
 output "image_push_command" {
-  description = "Build + push the extractor image (run from repo root)."
-  value       = "docker build -f deploy/docker/Dockerfile -t ${local.extractor_image} . && docker push ${local.extractor_image}"
+  description = "Build + push the extractor image via Cloud Build (run from repo root)."
+  value       = "gcloud builds submit --project ${var.project_id} --config deploy/cloudbuild/extractor.yaml --substitutions _IMAGE=${local.extractor_image} ."
 }
 
 output "qa_image_push_command" {
-  description = "Build + push the QA serving image (run from repo root)."
-  value       = "docker build -f deploy/docker/Dockerfile.serve -t ${local.qa_image} . && docker push ${local.qa_image}"
+  description = "Build + push the QA serving image via Cloud Build (run from repo root)."
+  value       = "gcloud builds submit --project ${var.project_id} --config deploy/cloudbuild/serve.yaml --substitutions _IMAGE=${local.qa_image} ."
 }
 
 output "run_extraction_command" {

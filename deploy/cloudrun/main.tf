@@ -20,9 +20,30 @@ resource "google_project_service" "apis" {
     "artifactregistry.googleapis.com",
     "secretmanager.googleapis.com",
     "cloudbuild.googleapis.com",
+    # Creates the Compute Engine default SA, which Cloud Build runs as on
+    # newer projects (see the IAM grants below).
+    "compute.googleapis.com",
   ])
   service            = each.key
   disable_on_destroy = false
+}
+
+# Cloud Build (new-project default behavior) runs builds as the Compute Engine
+# default SA, which lacks registry-push and log-write rights out of the box.
+data "google_project" "project" {}
+
+resource "google_project_iam_member" "cloudbuild_ar_writer" {
+  project    = var.project_id
+  role       = "roles/artifactregistry.writer"
+  member     = "serviceAccount:${data.google_project.project.number}-compute@developer.gserviceaccount.com"
+  depends_on = [google_project_service.apis]
+}
+
+resource "google_project_iam_member" "cloudbuild_logs" {
+  project    = var.project_id
+  role       = "roles/logging.logWriter"
+  member     = "serviceAccount:${data.google_project.project.number}-compute@developer.gserviceaccount.com"
+  depends_on = [google_project_service.apis]
 }
 
 # --- Artifact Registry ---------------------------------------------------------

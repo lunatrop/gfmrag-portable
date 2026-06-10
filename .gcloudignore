@@ -1,0 +1,13 @@
+# Build context for `gcloud builds submit` (which tars the whole cwd).
+# Allowlist only what the Docker builds need — without this, tracked data
+# (corpus/, corpus-shards/) and local junk would upload on every build.
+/*
+!/gfmrag
+!/pyproject.toml
+!/poetry.lock
+!/README.md
+!/deploy
+/deploy/*
+!/deploy/docker
+!/deploy/serve
+__pycache__/
