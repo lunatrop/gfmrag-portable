@@ -1,0 +1,227 @@
+{
+  "generated_from": "all-statements_2026-04-18.csv",
+  "register_sector_count": 47,
+  "register_sectors_mapped": 47,
+  "register_sectors_unmapped": 0,
+  "tautsec_code_totals": {
+    "MANU": 4659,
+    "PROF": 1852,
+    "FINI": 1674,
+    "RETH": 1187,
+    "TRAN": 877,
+    "HEAL": 859,
+    "UTIL": 648,
+    "TECH": 641,
+    "ENTM": 636,
+    "OTH": 596,
+    "EDUC": 408,
+    "PUBL": 344
+  },
+  "tautsec_codes_uncovered_by_register": [
+    "ACCREDITATION",
+    "ADULT",
+    "AUTHORITY",
+    "CREDIT",
+    "CRYPTO",
+    "CYBER",
+    "DATA",
+    "FILESHARING",
+    "GAMBLING",
+    "PAYMENTTRADING",
+    "SAFETY",
+    "SOCIALMEDIA",
+    "SURVEILLANCE"
+  ],
+  "tautsec_codes_uncovered_note": "Risk/regulatory classifiers (Adult, Gambling, Crypto, Cyber, Data, Authority, SocialMedia, Safety, PaymentTrading, Accreditation, Credit, Surveillance, FileSharing) are not ANZSIC industries and will never appear in the register's IndustrySectors field. To populate these codes we need a secondary classifier (GPT over website content, or business-activity-code rules in website-enrichment.ts).",
+  "register_to_tautsec": {
+    "Financial, insurance and real estate activities": {
+      "tautsec_code": "FINI",
+      "count": 1108
+    },
+    "Mining, metals, chemicals and resources (including oil and gas)": {
+      "tautsec_code": "MANU",
+      "count": 1055
+    },
+    "Construction, civil engineering and building products": {
+      "tautsec_code": "MANU",
+      "count": 949
+    },
+    "Other Services": {
+      "tautsec_code": "PROF",
+      "count": 761
+    },
+    "Food and beverages, agriculture and fishing": {
+      "tautsec_code": "MANU",
+      "count": 626
+    },
+    "Other": {
+      "tautsec_code": "OTH",
+      "count": 596
+    },
+    "Transportation, logistics, and storage": {
+      "tautsec_code": "TRAN",
+      "count": 589
+    },
+    "Healthcare and pharmaceuticals": {
+      "tautsec_code": "HEAL",
+      "count": 576
+    },
+    "Financial and Insurance Services": {
+      "tautsec_code": "FINI",
+      "count": 566
+    },
+    "Automotive, machinery and heavy electrical equipment": {
+      "tautsec_code": "MANU",
+      "count": 484
+    },
+    "Information technology and telecommunication": {
+      "tautsec_code": "TECH",
+      "count": 478
+    },
+    "Construction": {
+      "tautsec_code": "MANU",
+      "count": 461
+    },
+    "Manufacturing": {
+      "tautsec_code": "MANU",
+      "count": 419
+    },
+    "Professional and administrative services and supplies, including legal, consulting and accounting services": {
+      "tautsec_code": "PROF",
+      "count": 379
+    },
+    "Retail Trade": {
+      "tautsec_code": "RETH",
+      "count": 341
+    },
+    "Utilities: gas, water and electricity": {
+      "tautsec_code": "UTIL",
+      "count": 307
+    },
+    "Professional, Scientific and Technical Services": {
+      "tautsec_code": "PROF",
+      "count": 297
+    },
+    "Education and research": {
+      "tautsec_code": "EDUC",
+      "count": 295
+    },
+    "Charitable / not-for-profit activities": {
+      "tautsec_code": "PUBL",
+      "count": 293
+    },
+    "Transport, Postal and Warehousing": {
+      "tautsec_code": "TRAN",
+      "count": 288
+    },
+    "Health Care and Social Assistance": {
+      "tautsec_code": "HEAL",
+      "count": 283
+    },
+    "Wholesale Trade": {
+      "tautsec_code": "RETH",
+      "count": 273
+    },
+    "Mining": {
+      "tautsec_code": "MANU",
+      "count": 260
+    },
+    "Electricity, Gas, Water and Waste Services": {
+      "tautsec_code": "UTIL",
+      "count": 258
+    },
+    "Durable consumer goods, including electronics and appliances, home furnishings and other accessories": {
+      "tautsec_code": "RETH",
+      "count": 254
+    },
+    "Consumer services, including accommodation, hospitality, tourism and leisure": {
+      "tautsec_code": "ENTM",
+      "count": 235
+    },
+    "Fashion, textiles, apparel and luxury goods": {
+      "tautsec_code": "RETH",
+      "count": 225
+    },
+    "Media, publishing, arts and entertainment": {
+      "tautsec_code": "ENTM",
+      "count": 198
+    },
+    "Agriculture, Forestry and Fishing": {
+      "tautsec_code": "MANU",
+      "count": 176
+    },
+    "Information Media and Telecommunications": {
+      "tautsec_code": "TECH",
+      "count": 163
+    },
+    "Rental, Hiring and Real Estate Services": {
+      "tautsec_code": "PROF",
+      "count": 148
+    },
+    "Accommodation and Food Services": {
+      "tautsec_code": "ENTM",
+      "count": 142
+    },
+    "Administrative and Support Services": {
+      "tautsec_code": "PROF",
+      "count": 141
+    },
+    "Cleaning and security services": {
+      "tautsec_code": "PROF",
+      "count": 124
+    },
+    "Forestry, timber products, paper and containers and packaging": {
+      "tautsec_code": "MANU",
+      "count": 120
+    },
+    "Education and Training": {
+      "tautsec_code": "EDUC",
+      "count": 113
+    },
+    "Defence and aerospace": {
+      "tautsec_code": "MANU",
+      "count": 102
+    },
+    "Cosmetics and toiletries": {
+      "tautsec_code": "RETH",
+      "count": 94
+    },
+    "Waste management and recycling": {
+      "tautsec_code": "UTIL",
+      "count": 83
+    },
+    "Arts and Recreation Services": {
+      "tautsec_code": "ENTM",
+      "count": 61
+    },
+    "Government Sector": {
+      "tautsec_code": "PUBL",
+      "count": 32
+    },
+    "Public Administration and Safety": {
+      "tautsec_code": "PUBL",
+      "count": 19
+    },
+    "Agriculture": {
+      "tautsec_code": "MANU",
+      "count": 3
+    },
+    "Forestry and Fishing": {
+      "tautsec_code": "MANU",
+      "count": 3
+    },
+    "civil engineering and building products": {
+      "tautsec_code": "MANU",
+      "count": 1
+    },
+    "Professional": {
+      "tautsec_code": "PROF",
+      "count": 1
+    },
+    "Scientific and Technical Services": {
+      "tautsec_code": "PROF",
+      "count": 1
+    }
+  },
+  "unmapped_sectors": []
+}
