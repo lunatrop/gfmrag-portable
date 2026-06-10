@@ -85,10 +85,11 @@ variable "extractor_memory" {
   default = "16Gi"
 }
 
-# Per-task ceiling. Cloud Run Jobs cap at 24h ("86400s") — size shards to fit.
+# Per-task ceiling. GPU job tasks cap at 1h ("3600s") — which also matches the
+# ID-token lifetime the task's vLLM auth depends on. Size shards to fit.
 variable "extractor_task_timeout" {
   type    = string
-  default = "21600s"
+  default = "3600s"
 }
 
 # --- QA prompting service (deferred by default) -------------------------------
