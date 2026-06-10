@@ -94,3 +94,11 @@ resource "google_cloud_run_v2_service_iam_member" "vllm_invokers" {
   role     = "roles/run.invoker"
   member   = "serviceAccount:${each.value}"
 }
+
+resource "google_cloud_run_v2_service_iam_member" "vllm_extra_invokers" {
+  for_each = toset(var.extra_invoker_members)
+  name     = google_cloud_run_v2_service.vllm.name
+  location = var.region
+  role     = "roles/run.invoker"
+  member   = each.value
+}

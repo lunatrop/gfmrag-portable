@@ -61,6 +61,14 @@ variable "bucket_name" {
   description = "GCS bucket for corpus shards in and graph-index out. Globally unique."
 }
 
+# Extra IAM members granted run.invoker on the services, e.g. developers
+# smoke-testing with `gcloud auth print-identity-token`. Full member syntax
+# ("user:dev@example.com").
+variable "extra_invoker_members" {
+  type    = list(string)
+  default = []
+}
+
 # --- Extractor job -----------------------------------------------------------
 # Dataset subdirectories under the bucket to extract — one parallel job task
 # each. Pick rungs from corpus-shards/ (e.g. ["shard-0"] or
