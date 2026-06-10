@@ -84,7 +84,21 @@ class Qwen3TextEmbModel(BaseTextEmbModel):
         self.vllm_timeout = vllm_timeout
 
         if api_base is None:
-            self.text_emb_model = self._start_vllm_server()
+            try:
+                self.text_emb_model = self._start_vllm_server()
+                self._backend = "vllm"
+            except ImportError:
+                # vllm is a cloud-only dependency; locally fall back to
+                # sentence-transformers (same weights and pooling).
+                from sentence_transformers import SentenceTransformer
+
+                self.text_emb_model = SentenceTransformer(
+                    text_emb_model_name,
+                    truncate_dim=truncate_dim,
+                    model_kwargs=model_kwargs,
+                    tokenizer_kwargs=tokenizer_kwargs,
+                )
+                self._backend = "st"
         else:
             # Check if API is available
             if not self._is_api_available():
@@ -208,6 +222,16 @@ class Qwen3TextEmbModel(BaseTextEmbModel):
         Returns:
             torch.Tensor: Tensor containing the embeddings for the input text.
         """
+        if getattr(self, "_backend", "vllm") == "st":
+            emb = self.text_emb_model.encode(
+                text,
+                batch_size=self.batch_size,
+                convert_to_tensor=True,
+                normalize_embeddings=self.normalize,
+                show_progress_bar=show_progress_bar,
+            )
+            return emb.cpu().float()
+
         all_embeddings = []
         for i in tqdm(
             range(0, len(text), self.batch_size), disable=not show_progress_bar

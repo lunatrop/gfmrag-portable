@@ -40,5 +40,15 @@ The vLLM/7B production path uses the *unchanged* multi-turn prompt via the
 `openai` branch. Add a query-NER check to the Phase-2 deployment tests to
 verify the 7B follows it (the 3B did not).
 
-Pending: 34M G-Reasoner comparison (own stage-2 build, 0.6B embedder — all
-artifacts already cached); `/answer` generation layer test; rung-1 cloud run.
+## Serving layer (`deploy/serve/app.py`, local uvicorn :8001) — PASS
+
+Env: `LLM_API=ollama`, `OPENAI_BASE_URL=http://127.0.0.1:11434/v1` (answers via
+Ollama's OpenAI-compatible endpoint). Healthy in 55s.
+
+- `/retrieve` (17s): Nick Scali statement rank 1 (7.42), same as direct test.
+- `/answer` (28s): **"PLUSH-THINK SOFAS PTY LTD is included in NICK SCALI
+  LIMITED's modern slavery statement."** — correct, grounded, exact-match
+  entity name. The full lead-gen QA loop works locally end-to-end.
+
+34M comparison: see `local-34m-test-2026-06-10.md` (8M 2/2 vs 34M 1/2 at this
+scale). Pending: rung-1 cloud run (gated on GPUS_ALL_REGIONS quota grant).
