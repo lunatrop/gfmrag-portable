@@ -1,6 +1,7 @@
-# The extraction workload as a Cloud Run Job: N parallel tasks, one corpus
-# shard each — the direct analog of the GKE Indexed Job, sharded by
-# CLOUD_RUN_TASK_INDEX instead of JOB_COMPLETION_INDEX. Zero cost when idle.
+# The extraction workload as a Cloud Run Job: one parallel task per dataset in
+# var.extractor_datasets — the direct analog of the GKE Indexed Job, with
+# CLOUD_RUN_TASK_INDEX selecting the dataset instead of JOB_COMPLETION_INDEX
+# naming the shard. Zero cost when idle.
 #
 # Run with:  gcloud run jobs execute gfmrag-extract --region <region>
 
@@ -10,8 +11,8 @@ resource "google_cloud_run_v2_job" "extractor" {
   deletion_protection = false
 
   template {
-    parallelism = var.extractor_parallelism
-    task_count  = var.extractor_parallelism
+    parallelism = length(var.extractor_datasets)
+    task_count  = length(var.extractor_datasets)
 
     template {
       service_account = google_service_account.runtime.email
@@ -24,6 +25,12 @@ resource "google_cloud_run_v2_job" "extractor" {
         env {
           name  = "VLLM_URL"
           value = google_cloud_run_v2_service.vllm.uri
+        }
+
+        # Task N extracts the N-th dataset of this list.
+        env {
+          name  = "DATASETS"
+          value = join(",", var.extractor_datasets)
         }
 
         # Cloud Run enforces IAM per request, so the OpenAI client's bearer
@@ -39,9 +46,11 @@ resource "google_cloud_run_v2_job" "extractor" {
           export OPENAI_BASE_URL="$${VLLM_URL}/v1"
           export OPENAI_API_KEY=$(curl -s -H 'Metadata-Flavor: Google' \
             "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/identity?audience=$${VLLM_URL}")
+          DATA_NAME=$(echo "$${DATASETS}" | cut -d, -f$(($${CLOUD_RUN_TASK_INDEX} + 1)))
+          echo "task $${CLOUD_RUN_TASK_INDEX} -> dataset $${DATA_NAME}"
           python -m gfmrag.workflow.index_dataset \
             dataset.root=/data \
-            dataset.data_name=shard-$${CLOUD_RUN_TASK_INDEX} \
+            dataset.data_name=$${DATA_NAME} \
             openie_model.llm_api=openai \
             openie_model.model_name=${var.model_id} \
             ner_model.llm_api=openai \

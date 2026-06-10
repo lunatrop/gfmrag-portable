@@ -62,10 +62,17 @@ variable "bucket_name" {
 }
 
 # --- Extractor job -----------------------------------------------------------
-variable "extractor_parallelism" {
-  type        = number
-  description = "Number of corpus shards = number of parallel job tasks."
-  default     = 4
+# Dataset subdirectories under the bucket to extract — one parallel job task
+# each. Pick rungs from corpus-shards/ (e.g. ["shard-0"] or
+# ["shard-0", "shard-1", "shard-2"]), or ["corpus"] for the whole register
+# uploaded as a single dataset.
+variable "extractor_datasets" {
+  type    = list(string)
+  default = ["shard-0"]
+  validation {
+    condition     = length(var.extractor_datasets) > 0
+    error_message = "extractor_datasets must name at least one dataset."
+  }
 }
 
 variable "extractor_cpu" {
@@ -99,7 +106,7 @@ variable "qa_image_name" {
 variable "qa_data_name" {
   type        = string
   description = "Dataset subdirectory (under the bucket) whose index to serve."
-  default     = "mycorpus"
+  default     = "shard-0"
 }
 
 variable "gfm_model_path" {

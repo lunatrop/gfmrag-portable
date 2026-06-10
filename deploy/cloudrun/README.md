@@ -35,15 +35,32 @@ export TF_VAR_hf_token=hf_xxx                   # only for gated models
 
 terraform init && terraform apply
 
-# Build + push the extractor image, stage corpus shards, then run a batch:
+# Build + push the extractor image, stage the input, then run a batch:
 terraform output -raw image_push_command
-gsutil -m cp -r ./data/shard-0 gs://$(terraform output -raw data_bucket)/shard-0   # etc.
+gsutil -m cp -r corpus-shards/shard-0 gs://$(terraform output -raw data_bucket)/
 terraform output -raw run_extraction_command
 
 # Once the index is in GCS, enable the QA service:
 terraform output -raw qa_image_push_command
 terraform apply -var qa_enabled=true
 ```
+
+### Choosing the raw input
+
+`extractor_datasets` (tfvars) selects which bucket subdirectories get extracted,
+one parallel job task each. Two sources, both produced by
+`scripts/prepare_corpus_shards.py`:
+
+- **`corpus-shards/`** (default) — disjoint exponential ladder for cost
+  measurement: shard-0=16, shard-1=64, shard-2=256, shard-3=1024, shard-4=4096,
+  shard-5=11634 docs. First deployment runs `["shard-0"]`; widen as costs prove
+  out, e.g. `["shard-1", "shard-2"]` (upload those shards first).
+- **`corpus` as one dataset** — the whole register in a single run:
+  `python scripts/prepare_corpus_shards.py --shards 1 --out tmp/full`, upload
+  `tmp/full/shard-0` as `gs://<bucket>/corpus`, set
+  `extractor_datasets = ["corpus"]` (and `qa_data_name = "corpus"`).
+
+Changing the list re-shapes the job (`terraform apply`), then re-run it.
 
 ## Calling from tautsec-benchmarking
 

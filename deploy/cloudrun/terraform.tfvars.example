@@ -16,9 +16,11 @@ vllm_max_instances = 6
 vllm_concurrency   = 32
 
 # --- Extractor job ---
-extractor_parallelism = 4
+# Datasets (bucket subdirectories) to extract, one parallel task each:
+# rungs from corpus-shards/ or ["corpus"] for a single full dataset.
+extractor_datasets = ["shard-0"]
 
 # --- QA prompting service (flip to true once the KG index is in GCS) ---
 qa_enabled     = false
-qa_data_name   = "mycorpus"
+qa_data_name   = "shard-0"
 gfm_model_path = "rmanluo/GFM-RAG-8M"
