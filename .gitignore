@@ -14,3 +14,5 @@ dist/*
 site/
 .DS_Store
 /wandb/
+.venv
+.claude

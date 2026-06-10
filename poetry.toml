@@ -1,0 +1,6 @@
+# Allow both workflows:
+#  - new: an in-project .venv (created/used in the repo dir)
+#  - original: a plain `poetry install` on a fresh clone still creates the venv
+[virtualenvs]
+create = true
+in-project = true
