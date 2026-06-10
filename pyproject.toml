@@ -32,9 +32,17 @@ langchain-nvidia-ai-endpoints = "^0.3.9"
 langchain-ollama = "^0.3.0"
 ollama = "^0.4.0"
 pylate = "^1.4.0"
-faiss-gpu-cu12 = "^1.9.0.post1"
+# faiss backend is an install-time choice (both wheels expose the same `faiss`
+# module): --extras faiss-cpu (default for local dev) or --extras faiss-gpu
+# (CUDA-capable machines and cloud images). Exactly one must be selected.
+faiss-cpu = { version = "^1.9.0", optional = true }
+faiss-gpu-cu12 = { version = "^1.9.0.post1", optional = true }
 pymetis = "^2025.2.2"
 einops = "^0.8.2"
+
+[tool.poetry.extras]
+faiss-cpu = ["faiss-cpu"]
+faiss-gpu = ["faiss-gpu-cu12"]
 
 
 [tool.poetry.group.dev.dependencies]

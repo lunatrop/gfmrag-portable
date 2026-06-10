@@ -7,7 +7,10 @@ from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 
-from gfmrag.graph_index_construction.langchain_util import init_langchain_model
+from gfmrag.graph_index_construction.langchain_util import (
+    ChatOllamaNoThink,
+    init_langchain_model,
+)
 from gfmrag.graph_index_construction.utils import extract_json_dict, processing_phrases
 
 from .base_model import BaseNERModel
@@ -121,10 +124,17 @@ class LLMNERModel(BaseNERModel):
             response_content = chat_completion.content
             chat_completion.response_metadata["token_usage"]["total_tokens"]
             json_mode = True
-        elif isinstance(self.client, ChatOllama) or isinstance(
-            self.client, ChatLlamaCpp
+        elif isinstance(
+            self.client, (ChatOllama, ChatLlamaCpp, ChatOllamaNoThink)
         ):
-            response_content = self.client.invoke(query_ner_messages.to_messages())
+            # Small local models answer (or refuse) the multi-turn one-shot
+            # format instead of extracting; a single explicit instruction works.
+            single_turn = HumanMessage(
+                "Extract all named entities (companies, organisations, people, "
+                "places) from the question below. Reply with ONLY JSON: "
+                '{"named_entities": [...]}\n\nQuestion: ' + text
+            )
+            response_content = self.client.invoke([single_turn])
             if hasattr(response_content, "content"):
                 response_content = response_content.content
             response_content = extract_json_dict(response_content)
@@ -140,6 +150,9 @@ class LLMNERModel(BaseNERModel):
             chat_completion.response_metadata["token_usage"]["total_tokens"]
 
         if not json_mode:
+            if isinstance(response_content, list):
+                # Bare-array NER response (ollama models often skip the wrapper)
+                response_content = {"named_entities": response_content}
             try:
                 assert "named_entities" in response_content
                 response_content = str(response_content)
@@ -148,7 +161,10 @@ class LLMNERModel(BaseNERModel):
                 response_content = {"named_entities": []}
 
         try:
-            ner_list = eval(response_content)["named_entities"]
+            if isinstance(response_content, dict):
+                ner_list = response_content["named_entities"]
+            else:
+                ner_list = eval(response_content)["named_entities"]
             query_ner_list = [processing_phrases(ner) for ner in ner_list]
             return query_ner_list
         except Exception as e:
