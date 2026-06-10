@@ -2,9 +2,14 @@
 # (8M / 34M) + the KG index from GCS (read-only), and serves /retrieve + /answer.
 # Query-NER and answer generation call the in-cluster vLLM.
 
+# All QA resources are gated behind var.qa_enabled (default false) — deferred
+# until the KG index exists in GCS. Enable with: terraform apply -var qa_enabled=true
+
 # HF token secret in the default namespace (GFM-RAG-8M + Qwen3-Embedding are
 # public, so this is only needed if you point at gated weights).
 resource "kubernetes_secret_v1" "hf_default" {
+  count = var.qa_enabled ? 1 : 0
+
   metadata {
     name      = "hf-token"
     namespace = "default"
@@ -14,6 +19,8 @@ resource "kubernetes_secret_v1" "hf_default" {
 }
 
 resource "kubernetes_deployment_v1" "qa" {
+  count = var.qa_enabled ? 1 : 0
+
   metadata {
     name      = "gfmrag-qa"
     namespace = "default"
@@ -87,7 +94,7 @@ resource "kubernetes_deployment_v1" "qa" {
             name = "HUGGING_FACE_HUB_TOKEN"
             value_from {
               secret_key_ref {
-                name = kubernetes_secret_v1.hf_default.metadata[0].name
+                name = kubernetes_secret_v1.hf_default[0].metadata[0].name
                 key  = "token"
               }
             }
@@ -139,6 +146,8 @@ resource "kubernetes_deployment_v1" "qa" {
 }
 
 resource "kubernetes_service_v1" "qa" {
+  count = var.qa_enabled ? 1 : 0
+
   metadata {
     name      = "gfmrag-qa"
     namespace = "default"
@@ -157,6 +166,8 @@ resource "kubernetes_service_v1" "qa" {
 }
 
 resource "kubernetes_horizontal_pod_autoscaler_v2" "qa" {
+  count = var.qa_enabled ? 1 : 0
+
   metadata {
     name      = "gfmrag-qa"
     namespace = "default"
@@ -168,7 +179,7 @@ resource "kubernetes_horizontal_pod_autoscaler_v2" "qa" {
     scale_target_ref {
       api_version = "apps/v1"
       kind        = "Deployment"
-      name        = kubernetes_deployment_v1.qa.metadata[0].name
+      name        = kubernetes_deployment_v1.qa[0].metadata[0].name
     }
 
     metric {

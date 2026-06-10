@@ -26,6 +26,15 @@ resource "kubernetes_deployment_v1" "vllm" {
     labels    = { app = "vllm" }
   }
 
+  # Replicas are managed outside Terraform after creation: the HPA scales 1..max
+  # under load, and scale-to-zero when idle is manual —
+  #   kubectl -n llm scale deploy/vllm --replicas=0   (sleep; GPU pool drains)
+  #   kubectl -n llm scale deploy/vllm --replicas=1   (wake; HPA resumes)
+  # (An HPA cannot have minReplicas=0, but it ignores a Deployment at 0.)
+  lifecycle {
+    ignore_changes = [spec[0].replicas]
+  }
+
   spec {
     replicas = var.min_replicas
 
@@ -124,7 +133,9 @@ resource "kubernetes_horizontal_pod_autoscaler_v2" "vllm" {
     namespace = kubernetes_namespace_v1.llm.metadata[0].name
   }
   spec {
-    min_replicas = var.min_replicas
+    # HPA floor is 1 by design (k8s forbids minReplicas=0); idle scale-to-zero
+    # happens by scaling the Deployment itself — see the note on the Deployment.
+    min_replicas = max(var.min_replicas, 1)
     max_replicas = var.max_replicas
 
     scale_target_ref {

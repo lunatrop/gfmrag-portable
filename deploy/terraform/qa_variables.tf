@@ -1,3 +1,9 @@
+variable "qa_enabled" {
+  type        = bool
+  description = "Deploy the QA prompting service (its own GPU pod). Deferred by default."
+  default     = false
+}
+
 variable "qa_image_name" {
   type    = string
   default = "gfmrag-qa"

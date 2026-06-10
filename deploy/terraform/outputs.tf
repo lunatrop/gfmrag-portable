@@ -35,7 +35,7 @@ output "qa_image_push_command" {
 
 output "qa_service_internal_ip" {
   description = "Internal LB IP of the prompting service. POST /retrieve or /answer."
-  value       = try(kubernetes_service_v1.qa.status[0].load_balancer[0].ingress[0].ip, "(pending)")
+  value       = try(kubernetes_service_v1.qa[0].status[0].load_balancer[0].ingress[0].ip, "(disabled — apply with -var qa_enabled=true)")
 }
 
 output "qa_curl_example" {
