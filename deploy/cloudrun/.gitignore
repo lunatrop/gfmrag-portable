@@ -1,0 +1,15 @@
+# Terraform working dir + state + secrets — never commit these.
+.terraform/
+.terraform.tfstate.lock.info
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Local variable files (may contain project ids / tokens). Keep the example.
+*.tfvars
+*.tfvars.json
+!terraform.tfvars.example
+
+# DO commit the provider lock file:
+!.terraform.lock.hcl

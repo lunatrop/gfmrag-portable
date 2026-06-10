@@ -83,7 +83,8 @@ def init_langchain_model(
     if llm == "openai":
         # https://python.langchain.com/v0.1/docs/integrations/chat/openai/
 
-        assert model_name.startswith("gpt-")
+        # No gpt-* restriction: OPENAI_BASE_URL may point at any
+        # OpenAI-compatible server (vLLM, Ollama) serving e.g. Qwen models.
         return ChatOpenAI(
             api_key=os.environ.get("OPENAI_API_KEY"),
             model=model_name,

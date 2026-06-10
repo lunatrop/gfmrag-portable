@@ -1,0 +1,8 @@
+# Local NER via Ollama + qwen2.5:3b — the local default. Select with
+#   ner_model=ollama_qwen
+# The default (llm_ner_model.yaml) still targets OpenAI gpt-4o-mini.
+# Requires a local Ollama server with `ollama pull qwen2.5:3b`.
+_target_: gfmrag.graph_index_construction.ner_model.LLMNERModel
+llm_api: ollama
+model_name: qwen2.5:3b
+max_tokens: 300

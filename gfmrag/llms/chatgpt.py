@@ -37,9 +37,9 @@ def get_token_limit(model: str = "gpt-4") -> int:
     ]:
         num_tokens_limit = 4096
     else:
-        raise NotImplementedError(
-            f"""get_token_limit() is not implemented for model {model}."""
-        )
+        # Non-OpenAI models served over the OpenAI protocol (vLLM, Ollama).
+        # Conservative default matching the vLLM deployment's max_model_len.
+        num_tokens_limit = 8192
     return num_tokens_limit
 
 
@@ -80,9 +80,10 @@ class ChatGPT(BaseLanguageModel):
         """Returns the number of tokens used by a list of messages."""
         try:
             encoding = tiktoken.encoding_for_model(self.model_name)
-            num_tokens = len(encoding.encode(text))
-        except KeyError as e:
-            raise KeyError(f"Warning: model {self.model_name} not found.") from e
+        except KeyError:
+            # Non-OpenAI models (vLLM/Ollama): approximate with cl100k_base.
+            encoding = tiktoken.get_encoding("cl100k_base")
+        num_tokens = len(encoding.encode(text))
         return num_tokens
 
     def generate_sentence(

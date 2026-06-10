@@ -17,6 +17,8 @@ Env:
 """
 
 import os
+import time
+import urllib.request
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -30,7 +32,42 @@ LLM_MODEL = os.environ.get("LLM_MODEL", "Qwen/Qwen2.5-7B-Instruct")
 EL_MODEL = os.environ.get("EL_MODEL", "colbert-ir/colbertv2.0")
 DEFAULT_TOP_K = int(os.environ.get("TOP_K", "5"))
 
+# On Cloud Run, vLLM sits behind IAM: every request must carry a Google ID
+# token for the vLLM service. Set VLLM_AUDIENCE to the service URL to enable;
+# unset (GKE / local, where the endpoint is unauthenticated) this is a no-op.
+VLLM_AUDIENCE = os.environ.get("VLLM_AUDIENCE", "")
+
 _state: dict = {"retriever": None, "llm": None}
+_token: dict = {"expires": 0.0}
+
+
+def _refresh_openai_token() -> None:
+    """Mint a fresh ID token for vLLM and push it into the cached clients.
+
+    ID tokens live 60 minutes; refresh after 45. The metadata server is only
+    reachable on GCP — hence gated on VLLM_AUDIENCE.
+    """
+    if not VLLM_AUDIENCE or time.time() < _token["expires"]:
+        return
+    req = urllib.request.Request(
+        "http://metadata.google.internal/computeMetadata/v1/instance/"
+        f"service-accounts/default/identity?audience={VLLM_AUDIENCE}",
+        headers={"Metadata-Flavor": "Google"},
+    )
+    tok = urllib.request.urlopen(req, timeout=10).read().decode()
+    _token["expires"] = time.time() + 45 * 60
+
+    # New clients pick the token up from the env; existing ones cached it at
+    # construction and are updated in place.
+    os.environ["OPENAI_API_KEY"] = tok
+    if _state["llm"] is not None:
+        _state["llm"].client.api_key = tok  # gfmrag.llms.ChatGPT
+    retriever = _state["retriever"]
+    if retriever is not None:
+        # LLMNERModel.client is a langchain ChatOpenAI wrapping an OpenAI client.
+        root_client = getattr(retriever.ner_model.client, "root_client", None)
+        if root_client is not None:
+            root_client.api_key = tok
 
 
 @asynccontextmanager
@@ -40,6 +77,7 @@ async def lifespan(app: FastAPI):
     from gfmrag.graph_index_construction.entity_linking_model import ColbertELModel
     from gfmrag.graph_index_construction.ner_model import LLMNERModel
 
+    _refresh_openai_token()  # before any client caches OPENAI_API_KEY
     ner_model = LLMNERModel(llm_api=LLM_API, model_name=LLM_MODEL)
     el_model = ColbertELModel(model_name_or_path=EL_MODEL, root="/tmp/colbert")
 
@@ -75,6 +113,7 @@ def retrieve(q: Query) -> dict:
     retriever = _state["retriever"]
     if retriever is None:
         return {"error": "model still loading"}
+    _refresh_openai_token()
     return retriever.retrieve(
         q.query, top_k=q.top_k or DEFAULT_TOP_K, target_types=q.target_types
     )
@@ -91,6 +130,7 @@ def answer(q: Query) -> dict:
     if retriever is None:
         return {"error": "model still loading"}
 
+    _refresh_openai_token()
     docs = retriever.retrieve(
         q.query, top_k=q.top_k or DEFAULT_TOP_K, target_types=q.target_types
     )

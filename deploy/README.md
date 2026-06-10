@@ -152,11 +152,27 @@ pool `max_node_count` or add a dedicated pool so they land on different nodes.
 ## Run locally (Ollama)
 ```bash
 ollama serve &
-ollama pull qwen3:1.7b
+ollama pull qwen2.5:3b
 python -m gfmrag.workflow.stage1_index_dataset \
-  openie_model.llm_api=ollama openie_model.model_name=qwen3:1.7b \
-  ner_model.llm_api=ollama   ner_model.model_name=qwen3:1.7b
+  openie_model.llm_api=ollama openie_model.model_name=qwen2.5:3b \
+  ner_model.llm_api=ollama   ner_model.model_name=qwen2.5:3b
 ```
+
+### Why local and cloud use different Qwen sizes
+Local (`qwen2.5:3b`) and GCP (`Qwen/Qwen2.5-7B-Instruct`) are **deliberately the
+same family at two sizes**, each matched to its hardware:
+
+- **3B locally** — the largest Qwen that iterates acceptably on a small dev GPU
+  (the 7B takes ~5min/passage there). Validated on register-style corpus text
+  (`corpus-tuples/smoke-test-2026-06-10.md`); gemma2:2b emits 0 triples on the
+  same text, which is why the local default moved to qwen.
+- **7B on the L4** — the accuracy leader in the in-repo benchmarks; vLLM's
+  batching erases its latency penalty. This is what production tuples come from.
+
+Same family ⇒ prompt behavior and output format validated on the 3B transfer to
+the 7B. Caveat: Ollama serves a 4-bit quant while vLLM serves full precision, so
+local validates *format/behavior*, not exact output. Before a production run,
+re-test the smoke-test passage against the deployed 7B endpoint.
 
 ## Why this model / shape
 - **Qwen2.5-7B-Instruct** (non-thinking) is the throughput/accuracy sweet spot for

@@ -11,7 +11,7 @@
 #
 # Environment overrides:
 #   OLLAMA_HOST    host:port of the server   (default 127.0.0.1:11434)
-#   OLLAMA_MODEL   model to use              (default gemma2:2b)
+#   OLLAMA_MODEL   model to use              (default qwen2.5:3b)
 #   PYTHON         python interpreter        (default <repo>/.venv/bin/python)
 
 set -euo pipefail
@@ -24,7 +24,7 @@ cd "$REPO_ROOT"
 # --- config -------------------------------------------------------------------
 export PATH="$HOME/.local/bin:$PATH"
 export OLLAMA_HOST="${OLLAMA_HOST:-127.0.0.1:11434}"
-MODEL="${OLLAMA_MODEL:-gemma2:2b}"
+MODEL="${OLLAMA_MODEL:-qwen2.5:3b}"
 PY="${PYTHON:-$REPO_ROOT/.venv/bin/python}"
 BASE_URL="http://${OLLAMA_HOST}"
 PASSAGE="${1:-Clarence Fred Gehrke (1918-2002) was an American football player. He designed the Los Angeles Rams logo in 1948.}"

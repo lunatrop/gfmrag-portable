@@ -51,7 +51,7 @@ def test_llm_openie_model_ollama() -> None:
     host = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434")
     if not host.startswith("http"):
         host = f"http://{host}"
-    model = os.environ.get("OLLAMA_OPENIE_MODEL", "gemma2:2b")
+    model = os.environ.get("OLLAMA_OPENIE_MODEL", "qwen2.5:3b")
 
     if not _ollama_available(host, model):
         pytest.skip(f"Ollama model '{model}' not available at {host}")

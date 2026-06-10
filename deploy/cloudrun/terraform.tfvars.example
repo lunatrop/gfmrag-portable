@@ -1,0 +1,24 @@
+# Copy to terraform.tfvars and edit. terraform.tfvars is gitignored.
+
+project_id = "my-project"
+region     = "us-central1" # must offer L4 GPUs on Cloud Run
+
+# GCS bucket names are GLOBALLY unique; prefix with the project for safety.
+bucket_name = "my-project-gfmrag-data"
+
+# --- Model ---
+model_id      = "Qwen/Qwen2.5-7B-Instruct"
+max_model_len = 8192
+# hf_token: only for gated HF models. Prefer: export TF_VAR_hf_token=hf_xxx
+
+# --- vLLM serving (scale-to-zero; cold start ~minutes) ---
+vllm_max_instances = 6
+vllm_concurrency   = 32
+
+# --- Extractor job ---
+extractor_parallelism = 4
+
+# --- QA prompting service (flip to true once the KG index is in GCS) ---
+qa_enabled     = false
+qa_data_name   = "mycorpus"
+gfm_model_path = "rmanluo/GFM-RAG-8M"
