@@ -1,0 +1,449 @@
+{
+ "label": "34M",
+ "n": 49,
+ "retrieval_hit_at_k": 0.98,
+ "answer_accuracy": 0.98,
+ "results": [
+  {
+   "q": "What industry sectors does GME PTY LTD. operate in?",
+   "gold_answer": "Durable consumer goods",
+   "gold_doc": "Modern slavery statement 2023-838: GME PTY LTD.",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "GME PTY LTD. operates in the industry sectors: Durable consumer goods, including electronics and appliances, home furnishings and other accessories.",
+   "secs": 261.9
+  },
+  {
+   "q": "What is the annual revenue band of GME PTY LTD.?",
+   "gold_answer": "100-150M",
+   "gold_doc": "Modern slavery statement 2023-838: GME PTY LTD.",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of GME PTY LTD. is 100-150M.",
+   "secs": 1.7
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of GME PTY LTD. cover?",
+   "gold_answer": "2021-07-01",
+   "gold_doc": "Modern slavery statement 2023-838: GME PTY LTD.",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of GME PTY LTD. covers the reporting period 2021-07-01 to 2022-06-30.",
+   "secs": 2.2
+  },
+  {
+   "q": "What industry sectors does B.M.D. HOLDINGS PTY. LIMITED operate in?",
+   "gold_answer": "Construction",
+   "gold_doc": "Modern slavery statement 2024-131: B.M.D. HOLDINGS PTY. LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "B.M.D. HOLDINGS PTY. LIMITED operates in the industry sectors: Construction, civil engineering and building products.",
+   "secs": 1.9
+  },
+  {
+   "q": "What is the annual revenue band of B.M.D. HOLDINGS PTY. LIMITED?",
+   "gold_answer": "1BN+",
+   "gold_doc": "Modern slavery statement 2024-131: B.M.D. HOLDINGS PTY. LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of B.M.D. HOLDINGS PTY. LIMITED is 1BN+.",
+   "secs": 1.8
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of B.M.D. HOLDINGS PTY. LIMITED cover?",
+   "gold_answer": "2022-07-01",
+   "gold_doc": "Modern slavery statement 2024-131: B.M.D. HOLDINGS PTY. LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of B.M.D. HOLDINGS PTY. LIMITED covers the reporting period 2022-07-01 to 2023-06-30.",
+   "secs": 2.3
+  },
+  {
+   "q": "What industry sectors does NICK SCALI LIMITED operate in?",
+   "gold_answer": "Retail Trade",
+   "gold_doc": "Modern slavery statement 2025-3467: NICK SCALI LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "NICK SCALI LIMITED operates in the industry sectors: Retail Trade.",
+   "secs": 1.6
+  },
+  {
+   "q": "What is the annual revenue band of NICK SCALI LIMITED?",
+   "gold_answer": "450-500M",
+   "gold_doc": "Modern slavery statement 2025-3467: NICK SCALI LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of NICK SCALI LIMITED is 450-500M.",
+   "secs": 1.5
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of NICK SCALI LIMITED cover?",
+   "gold_answer": "2024-07-01",
+   "gold_doc": "Modern slavery statement 2025-3467: NICK SCALI LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of NICK SCALI LIMITED covers the reporting period 2024-07-01 to 2025-06-30.",
+   "secs": 2.0
+  },
+  {
+   "q": "What industry sectors does A2 AUSTRALIAN INVESTMENTS PTY. LIMITED. operate in?",
+   "gold_answer": "Food and beverages",
+   "gold_doc": "Modern slavery statement 2022-2432: A2 AUSTRALIAN INVESTMENTS PTY. LIMITED. & A2 INFANT NUTRITION AUSTRALIA PTY LTD & A2 INFANT NUTRITION LIMITED et al.",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "A2 AUSTRALIAN INVESTMENTS PTY. LIMITED operates in the industry sectors: Food and beverages, agriculture and fishing.",
+   "secs": 2.1
+  },
+  {
+   "q": "What is the annual revenue band of A2 AUSTRALIAN INVESTMENTS PTY. LIMITED.?",
+   "gold_answer": "1BN+",
+   "gold_doc": "Modern slavery statement 2022-2432: A2 AUSTRALIAN INVESTMENTS PTY. LIMITED. & A2 INFANT NUTRITION AUSTRALIA PTY LTD & A2 INFANT NUTRITION LIMITED et al.",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of A2 AUSTRALIAN INVESTMENTS PTY. LIMITED. is 1BN+.",
+   "secs": 2.0
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of A2 AUSTRALIAN INVESTMENTS PTY. LIMITED. cover?",
+   "gold_answer": "2021-07-01",
+   "gold_doc": "Modern slavery statement 2022-2432: A2 AUSTRALIAN INVESTMENTS PTY. LIMITED. & A2 INFANT NUTRITION AUSTRALIA PTY LTD & A2 INFANT NUTRITION LIMITED et al.",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of A2 AUSTRALIAN INVESTMENTS PTY. LIMITED. covers the reporting period 2021-07-01 to 2022-06-30.",
+   "secs": 2.7
+  },
+  {
+   "q": "Which entities filed a joint modern slavery statement with The a2 Milk Company Limited?",
+   "gold_answer": "A2 AUSTRALIAN INVESTMENTS PTY. LIMITED.",
+   "gold_doc": "Modern slavery statement 2022-2432: A2 AUSTRALIAN INVESTMENTS PTY. LIMITED. & A2 INFANT NUTRITION AUSTRALIA PTY LTD & A2 INFANT NUTRITION LIMITED et al.",
+   "hit": false,
+   "answer_ok": false,
+   "answer": "Based on the provided context, MITSUBISHI DEVELOPMENT PTY LTD and QCT RESOURCES PTY LIMITED filed a joint modern slavery statement with The Australian Modern Slavery Register. The statement was for the reporting period 2024-04-01 to 2025-03-31.",
+   "secs": 2.8
+  },
+  {
+   "q": "What industry sectors does DENTAL HEALTH SERVICES VICTORIA operate in?",
+   "gold_answer": "Healthcare and pharmaceuticals",
+   "gold_doc": "Modern slavery statement 2022-2012: DENTAL HEALTH SERVICES VICTORIA",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "DENTAL HEALTH SERVICES VICTORIA operates in the industry sector of Healthcare and pharmaceuticals.",
+   "secs": 1.7
+  },
+  {
+   "q": "What is the annual revenue band of DENTAL HEALTH SERVICES VICTORIA?",
+   "gold_answer": "150-200M",
+   "gold_doc": "Modern slavery statement 2022-2012: DENTAL HEALTH SERVICES VICTORIA",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of DENTAL HEALTH SERVICES VICTORIA is 150-200M.",
+   "secs": 1.9
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of DENTAL HEALTH SERVICES VICTORIA cover?",
+   "gold_answer": "2021-07-01",
+   "gold_doc": "Modern slavery statement 2022-2012: DENTAL HEALTH SERVICES VICTORIA",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of DENTAL HEALTH SERVICES VICTORIA covers the reporting period 2021-07-01 to 2022-06-30.",
+   "secs": 2.0
+  },
+  {
+   "q": "What industry sectors does HUSQVARNA AUSTRALIA PTY LIMITED operate in?",
+   "gold_answer": "Other",
+   "gold_doc": "Modern slavery statement 2021-2694: HUSQVARNA AUSTRALIA PTY LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "HUSQVARNA AUSTRALIA PTY LIMITED operates in the industry sector: Other.",
+   "secs": 1.8
+  },
+  {
+   "q": "What is the annual revenue band of HUSQVARNA AUSTRALIA PTY LIMITED?",
+   "gold_answer": "200-250M",
+   "gold_doc": "Modern slavery statement 2021-2694: HUSQVARNA AUSTRALIA PTY LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of HUSQVARNA AUSTRALIA PTY LIMITED is 200-250M.",
+   "secs": 2.0
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of HUSQVARNA AUSTRALIA PTY LIMITED cover?",
+   "gold_answer": "2021-01-01",
+   "gold_doc": "Modern slavery statement 2021-2694: HUSQVARNA AUSTRALIA PTY LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of HUSQVARNA AUSTRALIA PTY LIMITED covers the reporting period 2021-01-01 to 2021-12-31.",
+   "secs": 2.5
+  },
+  {
+   "q": "What industry sectors does PENGUIN RANDOM HOUSE AUSTRALIA PTY LTD operate in?",
+   "gold_answer": "Media",
+   "gold_doc": "Modern slavery statement 2025-854: PENGUIN RANDOM HOUSE AUSTRALIA PTY LTD",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "PENGUIN RANDOM HOUSE AUSTRALIA PTY LTD operates in the industry sectors: Media, publishing, arts and entertainment.",
+   "secs": 2.1
+  },
+  {
+   "q": "What is the annual revenue band of PENGUIN RANDOM HOUSE AUSTRALIA PTY LTD?",
+   "gold_answer": "250-300M",
+   "gold_doc": "Modern slavery statement 2025-854: PENGUIN RANDOM HOUSE AUSTRALIA PTY LTD",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of PENGUIN RANDOM HOUSE AUSTRALIA PTY LTD is 250-300M.",
+   "secs": 2.4
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of PENGUIN RANDOM HOUSE AUSTRALIA PTY LTD cover?",
+   "gold_answer": "2024-01-01",
+   "gold_doc": "Modern slavery statement 2025-854: PENGUIN RANDOM HOUSE AUSTRALIA PTY LTD",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of PENGUIN RANDOM HOUSE AUSTRALIA PTY LTD covers the reporting period 2024-01-01 to 2024-12-31.",
+   "secs": 2.5
+  },
+  {
+   "q": "What industry sectors does ROYAL VICTORIAN EYE & EAR HOSPITAL operate in?",
+   "gold_answer": "Health Care and Social Assistance",
+   "gold_doc": "Modern slavery statement 2025-3226: ROYAL VICTORIAN EYE & EAR HOSPITAL",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "ROYAL VICTORIAN EYE & EAR HOSPITAL operates in the industry sector: Health Care and Social Assistance.",
+   "secs": 1.9
+  },
+  {
+   "q": "What is the annual revenue band of ROYAL VICTORIAN EYE & EAR HOSPITAL?",
+   "gold_answer": "250-300M",
+   "gold_doc": "Modern slavery statement 2025-3226: ROYAL VICTORIAN EYE & EAR HOSPITAL",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of ROYAL VICTORIAN EYE & EAR HOSPITAL is 250-300M.",
+   "secs": 2.2
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of ROYAL VICTORIAN EYE & EAR HOSPITAL cover?",
+   "gold_answer": "2024-07-01",
+   "gold_doc": "Modern slavery statement 2025-3226: ROYAL VICTORIAN EYE & EAR HOSPITAL",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of ROYAL VICTORIAN EYE & EAR HOSPITAL covers the reporting period 2024-07-01 to 2025-06-30.",
+   "secs": 2.2
+  },
+  {
+   "q": "What industry sectors does REGIONAL EXPRESS HOLDINGS LIMITED operate in?",
+   "gold_answer": "Transport",
+   "gold_doc": "Modern slavery statement 2025-3878: REGIONAL EXPRESS HOLDINGS LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "REGIONAL EXPRESS HOLDINGS LIMITED operates in the industry sectors: Transport, Postal and Warehousing.",
+   "secs": 1.5
+  },
+  {
+   "q": "What is the annual revenue band of REGIONAL EXPRESS HOLDINGS LIMITED?",
+   "gold_answer": "350-400M",
+   "gold_doc": "Modern slavery statement 2025-3878: REGIONAL EXPRESS HOLDINGS LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of REGIONAL EXPRESS HOLDINGS LIMITED is 350-400M.",
+   "secs": 1.7
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of REGIONAL EXPRESS HOLDINGS LIMITED cover?",
+   "gold_answer": "2024-07-01",
+   "gold_doc": "Modern slavery statement 2025-3878: REGIONAL EXPRESS HOLDINGS LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of REGIONAL EXPRESS HOLDINGS LIMITED covers the reporting period 2024-07-01 to 2025-06-30.",
+   "secs": 2.0
+  },
+  {
+   "q": "What industry sectors does Scott Park Group Pty Ltd operate in?",
+   "gold_answer": "Construction",
+   "gold_doc": "Modern slavery statement 2023-441: Scott Park Group Pty Ltd",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "Scott Park Group Pty Ltd operates in the industry sectors: Construction, civil engineering, and building products.",
+   "secs": 1.6
+  },
+  {
+   "q": "What is the annual revenue band of Scott Park Group Pty Ltd?",
+   "gold_answer": "300-350M",
+   "gold_doc": "Modern slavery statement 2023-441: Scott Park Group Pty Ltd",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of Scott Park Group Pty Ltd is 300-350M.",
+   "secs": 1.5
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of Scott Park Group Pty Ltd cover?",
+   "gold_answer": "2022-01-01",
+   "gold_doc": "Modern slavery statement 2023-441: Scott Park Group Pty Ltd",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of Scott Park Group Pty Ltd covers the reporting period 2022-01-01 to 2022-12-31.",
+   "secs": 2.0
+  },
+  {
+   "q": "What industry sectors does KYNDRYL AUSTRALIA PTY LTD operate in?",
+   "gold_answer": "Information technology and telecommunication",
+   "gold_doc": "Modern slavery statement 2024-2040: KYNDRYL AUSTRALIA PTY LTD",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "KYNDRYL AUSTRALIA PTY LTD operates in the industry sectors: Information technology and telecommunication.",
+   "secs": 1.9
+  },
+  {
+   "q": "What is the annual revenue band of KYNDRYL AUSTRALIA PTY LTD?",
+   "gold_answer": "450-500M",
+   "gold_doc": "Modern slavery statement 2024-2040: KYNDRYL AUSTRALIA PTY LTD",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of KYNDRYL AUSTRALIA PTY LTD is 450-500M.",
+   "secs": 2.1
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of KYNDRYL AUSTRALIA PTY LTD cover?",
+   "gold_answer": "2023-04-01",
+   "gold_doc": "Modern slavery statement 2024-2040: KYNDRYL AUSTRALIA PTY LTD",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of KYNDRYL AUSTRALIA PTY LTD covers the reporting period 2023-04-01 to 2024-03-31.",
+   "secs": 2.4
+  },
+  {
+   "q": "What industry sectors does RICHLAND EXPRESS PTY LIMITED operate in?",
+   "gold_answer": "Other",
+   "gold_doc": "Modern slavery statement 2025-127: RICHLAND EXPRESS PTY LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "RICHLAND EXPRESS PTY LIMITED operates in the industry sector: Other.",
+   "secs": 1.6
+  },
+  {
+   "q": "What is the annual revenue band of RICHLAND EXPRESS PTY LIMITED?",
+   "gold_answer": "100-150M",
+   "gold_doc": "Modern slavery statement 2025-127: RICHLAND EXPRESS PTY LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of RICHLAND EXPRESS PTY LIMITED is 100-150M.",
+   "secs": 1.7
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of RICHLAND EXPRESS PTY LIMITED cover?",
+   "gold_answer": "2023-07-01",
+   "gold_doc": "Modern slavery statement 2025-127: RICHLAND EXPRESS PTY LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of RICHLAND EXPRESS PTY LIMITED covers the reporting period 2023-07-01 to 2024-06-30.",
+   "secs": 2.0
+  },
+  {
+   "q": "What industry sectors does ADELAIDE AIRPORT LIMITED operate in?",
+   "gold_answer": "Transportation",
+   "gold_doc": "Modern slavery statement 2021-3693: ADELAIDE AIRPORT LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "ADELAIDE AIRPORT LIMITED operates in the industry sectors: Transportation, logistics, and storage.",
+   "secs": 1.6
+  },
+  {
+   "q": "What is the annual revenue band of ADELAIDE AIRPORT LIMITED?",
+   "gold_answer": "150-200M",
+   "gold_doc": "Modern slavery statement 2021-3693: ADELAIDE AIRPORT LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of ADELAIDE AIRPORT LIMITED is 150-200M.",
+   "secs": 1.7
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of ADELAIDE AIRPORT LIMITED cover?",
+   "gold_answer": "2020-07-01",
+   "gold_doc": "Modern slavery statement 2021-3693: ADELAIDE AIRPORT LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of ADELAIDE AIRPORT LIMITED covers the reporting period 2020-07-01 to 2021-06-30.",
+   "secs": 2.2
+  },
+  {
+   "q": "What industry sectors does MITSUBISHI DEVELOPMENT PTY LTD, QCT RESOURCES PTY LIMITED operate in?",
+   "gold_answer": "Mining",
+   "gold_doc": "Modern slavery statement 2025-2142: MITSUBISHI DEVELOPMENT PTY LTD, QCT RESOURCES PTY LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "MITSUBISHI DEVELOPMENT PTY LTD, QCT RESOURCES PTY LIMITED operates in the industry sector of Mining.",
+   "secs": 2.4
+  },
+  {
+   "q": "What is the annual revenue band of MITSUBISHI DEVELOPMENT PTY LTD, QCT RESOURCES PTY LIMITED?",
+   "gold_answer": "1BN+",
+   "gold_doc": "Modern slavery statement 2025-2142: MITSUBISHI DEVELOPMENT PTY LTD, QCT RESOURCES PTY LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of MITSUBISHI DEVELOPMENT PTY LTD, QCT RESOURCES PTY LIMITED is 1BN+.",
+   "secs": 2.3
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of MITSUBISHI DEVELOPMENT PTY LTD, QCT RESOURCES PTY LIMITED cover?",
+   "gold_answer": "2024-04-01",
+   "gold_doc": "Modern slavery statement 2025-2142: MITSUBISHI DEVELOPMENT PTY LTD, QCT RESOURCES PTY LIMITED",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of MITSUBISHI DEVELOPMENT PTY LTD, QCT RESOURCES PTY LIMITED covers the reporting period 2024-04-01 to 2025-03-31.",
+   "secs": 2.9
+  },
+  {
+   "q": "What industry sectors does Adcome Pty Ltd operate in?",
+   "gold_answer": "Food and beverages",
+   "gold_doc": "Modern slavery statement 2023-1760: Adcome Pty Ltd",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "Adcome Pty Ltd operates in the industry sectors: Food and beverages, agriculture and fishing.",
+   "secs": 1.5
+  },
+  {
+   "q": "What is the annual revenue band of Adcome Pty Ltd?",
+   "gold_answer": "450-500M",
+   "gold_doc": "Modern slavery statement 2023-1760: Adcome Pty Ltd",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of Adcome Pty Ltd is 450-500M.",
+   "secs": 1.4
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of Adcome Pty Ltd cover?",
+   "gold_answer": "2022-05-01",
+   "gold_doc": "Modern slavery statement 2023-1760: Adcome Pty Ltd",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of Adcome Pty Ltd covers the reporting period 2022-05-01 to 2023-04-30.",
+   "secs": 1.9
+  },
+  {
+   "q": "What industry sectors does SOCIETE GENERALE operate in?",
+   "gold_answer": "Financial",
+   "gold_doc": "Modern slavery statement 2022-754: SOCIETE GENERALE",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "SOCIETE GENERALE operates in the industry sectors: Financial, insurance and real estate activities.",
+   "secs": 1.7
+  },
+  {
+   "q": "What is the annual revenue band of SOCIETE GENERALE?",
+   "gold_answer": "1BN+",
+   "gold_doc": "Modern slavery statement 2022-754: SOCIETE GENERALE",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The annual revenue band of SOCIETE GENERALE is 1BN+.",
+   "secs": 1.5
+  },
+  {
+   "q": "Which reporting period does the modern slavery statement of SOCIETE GENERALE cover?",
+   "gold_answer": "2021-01-01",
+   "gold_doc": "Modern slavery statement 2022-754: SOCIETE GENERALE",
+   "hit": true,
+   "answer_ok": true,
+   "answer": "The modern slavery statement of SOCIETE GENERALE covers the reporting period 2021-01-01 to 2021-12-31.",
+   "secs": 2.0
+  }
+ ]
+}
