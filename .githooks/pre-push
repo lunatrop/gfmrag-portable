@@ -1,15 +1,22 @@
 #!/bin/sh
 # upstream-gfm-rag is for incorporating upstream code only — block pushes to it.
 # Deliberate upstream merge: ALLOW_MAIN=1 git push ...
-while read -r _local_ref _local_sha remote_ref _remote_sha; do
-    case "$remote_ref" in
-    refs/heads/upstream-gfm-rag | refs/heads/main)
-        if [ -z "$ALLOW_MAIN" ]; then
-            echo "blocked: pushing to $remote_ref is disabled (upstream incorporation only)." >&2
-            echo "Override deliberately with: ALLOW_MAIN=1 git push ..." >&2
-            exit 1
-        fi
-        ;;
-    esac
-done
+#
+# Also chains git-lfs's pre-push (this repo LFS-tracks data/*), which needs the
+# same stdin ref list — so capture it once and feed both.
+refs=$(cat)
+
+if [ -z "$ALLOW_MAIN" ]; then
+    blocked=$(printf '%s\n' "$refs" |
+        awk '$3 == "refs/heads/upstream-gfm-rag" || $3 == "refs/heads/main" { print $3; exit }')
+    if [ -n "$blocked" ]; then
+        echo "blocked: pushing to $blocked is disabled (upstream incorporation only)." >&2
+        echo "Override deliberately with: ALLOW_MAIN=1 git push ..." >&2
+        exit 1
+    fi
+fi
+
+if command -v git-lfs >/dev/null 2>&1; then
+    printf '%s\n' "$refs" | git lfs pre-push "$@" || exit $?
+fi
 exit 0
