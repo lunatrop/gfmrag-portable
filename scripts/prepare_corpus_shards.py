@@ -9,14 +9,16 @@ then round-robins the passages into N shards laid out the way gfmrag expects
 
 Stdlib only. Usage:
 
-    python scripts/prepare_corpus_shards.py                  # full corpus, 4 shards
-    python scripts/prepare_corpus_shards.py --limit 40       # smoke run
-    python scripts/prepare_corpus_shards.py --shards 8 --out tmp/corpus-shards
+    python scripts/prepare_corpus_shards.py                        # equal, 4 shards
+    python scripts/prepare_corpus_shards.py --limit 40             # smoke run
+    python scripts/prepare_corpus_shards.py --mode exponential     # 16,64,256,...,rest
+    python scripts/prepare_corpus_shards.py --ladder 16,64,rest    # explicit rungs
 """
 
 import argparse
 import csv
 import json
+import random
 import re
 from pathlib import Path
 
@@ -41,7 +43,10 @@ def parse_entities(reporting_entities: str) -> list[str]:
         part = part.strip().rstrip(",")
         if not part:
             continue
-        if not part.endswith(")"):
+        # The split consumed this part's closing paren — restore it only if an
+        # opening paren is actually dangling (entities with no ABN parenthetical,
+        # e.g. "GME PTY LTD.", must not gain a stray ")").
+        if part.count("(") > part.count(")"):
             part += ")"
         # Label the number as an ABN so the extractor links it correctly.
         entities.append(re.sub(r"\((\d[\d ]*\d)\)$", r"(ABN \1)", part))
@@ -110,9 +115,29 @@ def main() -> None:
     parser.add_argument("--out", default=Path("tmp/corpus-shards"), type=Path)
     parser.add_argument("--shards", default=4, type=int)
     parser.add_argument("--limit", default=None, type=int, help="cap rows (smoke runs)")
+    parser.add_argument(
+        "--mode",
+        choices=["equal", "exponential"],
+        default="equal",
+        help="equal: round-robin into --shards balanced shards (full-parallel "
+        "extraction). exponential: shuffle (--seed), then cut --shards disjoint "
+        "rungs growing 16, 64, 256, ... with the last taking the rest (cost "
+        "measurement).",
+    )
+    parser.add_argument(
+        "--ladder",
+        default=None,
+        help="explicit comma-separated rung sizes, last may be 'rest' "
+        "(e.g. 16,64,256,rest); implies --mode exponential and overrides --shards.",
+    )
+    parser.add_argument(
+        "--seed", default=42, type=int, help="shuffle seed for exponential mode"
+    )
     args = parser.parse_args()
+    if args.ladder is not None:
+        args.mode = "exponential"
 
-    shards: list[dict[str, str]] = [{} for _ in range(args.shards)]
+    docs: list[tuple[str, str]] = []
     rows = skipped = 0
 
     with open(args.input, newline="", encoding="utf-8-sig") as fin:
@@ -125,9 +150,42 @@ def main() -> None:
                 skipped += 1
                 continue
             title, passage = result
-            shard = shards[(rows - skipped - 1) % args.shards]
+            docs.append((title, passage))
+
+    if args.mode == "exponential":
+        # Shuffle so small rungs are representative (the CSV is ordered by year),
+        # then cut disjoint slices of the given sizes.
+        random.Random(args.seed).shuffle(docs)
+        if args.ladder is not None:
+            sizes = []
+            parts = args.ladder.split(",")
+            for j, part in enumerate(parts):
+                if part.strip() == "rest":
+                    if j != len(parts) - 1:
+                        parser.error("'rest' must be the last ladder entry")
+                    sizes.append(len(docs) - sum(sizes))
+                else:
+                    sizes.append(int(part))
+        else:
+            # 16, 64, 256, ... with the last rung taking the rest.
+            sizes = [16 * 4**j for j in range(args.shards - 1)]
+            sizes.append(len(docs) - sum(sizes))
+        if sum(sizes) > len(docs) or sizes[-1] < 0:
+            parser.error(
+                f"rungs sum to {sum(sizes[:-1] if sizes[-1] < 0 else sizes)} "
+                f"but only {len(docs)} documents; lower --shards or the --ladder sizes"
+            )
+        shards = []
+        pos = 0
+        for size in sizes:
+            shards.append(dict(docs[pos : pos + size]))
+            pos += size
+    else:
+        shards = [{} for _ in range(args.shards)]
+        for k, (title, passage) in enumerate(docs):
+            shard = shards[k % args.shards]
             if title in shard:  # defensive: register IDX should be unique
-                title = f"{title} ({rows})"
+                title = f"{title} ({k})"
             shard[title] = passage
 
     for i, docs in enumerate(shards):
