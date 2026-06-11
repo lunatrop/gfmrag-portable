@@ -10,6 +10,7 @@ and sec/doc recorded for extrapolation.
 | 0c | 16 | vLLM 3B (GCP) | ~21 min | 79 | 90% (ABN 56%) | 0 | ~A$1.5 |
 | 1 | 64 | vLLM 3B (GCP) | 21.0 min | 19.7 | 81% (ABN ~45%) | 0 | ~A$1.6 |
 | 2 | 256 | vLLM 3B (GCP) | 21.8 min | 5.1 | 80% (ABN 41%) | 11 | ~A$1.7 |
+| 2-7b | 256 | vLLM 7B (GCP) | 41.3 min* | 9.7 | 76% (ABN 34%) | 4 | ~A$3.1 |
 | 3 | 1,024 | vLLM (GCP) | | | | | |
 | 4 | 4,096 | vLLM (GCP) | | | | | |
 | 5 | 11,634 | vLLM (GCP) | | | | | |
@@ -35,6 +36,18 @@ and sec/doc recorded for extrapolation.
 - vLLM cold start post-HF-cache: *3m03s* measured (was ~4.5 min downloading).
 - Arity rate not yet instrumented cloud-side (guided decoding claim untested);
   fact-gate recall is the operative quality metric for cloud rungs.
+
+## 3B-vs-7B A/B verdict (rung 2, identical 256 docs, 2026-06-11)
+
+*3B wins outright* — better on recall AND cheaper, so the decision rule
+("cheapest model whose verified-fact rate matches the best") isn't even
+close: entities 98%→90%, ABN 41%→34%, overall 80%→76%, at ~2× the time and
+cost (*7B wall includes one vLLM cold start — warm-up was skipped by an IAM
+propagation race; even subtracting ~5 min the 2× gap stands). The 7B's one
+win is precision (4 vs 11 suspect entities). The local single-passage
+benchmark that favoured 7B did NOT transfer to corpus-scale fact recall.
+=model_id= stays *Qwen2.5-3B-Instruct*; ABN recall in joint statements needs
+a prompt/chunking fix, not a bigger model.
 
 ## Rung 0 notes (2026-06-10)
 

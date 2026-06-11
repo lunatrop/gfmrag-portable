@@ -97,6 +97,14 @@ resource "google_storage_bucket_iam_member" "runtime_hf_cache" {
   member = "serviceAccount:${google_service_account.runtime.email}"
 }
 
+# Automation fallback: the gfmrag-terraform SA runs jobs when user CLI creds
+# hit the org's reauth wall (SA keys have no session expiry).
+resource "google_project_iam_member" "terraform_sa_run" {
+  project = var.project_id
+  role    = "roles/run.developer"
+  member  = "serviceAccount:gfmrag-terraform@${var.project_id}.iam.gserviceaccount.com"
+}
+
 # Cloud Build pre-populates the cache (deploy/cloudbuild/prepopulate-hf-cache.yaml)
 # — writing weights through GCS FUSE from an instance is ~1MB/s; this is minutes.
 resource "google_storage_bucket_iam_member" "cloudbuild_hf_cache" {
