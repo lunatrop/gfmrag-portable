@@ -69,6 +69,7 @@ class LLMOPENIEModel(BaseOPENIEModel):
         n_ctx: int | None = None,
         low_vram: bool = False,
         prompts_file: str | None = None,
+        request_timeout: int = 300,
     ):
         """Initialize LLM-based OpenIE model.
 
@@ -101,12 +102,17 @@ class LLMOPENIEModel(BaseOPENIEModel):
             load_prompt_profile(prompts_file) if prompts_file else default_profile()
         )
 
+        # Profile-rich prompts (attribute repetition, ABN-first triples) push
+        # entity-dense docs past the 60s langchain default — a timeout loses
+        # the WHOLE document's triples (measured: 37/256 docs in the first
+        # prompt-A/B run, cratering entity recall 98%->80%).
         self.client = init_langchain_model(
             llm=llm_api,
             model_name=model_name,
             temperature=0.0,
             n_ctx=n_ctx,
             low_vram=low_vram,
+            timeout=request_timeout,
         )
 
     def apply_prompt_profile(self, path: str) -> None:
