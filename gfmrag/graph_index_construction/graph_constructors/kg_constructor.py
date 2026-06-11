@@ -269,6 +269,14 @@ class KGConstructor(BaseGraphConstructor):
         Returns:
             str: Path to the openie results
         """
+        # Corpus-specific extraction prompts travel with the dataset: a
+        # raw/prompts.yaml beside documents.json overrides packaged defaults.
+        profile_path = os.path.join(raw_path, "prompts.yaml")
+        if os.path.exists(profile_path) and hasattr(
+            self.open_ie_model, "apply_prompt_profile"
+        ):
+            self.open_ie_model.apply_prompt_profile(profile_path)
+
         # Read data corpus
         with open(os.path.join(raw_path, GraphIndexDataset.RAW_DOCUMENT_NAME)) as f:
             corpus = json.load(f)

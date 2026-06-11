@@ -9,9 +9,9 @@ from langchain_community.chat_models import ChatLlamaCpp, ChatOllama
 from langchain_openai import ChatOpenAI
 
 from gfmrag.graph_index_construction.langchain_util import init_langchain_model
-from gfmrag.graph_index_construction.openie_extraction_instructions import (
-    ner_prompts,
-    openie_post_ner_prompts,
+from gfmrag.graph_index_construction.prompt_profiles import (
+    default_profile,
+    load_prompt_profile,
 )
 from gfmrag.graph_index_construction.utils import extract_json_dict
 
@@ -68,6 +68,7 @@ class LLMOPENIEModel(BaseOPENIEModel):
         max_triples_tokens: int = 4096,
         n_ctx: int | None = None,
         low_vram: bool = False,
+        prompts_file: str | None = None,
     ):
         """Initialize LLM-based OpenIE model.
 
@@ -94,6 +95,12 @@ class LLMOPENIEModel(BaseOPENIEModel):
         self.n_ctx = n_ctx
         self.low_vram = low_vram
 
+        # Corpus-specific prompts (see prompt_profiles.py). A dataset-level
+        # raw/prompts.yaml, applied by KGConstructor, overrides this.
+        self.prompts = (
+            load_prompt_profile(prompts_file) if prompts_file else default_profile()
+        )
+
         self.client = init_langchain_model(
             llm=llm_api,
             model_name=model_name,
@@ -101,6 +108,10 @@ class LLMOPENIEModel(BaseOPENIEModel):
             n_ctx=n_ctx,
             low_vram=low_vram,
         )
+
+    def apply_prompt_profile(self, path: str) -> None:
+        """Switch to a dataset's prompt profile (raw/prompts.yaml)."""
+        self.prompts = load_prompt_profile(path)
 
     def ner(self, text: str) -> list:
         """
@@ -118,7 +129,7 @@ class LLMOPENIEModel(BaseOPENIEModel):
             - For other clients, extracts JSON from regular response without JSON mode
             - Handles exceptions by returning empty list and logging error
         """
-        ner_messages = ner_prompts.format_prompt(user_input=text)
+        ner_messages = self.prompts["ner_prompts"].format_prompt(user_input=text)
 
         try:
             if isinstance(self.client, ChatOpenAI):  # JSON mode
@@ -186,7 +197,7 @@ class LLMOPENIEModel(BaseOPENIEModel):
             - Uses temperature=0 and configured max_tokens for consistent outputs
         """
         named_entity_json = {"named_entities": entities}
-        openie_messages = openie_post_ner_prompts.format_prompt(
+        openie_messages = self.prompts["openie_prompts"].format_prompt(
             passage=text, named_entity_json=json.dumps(named_entity_json)
         )
         try:

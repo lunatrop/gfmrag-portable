@@ -44,7 +44,7 @@ one_shot_passage_triples = """{"triples": [
             ["Radio City", "is", "private FM radio station"],
             ["Radio City", "started on", "3 July 2001"],
             ["Radio City", "plays songs in", "Hindi"],
-            ["Radio City", "plays songs in", "English"]
+            ["Radio City", "plays songs in", "English"],
             ["Radio City", "forayed into", "New Media"],
             ["Radio City", "launched", "PlanetRadiocity.com"],
             ["PlanetRadiocity.com", "launched in", "May 2008"],
