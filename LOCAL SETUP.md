@@ -144,3 +144,4 @@ curl -sf 127.0.0.1:8001/answer -H 'Content-Type: application/json' \
 | Stage-2 rebuilds on every load | embedder config mismatch vs the checkpoint's `config.json` fingerprint — don't override `text_emb_model_cfgs` |
 | gemma2:2b produces 0 triples | known on register-style text — use qwen2.5:3b |
 | Background launches silently do nothing | verify the log file exists after launch; don't trust `pgrep -f` (it matches its own command line — use a `[b]racketed` pattern) |
+| ALL extractions suddenly return empty entities/triples | **check Ollama is actually up** (`curl -sf 127.0.0.1:11434/api/version`) before blaming prompts or models — the model classes swallow connection errors and return `[]`/empty, so a dead server looks exactly like total extraction failure. The WSL VM shuts down when idle, killing Ollama/uvicorn and wiping `/tmp` (scripts, logs). After any WSL restart: relaunch Ollama with `OLLAMA_VULKAN=false` |
