@@ -21,6 +21,12 @@ resource "google_cloud_run_v2_service" "qa" {
   template {
     service_account = google_service_account.runtime.email
 
+    # The FIRST /retrieve on a cold instance triggers ColBERT PLAID index
+    # build + first GPU embedding pass, which exceeds Cloud Run's 300s default
+    # request timeout (observed: killed at exactly 300s, leaving the warm-up
+    # incomplete). 900s lets the priming query finish in one shot.
+    timeout = "900s"
+
     # GPU-bound per request (embeddings + ColBERT EL); keep concurrency low.
     max_instance_request_concurrency = 4
 

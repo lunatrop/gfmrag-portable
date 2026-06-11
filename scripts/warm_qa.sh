@@ -32,10 +32,24 @@ poll() { # name url tok path
 poll "vLLM (model loaded)" "$VLLM" "$VTOK" "/health"
 poll "QA (index loaded)"   "$QA"   "$QTOK" "/openapi.json"
 
-echo ">>> WARMING UP: first-query lazy init (ColBERT/embeddings, ~70s)..."
-t=$(curl -s -o /dev/null -w '%{time_total}' -m 300 -H "Authorization: Bearer $QTOK" \
-     -H "Content-Type: application/json" -d "$Q" "$QA/retrieve")
-echo ">>> fully warm — first /retrieve took ${t}s"
+# Layer 3: loop a priming /retrieve until it returns at steady-state speed.
+# A single call is NOT enough on a cold instance — the first lazy-init
+# retrieval (ColBERT PLAID build + first GPU embedding pass) can exceed the
+# Cloud Run request timeout; it may take 2 calls to fully warm. "warm" is
+# defined empirically (< THRESHOLD s), never assumed.
+THRESHOLD=5
+echo ">>> WARMING UP: first-query lazy init (ColBERT/embeddings; looping until <${THRESHOLD}s)..."
+warm=0
+for i in $(seq 1 6); do
+  t=$(curl -s -o /dev/null -w '%{time_total}' -m 870 -H "Authorization: Bearer $QTOK" \
+       -H "Content-Type: application/json" -d "$Q" "$QA/retrieve")
+  if awk "BEGIN{exit !($t < $THRESHOLD)}"; then
+    echo ">>> FULLY WARM — priming /retrieve steady at ${t}s (after $i call(s))"
+    warm=1; break
+  fi
+  echo "    still warming: priming /retrieve took ${t}s (lazy init in progress), repeating..."
+done
+[ "$warm" = 1 ] || { echo ">>> WARNING: did not reach steady state after 6 priming calls"; }
 
 if [ "${1:-}" = "--measure" ]; then
   echo "=== steady-state latency (3 reps) ==="

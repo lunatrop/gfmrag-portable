@@ -22,6 +22,7 @@ import urllib.request
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 DATA_DIR = os.environ.get("DATA_DIR", "/data")
@@ -37,7 +38,11 @@ DEFAULT_TOP_K = int(os.environ.get("TOP_K", "5"))
 # unset (GKE / local, where the endpoint is unauthenticated) this is a no-op.
 VLLM_AUDIENCE = os.environ.get("VLLM_AUDIENCE", "")
 
-_state: dict = {"retriever": None, "llm": None}
+# "warm" tracks the third readiness layer: the first /retrieve on a fresh
+# instance triggers ColBERT PLAID index build + first GPU embedding pass
+# (tens of seconds to minutes). Until that has run once, the service is
+# "warming" — loaded but not yet at steady-state latency.
+_state: dict = {"retriever": None, "llm": None, "warm": False}
 _token: dict = {"expires": 0.0}
 
 
@@ -101,10 +106,47 @@ class Query(BaseModel):
     target_types: list[str] | None = None
 
 
+def _readiness() -> dict:
+    """Three-layer readiness, with a human message for each state.
+
+    loading  — lifespan still loading the GFM checkpoint + index
+    warming  — loaded, but the first (lazy-init) retrieval hasn't run; the
+               next /retrieve|/answer will be slow (ColBERT/embedding build)
+    ready    — a retrieval has completed; steady-state latency (~1s)
+    """
+    if _state["retriever"] is None:
+        return {"state": "loading", "ready": False,
+                "detail": "GFM checkpoint + KG index still loading"}
+    if not _state["warm"]:
+        return {"state": "warming", "ready": False,
+                "detail": "models loaded; first query runs lazy init "
+                          "(ColBERT index + GPU embedding pass) and will be slow"}
+    return {"state": "ready", "ready": True, "detail": "steady-state"}
+
+
+# /healthz is 404'd by the Cloud Run layer (it's the startup-probe path); /ready
+# is the externally reachable readiness endpoint. Both are served by the app.
 @app.get("/healthz")
-def healthz() -> dict:
-    # Readiness probe gates traffic until the model + index are loaded.
-    return {"status": "ok" if _state["retriever"] is not None else "loading"}
+@app.get("/ready")
+def ready() -> JSONResponse:
+    r = _readiness()
+    # 503 while loading so callers/probes can poll; 200 once it's at least loaded.
+    return JSONResponse(r, status_code=200 if _state["retriever"] is not None else 503)
+
+
+@app.post("/warmup")
+def warmup() -> dict:
+    """Run a priming retrieval to absorb lazy init, so the next real query is
+    fast. Idempotent. The benchmarking app should call this (and poll /ready)
+    before issuing user queries, surfacing 'warming up…' meanwhile."""
+    retriever = _state["retriever"]
+    if retriever is None:
+        return {"state": "loading", "warmed": False}
+    _refresh_openai_token()
+    t0 = time.time()
+    retriever.retrieve("warmup probe", top_k=1)
+    _state["warm"] = True
+    return {"state": "ready", "warmed": True, "warmup_secs": round(time.time() - t0, 1)}
 
 
 @app.post("/retrieve")
@@ -112,11 +154,13 @@ def retrieve(q: Query) -> dict:
     """Graph retrieval over the KG: returns top-k nodes per target type."""
     retriever = _state["retriever"]
     if retriever is None:
-        return {"error": "model still loading"}
+        return {"error": "model still loading", "state": "loading"}
     _refresh_openai_token()
-    return retriever.retrieve(
+    result = retriever.retrieve(
         q.query, top_k=q.top_k or DEFAULT_TOP_K, target_types=q.target_types
     )
+    _state["warm"] = True  # warm-state is reported via /ready, not by reshaping this response
+    return result
 
 
 @app.post("/answer")
@@ -134,6 +178,7 @@ def answer(q: Query) -> dict:
     docs = retriever.retrieve(
         q.query, top_k=q.top_k or DEFAULT_TOP_K, target_types=q.target_types
     )
+    _state["warm"] = True
 
     if _state["llm"] is None:
         from gfmrag.llms import ChatGPT
