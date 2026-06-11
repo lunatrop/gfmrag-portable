@@ -251,14 +251,25 @@ terraform apply -var qa_enabled=true -var qa_data_name=shard-0 -var gfm_model_pa
 
 ### Nightly warm-up pattern (~A$1–2/day)
 
-Before a batch run, absorb the cold start once, deliberately:
+Use `scripts/warm_qa.sh` (add `--measure` to also print latencies). Warm-up
+has **three layers**, all required — polling readiness endpoints is NOT enough:
 
-```bash
-TOK=$(gcloud auth print-identity-token)   # or the benchmark caller SA's token
-curl -s -m 900 -H "Authorization: Bearer $TOK" "$(terraform output -raw vllm_url)/health"
-curl -s -m 900 -H "Authorization: Bearer $TOK" "$(terraform output -raw qa_url)/healthz"
-# then execute the job / fire the query batch while instances are warm
-```
+1. **instance up** — Cloud Run scale-from-zero
+2. **models loaded** — gate on QA `/openapi.json == 200` (NOT `/healthz`, which
+   the Cloud Run layer 404s — see note below)
+3. **first-query lazy init** — the FIRST `/retrieve` pays ~70s for ColBERT
+   PLAID index load + first GPU embedding pass, even after 1+2. Fire one
+   throwaway query to absorb it.
+
+**Measured warm steady-state** (shard-0, 34M, 2026-06-11): `/retrieve` ≈ 0.95s,
+`/answer` ≈ 1.5s (generation delta ≈ 0.5s). First `/retrieve` after warm = 73s.
+Warming vLLM first also eliminates the cold-vLLM `/answer` 503.
+
+> **`/healthz` quirk:** the route is registered (appears in `/openapi.json`)
+> but external GET returns 404 — a Cloud-Run-layer path interaction, not an app
+> bug (an `app.py` rebuild won't change it). Use `/openapi.json` as the QA
+> readiness probe. A rename to `/ready` would fix it if a clean health path is
+> wanted later.
 
 ## Known limits to respect
 
