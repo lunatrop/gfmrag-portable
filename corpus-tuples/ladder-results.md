@@ -11,7 +11,8 @@ and sec/doc recorded for extrapolation.
 | 1 | 64 | vLLM 3B (GCP) | 21.0 min | 19.7 | 81% (ABN ~45%) | 0 | ~A$1.6 |
 | 2 | 256 | vLLM 3B (GCP) | 21.8 min | 5.1 | 80% (ABN 41%) | 11 | ~A$1.7 |
 | 2-7b | 256 | vLLM 7B (GCP) | 41.3 min* | 9.7 | 76% (ABN 34%) | 4 | ~A$3.1 |
-| 3 | 1,024 | vLLM (GCP) | | | | | |
+| 2-p2 | 256 | vLLM 3B + au-register profile | 24.6 min | 5.8 | *86% (ABN 62%)* | 6 | ~A$2.0 |
+| 3 | 1,024 | vLLM 3B (GCP) | DNF (>1h cap) | — | — | — | ~A$2 |
 | 4 | 4,096 | vLLM (GCP) | | | | | |
 | 5 | 11,634 | vLLM (GCP) | | | | | |
 
@@ -20,10 +21,25 @@ and sec/doc recorded for extrapolation.
 - *The curve is flat*: 16, 64 and 256 docs all take ~21–22 min. Fixed overhead
   (image pull + imports + CUDA JIT + ColBERT index ≈ 15 min) dominates; warm
   vLLM with continuous batching makes marginal extraction ≈ 0.2–0.5 s/doc.
-- *Extrapolation*: rung 3 (1,024) projects ~25–30 min — comfortably inside the
-  1h GPU-task ceiling. Rung 4 (4,096) ~35–45 min, likely fits. Rung 5 (11,634)
-  projects ~1.5h+ → must be split (or run as 2–3 equal shards in parallel).
-  The 1h boundary is NOT the binding constraint up to rung 4.
+- *Extrapolation — FALSIFIED at rung 3*: the flat-curve projection (~25–30
+  min for 1,024 docs) was wrong. Attempt 1 of rung 3 was still running at the
+  1h task cap and was killed; Cloud Run then retried FROM SCRATCH (OpenIE
+  intermediates are container-local tmp — retries inherit nothing) with a
+  30-min wait between attempts, so the execution could only loop to failure.
+  Cancelled after retry 1 (execution gfmrag-extract-4vvnn). Scaling between
+  rung 2 and 3 is superlinear — suspects: synonym-edge/EL phase over ~4×
+  the phrases, PLAID index build, and vLLM throughput saturation at fixed
+  concurrency. Decomposition needs per-phase timestamps from logs.
+- *Revised production rule*: equal shards of ≤ ~256–500 docs per task (256
+  is proven at 21.8 min; 512 untested), run in parallel. Full 17k corpus ≈
+  34–68 parallel-or-queued tasks; with 2 concurrent task GPUs ≈ 6–12h
+  wall-clock, cost still O(A$50–120) — higher than the flat-curve estimate;
+  re-measure after a 512-doc probe before committing.
+- *Resumability gap (the structural fix)*: pointing the constructor tmp dir
+  at the GCS mount would make OpenIE results survive retries, BUT per-line
+  appends through gcsfuse are pathologically slow (the 1MB/s lesson). Proper
+  fix = periodic checkpoint sync of openie_results.jsonl to GCS; until then,
+  keep tasks comfortably under the cap.
 - *Cost is overhead-dominated too*: ~A$1.5–1.7/rung regardless of size so far
   (task ≈ A$0.75 + vLLM active ≈ A$0.85). Full 17k corpus as 3–4 parallel
   equal shards projects ≈ *A$8–12 total* — consistent with the original
