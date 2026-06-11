@@ -8,6 +8,7 @@ and sec/doc recorded for extrapolation.
 |---|---|---|---|---|---|---|---|
 | 0 | 16 | local qwen2.5:3b | 23.3 min | 87 (52–139) | — (pre-gate) | — | A$0 |
 | 0c | 16 | vLLM 3B (GCP) | ~21 min | 79 | 90% (ABN 56%) | 0 | ~A$1.5 |
+| 0-p2 | 16 | 3B + au-register profile | 9.9 min | 37 | *92% (ABN 72%)* | 0 | ~A$1.2 |
 | 1 | 64 | vLLM 3B (GCP) | 21.0 min | 19.7 | 81% (ABN ~45%) | 0 | ~A$1.6 |
 | 1-p2 | 64 | 3B + au-register profile | 11.5 min | 10.8 | *95% (ABN 84%)* | 1 | ~A$1.2 |
 | 2 | 256 | vLLM 3B (GCP) | 21.8 min | 5.1 | 80% (ABN 41%) | 11 | ~A$1.7 |

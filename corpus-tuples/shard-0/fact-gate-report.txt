@@ -1,23 +1,21 @@
 Documents checked: 16
 
 fact       found expected   recall
-entity        20       20     100%
-abn           10       18      56%
+entity        18       20      90%
+abn           13       18      72%
 revenue       16       16     100%
-period        14       16      88%
-hq            16       16     100%
+period        16       16     100%
+hq            15       16      94%
 sector        16       16     100%
 
-MISSING FACTS (10):
+MISSING FACTS (8):
+  entity   2022-2432: missing 'THE A2 MILK COMPANY (AUSTRALIA) PTY LTD'
+  entity   2022-2432: missing 'The a2 Milk Company Limited'
   abn      2022-2432: missing '93126014275'
   abn      2022-2432: missing '27161773913'
   abn      2022-2432: missing '81618864958'
   abn      2022-2432: missing '52125331213'
   abn      2022-2432: missing '97769415292'
-  abn      2021-2694: missing '45115475619'
-  abn      2025-854: missing '28004815703'
-  period   2025-854: missing '2024 01 01 to 2024 12 31'
-  period   2023-441: missing '2022 01 01 to 2022 12 31'
-  abn      2022-754: missing '71092516286'
+  hq       2022-2432: missing 'New Zealand'
 
-OVERALL: 92/102 facts preserved (90%), 0 suspect entities
+OVERALL: 94/102 facts preserved (92%), 0 suspect entities
