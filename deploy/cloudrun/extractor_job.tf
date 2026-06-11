@@ -36,6 +36,13 @@ resource "google_cloud_run_v2_job" "extractor" {
           value = google_cloud_run_v2_service.vllm.uri
         }
 
+        # Read models (ColBERT etc.) from the shared cache — anonymous HF
+        # downloads from shared Cloud Run egress IPs get 429-rate-limited.
+        env {
+          name  = "HF_HOME"
+          value = "/models/hf"
+        }
+
         # Task N extracts the N-th dataset of this list.
         env {
           name  = "DATASETS"
@@ -79,6 +86,11 @@ resource "google_cloud_run_v2_job" "extractor" {
           name       = "data"
           mount_path = "/data"
         }
+
+        volume_mounts {
+          name       = "hf-cache"
+          mount_path = "/models/hf"
+        }
       }
 
       # Built-in GCS volume mount — replaces the GKE GCS FUSE CSI driver.
@@ -87,6 +99,14 @@ resource "google_cloud_run_v2_job" "extractor" {
         gcs {
           bucket    = google_storage_bucket.data.name
           read_only = false
+        }
+      }
+
+      volumes {
+        name = "hf-cache"
+        gcs {
+          bucket    = google_storage_bucket.hf_cache.name
+          read_only = false # uncached models populate on first use
         }
       }
     }

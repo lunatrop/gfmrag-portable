@@ -105,6 +105,25 @@ resource "google_project_iam_member" "terraform_sa_run" {
   member  = "serviceAccount:gfmrag-terraform@${var.project_id}.iam.gserviceaccount.com"
 }
 
+resource "google_project_iam_member" "terraform_sa_builds" {
+  project = var.project_id
+  role    = "roles/cloudbuild.builds.editor"
+  member  = "serviceAccount:gfmrag-terraform@${var.project_id}.iam.gserviceaccount.com"
+}
+
+resource "google_project_iam_member" "terraform_sa_logs" {
+  project = var.project_id
+  role    = "roles/logging.viewer"
+  member  = "serviceAccount:gfmrag-terraform@${var.project_id}.iam.gserviceaccount.com"
+}
+
+# builds submit stages the source tarball here.
+resource "google_storage_bucket_iam_member" "terraform_sa_build_source" {
+  bucket = "${var.project_id}_cloudbuild"
+  role   = "roles/storage.objectAdmin"
+  member = "serviceAccount:gfmrag-terraform@${var.project_id}.iam.gserviceaccount.com"
+}
+
 # Cloud Build pre-populates the cache (deploy/cloudbuild/prepopulate-hf-cache.yaml)
 # — writing weights through GCS FUSE from an instance is ~1MB/s; this is minutes.
 resource "google_storage_bucket_iam_member" "cloudbuild_hf_cache" {
