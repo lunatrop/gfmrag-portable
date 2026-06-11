@@ -104,7 +104,7 @@ resource "google_cloud_run_v2_service" "vllm" {
     volumes {
       name = "hf-cache"
       gcs {
-        bucket    = google_storage_bucket.hf_cache.name
+        bucket    = data.google_storage_bucket.hf_cache.name
         read_only = false
       }
     }

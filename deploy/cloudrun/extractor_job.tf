@@ -98,7 +98,7 @@ resource "google_cloud_run_v2_job" "extractor" {
       volumes {
         name = "data"
         gcs {
-          bucket    = google_storage_bucket.data.name
+          bucket    = data.google_storage_bucket.data.name
           read_only = false
         }
       }
@@ -106,7 +106,7 @@ resource "google_cloud_run_v2_job" "extractor" {
       volumes {
         name = "hf-cache"
         gcs {
-          bucket    = google_storage_bucket.hf_cache.name
+          bucket    = data.google_storage_bucket.hf_cache.name
           read_only = false # uncached models populate on first use
         }
       }

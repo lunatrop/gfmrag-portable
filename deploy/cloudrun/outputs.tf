@@ -15,7 +15,7 @@ output "benchmark_caller_sa" {
 
 output "data_bucket" {
   description = "GCS bucket for corpus shards (shard-N) and graph-index output."
-  value       = google_storage_bucket.data.name
+  value       = data.google_storage_bucket.data.name
 }
 
 output "image_push_command" {

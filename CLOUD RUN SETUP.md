@@ -57,13 +57,25 @@ Companion docs: [deploy/cloudrun/README.md](deploy/cloudrun/README.md)
 
 ## Phase 1 — Deploy the infrastructure
 
+**Two stacks.** `persistent/` holds the long-lived artifacts (data + hf_cache
+buckets, Artifact Registry repos) — apply once, rarely touch; it's guarded
+with `prevent_destroy` + `force_destroy=false`. The top-level (compute) stack
+holds services/job/IAM/secrets and reads the persistent artifacts via data
+sources. **Teardown = `terraform destroy` in the compute stack only**; the
+persistent stack (and your tuples, cache, images) is untouched.
+
 ```bash
-cd deploy/cloudrun
+cd deploy/cloudrun/persistent      # FIRST — creates buckets + AR repos
+terraform init && terraform apply   # rarely re-run
+
+cd ..                               # compute stack
 # terraform.tfvars is gitignored; copy from terraform.tfvars.example and set:
 #   project_id, bucket_name, model_id, extractor_datasets, extra_invoker_members
 terraform init
-terraform apply        # ~21 resources; the extractor JOB will fail — expected, see below
+terraform apply        # the extractor JOB will fail first time — expected, see below
 ```
+
+Both stacks share `project_id` / `region` / `bucket_name` — keep them in sync.
 
 ### Settings that matter (terraform.tfvars)
 
@@ -210,11 +222,43 @@ terraform apply -var qa_enabled=true -var qa_data_name=shard-0 -var gfm_model_pa
 
 ## Teardown checklist
 
-- [ ] `corpus-tuples/` has everything you want to keep — the bucket has
-      `force_destroy = true` and **dies with the stack**
-- [ ] `terraform destroy` (cluster-free: it's all Cloud Run, so this is fast)
-- [ ] Post-destroy cost: Artifact Registry images + build cache only
-      (single-digit A$/month; delete the AR repos too for true zero)
+- [ ] `terraform destroy` runs in the **compute stack only** (the top-level
+      dir). The `persistent/` stack — buckets, tuples, stage-2, HF cache, AR
+      images — survives by design (`prevent_destroy`), so recreate needs NO
+      rebuild: re-apply compute and services come up against the warm cache.
+- [ ] Recreate: `cd persistent && terraform apply` (no-op if it still exists)
+      then `cd .. && terraform apply`.
+- [ ] To tear down *everything* including persistent (rare): destroy compute
+      first, then in `persistent/` remove the `prevent_destroy` lifecycle
+      blocks and set `force_destroy=true` before `terraform destroy`.
+- [ ] Post-(compute-)destroy cost: persistent storage only — buckets + AR
+      images ≈ A$1-2/month.
+
+## De-ephemeralised caches (what persists between cold starts)
+
+- **HF weights** live in `gs://<bucket_name>-hf-cache`, mounted at
+  `/models/hf` (= `HF_HOME`) on both vLLM and the QA service. First start
+  populates it; later cold starts read intra-region instead of downloading
+  from huggingface.co — and weights no longer transit the RAM-backed
+  filesystem (this is what makes 7B-class models safe).
+- **Stage-2 embeddings** persist because the QA data volume is mounted
+  read-write: `from_index` writes `processed/stage2/` back to the bucket, so
+  checkpoint swaps and restarts skip the embedding rebuild. (Mounting it
+  read-only crashes startup: `OSError: Read-only file system … stage2`.)
+- Storage cost for both: ~A$1/month. Keeping instances warm instead costs
+  ~A$2.10/hour each (~A$50/day) — reserve `min_instances=1` for genuinely
+  interactive use.
+
+### Nightly warm-up pattern (~A$1–2/day)
+
+Before a batch run, absorb the cold start once, deliberately:
+
+```bash
+TOK=$(gcloud auth print-identity-token)   # or the benchmark caller SA's token
+curl -s -m 900 -H "Authorization: Bearer $TOK" "$(terraform output -raw vllm_url)/health"
+curl -s -m 900 -H "Authorization: Bearer $TOK" "$(terraform output -raw qa_url)/healthz"
+# then execute the job / fire the query batch while instances are warm
+```
 
 ## Known limits to respect
 
@@ -225,4 +269,4 @@ terraform apply -var qa_enabled=true -var qa_data_name=shard-0 -var gfm_model_pa
 | GPU service max instances | ≤ regional L4 allocation | Raise via quota request |
 | One GPU per Cloud Run instance | 1×L4 | 7B-class models max; multi-GPU = GKE |
 | Cloud Run filesystem | RAM-backed, counts against memory | Model downloads eat the 32GiB cap; why 3B first |
-| Scale-to-zero | weights re-download per cold start | Warm before batch runs; `min_instances=1` during heavy use |
+| Scale-to-zero | cold start per wake | GCS HF cache cuts the download; warm-up request before batch runs |
