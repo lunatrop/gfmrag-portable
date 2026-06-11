@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import re
+import shutil
 from multiprocessing.dummy import Pool as ThreadPool
 from typing import Any
 
@@ -17,6 +18,11 @@ from gfmrag.graph_index_datasets.graph_index_dataset import GraphIndexDataset
 from .base_graph_constructor import BaseGraphConstructor, Edge, Graph, Node, Relation
 
 logger = logging.getLogger(__name__)
+
+# Copy the (local) OpenIE results file to the dataset's processed/ dir every N
+# documents, so a killed task resumes instead of restarting. Bulk copies are
+# cheap even on a GCS FUSE mount; per-line appends there are not.
+OPENIE_CHECKPOINT_EVERY = 25
 
 
 class KGConstructor(BaseGraphConstructor):
@@ -145,6 +151,9 @@ class KGConstructor(BaseGraphConstructor):
         """
         # Get dataset information
         self.data_name = data_name  # type: ignore
+        # Durable home for the OpenIE checkpoint: lives with the dataset
+        # (the GCS mount in cloud runs), unlike the container-local tmp_dir.
+        self.checkpoint_dir = os.path.join(data_root, data_name, "processed")
         raw_path = os.path.join(data_root, data_name, "raw")
 
         if self.force:
@@ -289,6 +298,20 @@ class KGConstructor(BaseGraphConstructor):
         logger.info(f"Number of passages: {len(corpus)}")
 
         open_ie_result_path = f"{self.tmp_dir}/openie_results.jsonl"
+
+        # Restore from the durable checkpoint (survives task retries; the
+        # tmp_dir copy does not). The existing skip-processed logic below
+        # then resumes exactly where the killed attempt stopped.
+        checkpoint_path = None
+        if getattr(self, "checkpoint_dir", None):
+            os.makedirs(self.checkpoint_dir, exist_ok=True)
+            checkpoint_path = os.path.join(self.checkpoint_dir, "openie_checkpoint.jsonl")
+            if os.path.exists(checkpoint_path) and not os.path.exists(
+                open_ie_result_path
+            ):
+                shutil.copyfile(checkpoint_path, open_ie_result_path)
+                logger.info(f"Restored OpenIE checkpoint from {checkpoint_path}")
+
         open_ie_results = {}
         # check if the openie results are already computed
         if os.path.exists(open_ie_result_path):
@@ -306,6 +329,7 @@ class KGConstructor(BaseGraphConstructor):
         )
 
         if len(remining_passages) > 0:
+            done = 0
             with open(open_ie_result_path, "a") as f:
                 with ThreadPool(processes=self.num_processes) as pool:
                     for result in tqdm(
@@ -318,6 +342,18 @@ class KGConstructor(BaseGraphConstructor):
                             result["title"] = passage_title
                             f.write(json.dumps(result) + "\n")
                             f.flush()
+                            done += 1
+                            if checkpoint_path and done % OPENIE_CHECKPOINT_EVERY == 0:
+                                try:
+                                    shutil.copyfile(open_ie_result_path, checkpoint_path)
+                                except OSError as e:
+                                    logger.warning(f"Checkpoint copy failed: {e}")
+
+        if checkpoint_path:
+            try:
+                shutil.copyfile(open_ie_result_path, checkpoint_path)
+            except OSError as e:
+                logger.warning(f"Checkpoint copy failed: {e}")
 
         logger.info(f"OpenIE results saved to {open_ie_result_path}")
         return open_ie_result_path
