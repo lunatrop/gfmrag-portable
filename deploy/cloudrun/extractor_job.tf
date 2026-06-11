@@ -69,6 +69,7 @@ resource "google_cloud_run_v2_job" "extractor" {
             dataset.data_name=$${DATA_NAME} \
             openie_model.llm_api=openai \
             openie_model.model_name=${var.model_id} \
+            openie_model.max_triples_tokens=6000 \
             ner_model.llm_api=openai \
             ner_model.model_name=${var.model_id}
           EOT

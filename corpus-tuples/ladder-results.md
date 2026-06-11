@@ -13,6 +13,7 @@ and sec/doc recorded for extrapolation.
 | 2-7b | 256 | vLLM 7B (GCP) | 41.3 min* | 9.7 | 76% (ABN 34%) | 4 | ~A$3.1 |
 | 2-p2 | 256 | vLLM 3B + au-register profile | 24.6 min | 5.8 | *86% (ABN 62%)* | 6 | ~A$2.0 |
 | 3 | 1,024 | vLLM 3B (GCP) | DNF (>1h cap) | — | — | — | ~A$2 |
+| 3-p2 | 1,024 | 3B + profile + checkpoint | 67.7 min (1 retry, resumed) | 4.0 | 85% (ABN 60%) | 26 | ~A$7 |
 | 4 | 4,096 | vLLM (GCP) | | | | | |
 | 5 | 11,634 | vLLM (GCP) | | | | | |
 
@@ -40,6 +41,25 @@ and sec/doc recorded for extrapolation.
   appends through gcsfuse are pathologically slow (the 1MB/s lesson). Proper
   fix = periodic checkpoint sync of openie_results.jsonl to GCS; until then,
   keep tasks comfortably under the cap.
+
+## Rung 3 completion + Tier-2 closure (2026-06-11, execution 67rbt)
+
+- *Checkpoint-resume validated in production*: attempt 1 killed at the 1h cap
+  with ~95% of OpenIE done; the retry restored the checkpoint instantly and
+  finished extraction + EL + graph in ~7 min. Total 67.7 min wall — the
+  failure mode that DNF'd rung 3 is retired.
+- *Sizing datum (replaces the 512 probe)*: ~900–950 docs/hour/task under full
+  production config (3B + au-register profile + 6000 triple-token cap + vLLM
+  2-instance fan-out). Production shards: ~768 docs fits attempt 1 with
+  margin; larger shards degrade gracefully via resume.
+- *Quality holds at 4× scale*: 85% overall (vs 86% at 256), ABN 60% (vs 62%),
+  revenue/period/HQ 100%, sectors 99%, suspect rate flat (~2.5%). Entity
+  recall 87% — the 6000-token cap didn't fully cure the mega-joint dip;
+  remaining entity misses concentrate in the largest joint statements
+  (next lever: chunk or special-case statements with >6 co-filers).
+- *Full-corpus projection (17k docs)*: ~18-19 task-hours → with 2 parallel
+  task GPUs impossible under the 3-GPU allocation while vLLM fans out; at
+  1 task + 2 vLLM ≈ ~19h wall, ~A$80-100. A quota bump to 6-8 L4s halves it.
 - *Cost is overhead-dominated too*: ~A$1.5–1.7/rung regardless of size so far
   (task ≈ A$0.75 + vLLM active ≈ A$0.85). Full 17k corpus as 3–4 parallel
   equal shards projects ≈ *A$8–12 total* — consistent with the original
