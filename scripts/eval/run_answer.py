@@ -15,26 +15,44 @@ def token():
         ["gcloud", "auth", "print-identity-token", "--account", SA, "--audiences", QA],
         text=True).strip()
 
-def answer(tok, query):
+OUT = "corpus-tuples/shard4-answer-demos.json"
+
+def answer(tok, query, timeout=900):
     body = json.dumps({"query": query, "top_k": 6, "target_types": ["document"]}).encode()
     req = urllib.request.Request(QA + "/answer", data=body,
                                  headers={"Authorization": f"Bearer {tok}",
                                           "Content-Type": "application/json"})
     t0 = time.time()
-    with urllib.request.urlopen(req, timeout=600) as r:
+    with urllib.request.urlopen(req, timeout=timeout) as r:
         resp = json.load(r)
     return time.time() - t0, resp
 
 tok = token()
+# Warm the vLLM (Qwen2.5-3B) generation service first so the first timed demo
+# doesn't eat a cold start (observed: first /answer timed out otherwise).
+try:
+    print("warming vLLM via a throwaway /answer ...")
+    answer(tok, "warmup", timeout=900)
+except Exception as e:
+    print(f"(warmup call returned: {e})")
+
+results = []
 for i, (cat, q) in enumerate(DEMOS, 1):
     try:
         secs, resp = answer(tok, q)
     except Exception as e:
         print(f"\n[{i}] {cat} ERROR: {e}\n  Q: {q}")
+        results.append({"i": i, "cat": cat, "q": q, "error": str(e)})
         continue
     docs = resp.get("retrieved", {}).get("document", [])
+    ans = resp.get("answer", "(none)")
     print(f"\n========== DEMO {i} [{cat}]  ({secs:.1f}s) ==========")
     print(f"Q: {q}")
-    print(f"\nANSWER:\n{resp.get('answer','(none)')}")
+    print(f"\nANSWER:\n{ans}")
     print(f"\n(grounded on {len(docs)} retrieved statements; top: "
           + "; ".join(str(d['id']).split(':',1)[-1].strip()[:32] for d in docs[:3]) + ")")
+    results.append({"i": i, "cat": cat, "q": q, "secs": round(secs, 1), "answer": ans,
+                    "grounded_on": [str(d["id"]) for d in docs]})
+
+json.dump(results, open(OUT, "w"), indent=2)
+print(f"\nwrote {OUT}")

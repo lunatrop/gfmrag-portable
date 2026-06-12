@@ -140,6 +140,40 @@ a natural-language answer. Findings (3 demos):
 | importers/logistics | importers with multi-country supply chains | 113.6 s | ◐ retrieval good (Grain Export, Bitumen Importers) but 3B wrongly answered "none" |
 | food/bev | food/bev intl sourcers | timeout | first call cold-started the vLLM service past the client timeout |
 
+### Raw answers (verbatim)
+
+**Demo 1 — food/bev intl sourcers** (`top_k=6`, `target_types=["document"]`):
+> `ERROR: read operation timed out` — first call; the vLLM (Qwen2.5-3B) service
+> was scaled to zero and its cold start exceeded the client timeout. (Retrieval
+> for this intent succeeds via `/retrieve` — see Reject Shop / IKEA / Chrisco in §4.)
+
+**Demo 2 — importers/logistics with multi-country supply chains** (113.6 s; grounded on 6 statements; top: Australian Grain Export, Allied Beef Group, Bitumen Importers Australia):
+> "Based on the provided context, there are no importers or logistics companies
+> listed that have supply chains spanning multiple countries. All the entities
+> mentioned are Australian-based and operate within the Australian market.
+> Therefore, no answer can be provided for importers or logistics companies with
+> supply chains spanning multiple countries from the given data."
+
+*(Retrieval was correct — Grain Export and Bitumen Importers are literal
+importers/exporters — but the 3B model declined to infer cross-border supply
+chains from the register metadata. A synthesis-quality miss, not a retrieval miss.)*
+
+**Demo 3 — entities in a parent group / joint statement** (12.7 s; grounded on 6 statements; top: GSFM Responsible Entity Services ×3):
+> "Based on the provided context, the following entities filed as part of a parent
+> company's group or joint modern slavery statement:
+>
+> 1. **GSFM Responsible Entity Services Limited as RE for Epoch Global Equity Shareholder Yield (Unhedged) Fund (ABN 68 164 059 884) and … Munro Global Growth Fund (ABN 92 514 177 120)** — Filed for the reporting period 2024-07-01 to 2025-06-30.
+> 2. **GSFM RESPONSIBLE ENTITY SERVICES LIMITED as RE for Epoch Global Equity Shareholder Yield (Unhedged) Fund (ABN 48 129 256 104) and … Munro Global Growth Fund (ABN 48 129 256 104)** — Filed for the reporting periods 2022-07-01 to 2023-06-30, 2023-07-01 to 2024-06-30, and 2023-10-01 to 2024-09-30.
+> 3. **ENERO GROUP LIMITED** — Filed a single modern slavery statement for 2023-10-01 to 2024-09-30, which covers multiple included entities.
+> 4. **The Salvation Army Australia** — Filed a single modern slavery statement for 2023-07-01 to 2024-06-30, which covers multiple included entities.
+>
+> These entities are part of a parent company's group or joint modern slavery
+> statement as they filed as Responsible Entities (RE) for multiple funds or
+> entities under the same parent company."
+
+*(Strong synthesis: correct entities, real ABNs, reporting periods, and the
+group/joint relationship explained.)*
+
 **Takeaways:** `/answer` works and grounds well, but is **12–114 s warm vs ~1 s for
 `/retrieve`**, and Qwen2.5-3B synthesis is **hit-or-miss** (good at structured
 listing, poor at judgement). For leads / crawler seeding, prefer **`/retrieve` +
@@ -151,6 +185,7 @@ stronger generation model.
 ## Appendix — environment
 
 - Per-query raw results: `corpus-tuples/shard4-query-results-2026-06-12.json`.
+- Raw `/answer` demo outputs: `corpus-tuples/shard4-answer-demos.json`.
 - Scripts: `scripts/eval/run_queries.py` (retrieval suite),
   `scripts/eval/run_answer.py` (LLM demos), `scripts/eval/enrich.py` (lead cards),
   `scripts/eval/inspect_graph.py` (graph content).
