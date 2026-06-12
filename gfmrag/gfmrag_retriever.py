@@ -196,6 +196,15 @@ class GFMRetriever:
         dataset_kwargs["text_emb_model_cfgs"] = OmegaConf.create(
             dataset_kwargs["text_emb_model_cfgs"]
         )
+        # Optional ops override: shrink the embedding batch to bound peak memory
+        # during the stage-2 build. Long document-node texts OOM the embedder at
+        # the checkpoint default (32) on a 22GB L4. batch_size is excluded from
+        # the dataset fingerprint (graph_index_dataset.py), so this changes only
+        # peak memory, not which stage-2 directory is read/written.
+        _emb_bs = os.environ.get("GFMRAG_EMB_BATCH_SIZE")
+        if _emb_bs:
+            dataset_kwargs["text_emb_model_cfgs"]["batch_size"] = int(_emb_bs)
+            logger.info(f"GFMRAG_EMB_BATCH_SIZE set: embedding batch_size -> {_emb_bs}")
         return dataset_cls(
             root=data_dir,
             data_name=data_name,
