@@ -1,0 +1,890 @@
+[
+  {
+    "i": 1,
+    "cat": "A multi-hop",
+    "q": "Companies that filed a joint modern slavery statement together with another reporting entity",
+    "secs": 1.061,
+    "entities": [
+      {
+        "id": "filed joint modern slavery statement with",
+        "score": -1.685504674911499
+      },
+      {
+        "id": "https   modernslaveryregister gov au statements 18280",
+        "score": -3.4730019569396973
+      },
+      {
+        "id": "https   modernslaveryregister gov au statements 17840",
+        "score": -3.4893503189086914
+      },
+      {
+        "id": "https   modernslaveryregister gov au statements 23649",
+        "score": -3.606985330581665
+      },
+      {
+        "id": "https   modernslaveryregister gov au statements 23339",
+        "score": -3.615687847137451
+      },
+      {
+        "id": "https   modernslaveryregister gov au statements 24016",
+        "score": -3.6176156997680664
+      },
+      {
+        "id": "the trustee for think tank commercial w04 trust",
+        "score": -3.6177055835723877
+      },
+      {
+        "id": "egypt",
+        "score": -3.637397289276123
+      }
+    ],
+    "documents": [
+      {
+        "id": "Modern slavery statement 2026-156: GSFM Responsible Entity Services Limited as RE for Epoch Global Equity Shareholder Yield (Unhedged) Fund & GSFM Responsible Entity Services Limited as RE for Munro Global Growth Fund",
+        "score": -2.828366756439209
+      },
+      {
+        "id": "Modern slavery statement 2023-2516: GSFM RESPONSIBLE ENTITY SERVICES LIMITED as RE for Epoch Global Equity Shareholder Yield (Unhedged) Fund & GSFM RESPONSIBLE ENTITY SERVICES LIMITED as RE for Munro Global Growth Fund",
+        "score": -3.4254989624023438
+      },
+      {
+        "id": "Modern slavery statement 2024-2956: GSFM RESPONSIBLE ENTITY SERVICES LIMITED as RE for Epoch Global Equity Shareholder Yield (Unhedged) Fund & GSFM RESPONSIBLE ENTITY SERVICES LIMITED as RE for Munro Global Growth Fund",
+        "score": -5.333207607269287
+      },
+      {
+        "id": "Modern slavery statement 2024-329: Impax Asset Management",
+        "score": -6.016903400421143
+      },
+      {
+        "id": "Modern slavery statement 2026-370: Impax Asset Management Group plc, Impax Asset Management Limited",
+        "score": -6.567534923553467
+      },
+      {
+        "id": "Modern slavery statement 2021-2799: Ricoh Australia Pty Ltd",
+        "score": -6.6016526222229
+      },
+      {
+        "id": "Modern slavery statement 2021-660: Impax Asset Management Limited",
+        "score": -6.689693450927734
+      },
+      {
+        "id": "Modern slavery statement 2024-3053: The Salvation Army Australia",
+        "score": -6.7055983543396
+      }
+    ]
+  },
+  {
+    "i": 2,
+    "cat": "A multi-hop",
+    "q": "Subsidiaries and entities included within a parent company's group modern slavery statement",
+    "secs": 0.943,
+    "entities": [
+      {
+        "id": "egypt",
+        "score": -3.8786232471466064
+      },
+      {
+        "id": "the trustee for think tank commercial w04 trust",
+        "score": -4.056138038635254
+      },
+      {
+        "id": "greece",
+        "score": -4.435020446777344
+      },
+      {
+        "id": "46 061 711 804",
+        "score": -4.99463415145874
+      },
+      {
+        "id": "the trustee for think tank commercial w03 trust",
+        "score": -5.206319332122803
+      },
+      {
+        "id": "bulgaria",
+        "score": -5.308445930480957
+      },
+      {
+        "id": "the trustee for think tank commercial w08 trust",
+        "score": -5.4802117347717285
+      },
+      {
+        "id": "mexico",
+        "score": -5.56022310256958
+      }
+    ],
+    "documents": [
+      {
+        "id": "Modern slavery statement 2022-2578: Transport Asset Holding Entity of New South Wales",
+        "score": -1.7131516933441162
+      },
+      {
+        "id": "Modern slavery statement 2023-2400: Transport Asset Holding Entity of New South Wales",
+        "score": -3.975581169128418
+      },
+      {
+        "id": "Modern slavery statement 2024-2646: ENERO GROUP LIMITED",
+        "score": -7.601756572723389
+      },
+      {
+        "id": "Modern slavery statement 2024-763: COSTA GROUP HOLDINGS PTY LTD",
+        "score": -7.737362861633301
+      },
+      {
+        "id": "Modern slavery statement 2026-150: OROTONGROUP (AUSTRALIA) PTY LIMITED",
+        "score": -7.7831549644470215
+      },
+      {
+        "id": "Modern slavery statement 2025-1002: Christian Education Ministries Ltd",
+        "score": -8.053089141845703
+      },
+      {
+        "id": "Modern slavery statement 2024-329: Impax Asset Management",
+        "score": -8.302301406860352
+      },
+      {
+        "id": "Modern slavery statement 2024-3053: The Salvation Army Australia",
+        "score": -8.483991622924805
+      }
+    ]
+  },
+  {
+    "i": 3,
+    "cat": "A multi-hop",
+    "q": "Mining, metals and resources companies that are headquartered outside Australia",
+    "secs": 1.453,
+    "entities": [
+      {
+        "id": "the trustee for think tank commercial w04 trust",
+        "score": -2.3845999240875244
+      },
+      {
+        "id": "51 632 795 512",
+        "score": -2.8728103637695312
+      },
+      {
+        "id": "air new zealand associated companies limited",
+        "score": -3.004908561706543
+      },
+      {
+        "id": "see out pty ltd",
+        "score": -3.0506269931793213
+      },
+      {
+        "id": "70 000 312 685",
+        "score": -3.280503988265991
+      },
+      {
+        "id": "46 061 711 804",
+        "score": -3.481800079345703
+      },
+      {
+        "id": "pharos iac pty ltd",
+        "score": -3.6486988067626953
+      },
+      {
+        "id": "the trustee for think tank commercial w09 trust",
+        "score": -3.7340283393859863
+      }
+    ],
+    "documents": [
+      {
+        "id": "Modern slavery statement 2025-2689: RESOURCE SERVICES GROUP X PTY LTD & RSGX HOLDINGS PTY LTD",
+        "score": 0.27395302057266235
+      },
+      {
+        "id": "Modern slavery statement 2024-2753: AIR NEW ZEALAND LIMITED",
+        "score": -1.5799579620361328
+      },
+      {
+        "id": "Modern slavery statement 2022-2408: Camelot UK Bidco Limited, CLARIVATE ANALYTICS (AUSTRALIA) HOLDINGS PTY LTD & CLARIVATE ANALYTICS (AUSTRALIA) PTY LIMITED & Clarivate Analytics (International) Limited, Clarivate Analytics (UK) Limited, Computer Patent Annuities International Limited, CPA Global Finco Limited, CPA Global (Landon IP) Limited, \u00b7 CPA Global Legal Support Services UK Limited, CPA Global Management Services Ltd, CPA Global (Patrafee) Limited, CPA Global Renewals (UK) Limited, CPA GLOBAL SOFTWARE SOLUTIONS AUSTRALIA PTY LIMITED et al.",
+        "score": -3.378277540206909
+      },
+      {
+        "id": "Modern slavery statement 2024-276: IX INFRASTRUCTURE PTY LTD, IXOM HOLDCO PTY LTD, IXOM HOLDINGS PTY LTD, IXOM INTERNATIONAL HOLDINGS PTY LTD, IXOM OPERATIONS PTY LTD & IXOM PTY LTD",
+        "score": -4.969986915588379
+      },
+      {
+        "id": "Modern slavery statement 2024-2309: AUSTRALIA PACIFIC LNG PTY LIMITED",
+        "score": -5.3386125564575195
+      },
+      {
+        "id": "Modern slavery statement 2023-1862: ICRA MC PTY LTD & ICRA OC PTY LTD & IM IRON HOLDING PTY LTD et al.",
+        "score": -5.366541862487793
+      },
+      {
+        "id": "Modern slavery statement 2026-15: THINK TANK GROUP PTY LIMITED",
+        "score": -5.518969535827637
+      },
+      {
+        "id": "Modern slavery statement 2024-440: Canadian Imperial Bank of Commerce",
+        "score": -5.580799102783203
+      }
+    ]
+  },
+  {
+    "i": 4,
+    "cat": "B segment",
+    "q": "Financial, insurance and real estate companies that filed modern slavery statements",
+    "secs": 1.425,
+    "entities": [
+      {
+        "id": "the trustee for think tank commercial w04 trust",
+        "score": -3.3180012702941895
+      },
+      {
+        "id": "https   modernslaveryregister gov au statements 18280",
+        "score": -3.368514060974121
+      },
+      {
+        "id": "modern slavery statement",
+        "score": -3.645791530609131
+      },
+      {
+        "id": "https   modernslaveryregister gov au statements 17840",
+        "score": -3.6885061264038086
+      },
+      {
+        "id": "https   modernslaveryregister gov au statements 16749",
+        "score": -3.8886353969573975
+      },
+      {
+        "id": "https   modernslaveryregister gov au statements 17842",
+        "score": -3.9083218574523926
+      },
+      {
+        "id": "https   modernslaveryregister gov au statements 17847",
+        "score": -3.9162983894348145
+      },
+      {
+        "id": "https   modernslaveryregister gov au statements 20383",
+        "score": -3.941473960876465
+      }
+    ],
+    "documents": [
+      {
+        "id": "Modern slavery statement 2024-2753: AIR NEW ZEALAND LIMITED",
+        "score": -1.3184432983398438
+      },
+      {
+        "id": "Modern slavery statement 2024-440: Canadian Imperial Bank of Commerce",
+        "score": -5.418976783752441
+      },
+      {
+        "id": "Modern slavery statement 2025-1892: NORINCHUKIN AUSTRALIA PTY LIMITED & The Norinchukin Bank",
+        "score": -5.536214828491211
+      },
+      {
+        "id": "Modern slavery statement 2026-48: SQUARE RESOURCES HOLDING PTY LTD",
+        "score": -5.625205039978027
+      },
+      {
+        "id": "Modern slavery statement 2022-1346: PIMCO AUSTRALIA MANAGEMENT LIMITED & PIMCO AUSTRALIA PTY LIMITED",
+        "score": -5.6732659339904785
+      },
+      {
+        "id": "Modern slavery statement 2024-1785: Perry Ellis International, Inc.",
+        "score": -5.711145877838135
+      },
+      {
+        "id": "Modern slavery statement 2021-1705: STATE STREET AUSTRALIA LTD & STATE STREET BANK AND TRUST COMPANY & STATE STREET GLOBAL ADVISORS TRUST COMPANY, STATE STREET GLOBAL MARKETS, LLC",
+        "score": -5.716061115264893
+      },
+      {
+        "id": "Modern slavery statement 2025-2639: HERITAGE AND PEOPLE'S CHOICE LIMITED",
+        "score": -5.882980823516846
+      }
+    ]
+  },
+  {
+    "i": 5,
+    "cat": "B segment",
+    "q": "Reporting entities with annual revenue of one billion dollars or more",
+    "secs": 0.922,
+    "entities": [
+      {
+        "id": "the trustee for think tank commercial w04 trust",
+        "score": -3.7313590049743652
+      },
+      {
+        "id": "ex libris  australia  pty ltd",
+        "score": -4.369002342224121
+      },
+      {
+        "id": "united kingdom",
+        "score": -4.555624961853027
+      },
+      {
+        "id": "mexico",
+        "score": -4.595940589904785
+      },
+      {
+        "id": "https   modernslaveryregister gov au statements 5223",
+        "score": -4.673409461975098
+      },
+      {
+        "id": "46 061 711 804",
+        "score": -4.681046009063721
+      },
+      {
+        "id": "exhibit 21 1 of news corp s form 10 k annual report",
+        "score": -4.736321926116943
+      },
+      {
+        "id": "pharos iac h 2021 pty ltd",
+        "score": -4.769048690795898
+      }
+    ],
+    "documents": [
+      {
+        "id": "Modern slavery statement 2024-3148: NATIONWIDE NEWS PTY. LIMITED & NEWS AUSTRALIA HOLDINGS PTY LIMITED & NEWS CORP AUSTRALIA PTY LIMITED et al.",
+        "score": -1.773895263671875
+      },
+      {
+        "id": "Modern slavery statement 2021-3643: Lynas Africa Holdings Pty Ltd, Lynas Africa Limited, LYNAS KALGOORLIE PTY LTD & Lynas Malaysia Sdn Bhd, LYNAS RARE EARTHS LIMITED & LYNAS SERVICES PTY LTD et al.",
+        "score": -5.5941572189331055
+      },
+      {
+        "id": "Modern slavery statement 2024-440: Canadian Imperial Bank of Commerce",
+        "score": -5.615362167358398
+      },
+      {
+        "id": "Modern slavery statement 2026-172: SYNACO GLOBAL RECRUITMENT PTY LTD",
+        "score": -5.7132086753845215
+      },
+      {
+        "id": "Modern slavery statement 2026-421: RURAL PRESS PTY LIMITED",
+        "score": -5.713710784912109
+      },
+      {
+        "id": "Modern slavery statement 2021-2799: Ricoh Australia Pty Ltd",
+        "score": -5.830462455749512
+      },
+      {
+        "id": "Modern slavery statement 2020-149: NEWS CORP AUSTRALIA PTY LIMITED & NXE AUSTRALIA PTY LIMITED",
+        "score": -5.844499588012695
+      },
+      {
+        "id": "Modern slavery statement 2021-1484: ECF Asia Pacific Pty Ltd",
+        "score": -6.172756671905518
+      }
+    ]
+  },
+  {
+    "i": 6,
+    "cat": "B segment",
+    "q": "Reporting entities headquartered in the United States",
+    "secs": 0.985,
+    "entities": [
+      {
+        "id": "the trustee for think tank commercial w04 trust",
+        "score": -3.0671231746673584
+      },
+      {
+        "id": "pharos aq 2021v pty ltd",
+        "score": -3.8446364402770996
+      },
+      {
+        "id": "pharos aq 2022 pty ltd",
+        "score": -3.8550615310668945
+      },
+      {
+        "id": "pharos aq 2021 pty ltd",
+        "score": -4.055971145629883
+      },
+      {
+        "id": "the trustee for think tank commercial w08 trust",
+        "score": -4.140644550323486
+      },
+      {
+        "id": "pharos aq 2023 pty ltd",
+        "score": -4.16069221496582
+      },
+      {
+        "id": "ex libris  australia  pty ltd",
+        "score": -4.16556453704834
+      },
+      {
+        "id": "pharos aq l 2021 pty ltd",
+        "score": -4.188728332519531
+      }
+    ],
+    "documents": [
+      {
+        "id": "Modern slavery statement 2026-421: RURAL PRESS PTY LIMITED",
+        "score": -5.4155731201171875
+      },
+      {
+        "id": "Modern slavery statement 2024-3148: NATIONWIDE NEWS PTY. LIMITED & NEWS AUSTRALIA HOLDINGS PTY LIMITED & NEWS CORP AUSTRALIA PTY LIMITED et al.",
+        "score": -5.4707183837890625
+      },
+      {
+        "id": "Modern slavery statement 2021-2799: Ricoh Australia Pty Ltd",
+        "score": -5.644795894622803
+      },
+      {
+        "id": "Modern slavery statement 2021-3643: Lynas Africa Holdings Pty Ltd, Lynas Africa Limited, LYNAS KALGOORLIE PTY LTD & Lynas Malaysia Sdn Bhd, LYNAS RARE EARTHS LIMITED & LYNAS SERVICES PTY LTD et al.",
+        "score": -6.124835968017578
+      },
+      {
+        "id": "Modern slavery statement 2025-727: EXPERIS AUSTRALIA PTY LTD & MANPOWER SERVICES (AUSTRALIA) PTY LTD & RIGHT MANAGEMENT CONSULTANTS PTY LTD",
+        "score": -6.304257392883301
+      },
+      {
+        "id": "Modern slavery statement 2025-3751: Capital International, Inc.",
+        "score": -6.33643913269043
+      },
+      {
+        "id": "Modern slavery statement 2024-2646: ENERO GROUP LIMITED",
+        "score": -6.371824741363525
+      },
+      {
+        "id": "Modern slavery statement 2021-1484: ECF Asia Pacific Pty Ltd",
+        "score": -6.414468765258789
+      }
+    ]
+  },
+  {
+    "i": 7,
+    "cat": "C lead",
+    "q": "Large Australian retail and consumer goods companies that are prospects for modern slavery compliance software",
+    "secs": 1.101,
+    "entities": [
+      {
+        "id": "global retail brands australia pty ltd",
+        "score": -4.319979190826416
+      },
+      {
+        "id": "46 061 711 804",
+        "score": -5.390295505523682
+      },
+      {
+        "id": "the trustee for think tank commercial w04 trust",
+        "score": -5.706546783447266
+      },
+      {
+        "id": "74 323 352 189",
+        "score": -5.885293960571289
+      },
+      {
+        "id": "the trustee for think tank commercial w03 trust",
+        "score": -6.345980644226074
+      },
+      {
+        "id": "ipss europe limited",
+        "score": -6.642980098724365
+      },
+      {
+        "id": "the trustee for think tank commercial w08 trust",
+        "score": -7.006634712219238
+      },
+      {
+        "id": "the trustee for think tank commercial w09 trust",
+        "score": -7.009005546569824
+      }
+    ],
+    "documents": [
+      {
+        "id": "Modern slavery statement 2021-1445: GLOBAL RETAIL BRANDS AUSTRALIA PTY LTD & GLOBAL RETAIL BRANDS PTY LTD",
+        "score": -3.248103618621826
+      },
+      {
+        "id": "Modern slavery statement 2024-440: Canadian Imperial Bank of Commerce",
+        "score": -8.5308256149292
+      },
+      {
+        "id": "Modern slavery statement 2024-276: IX INFRASTRUCTURE PTY LTD, IXOM HOLDCO PTY LTD, IXOM HOLDINGS PTY LTD, IXOM INTERNATIONAL HOLDINGS PTY LTD, IXOM OPERATIONS PTY LTD & IXOM PTY LTD",
+        "score": -8.559713363647461
+      },
+      {
+        "id": "Modern slavery statement 2023-1959: ANDROMEDA NOMINEES PTY. LTD trading as Formby Logistics, BAGTRANS PTY LIMITED, EFM LOGISTICS PTY LTD, EFM LOGISTICS PTY LTD - trading as efm warehousing, FLEMINGTON FIELDS PTY LTD - trading as GKR Transport, FLIP GROUP TECHNOLOGIES PTY LTD, FLIP TECHNOLOGIES PTY LTD, FREIGHT MANAGEMENT HOLDINGS PTY. LTD., NICHE LOGISTICS PTY LTD, SINGPOST AUSTRALIA INVESTMENTS PTY LTD, SPECTRUM TRANSPORT NSW PTY LTD, SPECTRUM TRANSPORT QLD PTY LTD, SPECTRUM TRANSPORT VIC PTY LTD",
+        "score": -8.607209205627441
+      },
+      {
+        "id": "Modern slavery statement 2024-2791: AERIS RESOURCES LIMITED, EXCO RESOURCES PTY LIMITED, LION MINING LIMITED, ROUND OAK JAGUAR PTY LTD, ROUND OAK STOCKMAN PTY LTD, TRITTON RESOURCES PTY LTD",
+        "score": -8.797463417053223
+      },
+      {
+        "id": "Modern slavery statement 2024-329: Impax Asset Management",
+        "score": -8.840790748596191
+      },
+      {
+        "id": "Modern slavery statement 2023-171: IOR SUPPLY AND TRADING PTY LTD",
+        "score": -8.975820541381836
+      },
+      {
+        "id": "Modern slavery statement 2023-3384: Edna May Operations Pty Ltd, MT MAGNET GOLD PTY LTD, Ramelius Resources Ltd",
+        "score": -9.111474990844727
+      }
+    ]
+  },
+  {
+    "i": 8,
+    "cat": "C lead",
+    "q": "High revenue manufacturing and industrial companies with complex global operations",
+    "secs": 0.939,
+    "entities": [
+      {
+        "id": "construction manufacturing other services",
+        "score": -4.684271812438965
+      },
+      {
+        "id": "the trustee for think tank commercial w03 trust",
+        "score": -4.812097072601318
+      },
+      {
+        "id": "the trustee for think tank commercial w04 trust",
+        "score": -4.9315361976623535
+      },
+      {
+        "id": "46 061 711 804",
+        "score": -5.403968334197998
+      },
+      {
+        "id": "pharos aq ntx pty ltd",
+        "score": -5.753530502319336
+      },
+      {
+        "id": "the trustee for think tank commercial w09 trust",
+        "score": -5.959327220916748
+      },
+      {
+        "id": "pharos aq pty ltd",
+        "score": -5.9612202644348145
+      },
+      {
+        "id": "the trustee for think tank commercial w08 trust",
+        "score": -6.015990257263184
+      }
+    ],
+    "documents": [
+      {
+        "id": "Modern slavery statement 2025-3647: MAAS GROUP HOLDINGS LIMITED",
+        "score": -5.821773052215576
+      },
+      {
+        "id": "Modern slavery statement 2023-1650: THE WALT DISNEY COMPANY (AUSTRALIA) PTY LIMITED",
+        "score": -6.4571661949157715
+      },
+      {
+        "id": "Modern slavery statement 2024-1790: Panasonic Avionics Corporation",
+        "score": -6.754161357879639
+      },
+      {
+        "id": "Modern slavery statement 2024-440: Canadian Imperial Bank of Commerce",
+        "score": -6.782459259033203
+      },
+      {
+        "id": "Modern slavery statement 2023-1995: CROWN EQUIPMENT PTY. LIMITED",
+        "score": -6.990156650543213
+      },
+      {
+        "id": "Modern slavery statement 2025-1259: Panasonic Avionics Corporation",
+        "score": -6.999484062194824
+      },
+      {
+        "id": "Modern slavery statement 2021-138: WILLIAMS-SONOMA AUSTRALIA PTY LTD",
+        "score": -7.179828643798828
+      },
+      {
+        "id": "Modern slavery statement 2025-2364: DONALDSON AUSTRALASIA PTY LTD",
+        "score": -7.421446800231934
+      }
+    ]
+  },
+  {
+    "i": 9,
+    "cat": "C lead",
+    "q": "Food, beverage and agriculture companies that source goods internationally",
+    "secs": 0.954,
+    "entities": [
+      {
+        "id": "food and beverages  agriculture and fishing durable consumer goods  including electronics and appliances  home furnishings and other accessories",
+        "score": -4.4880499839782715
+      },
+      {
+        "id": "46 061 711 804",
+        "score": -4.974825382232666
+      },
+      {
+        "id": "the trustee for think tank commercial w04 trust",
+        "score": -5.1515889167785645
+      },
+      {
+        "id": "pharos aq l 2021 pty ltd",
+        "score": -5.626181602478027
+      },
+      {
+        "id": "pharos aq 2021 pty ltd",
+        "score": -5.654043197631836
+      },
+      {
+        "id": "pharos aq 2021v pty ltd",
+        "score": -5.77658224105835
+      },
+      {
+        "id": "pharos aq 2023 pty ltd",
+        "score": -5.813290596008301
+      },
+      {
+        "id": "pharos aq l 2024 pty ltd",
+        "score": -5.813966751098633
+      }
+    ],
+    "documents": [
+      {
+        "id": "Modern slavery statement 2021-590: THE REJECT SHOP LIMITED",
+        "score": -7.016862869262695
+      },
+      {
+        "id": "Modern slavery statement 2023-176: IKEA PTY LIMITED",
+        "score": -7.195695400238037
+      },
+      {
+        "id": "Modern slavery statement 2024-2578: CHRISCO HAMPERS AUSTRALIA LIMITED",
+        "score": -8.117444038391113
+      },
+      {
+        "id": "Modern slavery statement 2022-2489: CHRISCO HAMPERS AUSTRALIA LIMITED",
+        "score": -8.197324752807617
+      },
+      {
+        "id": "Modern slavery statement 2020-467: PANASONIC AUSTRALIA PTY LIMITED",
+        "score": -8.671731948852539
+      },
+      {
+        "id": "Modern slavery statement 2020-235: YAMAHA MUSIC AUSTRALIA PTY. LTD.",
+        "score": -8.919343948364258
+      },
+      {
+        "id": "Modern slavery statement 2024-2646: ENERO GROUP LIMITED",
+        "score": -9.383056640625
+      },
+      {
+        "id": "Modern slavery statement 2023-1959: ANDROMEDA NOMINEES PTY. LTD trading as Formby Logistics, BAGTRANS PTY LIMITED, EFM LOGISTICS PTY LTD, EFM LOGISTICS PTY LTD - trading as efm warehousing, FLEMINGTON FIELDS PTY LTD - trading as GKR Transport, FLIP GROUP TECHNOLOGIES PTY LTD, FLIP TECHNOLOGIES PTY LTD, FREIGHT MANAGEMENT HOLDINGS PTY. LTD., NICHE LOGISTICS PTY LTD, SINGPOST AUSTRALIA INVESTMENTS PTY LTD, SPECTRUM TRANSPORT NSW PTY LTD, SPECTRUM TRANSPORT QLD PTY LTD, SPECTRUM TRANSPORT VIC PTY LTD",
+        "score": -9.45187759399414
+      }
+    ]
+  },
+  {
+    "i": 10,
+    "cat": "D crawl",
+    "q": "Importers and logistics companies whose supply chains span multiple countries",
+    "secs": 1.148,
+    "entities": [
+      {
+        "id": "bitumen importers australia pty ltd",
+        "score": -3.9069526195526123
+      },
+      {
+        "id": "46 061 711 804",
+        "score": -3.9393796920776367
+      },
+      {
+        "id": "the trustee for think tank commercial w04 trust",
+        "score": -4.204809188842773
+      },
+      {
+        "id": "the trustee for think tank commercial w03 trust",
+        "score": -4.485018253326416
+      },
+      {
+        "id": "ipss europe limited",
+        "score": -4.750114917755127
+      },
+      {
+        "id": "12 141 170 658",
+        "score": -4.775589942932129
+      },
+      {
+        "id": "pharos aq pty ltd",
+        "score": -4.962881088256836
+      },
+      {
+        "id": "louis dreyfus company grains logistics australia pty ltd",
+        "score": -5.012716293334961
+      }
+    ],
+    "documents": [
+      {
+        "id": "Modern slavery statement 2021-404: AUSTRALIAN GRAIN EXPORT PTY LTD",
+        "score": -4.120368003845215
+      },
+      {
+        "id": "Modern slavery statement 2022-2272: BITUMEN IMPORTERS AUSTRALIA PTY LTD",
+        "score": -4.1623454093933105
+      },
+      {
+        "id": "Modern slavery statement 2024-180: BITUMEN IMPORTERS AUSTRALIA PTY LTD",
+        "score": -4.315914154052734
+      },
+      {
+        "id": "Modern slavery statement 2024-394: LOUIS DREYFUS COMPANY MELBOURNE HOLDINGS PTY LTD",
+        "score": -5.231620788574219
+      },
+      {
+        "id": "Modern slavery statement 2021-3643: Lynas Africa Holdings Pty Ltd, Lynas Africa Limited, LYNAS KALGOORLIE PTY LTD & Lynas Malaysia Sdn Bhd, LYNAS RARE EARTHS LIMITED & LYNAS SERVICES PTY LTD et al.",
+        "score": -6.86464262008667
+      },
+      {
+        "id": "Modern slavery statement 2024-329: Impax Asset Management",
+        "score": -7.33093786239624
+      },
+      {
+        "id": "Modern slavery statement 2021-1484: ECF Asia Pacific Pty Ltd",
+        "score": -7.334750652313232
+      },
+      {
+        "id": "Modern slavery statement 2024-276: IX INFRASTRUCTURE PTY LTD, IXOM HOLDCO PTY LTD, IXOM HOLDINGS PTY LTD, IXOM INTERNATIONAL HOLDINGS PTY LTD, IXOM OPERATIONS PTY LTD & IXOM PTY LTD",
+        "score": -7.70947265625
+      }
+    ]
+  },
+  {
+    "i": 11,
+    "cat": "D crawl",
+    "q": "Textiles, apparel and consumer goods companies in high modern slavery risk sectors to map suppliers for",
+    "secs": 0.931,
+    "entities": [
+      {
+        "id": "46 061 711 804",
+        "score": -3.3077406883239746
+      },
+      {
+        "id": "the trustee for think tank commercial w04 trust",
+        "score": -3.463247776031494
+      },
+      {
+        "id": "the trustee for think tank commercial w03 trust",
+        "score": -3.8674888610839844
+      },
+      {
+        "id": "pharos aq 2022 pty ltd",
+        "score": -4.542448997497559
+      },
+      {
+        "id": "pharos aq 2023 pty ltd",
+        "score": -4.5767741203308105
+      },
+      {
+        "id": "pharos aq 2021 pty ltd",
+        "score": -4.623542308807373
+      },
+      {
+        "id": "pharos aq 2021v pty ltd",
+        "score": -4.672554016113281
+      },
+      {
+        "id": "pharos aq l 2021 pty ltd",
+        "score": -4.772266864776611
+      }
+    ],
+    "documents": [
+      {
+        "id": "Modern slavery statement 2023-1463: AAG HOLDCO PTY LTD, ACTIVE APPAREL GROUP PTY LTD",
+        "score": -0.23167546093463898
+      },
+      {
+        "id": "Modern slavery statement 2024-276: IX INFRASTRUCTURE PTY LTD, IXOM HOLDCO PTY LTD, IXOM HOLDINGS PTY LTD, IXOM INTERNATIONAL HOLDINGS PTY LTD, IXOM OPERATIONS PTY LTD & IXOM PTY LTD",
+        "score": -6.741241455078125
+      },
+      {
+        "id": "Modern slavery statement 2023-269: MC MARDIE PTY LTD & MCNALLY GROUP CONTRACTING PTY LTD & MCNALLY GROUP HOLDINGS PTY LTD et al.",
+        "score": -6.836235046386719
+      },
+      {
+        "id": "Modern slavery statement 2024-2791: AERIS RESOURCES LIMITED, EXCO RESOURCES PTY LIMITED, LION MINING LIMITED, ROUND OAK JAGUAR PTY LTD, ROUND OAK STOCKMAN PTY LTD, TRITTON RESOURCES PTY LTD",
+        "score": -7.158941745758057
+      },
+      {
+        "id": "Modern slavery statement 2021-3643: Lynas Africa Holdings Pty Ltd, Lynas Africa Limited, LYNAS KALGOORLIE PTY LTD & Lynas Malaysia Sdn Bhd, LYNAS RARE EARTHS LIMITED & LYNAS SERVICES PTY LTD et al.",
+        "score": -7.174503326416016
+      },
+      {
+        "id": "Modern slavery statement 2023-3064: AUTOMOTIVE FINANCIAL SERVICES PTY LIMITED & BELLAVITA PTY LTD & BENNJI PTY LTD et al.",
+        "score": -7.248767852783203
+      },
+      {
+        "id": "Modern slavery statement 2024-763: COSTA GROUP HOLDINGS PTY LTD",
+        "score": -7.26174259185791
+      },
+      {
+        "id": "Modern slavery statement 2024-1785: Perry Ellis International, Inc.",
+        "score": -7.2885236740112305
+      }
+    ]
+  },
+  {
+    "i": 12,
+    "cat": "D crawl",
+    "q": "Large mining and resources entities suitable for tier-one supplier mapping and ABN enrichment",
+    "secs": 1.239,
+    "entities": [
+      {
+        "id": "68 608 225 458",
+        "score": -2.2917025089263916
+      },
+      {
+        "id": "supply partners pty ltd",
+        "score": -3.1278390884399414
+      },
+      {
+        "id": "94 155 169 074",
+        "score": -3.298495292663574
+      },
+      {
+        "id": "abn group pty ltd",
+        "score": -3.605634927749634
+      },
+      {
+        "id": "46 061 711 804",
+        "score": -3.779362916946411
+      },
+      {
+        "id": "eqstats pty ltd",
+        "score": -4.702606678009033
+      },
+      {
+        "id": "the trustee for think tank commercial w04 trust",
+        "score": -4.815334320068359
+      },
+      {
+        "id": "ipss europe limited",
+        "score": -4.895374298095703
+      }
+    ],
+    "documents": [
+      {
+        "id": "Modern slavery statement 2021-163: ABN GROUP PTY LTD",
+        "score": -3.3961386680603027
+      },
+      {
+        "id": "Modern slavery statement 2024-742: Supply Partners Pty Ltd",
+        "score": -3.4844937324523926
+      },
+      {
+        "id": "Modern slavery statement 2024-2687: COUNT LIMITED",
+        "score": -4.427707195281982
+      },
+      {
+        "id": "Modern slavery statement 2021-3643: Lynas Africa Holdings Pty Ltd, Lynas Africa Limited, LYNAS KALGOORLIE PTY LTD & Lynas Malaysia Sdn Bhd, LYNAS RARE EARTHS LIMITED & LYNAS SERVICES PTY LTD et al.",
+        "score": -7.939683437347412
+      },
+      {
+        "id": "Modern slavery statement 2024-329: Impax Asset Management",
+        "score": -8.152661323547363
+      },
+      {
+        "id": "Modern slavery statement 2023-1137: AUSNET ELECTRICITY SERVICES PTY LTD & AUSNET GAS SERVICES PTY LTD & AUSNET PTY LTD et al.",
+        "score": -8.420241355895996
+      },
+      {
+        "id": "Modern slavery statement 2021-1484: ECF Asia Pacific Pty Ltd",
+        "score": -8.470178604125977
+      },
+      {
+        "id": "Modern slavery statement 2023-2648: The Trustee for Mackay`s Banana Marketing Co & The Trustee for The John B Mackay Family Trust No 3 & The Trustee for the Robert S Mackay Family Trust No 3",
+        "score": -8.576257705688477
+      }
+    ]
+  }
+]
