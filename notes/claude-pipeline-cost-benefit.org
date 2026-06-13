@@ -1,0 +1,89 @@
+#+TITLE: Claude API in the GFM-RAG pipeline — cost/benefit for local + cloud
+#+AUTHOR: eugene@tautsec.com (drafted with Claude)
+#+DATE: 2026-06-13
+#+STARTUP: overview
+
+Synthesis of notes/local-gfm.org (query/retrieve side) and
+notes/gfm-extract-feasibility.org (extract/ingest side). Billing in USD
+(Anthropic bills USD; AUD ≈ ×1.5). Token/cost facts from the claude-api skill
+reference; latency baselines from corpus-tuples/local-8m-test-2026-06-10.md and
+ladder-results.md.
+
+* The key distinction: two integration points, opposite economics
+| | Query side (retrieve path) | Extract side (ingest/merge path) |
+|--+----------------------------+-----------------------------------|
+| What Claude does | Query-NER via Option-A passthrough (session names entities) | NER+OpenIE to build/merge graph nodes |
+| Covered in | local-gfm.org (Bottleneck 1) | gfm-extract-feasibility.org |
+| Marginal API cost | ~zero — session is already Claude | real — per-token, every doc |
+| Worthwhile? | Unambiguously yes | Yes, but a quality-for-money trade |
+
+* Performance enhancements
+** Query side — large latency win, ~free
+Measured retrieve = 17s, of which ~10–14s is the local Ollama query-NER call.
+Option A (PassthroughNERModel; Claude passes entity names, ColBERT still
+fuzzy-links them to nodes) removes that LLM:
+- *Local*: retrieve 17s → sub-second–2s; resident memory −2–5GB (no local
+  generative LLM held).
+- *Cloud*: QA service routes query-NER to vLLM on every /retrieve and /answer;
+  passthrough removes that call too → faster cloud retrieve AND less vLLM load
+  (fewer GPU-seconds/query). A genuine cloud win, not just local.
+- Cost: ~15 lines + one tool-description sentence. Pure upside.
+** Extract side — quality + scale wall-clock, at a token cost
+- *Quality*: structured outputs GUARANTEE valid triple JSON (kills ~11% arity
+  defect); Haiku should lift ABN recall above the 41–56% ceiling that caps the
+  fact-gate — the metric that actually gates lead-gen.
+- *Wall-clock at scale*: shard-3 (1,024) was ~1.3-day CPU grind locally /
+  DNF at the cloud 1h cap → Haiku batch does extraction in <1h.
+
+* Advantages of leaving the pipeline as-is (the monetary case)
+Applies ONLY to the extract side (query side is free either way). Self-hosted
+qwen/vLLM bills GPU-hours, not tokens — once the L4 is warm, extraction tokens
+are effectively free. Plus: data sovereignty (nothing leaves the VPC — matters
+for crawled intel, not the public register) and no external dependency / rate
+limits.
+
+** Billing — final merge of ALL shards (~17,090 docs → mother graph)
+One combined call/doc, cached profile prefix (~300 in + ~400 out tokens/doc),
+Message Batches (50% off): ~5.1M input / ~6.8M output tokens.
+| Approach                 | Cost (USD, batched) | ≈ AUD        |
+|--------------------------+---------------------+--------------|
+| Self-hosted vLLM (as-is) | — (GPU-hours)       | ~A$8–12      |
+| Claude Haiku 4.5         | ~$20                | ~A$30        |
+| Claude Sonnet 4.6        | ~$58                | ~A$88        |
+| Claude Opus 4.8          | ~$98                | ~A$147       |
+
+As-is is cheapest by ~A$20–80 absolute for the one-time merge. But for a
+ONE-TIME merge that fixes the ABN-recall bottleneck gating the whole lead-gen
+product, ~A$30 (Haiku) is trivial insurance. As-is wins only when extraction is
+SUSTAINED/high-volume (continuous re-crawls), where per-token compounds and
+GPU-hours amortize. That is the crossover.
+
+* Does local-first inform the cloud mother-graph merge? — Yes, decisively
+local-gfm.org's "First build target" IS the merge operation (concatenate shards
+→ one stage-1+stage-2 index), just at 4-shard / ~5,456-doc scale vs full 17k.
+Running it locally first de-risks the cloud final merge on the failure points
+that matter:
+1. *Merge mechanic* — do disjoint shards concatenate, and does ColBERT EL
+   connect the SAME company across former shard boundaries into ONE node? That
+   node-unification is the whole point of a mother graph; prove it cheaply
+   locally.
+2. *Cross-shard multi-hop* — the RelatedStatements-chain queries the merged
+   graph is FOR, plus the 8M-vs-34M re-match on the merged graph (shard-0 too
+   small to show 34M's edge). Validates the checkpoint choice before cloud
+   commits.
+3. *Memory behavior* — stage-2 is memory-bound (doc-node embedding,
+   GFMRAG_EMB_BATCH_SIZE=8). A local merge rehearses that peak-memory pass,
+   informing cloud batch-size / node-count budget before the expensive run.
+
+The local 4-shard merge is a full-fidelity rehearsal of the cloud mother-graph
+merge — same code, same fingerprint coupling, same EL-unification question,
+smaller N. Free, and it raises the odds of a clean first cloud apply.
+
+* Net recommendation
+- *Query-side Claude*: adopt unconditionally — free, faster local AND cloud.
+- *Extract-side Claude*: treat as a QUALITY decision, not a cost decision —
+  Haiku ~A$30 for the one-time final merge is cheap insurance against the
+  ABN-recall bottleneck; stay on self-hosted vLLM if/when extraction becomes a
+  sustained re-crawl pipeline.
+- *Sequence*: run the local 4-shard merge FIRST — the rehearsal that most
+  increases the odds the cloud mother-graph merge lands on the first apply.

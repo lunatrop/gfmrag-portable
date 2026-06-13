@@ -1,0 +1,154 @@
+#+TITLE: Testing the increment-compact cycle on arbitrary crawled news
+#+AUTHOR: eugene@tautsec.com (generated with Claude)
+#+DATE: 2026-06-12
+#+STARTUP: overview
+
+How to test the incremental-indexing / compaction cycle when the corpora are
+*arbitrary crawled prose* — supply-chain news, cybersecurity news, business
+intelligence — rather than the structured register. The register tests leaned
+on a free answer key (ABNs, RelatedStatements); crawled news has none, so the
+test program is reconceived around different sources of truth and the failure
+modes specific to this domain.
+
+Status: *test design / theory*. Companions:
+[[file:increment-and-compact-cycle.org][increment-and-compact-cycle.org]] (the architecture under test),
+[[file:../FACT GATING FOR PROSE.md][FACT GATING FOR PROSE.md]] (faithfulness gate),
+[[file:../pipeline.org][pipeline.org]] (use case, genre-risk finding),
+[[file:NLP-sequence.org][NLP-sequence.org]].
+
+* The fundamental shift: no free answer key
+
+The register gave ground truth for free (every passage came from a CSV row).
+Arbitrary crawled news gives nothing. The verification question splits — and the
+tests get "truth" from four sources instead:
+
+1. *The source text itself* — for FAITHFULNESS (does an edge follow from its
+   cited span). No external truth needed; the article is the authority.
+2. *Controlled injection* — author synthetic articles with known facts,
+   duplicates, collisions, contradictions. You own the truth, so stress tests
+   become exact.
+3. *KB anchors* — register/ABN (AU firms), Wikidata / SEC EDGAR (identity),
+   domains/WHOIS, ticker symbols. Partial but hard truth for entity resolution.
+4. *A small hand-labelled golden set* — the one place to spend on humans:
+   multi-hop chains and ambiguous entities only.
+
+* A. Correctness / functioning (mostly truth-free)
+
+** A1 — Incremental ≡ batch
+Build the graph incrementally vs as one batch over the same N crawled docs;
+compare node/edge sets + a fixed query set's retrieval. Self-consistency, no
+truth needed. The delta = drift.
+
+** A2 — Faithfulness re-check (replaces the register fact-gate)
+Every edge in the grown graph must trace to a source span that ENTAILS it
+(provenance + NLI / LLM-judge). Metric: % of edges that re-pass span-entailment.
+Core correctness metric for prose; needs no external truth. Increments must
+never admit ungrounded edges.
+
+** A3 — Entity-consistency invariant
+No two nodes share a HARD identifier (canonical domain, ticker, ABN, EDGAR CIK)
+yet remain unmerged. Uses strong signals as partial truth. Metric:
+duplicate-node rate by identifier.
+
+** A4 — Idempotency & order-independence
+Re-adding an article (or its syndicated copy) creates nothing new; crawl order
+doesn't change the graph. Far more important here than for the register — see C3.
+
+** A5 — Snapshot isolation + retraction
+Serving stays on a consistent snapshot during a merge; retracting a source
+removes its uncorroborated claims and compaction reclaims the dead edges.
+
+* B. Advantage (the product's reason to exist)
+
+** B1 — Cross-corpus multi-hop (the value claim)
+Killer queries span genres: "which insured prospects are <=2 hops from this
+breached vendor?" — cyber breach article -> supply-chain vendor-relationship
+article -> business-intel customer record. Answerable ONLY on the unified
+incrementally-grown graph, not isolated corpora. Truth: curated golden set of
+hand-verified multi-hop chains (e.g. the VIQ->e24 subcontracting-breach chain).
+This is where human labelling spend goes — it is the core value.
+
+** B2 — Cost curve O(new) vs O(total)
+Per-increment wall-clock + GPU, incremental-add vs method-2-rebuild, plotted
+against accumulated graph size. Incremental stays ~flat; method-2 rises. No
+truth needed.
+
+** B3 — Drift + compaction recovery
+Drift (A1 delta + A3 duplicate rate) accumulates over many increments; compaction
+restores batch-equivalence. Calibrates compaction cadence.
+
+** B4 — Corroboration counts INDEPENDENT sources
+Inject a true event corroborated across genuinely independent outlets vs a single
+rumor; verify the corroboration score rises only with independence (requires C3).
+
+* C. Domain stress tests (the crawled-news realities)
+
+** C1 — Entity ambiguity & collision (hardest, most important)
+No universal ID in news. Inject: two different companies sharing a name ("Acme"
+US vs AU); aliases of one company (legal name / ticker / common name /
+subsidiary "Microsoft Australia Pty Ltd"). Verify collisions SPLIT and aliases
+MERGE, anchoring to register/Wikidata/domain. False-merge here = a breach
+attributed to the wrong company = defamation. Truth: curated alias/collision set.
+
+** C2 — Temporal correctness
+Events are dated and recur. Two breaches of one vendor in different years; queries
+like "breached in the last 12 months". Verify edges carry time and time-filtered
+multi-hop doesn't conflate distinct events. Truth: dated golden events.
+
+** C3 — Syndication / near-duplicate resistance
+A wire story republished across 50 outlets must count as ONE source for
+corroboration, not 50, and must not 50x the graph. Verify near-dup detection.
+Truth: known syndicated sets.
+
+** C4 — Source-reliability weighting
+Same claim from an SEC filing vs an anonymous blog — provenance must carry
+reliability and the release gate must weight accordingly.
+
+** C5 — Adversarial defamation-precision (legally critical, zero tolerance)
+Red-team set of plausible-but-unsupported ADVERSE claims ("Company X was
+breached") that are ungrounded, single-source, or contradicted. Verify NONE pass
+the outward gate (entity exact-match + span-grounded + corroborated). Metric:
+false-assertion rate on adverse claims must be ~0%. The cost of failure is a
+lawsuit, not a quality dip.
+
+** C6 — Genre robustness
+pipeline.org found opinion/LinkedIn text -> wrong-binding hallucination (67%
+arity failure). Commentary crawled alongside news will misbehave. Verify the
+faithfulness gate (A2) catches wrong-binding on opinion content. Keep opinion
+docs permanently in the golden set.
+
+** C7 — Cross-article coreference
+"the vendor", "it", partial names resolved to canonical nodes across documents —
+the bridge that makes multi-hop work when articles don't repeat full names.
+
+** C8 — Realistic-velocity simulation
+Replay a bursty, duplicated, mixed-quality crawl stream over time; measure
+entity-resolution drift and the compaction cadence needed to hold quality. The
+production dress-rehearsal.
+
+* The reprioritisation vs the register
+
+For the register, entity resolution was easy (ABN anchor) and focus was
+extraction recall. For crawled supply-chain / cyber / BI news the priority
+inverts:
+
+1. *C1 entity resolution* — dominant risk; no universal ID, false-merge is a
+   defamation vector.
+2. *C5 defamation-precision* — zero-tolerance outward gate on adverse claims.
+3. *C3 syndication dedup* — news is massively duplicated; silently corrupts
+   corroboration.
+4. *B1 cross-corpus multi-hop* — the value actually being sold.
+
+Everything else (cost curve, drift, equivalence) is the same machinery as the
+register tests; what changes is the TRUTH strategy (faithfulness + injection +
+KB anchors + small golden set) and these four domain risks.
+
+* Truth-acquisition cheat-sheet
+
+| Test          | How it gets truth                              |
+|---------------+------------------------------------------------|
+| A1, A2, A4, B2, B3 | self-consistency / source text — no external truth |
+| A3            | hard identifiers (domain, ticker, ABN, CIK)    |
+| B1, C1        | small hand-labelled golden set                 |
+| B4, C1-C5     | controlled injection (you author the truth)    |
+| C4            | source-reliability lookup (SEC vs blog tiers)  |

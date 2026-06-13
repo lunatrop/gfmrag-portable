@@ -1,0 +1,112 @@
+#+TITLE: The NLP sequence — what each stage does and how it scales
+#+AUTHOR: eugene@tautsec.com (generated with Claude)
+#+DATE: 2026-06-12
+#+STARTUP: overview
+
+What the NLP-bearing stages of the gfmrag pipeline actually do, and — crucially
+— how each one scales with corpus size. The headline: *per-kilobyte cost is not
+constant*, because the stages have fundamentally different scaling laws (fixed,
+linear, super-linear). Treating the pipeline as "X seconds per KB" is the wrong
+model and hides where time actually goes.
+
+Companion docs: [[file:../pipeline.org][pipeline.org]] (full pipeline),
+[[file:../corpus-tuples/ladder-results.md][ladder-results.md]] (wall-clock per rung),
+[[file:../FACT GATING FOR STRUCTURED DATA.md][fact gating]].
+
+* Where the numbers come from
+
+Measured from the cleanest single-pass extraction run (shard-0, execution
+=gfbhj=, 16 docs / 9.1 KB), using phase boundaries in the Cloud Run logs.
+Infra costs (≈10 min image pull, ≈5 min python imports, vLLM cold start) are
+*excluded* — those are not NLP and do not scale with corpus. NLP compute total
+for that run ≈ 207 s.
+
+| Corpus | docs | KB   | KB/doc |
+|--------+------+------+--------|
+| shard-0|   16 |  9.1 | 0.57   |
+| shard-1|   64 | 43.1 | 0.67   |
+| shard-2|  256 |179.3 | 0.70   |
+| shard-3| 1024 |699.8 | 0.68   |
+
+* The stages
+
+** 1. NER + OpenIE  (≈25% of NLP, ~52 s) — scales LINEARLY
+Two LLM calls per document against vLLM (OpenAI-compatible):
+- *NER* extracts the named entities (companies, ABNs, places, dates, sectors).
+- *OpenIE* turns the passage + entity list into RDF triples
+  =[subject, relation, object]=, guided to valid JSON.
+This is the only stage whose work is genuinely proportional to text volume.
+- *Scaling:* ~linear in corpus KB. Measured ~5.7 s/KB at shard-0 (warm), but
+  the rate *falls* on larger shards as vLLM's continuous batching saturates —
+  so 5.7 s/KB is an upper bound at the smallest scale, not a constant.
+- *Note:* the first document of a cold run absorbs the vLLM cold start
+  (minutes); excluded here as infra. Output quality is governed by the prompt
+  profile (see fact gating), not timing.
+
+** 2. ColBERT entity-linking  (≈70% of NLP, ~144 s) — MIXED
+Resolves surface variants of entity/phrase nodes to canonical nodes, building
+a PLAID index over the node names. Three sub-parts with *different* scaling:
+
+*** 2a. CUDA JIT compile  (~84 s, ≈40% of the whole NLP sequence) — FIXED
+pylate/ColBERT JIT-compiles CUDA C++ extensions (=decompress_residuals_cpp=,
+=packbits_cpp=) at first use — the reason the image needs the CUDA *devel*
+base. This is a flat ~84 s *regardless of corpus size*. At shard-0 it is the
+single largest NLP cost; at shard-3 it is the same 84 s against far more real
+work, so it shrinks toward irrelevance. *Per-instance ephemeral* — paid on
+every cold run, not cached between executions.
+
+*** 2b. PLAID index build  (~58 s, ≈28%) — SUPER-LINEAR
+Encodes node embeddings and builds the PLAID/IVF index structure. Grows faster
+than linearly with the number of distinct nodes, so its share *increases* with
+corpus size — the opposite of the JIT compile.
+
+*** 2c. Document encode  (~2 s, ≈1%) — linear
+First GPU embedding pass over the documents. Cheap.
+
+** 3. Synonym edges + graph write  (≈5%, ~11 s) — SUPER-LINEAR
+Adds cosine-similarity "synonym" edges between node names
+(=BAAI/bge-large-en-v1.5=, threshold 0.8), then writes
+=nodes.csv / edges.csv / relations.csv=. The similarity step is pairwise over
+the node set (≈ n²), so like the index build its cost share grows with corpus
+size.
+
+** 4. Stage-2 embedding build  (QA-side, not cleanly isolated) — linear
+Builds the retrieval index the GFM reasons over: node/relation embeddings under
+the checkpoint's embedder (34M ⇒ Qwen3-Embedding-0.6B / 1024-dim), persisted to
+the bucket. Happens at QA startup, bundled inside the QA cold start, so a clean
+isolated time was not captured. Small at tested scales (seconds for shard-0's
+126 nodes); scales ~linearly with node count.
+
+* Scaling summary
+
+| Stage                       | % of NLP (shard-0) | scaling law      | share as corpus grows |
+|-----------------------------+--------------------+------------------+-----------------------|
+| NER + OpenIE                | 25%                | linear           | ~flat (batching helps)|
+| ColBERT JIT compile         | 40%                | FIXED            | shrinks → negligible  |
+| PLAID index build           | 28%                | super-linear     | grows                 |
+| doc encode                  | 1%                 | linear           | ~flat                 |
+| synonym edges + write       | 5%                 | super-linear (n²)| grows                 |
+| stage-2 embedding (QA-side) | (not isolated)     | linear           | ~flat                 |
+
+* Why "per kilobyte" is the wrong question
+
+At small scale the NLP time is dominated by the *fixed* JIT compile (40%); as
+the corpus grows, OpenIE's linear term and the index/synonym super-linear terms
+take over while the JIT amortizes to nothing. So a single "seconds per KB" for
+the whole pipeline is meaningless — it would be huge at 9 KB (fixed cost spread
+over little text) and misleading at 700 KB (super-linear terms dominating).
+
+The only stage with a defensible per-KB number is *LLM extraction (NER+OpenIE):
+~3–6 s/KB warm, trending down with scale.* Everything else is governed by node
+count and fixed setup, not text volume. This is exactly why the cost ladder
+measures *wall-clock per rung* rather than per-byte, and why the operational
+rule is "pack shards as large as the 1-hour task cap allows" — you are mostly
+paying to get the container ready (image pull + JIT), not to process bytes.
+
+* Caveat on precision
+
+These percentages are reconstructed from one shard-0 run's logs and are rough.
+A precise per-stage profile at a large shard (where fixed costs are amortized
+and the super-linear terms are visible) needs explicit phase timers added to the
+extractor; the shape above is directionally correct but the exact split shifts
+with scale.

@@ -1,0 +1,67 @@
+#+TITLE: Configure these things
+* Corpus
+:PROPERTIES:
+:LOCATION_All: ~/gfm-rag/corpus ~cloud bucket~
+:LOCATION: ~/gfm-rag/corpus
+:END:
+A folder for raw corpora.
+** Shards
+:PROPERTIES:
+:SCRIPT: ~path of sharding script~
+:TYPE_All: ladder equal
+:TYPE:     equal
+:MAX_SIZE_All: no-max 500
+:MAX_SIZE: 500
+:END:
+The raw corpus is divided into shards.
+Processing of shards can be sequential or parrallel.
+Sharding script allows for
+ - laddered
+   exponentially increasing shard sizes
+ - equal bands
+    equal sized folders
+
+* Extractor
+** ollama
+:PROPERTIES:
+:MODEL_All: Qwen2.53B Gemma2
+:MODEL:    Qwen2.53B
+:END:
+Ollama is used for local tuple extraction.
+Qwen is the default and matches closest to production "instruct" variant 
+Gemma2 is English and needs more testing to make it work
+** vllm
+:PROPERTIES:
+:MODEL:    Qwen2.53BINstruct
+:CONCURRENCY: 8
+:END:
+VLLM is used in production and can be scaled via a concurrency setting which provisions an extra L4 GPU if the concurrency is exceeded during tuple extraction.
+The max L4 GPU setting is: vllm_max_instances=2
+* Normalisation
+** Quadgraph
+Let me pull the actual paper so the explanation is grounded rather than from memory:
+
+**QuadGraph is G-Reasoner's input data structure** — the standardized graph format the model is trained to reason over. The relationship is: QuadGraph is the *interface*, G-Reasoner is the *engine*. The paper defines it as 𝒢 = (𝒱, ℰ, ℛ, 𝒯, 𝒮) — a graph whose nodes are typed into four layers:
+
+1. **Document layer** — the unstructured source texts (in your deployment: the register passages built from CSV rows, later the crawled news articles).
+2. **Knowledge-graph layer** — the entity-relation triples extracted from those documents (your `nodes/edges/relations.csv` from the extraction pipeline).
+3. **Attribute layer** — node properties lifted out as first-class graph citizens (revenue bands, HQ countries, reporting periods, sectors — the structured facts your fact-gate verifies).
+4. **Community layer** — clusters of semantically or structurally related nodes (e.g., companies grouped by shared vendor dependencies or sectors — the layer that lets you ask "systemic contagion" questions).
+
+**Why it exists:** before G-Reasoner, every GraphRAG flavor had its own incompatible graph shape — HippoRAG-style entity KGs, document graphs, Microsoft-GraphRAG-style hierarchical community graphs. A "foundation model" for graph reasoning is only possible if all of these can be expressed in one format, the way LLMs needed all text reduced to one token stream. QuadGraph is that normalization: KGs map onto the KG layer, document graphs onto document+attribute layers, hierarchical graphs use all four. That's what lets the *same* 34M checkpoint you downloaded transfer to your register corpus without retraining — it was trained on many corpora that were all first cast into QuadGraph form.
+
+**How G-Reasoner operates over it:** node texts are encoded with the pinned embedder (Qwen3-Embedding-0.6B at 1024-dim for your 34M checkpoint — this is exactly the "stage-2 embedding build" step, and why the embedder isn't swappable), then a *query-dependent* GNN message-passes across all four layers at once and scores every node for relevance to the query. Because messages flow between layers — document ↔ entity ↔ attribute ↔ community — a query can enter at one granularity and surface evidence at another: "1BN+ mining companies connected to X" propagates through attribute nodes (revenue band), KG edges (co-filing), and community structure in a single forward pass, instead of the iterative LLM-hop loops other GraphRAG systems need.
+
+**Where it touches your stack concretely:** the `target_types` parameter in the QA service's `/retrieve` endpoint *is* the QuadGraph type system — it asks the GFM for top-k nodes *per layer* (give me documents vs entities vs communities). And the note in `big-local-downloads.org` that the 34M checkpoint runs "node features ON" with `GraphIndexDataset` (vs the 8M's V1 dataset class) reflects exactly this: the 34M is the QuadGraph-native G-Reasoner, while the 8M predates the four-layer formalization. After GFM scoring, the top-k nodes per type are formatted into a prompt for whatever LLM generates the answer — which is the decoupling point from the previous question: QuadGraph + G-Reasoner replace the *retrieval* half of RAG; the generator just receives well-chosen, multi-granularity context.
+* Embedding and Linkage
+Colbert
+* About L4 max
+Three layers, from hard to soft:
+
+**1. The Google-granted regional quota — currently 3.** The governing quota is `NvidiaL4GpuAllocNoZonalRedundancyPerProjectRegion` ("Total Nvidia L4 GPU allocation without zonal redundancy, per project per region"). We discovered its value the empirical way — the QA deploy was rejected with `requested: 4 allowed: 3`. Three is Google's standard starter allocation for the no-zonal-redundancy tier: it's what you get **on demand, with no quota request**, which is the whole reason this tier was chosen. It's per-project *and* per-region (a deployment in another L4 region would get its own 3), and it's separate from the zonal-redundancy tier's quota and from Compute Engine GPU quotas.
+
+**2. Where it's enforced.** Twice: at **deploy time** — Cloud Run validates each service's `max_instances` against the allocation (the 400s we hit at 6 and then 4) — and at **runtime admission**, where all GPU consumers share the pool of 3 concurrently: vLLM instances + extractor job tasks + QA instances. That's why the current arithmetic is deliberately exact: extraction runs at 1 job task + 2 vLLM = 3, with the side effect that a QA query arriving mid-extraction can't get a GPU.
+
+**3. Our own sub-allocation within it.** The tfvars carve up the 3: `vllm_max_instances = 2`, `qa_max_instances = 1`, and `extractor_datasets` length = simultaneous job GPUs. These are the knobs we control without asking Google for anything.
+
+**To raise it:** the quota is increase-eligible (`isEligible: true` on the quota record) — file via the Console quotas page or the `g.co/cloudrun/gpu-quota` link the error message itself provides. Approval typically considers billing history and regional capacity; new projects with a day of GPU usage and clean billing (this one) generally get modest bumps (6–8) quickly. That's the prerequisite for the full-corpus production pattern — e.g., 4 parallel extraction tasks + 3 vLLM instances would need ≥7.

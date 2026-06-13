@@ -1,0 +1,137 @@
+#+TITLE: Feasibility & strategy — Claude-powered gfm-extract / gfm-crawl
+#+AUTHOR: eugene@tautsec.com (drafted with Claude)
+#+DATE: 2026-06-13
+#+STARTUP: overview
+
+Companion write/ingest tools for the GFM-RAG MCP server (alongside the existing
+read tools gfm-retrieve / gfm-answer), letting a Claude Code session grow the
+"mother graph" incrementally and suggest where to crawl next.
+
+Authoritative Claude API facts below are from the in-repo claude-api skill
+reference (model IDs, pricing, Batches API, structured outputs), not memory.
+
+* Ground truth (measured 2026-06-13)
+- Mother graph = *shard-4* (served by the MCP / Cloud Run QA service):
+  =22,581 nodes / 489,687 edges / 104 relation types= (4,096 docs).
+- New-knowledge increments (the ladder): shard-0 =16=, shard-1 =64=,
+  shard-2 =256=, shard-3 =1,024= docs.
+- Existing extraction quality bottleneck (corpus-tuples/ladder-results.md):
+  entities ~98%, but *ABN recall 41–56%*, fact-gate ~80%, plus an ~11% arity
+  defect rate locally that guided decoding was meant to fix.
+
+* Verdict
+Feasible, and the right tool for the *incremental* case — but the bottleneck
+being solved is QUALITY, not speed, and the hard part is the graph MERGE, which
+does not exist yet.
+
+- + Structured outputs *guarantee* valid triple JSON → eliminates the arity
+  defect entirely (not just reduces it). Even Haiku should crush the 41–56%
+  ABN recall ceiling.
+- + Interactive path needs NO new LLM: the Claude Code session IS Claude, so it
+  extracts tuples in its own turn and calls a tool only to persist/merge.
+- + Economics flip in Claude's favour for SMALL increments — self-hosting won
+  on $/token at sustained scale; for a 64–256 doc shard, an L4 spin-up is pure
+  overhead vs a cents-scale Haiku batch.
+- ! Incremental merge into the mother graph is UNBUILT (pipeline builds
+  per-dataset graphs; no merge-into-existing; stage-2 re-embed + fingerprint
+  match required).
+- ! The served graph is single-dataset on Cloud Run — merge = rebuild + reload,
+  not a live mutation.
+
+* Where Claude fits each pipeline stage
+| Stage                         | Today                | Claude role                                                        | Verdict        |
+|-------------------------------+----------------------+--------------------------------------------------------------------+----------------|
+| Tuple extraction (NER+OpenIE) | qwen2.5:3b / 3B vLLM | Replace. One combined structured-output call (vs 2-call HippoRAG). | Strong replace |
+| Entity linkage (mention→node) | ColBERT candidate-gen| Augment: ColBERT gens candidates, Claude adjudicates the merge.    | Hybrid         |
+| Graph merge into mother       | does not exist       | Drive new-vs-existing decisions; mechanical append is code.        | Build it       |
+| ColBERT query-stage linkage   | ColBERT at query time| Leave alone — don't add a Claude call to the hot path.             | Don't replace  |
+
+Nuance: ColBERT is an embedding retriever over 22.6k node names — Claude can't
+cheaply replace *candidate generation* (though the vocabulary could live in a
+cached prefix). Claude's edge is *disambiguation* = the merge problem, not the
+query problem. ABNs are exact-match keys → bypass fuzzy matching entirely.
+
+* The two new tools
+** gfm-extract (dual-mode — the key design insight)
+- *Interactive mode* (chat corpus): the tool's INPUT SCHEMA is the structured
+  triples. The session extracts tuples itself (au-register profile as guidance)
+  and calls gfm-extract with validated triples. No extra API call, no extra
+  latency. Reuses the committed prompt-profile work.
+- *Volume mode* (a shard): dispatch a Message Batches job (Haiku 4.5, structured
+  outputs, profile as a prompt-cached prefix), return a job handle. Async
+  (batches <1h); gfm-status reports progress.
+** gfm-crawl (companion agent)
+- Uses Claude server-side web_search / web_fetch to gather docs about target
+  entities → pipes through gfm-extract → merges.
+- "Where to crawl" falls out of the graph: query the mother graph for SPARSE
+  regions (low-degree entities, thin sectors, dangling RelatedStatements refs)
+  and crawl to fill them. Loop: gfm-retrieve finds gap → gfm-crawl fetches →
+  gfm-extract merges → repeat.
+** Composition
+gfm-retrieve / gfm-answer = read; gfm-extract / gfm-crawl = write. Together the
+mother graph becomes a living object grown from a chat session — the intended
+workflow.
+
+* Model + API stack (authoritative)
+- *Workhorse: Haiku 4.5* ($1/$5 per MTok, 200K ctx) for batch extraction —
+  precisely the "simple, speed-critical, high-volume" case. Caveat: Haiku is
+  the cost/speed choice, NOT the default; Opus 4.8 is the quality default and
+  the call is the user's. Given how hard ABN recall was, *A/B Haiku vs the 3B
+  fact-gate on shard-2 before committing* (ground truth already exists there).
+- *Structured outputs* (output_config.format / messages.parse): guarantees
+  schema-valid {entities, triples}. Biggest single quality lever.
+- *Message Batches API*: 50% cost, ≤100k req/batch, caching+tools supported.
+  Right for shards ≥256.
+- *Prompt caching*: profile prefix identical across docs → cache once (~0.1x
+  reads); marginal input/doc ≈ 250 tokens.
+
+* Practicality at each scale (latency + quality + cost)
+Model: one combined NER+OpenIE call/doc, Haiku, cached profile prefix
+(~300 input + ~400 output tokens/doc), merged into the 22.6k-node mother graph.
+
+| Increment | Docs  | Interactive in-session | Batch latency        | Cost (Haiku, batched) | Merge impact on mother    | Quality |
+|-----------+-------+------------------------+----------------------+-----------------------+---------------------------+---------|
+| shard-0   |    16 | yes, seconds, one turn | overkill             | <A$0.05               | +~120 nodes (~0.5%)       | high    |
+| shard-1   |    64 | yes, ~1–2 min          | minutes              | ~A$0.15               | +~500 nodes (~2%)         | high    |
+| shard-2   |   256 | borderline → batch     | <1h                  | ~A$0.50               | +~2k nodes (~9%)          | A/B 3B  |
+| shard-3   | 1,024 | no → batch only        | <1h (~15–30 min est) | ~A$2                  | +~6k nodes (~25%) re-embed| high    |
+
+Reading across: *latency stops being the constraint*. Claude per-doc latency
+(2–5s, fully parallel in batch) is dwarfed by the MERGE (stage-2 re-embed of new
+nodes + GFM re-index), which scales with how much the mother graph changes.
+shard-0/1 trivially interactive; shard-2 is the batch threshold; shard-3 is a
++25%-node mutation where merge dominates wall-clock, not extraction.
+
+Contrast with today: shard-3 was a ~1.3-day CPU grind locally and DNF'd at the
+cloud 1h cap. *Claude batch + Haiku does the extraction in <1h for ~A$2 with
+guaranteed-valid, high-recall triples* — the most compelling line here.
+
+* Hard parts (project, not a patch)
+1. *Build the incremental merge.* Entity resolution vs 22.6k nodes (Claude
+   adjudicates ColBERT candidates), edge dedup, stage-2 re-embed of NEW nodes
+   only, GFM embedder-fingerprint kept intact. The real engineering.
+2. *Serving reload.* QA service loads one dataset; merge = rebuild index +
+   reload, not in-place. Design gfm-extract as stage→verify→promote, never
+   direct-write to the served graph.
+3. *Sovereignty + economics crossover.* Register data is public (fine to send);
+   crawled intel may not be — flag for gfm-crawl. API wins for incremental
+   shards; self-hosted vLLM still wins for a from-scratch 17k re-extraction.
+4. *Async UX.* Batch returns a handle, not results — gfm-extract + gfm-status
+   need job tracking like the existing Cloud Run proxy.
+
+* Recommended phased path
+1. *Prove extraction quality* — A/B Haiku + structured output vs the 3B
+   fact-gate on shard-2 (ground truth exists). Decides Haiku-vs-Sonnet and
+   validates the premise cheaply. (Needs ANTHROPIC_API_KEY in the WSL env —
+   unverified.)
+2. *gfm-extract interactive mode* — zero-new-infra: tool takes structured
+   triples, stages, merges into a COPY of the mother graph. Exercises merge
+   logic at shard-0/1 in-session.
+3. *Build merge + promote* — entity resolution, re-embed, candidate→promote.
+   Core deliverable.
+4. *Batch mode + gfm-crawl* — Batches API for shard-2/3, then the gap-driven
+   crawl loop.
+
+This is the unstructured-corpus phase (seven-layer analysis) finally getting
+tooling — where GFM-RAG's multi-hop reasoning earns its keep, because crawled
+prose is exactly where pre-computed RelatedStatements columns don't exist.
