@@ -57,6 +57,7 @@ class GFMRetriever:
         graph_retriever: BaseGNNModel,
         node_info: pd.DataFrame,
         device: torch.device,
+        excluded_mask: torch.Tensor | None = None,
     ) -> None:
         self.qa_data = qa_data
         self.graph = qa_data.graph
@@ -67,6 +68,12 @@ class GFMRetriever:
         self.node_info = node_info
         self.device = device
         self.num_nodes = self.graph.num_nodes
+        # Optional read-out filter: a boolean [num_nodes] mask of nodes to drop
+        # from results (e.g. attribute literals — register URLs, ABNs, revenue
+        # bands — that are degree hubs and pollute entity retrieval). None = off.
+        self.excluded_mask = (
+            excluded_mask.to(device) if excluded_mask is not None else None
+        )
 
     @torch.no_grad()
     def retrieve(
@@ -107,6 +114,10 @@ class GFMRetriever:
                 target_type
             ]  # raises KeyError if missing
             type_pred = pred[:, node_ids].squeeze(0)
+            if self.excluded_mask is not None:
+                type_pred = type_pred.masked_fill(
+                    self.excluded_mask[node_ids], float("-inf")
+                )
             topk = torch.topk(type_pred, k=min(top_k, len(node_ids)))
             original_ids = node_ids[topk.indices]
             results[target_type] = [
@@ -173,6 +184,46 @@ class GFMRetriever:
             "start_nodes_mask": start_nodes_mask,
         }
         return graph_retriever_input
+
+    # Attribute relations whose *targets* are non-company literals (locations,
+    # revenue bands, reporting periods, sectors, ABNs, register URLs). Their
+    # target nodes are typed "entity" by stage-2 but are degree hubs that
+    # dominate the GNN entity read-out; excluding them surfaces real companies.
+    _LITERAL_ATTR_RELS = frozenset({
+        "has revenue band", "has annual revenue band", "covers reporting period",
+        "headquartered in", "operates in sector", "has abn", "abn", "register entry",
+    })
+
+    @staticmethod
+    def _build_literal_exclude_mask(
+        stage1_dir: str, qa_data: GraphIndexDataset
+    ) -> torch.Tensor:
+        """Boolean [num_nodes] mask: True for attribute-literal nodes (targets of
+        _LITERAL_ATTR_RELS), to drop from retrieval read-out. Env-gated by the
+        caller; deterministic from stage-1 edges."""
+        edges = pd.read_csv(
+            os.path.join(stage1_dir, "edges.csv"),
+            keep_default_na=False,
+            usecols=["relation", "target"],
+        )
+        literal_names = set(
+            edges.loc[
+                edges["relation"].isin(GFMRetriever._LITERAL_ATTR_RELS), "target"
+            ]
+        )
+        num_nodes = qa_data.graph.num_nodes
+        mask = torch.zeros(num_nodes, dtype=torch.bool)
+        n = 0
+        for name in literal_names:
+            nid = qa_data.node2id.get(name)
+            if nid is not None:
+                mask[nid] = True
+                n += 1
+        logger.info(
+            "GFMRAG_EXCLUDE_LITERAL_ENTITIES: masking %d literal nodes from read-out",
+            n,
+        )
+        return mask
 
     @staticmethod
     def _load_qa_data_from_model_config(
@@ -300,6 +351,12 @@ class GFMRetriever:
 
         text_emb_model = instantiate(qa_data.text_emb_model_cfgs)
 
+        excluded_mask = None
+        if os.environ.get("GFMRAG_EXCLUDE_LITERAL_ENTITIES"):
+            excluded_mask = GFMRetriever._build_literal_exclude_mask(
+                stage1_dir, qa_data
+            )
+
         return GFMRetriever(
             qa_data=qa_data,
             text_emb_model=text_emb_model,
@@ -308,4 +365,5 @@ class GFMRetriever:
             graph_retriever=graph_retriever,
             node_info=nodes_df,
             device=device,
+            excluded_mask=excluded_mask,
         )

@@ -84,7 +84,14 @@ async def lifespan(app: FastAPI):
 
     _refresh_openai_token()  # before any client caches OPENAI_API_KEY
     ner_model = LLMNERModel(llm_api=LLM_API, model_name=LLM_MODEL)
-    el_model = ColbertELModel(model_name_or_path=EL_MODEL, root="/tmp/colbert")
+    el_model = ColbertELModel(
+        model_name_or_path=EL_MODEL,
+        root="/tmp/colbert",
+        # Durable cache dir (e.g. a writable gcsfuse mount): seeds /tmp on cold
+        # start instead of the ~14-18min rebuild. No-op when COLBERT_CACHE_DIR
+        # is unset.
+        cache_dir=os.environ.get("COLBERT_CACHE_DIR") or None,
+    )
 
     _state["retriever"] = GFMRetriever.from_index(
         data_dir=DATA_DIR,

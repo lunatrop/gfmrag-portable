@@ -1,5 +1,6 @@
 import hashlib
 import json
+import logging
 import shutil
 from pathlib import Path
 from typing import Any
@@ -11,6 +12,8 @@ from pylate.retrieve import ColBERT as ColBERTRetriever
 from gfmrag.graph_index_construction.utils import processing_phrases
 
 from .base_model import BaseELModel
+
+logger = logging.getLogger(__name__)
 
 ENCODE_BATCH_SIZE = 32
 QUERY_BATCH_SIZE = 32
@@ -24,6 +27,7 @@ class ColbertELModel(BaseELModel):
         force: bool = False,
         batch_size: int = ENCODE_BATCH_SIZE,
         use_fast: bool = False,
+        cache_dir: str | None = None,
         **_: Any,
     ) -> None:
         self.model_name_or_path = model_name_or_path
@@ -31,8 +35,19 @@ class ColbertELModel(BaseELModel):
         self.force = force
         self.batch_size = batch_size
         self.use_fast = use_fast
+        # Optional durable cache for the PLAID index. The build is deterministic
+        # given (entity_list, model), so on an ephemeral `root` (e.g. a Cloud Run
+        # /tmp) we seed it from `cache_dir` to skip the ~14-18min rebuild, and copy
+        # a freshly-built index back. Build/load stay on local `root` (mmap-safe);
+        # `cache_dir` is a plain directory (e.g. a writable gcsfuse mount) touched
+        # only by file copies. No-op when unset; no extra dependencies.
+        self.cache_dir = cache_dir
         self.model = ColBERTModel(model_name_or_path=model_name_or_path)
         self._retriever: ColBERTRetriever | None = None
+
+    def _cache_index_root(self, fingerprint: str) -> Path:
+        model_slug = self.model_name_or_path.replace("/", "_")
+        return Path(self.cache_dir) / "pylate" / model_slug / fingerprint  # type: ignore[arg-type]
 
     def _index_root(self, fingerprint: str) -> Path:
         model_slug = self.model_name_or_path.replace("/", "_")
@@ -70,6 +85,17 @@ class ColbertELModel(BaseELModel):
             "entity_list": entity_list,
         }
 
+        # Seed an ephemeral root from the durable cache before deciding to
+        # rebuild. Best-effort: any failure falls through to a local build.
+        if self.cache_dir and not self.force and not index_root.exists():
+            cached = self._cache_index_root(fingerprint)
+            if cached.exists():
+                try:
+                    shutil.copytree(cached, index_root)
+                    logger.info("ColBERT index seeded from cache %s", cached)
+                except Exception as e:  # noqa: BLE001
+                    logger.warning("ColBERT cache seed failed (%s); rebuilding", e)
+
         existing_metadata = self._load_metadata(fingerprint)
         should_reuse = (
             not self.force
@@ -101,6 +127,15 @@ class ColbertELModel(BaseELModel):
                 documents_embeddings=doc_embeddings,
             )
             self._write_metadata(fingerprint, entity_list)
+            # Persist the freshly-built index so the next cold start reuses it.
+            if self.cache_dir:
+                cached = self._cache_index_root(fingerprint)
+                try:
+                    cached.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copytree(index_root, cached, dirs_exist_ok=True)
+                    logger.info("ColBERT index persisted to cache %s", cached)
+                except Exception as e:  # noqa: BLE001
+                    logger.warning("ColBERT cache persist failed (%s)", e)
         else:
             self.entity_list = existing_metadata["entity_list"]  # type: ignore[index]
             plaid = PLAID(
