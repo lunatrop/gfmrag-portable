@@ -4,7 +4,7 @@
       "command": "wsl.exe",
       "args": [
         "-d", "ubuntu", "bash", "-c",
-        "cd $HOME/repo/gfm-rag && export PATH=$HOME/.local/bin:$PATH && export GFMRAG_DATASET=shard-4 && exec .venv/bin/python scripts/mcp/gfmrag_server.py"
+        "GFMRAG_DATASET=union-0-5-canon-eq exec /home/scorchman/repo/gfm-rag/.venv/bin/python /home/scorchman/repo/gfm-rag/scripts/mcp/gfmrag_server.py"
       ]
     }
   }

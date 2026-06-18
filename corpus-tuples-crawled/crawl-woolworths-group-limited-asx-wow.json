@@ -1,0 +1,249 @@
+{
+ "company": "Woolworths Group Limited (ASX:WOW)",
+ "amenability": "High",
+ "source_passage": "Australia's largest grocery retailer with a very large consumer attack surface and a confirmed high-severity breach: its MyDeal subsidiary's CRM was accessed via a compromised credential, exposing ~2.2 million customers' PII (Oct 2022), OAIC-notified under the NDB scheme. Recurring human-error exposure (the e-gift-card spreadsheet leak) and a sprawling subsidiary base (Quantium/wiq, Petstock, PFD, PetCulture) compound supply-chain and data-governance risk. Sheer size, multiple consumer-data brands and a real breach history make it highly amenable. MyDeal (Woolworths subsidiary) breach: ~2.2M customers' names/emails/phones/addresses (some DOBs) exposed via compromised credential into CRM; data offered for sale (Oct 2022) OAIC notified under NDB scheme; OAIC statement confirming engagement on compliance Insider/human-error e-gift-card leak (~8,000 cards, >A$1m) emailed to 1,000+ customers (2015; resurfaced as case study 2023) Majority-owned subsidiary: Quantium / wiq (~75-80%), which also serves CBA, Qantas, Flight Centre, Telstra Subsidiary: MyDeal.com.au (~80%) — breach source Subsidiaries: Petstock (55%), PFD Food Services (100%), PetCulture JV (~60%; pet insurance via PetSure/Hollard) Former subsidiary: Endeavour Group (demerged Jul 2021; final stake exited Sep 2024) Major supplier: Costa Group (fresh produce) Delivery partners: DoorDash (current), Uber Eats (historical) External auditor: Deloitte Touche Tohmatsu Competitors: Coles, ALDI, Metcash/IGA",
+ "sources": [
+  "https://www.securityweek.com/retail-giant-woolworths-discloses-data-breach-impacting-22-million-mydeal-customers/",
+  "https://www.oaic.gov.au/newsroom/oaic-statement-on-mydeal-data-breach",
+  "https://www.cmo.com.au/article/576255/woolworths-apologises-e-gift-card-customer-data-breach",
+  "https://www.itnews.com.au/news/woolworths-to-take-control-of-quantium-for-223m-563582"
+ ],
+ "extractor": {
+  "llm_api": "openai",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "endpoint": "https://gfmrag-vllm-olbu7sektq-uc.a.run.app",
+  "seconds": 20.7
+ },
+ "entities": [
+  "Australia",
+  "CBA",
+  "Deloitte Touche Tohmatsu",
+  "Flight Centre",
+  "MyDeal",
+  "PFD",
+  "PetCulture",
+  "Petstock",
+  "Qantas",
+  "Quantium",
+  "Telstra",
+  "Woolworths",
+  "wiq"
+ ],
+ "triples": [
+  [
+   "Australia",
+   "has",
+   "largest grocery retailer"
+  ],
+  [
+   "MyDeal",
+   "is",
+   "subdivision of Woolworths"
+  ],
+  [
+   "MyDeal",
+   "exposed",
+   "~2.2 million customers' PII"
+  ],
+  [
+   "MyDeal",
+   "exposed",
+   "names/emails/phones/addresses (some DOBs)"
+  ],
+  [
+   "MyDeal",
+   "exposed",
+   "via compromised credential into CRM"
+  ],
+  [
+   "MyDeal",
+   "exposed",
+   "data offered for sale"
+  ],
+  [
+   "MyDeal",
+   "exposed",
+   "OAIC notified under NDB scheme"
+  ],
+  [
+   "MyDeal",
+   "exposed",
+   "Insider/human-error e-gift-card leak"
+  ],
+  [
+   "Quantium",
+   "is",
+   "subdivision of Woolworths"
+  ],
+  [
+   "Quantium",
+   "serves",
+   "CBA"
+  ],
+  [
+   "Quantium",
+   "serves",
+   "Qantas"
+  ],
+  [
+   "Quantium",
+   "serves",
+   "Flight Centre"
+  ],
+  [
+   "Quantium",
+   "serves",
+   "Telstra"
+  ],
+  [
+   "Quantium",
+   "serves",
+   "Woolworths"
+  ],
+  [
+   "Quantium",
+   "serves",
+   "wiq"
+  ],
+  [
+   "Petstock",
+   "is",
+   "subdivision of Woolworths"
+  ],
+  [
+   "Petstock",
+   "serves",
+   "CBA"
+  ],
+  [
+   "Petstock",
+   "serves",
+   "Qantas"
+  ],
+  [
+   "Petstock",
+   "serves",
+   "Flight Centre"
+  ],
+  [
+   "Petstock",
+   "serves",
+   "Telstra"
+  ],
+  [
+   "Petstock",
+   "serves",
+   "Woolworths"
+  ],
+  [
+   "Petstock",
+   "serves",
+   "wiq"
+  ],
+  [
+   "PFD",
+   "is",
+   "subdivision of Woolworths"
+  ],
+  [
+   "PFD",
+   "serves",
+   "CBA"
+  ],
+  [
+   "PFD",
+   "serves",
+   "Qantas"
+  ],
+  [
+   "PFD",
+   "serves",
+   "Flight Centre"
+  ],
+  [
+   "PFD",
+   "serves",
+   "Telstra"
+  ],
+  [
+   "PFD",
+   "serves",
+   "Woolworths"
+  ],
+  [
+   "PFD",
+   "serves",
+   "wiq"
+  ],
+  [
+   "PetCulture",
+   "is",
+   "subdivision of Woolworths"
+  ],
+  [
+   "PetCulture",
+   "serves",
+   "CBA"
+  ],
+  [
+   "PetCulture",
+   "serves",
+   "Qantas"
+  ],
+  [
+   "PetCulture",
+   "serves",
+   "Flight Centre"
+  ],
+  [
+   "PetCulture",
+   "serves",
+   "Telstra"
+  ],
+  [
+   "PetCulture",
+   "serves",
+   "Woolworths"
+  ],
+  [
+   "PetCulture",
+   "serves",
+   "wiq"
+  ],
+  [
+   "Costa Group",
+   "is",
+   "supplier of Woolworths"
+  ],
+  [
+   "DoorDash",
+   "is",
+   "delivery partner of Woolworths"
+  ],
+  [
+   "Uber Eats",
+   "is",
+   "delivery partner of Woolworths"
+  ],
+  [
+   "Deloitte Touche Tohmatsu",
+   "is",
+   "external auditor of Woolworths"
+  ],
+  [
+   "Coles",
+   "is",
+   "competitor of Woolworths"
+  ],
+  [
+   "ALDI",
+   "is",
+   "competitor of Woolworths"
+  ],
+  [
+   "Metcash/IGA",
+   "is",
+   "competitor of Woolworths"
+  ]
+ ]
+}

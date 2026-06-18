@@ -1,0 +1,177 @@
+{
+ "company": "Uber Australia (Rasier Pacific Pty Ltd)",
+ "amenability": "High",
+ "source_passage": "Australian operating entity of the Uber group (ridesharing/food delivery; holds Australian driver and customer PII). Subject to a major confirmed breach affecting ~1.2 million Australians (2016, concealed until Nov 2017) and a formal OAIC determination (23 Jul 2021) that Uber breached the Privacy Act, plus the global Lapsus$ 2022 compromise of internal systems the Australian operation runs on. Severe, regulator-confirmed history and high data sensitivity. CAVEAT: the research flags the Australian-HQ status as false (US/Netherlands parents); the OAIC respondents were Uber Technologies, Inc. and Uber B.V., not Rasier Pacific directly. Still ranked High as an Australian-market entity with Australian-specific incidents/regulatory action. 2016 breach: names + driver's-licence numbers of ~600k drivers and PII of ~1.2M Australians; ransom paid via bug bounty and concealed until Nov 2017 OAIC determination (23 Jul 2021): Uber Technologies Inc. and Uber B.V. found to have interfered with privacy of ~1.2M Australians; remediation orders Sep 2022 Lapsus$ breach of Uber global internal systems (MFA-fatigue on a contractor account) affecting the platform AU operations run on Parent/contracting entity: Uber B.V. (Netherlands) Ultimate parent: Uber Technologies, Inc. (USA) Sister AU entities: Uber Australia Holdings, Portier Pacific, Uber Pacific, Uber Australia Pty Ltd PwC personnel/advisory links (PwC partner Craig Heraghty a director of an AU Uber entity) — NOT confirmed as statutory auditor Delivery partner of Woolworths (Uber Eats, historical); competitor Deliveroo (exited AU Nov 2022)",
+ "sources": [
+  "https://www.oaic.gov.au/news/media-centre/uber-found-to-have-interfered-with-privacy",
+  "https://www.cnn.com/2022/09/19/tech/uber-lapsus-cybersecurity-incident/index.html",
+  "https://michaelwest.com.au/investigating-uber-more-lawyers-than-drivers/"
+ ],
+ "extractor": {
+  "llm_api": "openai",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "endpoint": "https://gfmrag-vllm-olbu7sektq-uc.a.run.app",
+  "seconds": 117.7,
+  "rechunked": true
+ },
+ "entities": [
+  "1.2M",
+  "2016",
+  "600k",
+  "AU",
+  "AU Uber entity",
+  "Australians",
+  "Craig Heraghty",
+  "Deliveroo",
+  "Lapsus$",
+  "Netherlands",
+  "Portier Pacific",
+  "PwC",
+  "Rasier Pacific Pty Ltd",
+  "USA",
+  "Uber Australia",
+  "Uber Australia Holdings",
+  "Uber Australia Pty Ltd",
+  "Uber B.V.",
+  "Uber Eats",
+  "Uber Pacific",
+  "Uber Technologies Inc.",
+  "Uber Technologies, Inc.",
+  "Woolworths"
+ ],
+ "triples": [
+  [
+   "Uber Australia",
+   "owned by",
+   "Rasier Pacific Pty Ltd"
+  ],
+  [
+   "Uber Australia",
+   "experienced",
+   "2016 breach"
+  ],
+  [
+   "Uber Australia",
+   "affected",
+   "~600k drivers and PII of ~1.2M Australians"
+  ],
+  [
+   "Uber Australia",
+   "paid ransom",
+   "via bug bounty"
+  ],
+  [
+   "Uber Australia",
+   "determined to have interfered with privacy of",
+   "~1.2M Australians",
+   "by",
+   "OAIC determination"
+  ],
+  [
+   "Uber Australia",
+   "remediation orders",
+   "in",
+   "Sep 2022"
+  ],
+  [
+   "Lapsus$",
+   "affected",
+   "Uber global internal systems"
+  ],
+  [
+   "Lapsus$",
+   "targeted",
+   "a contractor account"
+  ],
+  [
+   "Lapsus$",
+   "resulted in",
+   "MFA-fatigue"
+  ],
+  [
+   "Lapsus$",
+   "affecting",
+   "the platform AU operations"
+  ],
+  [
+   "Uber Australia (Rasier Pacific Pty Ltd)",
+   "parent entity of",
+   "Uber B.V."
+  ],
+  [
+   "Uber B.V.",
+   "ultimate parent",
+   "Uber Technologies, Inc."
+  ],
+  [
+   "Uber Technologies, Inc.",
+   "country",
+   "USA"
+  ],
+  [
+   "Uber Australia (Rasier Pacific Pty Ltd)",
+   "sister entity of",
+   "Uber Australia Holdings"
+  ],
+  [
+   "Uber Australia (Rasier Pacific Pty Ltd)",
+   "sister entity of",
+   "Portier Pacific"
+  ],
+  [
+   "Uber Australia (Rasier Pacific Pty Ltd)",
+   "sister entity of",
+   "Uber Pacific"
+  ],
+  [
+   "Uber Australia (Rasier Pacific Pty Ltd)",
+   "sister entity of",
+   "Uber Australia Pty Ltd"
+  ],
+  [
+   "Uber Australia",
+   "is",
+   "Rasier Pacific Pty Ltd"
+  ],
+  [
+   "Rasier Pacific Pty Ltd",
+   "has",
+   "PwC personnel/advisory links"
+  ],
+  [
+   "Craig Heraghty",
+   "is",
+   "PwC partner"
+  ],
+  [
+   "Craig Heraghty",
+   "is",
+   "director of an AU Uber entity"
+  ],
+  [
+   "Uber Australia",
+   "links to",
+   "Delivery partner of Woolworths"
+  ],
+  [
+   "Uber Eats",
+   "is",
+   "part of Uber Australia"
+  ],
+  [
+   "Uber Eats",
+   "has",
+   "historical connection with Delivery partner of Woolworths"
+  ],
+  [
+   "Deliveroo",
+   "is",
+   "competitor of Uber Eats"
+  ],
+  [
+   "Deliveroo",
+   "exited AU",
+   "in November 2022"
+  ]
+ ]
+}

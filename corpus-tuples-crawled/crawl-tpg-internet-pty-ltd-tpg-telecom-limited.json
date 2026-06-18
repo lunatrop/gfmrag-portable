@@ -1,0 +1,246 @@
+{
+ "company": "TPG Internet Pty Ltd / TPG Telecom Limited (ASX:TPG)",
+ "amenability": "High",
+ "source_passage": "Telco/ISP holding large volumes of customer PII, with TWO confirmed high-severity breaches: the iiNet order-management breach (identified 16 Aug 2025, disclosed to ASX 19 Aug 2025) exfiltrating ~280,000 active customer email addresses plus landlines, addresses and ~1,700 modem passwords via stolen employee credentials; and the Dec 2022 Hosted Exchange breach affecting up to ~15,000 iiNet/Westnet business customers (identified by Mandiant). Recency (a 2025 incident), severity, the high-data-sensitivity telco sector and group scale make this the single most amenable target. The breaches were notified under the OAIC NDB scheme and worked with ACSC/NOCS. iiNet (TPG brand) Aug 2025 breach: ~280k customer emails, ~20k landlines, ~10k usernames+addresses, ~1,700 modem passwords via stolen employee credentials; OAIC/ACSC engaged Dec 2022 Hosted Exchange breach affecting up to ~15k iiNet/Westnet business email customers; Mandiant identified the unauthorised access (attacker hunting crypto/financial data) Historical regulator scrutiny: ACCC s.87B undertaking against TPG Internet Pty Ltd over misleading FTTN/FTTB broadband speed claims (non-cyber) Parent: TPG Telecom Limited (ASX:TPG), formed by 2020 TPG + Vodafone Hutchison Australia merger Substantial shareholders: CK Hutchison/Hutchison Telecommunications Australia (~23.98%), Vodafone Group plc (~23.98%), Washington H. Soul Pattinson (~12.78%) Sibling brands: iiNet, Internode, Westnet, AAPT, Lebara, felix, Vodafone (iiNet/Westnet are the breached brands) Technology supplier: Ericsson (2023 AI network analytics deal) Incident-response adviser: Mandiant (Google) Competitors: Telstra, Optus (Optus is also a MOCN network-sharing partner) External auditor of parent: KPMG",
+ "sources": [
+  "https://ia.acs.org.au/article/2025/iinet-breach-compromises-280-000-customers--data.html",
+  "https://www.bankinfosecurity.com/australian-telecom-giant-tpg-discloses-email-hack-a-20717",
+  "https://en.wikipedia.org/wiki/TPG_Telecom",
+  "https://www.accc.gov.au/public-registers/undertakings-registers/section-87b-undertakings-register/tpg-internet-pty-ltd-s87b-undertaking"
+ ],
+ "extractor": {
+  "llm_api": "openai",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "endpoint": "https://gfmrag-vllm-olbu7sektq-uc.a.run.app",
+  "seconds": 148.3
+ },
+ "entities": [
+  "ACSC",
+  "CK Hutchison/Hutchison Telecommunications Australia",
+  "Dec 2022 Hosted Exchange",
+  "Ericsson",
+  "Google",
+  "KPMG",
+  "Mandiant",
+  "NOCS",
+  "OAIC",
+  "Optus",
+  "TPG",
+  "TPG Telecom Limited",
+  "Telco",
+  "Telstra",
+  "Vodafone Group plc",
+  "Washington H. Soul Pattinson",
+  "iiNet"
+ ],
+ "triples": [
+  [
+   "Telco",
+   "has",
+   "Telco/ISP holding large volumes of customer PII"
+  ],
+  [
+   "iiNet",
+   "has",
+   "Telco/ISP holding large volumes of customer PII"
+  ],
+  [
+   "iiNet",
+   "has",
+   "two confirmed high-severity breaches"
+  ],
+  [
+   "iiNet",
+   "has",
+   "order-management breach"
+  ],
+  [
+   "iiNet",
+   "has",
+   "Dec 2022 Hosted Exchange breach"
+  ],
+  [
+   "iiNet",
+   "has",
+   "Dec 2022 Hosted Exchange breach",
+   "affecting up to ~15,000 iiNet/Westnet business customers"
+  ],
+  [
+   "Dec 2022 Hosted Exchange breach",
+   "identified by",
+   "Mandiant"
+  ],
+  [
+   "iiNet",
+   "has",
+   "order-management breach",
+   "identified 16 Aug 2025"
+  ],
+  [
+   "iiNet",
+   "has",
+   "order-management breach",
+   "disclosed to ASX 19 Aug 2025"
+  ],
+  [
+   "iiNet",
+   "has",
+   "order-management breach",
+   "exfiltrating ~280,000 active customer email addresses plus landlines, addresses and ~1,700 modem passwords"
+  ],
+  [
+   "iiNet",
+   "has",
+   "order-management breach",
+   "via stolen employee credentials"
+  ],
+  [
+   "Dec 2022 Hosted Exchange breach",
+   "affecting up to ~15,000 iiNet/Westnet business customers",
+   "identified by",
+   "Mandiant"
+  ],
+  [
+   "Dec 2022 Hosted Exchange breach",
+   "affecting up to ~15,000 iiNet/Westnet business customers",
+   "identified by",
+   "Mandiant",
+   "affecting up to ~15k iiNet/Westnet business email customers"
+  ],
+  [
+   "Dec 2022 Hosted Exchange breach",
+   "affecting up to ~15,000 iiNet/Westnet business customers",
+   "identified by",
+   "Mandiant",
+   "unauthorised access (attacker hunting crypto/financial data)"
+  ],
+  [
+   "iiNet",
+   "has",
+   "parent",
+   "TPG Telecom Limited"
+  ],
+  [
+   "TPG Telecom Limited",
+   "has",
+   "parent",
+   "TPG"
+  ],
+  [
+   "TPG",
+   "has",
+   "substantial shareholders",
+   "CK Hutchison/Hutchison Telecommunications Australia"
+  ],
+  [
+   "TPG",
+   "has",
+   "substantial shareholders",
+   "Vodafone Group plc"
+  ],
+  [
+   "TPG",
+   "has",
+   "substantial shareholders",
+   "Washington H. Soul Pattinson"
+  ],
+  [
+   "iiNet",
+   "has",
+   "sibling brands",
+   "Internode"
+  ],
+  [
+   "iiNet",
+   "has",
+   "sibling brands",
+   "Westnet"
+  ],
+  [
+   "iiNet",
+   "has",
+   "sibling brands",
+   "AAPT"
+  ],
+  [
+   "iiNet",
+   "has",
+   "sibling brands",
+   "Lebara"
+  ],
+  [
+   "iiNet",
+   "has",
+   "sibling brands",
+   "felix"
+  ],
+  [
+   "iiNet",
+   "has",
+   "sibling brands",
+   "Vodafone"
+  ],
+  [
+   "iiNet",
+   "has",
+   "technology supplier",
+   "Ericsson"
+  ],
+  [
+   "iiNet",
+   "has",
+   "incident-response adviser",
+   "Mandiant"
+  ],
+  [
+   "iiNet",
+   "has",
+   "competitors",
+   "Telstra"
+  ],
+  [
+   "iiNet",
+   "has",
+   "competitors",
+   "Optus"
+  ],
+  [
+   "Optus",
+   "has",
+   "competitors",
+   "Telstra"
+  ],
+  [
+   "Optus",
+   "has",
+   "MOCN network-sharing partner",
+   "Telstra"
+  ],
+  [
+   "iiNet",
+   "has",
+   "external auditor of parent",
+   "KPMG"
+  ],
+  [
+   "ACSC",
+   "has",
+   "undertaking against",
+   "TPG Internet Pty Ltd"
+  ],
+  [
+   "ACSC",
+   "has",
+   "undertaking against",
+   "TPG Internet Pty Ltd",
+   "over misleading FTTN/FTTB broadband speed claims"
+  ],
+  [
+   "ACSC",
+   "has",
+   "undertaking against",
+   "TPG Internet Pty Ltd",
+   "non-cyber"
+  ]
+ ]
+}

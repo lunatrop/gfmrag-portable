@@ -1,0 +1,59 @@
+{
+  "doc_id": "crawl-2026-06-18-rasier-pacific-uber",
+  "title": "RASIER PACIFIC PTY LTD (Uber) — crawled relationships",
+  "source_passage": "RASIER PACIFIC PTY LTD (ABN 27 622 365 833) is an Australian entity of Uber. It filed a joint modern slavery statement with PORTIER PACIFIC PTY LTD, UBER AUSTRALIA HOLDINGS PTY LTD and UBER AUSTRALIA PTY LTD for the reporting period 2021. In August 2021 Uber Eats partnered with Woolworths Group to deliver same-hour groceries from Woolworths Metro stores, and Uber provided last-mile delivery for Woolworths.com.au orders. Uber Eats competed with Deliveroo in Australian food delivery; Uber Eats held 52.9 percent market share while Deliveroo held 11.7 percent, and Deliveroo exited Australia in November 2022. PricewaterhouseCoopers is the independent auditor of Uber Technologies. BWS and Dan Murphy's, operated by Endeavour Group, use DoorDash and Menulog for third-party delivery rather than Uber Eats.",
+  "seed_entity": {"name": "RASIER PACIFIC PTY LTD", "abn": "27622365833", "revenue_band": "0-99M", "hq": "Australia", "register_link": "https://modernslaveryregister.gov.au/statements/8912/"},
+  "sources": [
+    "https://www.uber.com/en-AU/newsroom/woolworths/",
+    "https://www.woolworthsgroup.com.au/au/en/our-newsroom/latest-news/2021/woolworths-and-uber-eats-partner-to-accelerate-ultra-convenience-in-australia.html",
+    "https://www.itnews.com.au/news/woolworths-partners-with-uber-eats-for-same-hour-delivery-568937",
+    "https://www.lightspeedhq.com/au/blog/what-does-the-collapse-of-deliveroo-mean-for-the-future-of-delivery-in-australia/",
+    "https://www.thenewdaily.com.au/finance/2022/11/18/deliveroo-exit-gig-economy",
+    "https://www.sec.gov/Archives/edgar/data/0001543151/000155278124000232/e24180_uber-defa14a.htm",
+    "https://www.drinkstrade.com.au/news/dan-murphys-announces-exclusive-partnership-with-third-party-delivery-service/"
+  ],
+  "extractor": {"llm_api": "ollama", "model": "qwen2.5:3b", "seconds": 177},
+  "entities": [
+    "ABN 27 622 365 833",
+    "Australia",
+    "Deliveroo",
+    "DoorDash",
+    "Endeavour Group",
+    "Menulog",
+    "PORTIER PACIFIC PTY LTD",
+    "PricewaterhouseCoopers",
+    "RASIER PACIFIC PTY LTD",
+    "UBER AUSTRALIA HOLDINGS PTY LTD",
+    "UBER AUSTRALIA PTY LTD",
+    "Woolworths Group",
+    "Woolworths Metro",
+    "Woolworths.com.au"
+  ],
+  "triples": [
+    ["RASIER PACIFIC PTY LTD (ABN 27 622 365 833)", "is an entity of", "Uber"],
+    ["PORTIER PACIFIC PTY LTD", "filed a joint modern slavery statement with", "RASIER PACIFIC PTY LTD"],
+    ["UBER AUSTRALIA HOLDINGS PTY LTD", "filed a joint modern slavery statement with", "RASIER PACIFIC PTY LTD"],
+    ["UBER AUSTRALIA PTY LTD", "filed a joint modern slavery statement with", "RASIER PACIFIC PTLY LTD"],
+    ["PORTIER PACIFIC PTY LTD", "filed a joint modern slavery statement with", "RASIER PACIFIC PTY LTD"],
+    ["RASIER PACIFIC PTY LTD", "filed a joint modern slavery statement with", "PORTIER PACIFIC PTY LTD"],
+    ["RASIER PACIFIC PTY LTD", "filed a joint modern slavery statement with", "UBER AUSTRALIA HOLDINGS PTY LTD"],
+    ["RASIER PACIFIC PTY LTD", "filed a joint modern slavery statement with", "UBER AUSTRALIA PTY LTD"],
+    ["Woolworths Group", "partnered with", "Uber Eats"],
+    ["Woolworths Metro stores", "offered groceries from", "Uber Eats"],
+    ["Uber Eats", "provided last-mile delivery for", "Woolworths.com.au orders"],
+    ["Deliveroo", "competed with", "Uber Eats"],
+    ["Uber Eats", "held market share of", "52.9 percent"],
+    ["Deliveroo", "held market share of", "11.7 percent"],
+    ["Deliveroo", "exited Australia in", "November 2022"],
+    ["PricewaterhouseCoopers", "is the independent auditor of", "Uber Technologies"]
+  ],
+  "notes": [
+    "RAW extractor output, unmodified (warts retained).",
+    "Typo: 'RASIER PACIFIC PTLY LTD' in triple 4 (LLM error) — fact-gate exact-match against register would flag it.",
+    "Recall miss: Endeavour Group / DoorDash / Menulog extracted as entities but the Endeavour->DoorDash/Menulog relationship was not turned into a triple.",
+    "Redundancy: joint-filing triples are duplicated/bidirectional — dedup at merge.",
+    "'Uber Eats' appears in edges but is not a standalone NER entity.",
+    "Web-derived edges (partnered_with, competed_with, is_auditor_of) require provenance (see sources) + confidence before graph admission; they have no register ground truth.",
+    "PwC audits Uber Technologies (US parent); link to RASIER PACIFIC is at group level, not a direct AU-subsidiary engagement."
+  ]
+}

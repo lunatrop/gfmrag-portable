@@ -1,0 +1,252 @@
+{
+ "company": "MYOB Australia (MYOB Group)",
+ "amenability": "Medium",
+ "source_passage": "Business-management / accounting / payroll SaaS for SMEs and mid-market — high data sensitivity (custodian of payroll, TFNs, bank details for many client businesses). Confirmed high-severity 2019 payroll incident: an AccountRight Live glitch sent/exposed payment summaries and payslips to wrong recipients across employers, exposing salaries, names, addresses, TFNs and bank details; reported to OAIC and ATO. Incident is dated (2019) and was a glitch rather than an external breach, hence Medium rather than High. KKR-owned (private), large user base (~1.2M), and a fresh April 2026 Microsoft AI partnership expanding its tech footprint. 2019 payroll/payslip data exposure (AccountRight Live glitch): salaries, names, addresses, TFNs, bank details sent to wrong people; OAIC + ATO notified (Notifiable Data Breach) 2019 incident corroborated by independent media UpGuard 'A' rating (825/950) but flags infostealer malware detected on associated systems plus CSP/DNSSEC/HSTS hygiene gaps (low-confidence automated signal) Parent/owner: KKR (acquired ~A$2bn in 2019, delisted from ASX); former PE owners Bain Capital (2011-19), Archer Capital (2009-11) Strategic tech partner: Microsoft (five-year AI partnership signed Apr 2026; 'Powered by Microsoft') Subsidiaries/brands: Tall Emu (CRM), Flare HR (HR/payroll fintech), Nimbus Portal Solutions (doc mgmt), GreatSoft (practice mgmt) Competitors: Xero (market leader ~60%), Intuit QuickBooks, Reckon Clarifying finding: the 'Endeavour' MYOB implementation partner is a NZ ERP consultancy, NOT ASX-listed Endeavour Group (name collision)",
+ "sources": [
+  "https://ausdatabreach.org/breaches/2019/myob/",
+  "https://au.finance.yahoo.com/news/peoples-salaries-exposed-after-myob-glitch-005414328.html",
+  "https://news.microsoft.com/source/asia/2026/04/08/myob-and-microsoft-sign-five-year-strategic-partnership/",
+  "https://www.upguard.com/security-report/myob"
+ ],
+ "extractor": {
+  "llm_api": "openai",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "endpoint": "https://gfmrag-vllm-olbu7sektq-uc.a.run.app",
+  "seconds": 120.7,
+  "rechunked": true
+ },
+ "entities": [
+  "2009-11",
+  "2011-19",
+  "2019",
+  "825/950",
+  "A",
+  "A$2bn",
+  "ATO",
+  "AccountRight Live",
+  "Apr 2026",
+  "Archer Capital",
+  "Bain Capital",
+  "CSP/DNSSEC/HSTS",
+  "Endeavour",
+  "Endeavour Group",
+  "Flare HR",
+  "GreatSoft",
+  "Intuit QuickBooks",
+  "KKR",
+  "MYOB Australia",
+  "MYOB Group",
+  "MYOB implementation partner",
+  "Microsoft",
+  "NZ ERP consultancy",
+  "Nimbus Portal Solutions",
+  "Notifiable Data Breach",
+  "OAIC",
+  "Reckon Clarifying",
+  "TFNs",
+  "Tall Emu",
+  "UpGuard",
+  "Xero",
+  "addresses",
+  "associated systems",
+  "bank details",
+  "detected",
+  "hygiene gaps",
+  "incident",
+  "infostealer malware",
+  "names",
+  "payroll/payslip data exposure",
+  "rating",
+  "salaries",
+  "wrong people"
+ ],
+ "triples": [
+  [
+   "MYOB Australia",
+   "part of",
+   "MYOB Group"
+  ],
+  [
+   "2019 payroll/payslip data exposure",
+   "affected",
+   "salaries"
+  ],
+  [
+   "2019 payroll/payslip data exposure",
+   "affected",
+   "names"
+  ],
+  [
+   "2019 payroll/payslip data exposure",
+   "affected",
+   "addresses"
+  ],
+  [
+   "2019 payroll/payslip data exposure",
+   "affected",
+   "TFNs"
+  ],
+  [
+   "2019 payroll/payslip data exposure",
+   "affected",
+   "bank details"
+  ],
+  [
+   "2019 payroll/payslip data exposure",
+   "sent to",
+   "wrong people"
+  ],
+  [
+   "2019 payroll/payslip data exposure",
+   "notified",
+   "OAIC"
+  ],
+  [
+   "2019 payroll/payslip data exposure",
+   "notified",
+   "ATO"
+  ],
+  [
+   "2019 payroll/payslip data exposure",
+   "corroborated by",
+   "UpGuard"
+  ],
+  [
+   "UpGuard",
+   "gave",
+   "A rating"
+  ],
+  [
+   "UpGuard",
+   "gave",
+   "825/950 rating"
+  ],
+  [
+   "UpGuard",
+   "gave",
+   "low-confidence automated signal"
+  ],
+  [
+   "UpGuard",
+   "gave",
+   "infostealer malware"
+  ],
+  [
+   "UpGuard",
+   "gave",
+   "CSP/DNSSEC/HSTS hygiene gaps"
+  ],
+  [
+   "UpGuard",
+   "gave",
+   "infostealer malware",
+   "detected on",
+   "associated systems"
+  ],
+  [
+   "MYOB Australia",
+   "parent/owner",
+   "KKR"
+  ],
+  [
+   "MYOB Australia",
+   "acquired",
+   "A$2bn"
+  ],
+  [
+   "MYOB Australia",
+   "acquired",
+   "2019"
+  ],
+  [
+   "MYOB Australia",
+   "former PE owners",
+   "Bain Capital"
+  ],
+  [
+   "MYOB Australia",
+   "former PE owners",
+   "Archer Capital"
+  ],
+  [
+   "MYOB Australia",
+   "strategic tech partner",
+   "Microsoft"
+  ],
+  [
+   "Microsoft",
+   "five-year AI partnership with",
+   "MYOB Australia"
+  ],
+  [
+   "Microsoft",
+   "AI partnership signed",
+   "Apr 2026"
+  ],
+  [
+   "Microsoft",
+   "partnership branded as",
+   "'Powered by Microsoft'"
+  ],
+  [
+   "MYOB Australia",
+   "subsidiary",
+   "Tall Emu"
+  ],
+  [
+   "MYOB Australia",
+   "subsidiary",
+   "Flare HR"
+  ],
+  [
+   "MYOB Australia",
+   "subsidiary",
+   "Nimbus Portal Solutions"
+  ],
+  [
+   "MYOB Australia",
+   "subsidiary",
+   "GreatSoft"
+  ],
+  [
+   "MYOB Australia",
+   "part of",
+   "MYOB Group"
+  ],
+  [
+   "MYOB Group",
+   "competitor",
+   "Xero"
+  ],
+  [
+   "Xero",
+   "market leader",
+   "~60%"
+  ],
+  [
+   "MYOB Australia",
+   "competitor",
+   "Intuit QuickBooks"
+  ],
+  [
+   "MYOB Australia",
+   "competitor",
+   "Reckon Clarifying"
+  ],
+  [
+   "MYOB Australia",
+   "implementation partner",
+   "NZ ERP consultancy"
+  ],
+  [
+   "NZ ERP consultancy",
+   "NOT",
+   "ASX-listed Endeavour Group"
+  ],
+  [
+   "ASX-listed Endeavour Group",
+   "name",
+   "Endeavour"
+  ]
+ ]
+}

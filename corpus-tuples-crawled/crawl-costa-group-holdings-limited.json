@@ -1,0 +1,178 @@
+{
+ "company": "Costa Group Holdings Limited",
+ "amenability": "Medium",
+ "source_passage": "Confirmed medium-severity breach: an Aug 2022 phishing attack gave an attacker access to a single file server at the Corindi (NSW) berry site, with ~10% of that server's data accessed and encrypted; sensitive employee PII potentially exposed (passports, birth certificates, citizenship certificates, bank/super details, TFNs). Notified to ACSC and OAIC. Confirmed incident and PII exposure raise amenability, but agriculture/horticulture is a lower-data-sensitivity sector, no customer/supplier data was impacted, and the incident is dated (2022) — netting to Medium. PE-owned (delisted), so cyber-insurance decisions sit with the consortium. Aug 2022 phishing breach at Corindi (NSW) berry site: ~10% of one file server accessed and encrypted; employee PII (passports, bank, super, TFN, citizenship/birth/travel docs) potentially exposed; notified to ACSC and OAIC; no ransom disclosed Independent corroboration (BankInfoSecurity) of the phishing attack, employee-PII exposure and service disruptions; no customer/supplier data breached; no threat group attributed Parent/controlling owner: Paine Schwartz Partners (led ~A$1.5bn equity buyout, completed Feb 2024, delisted) Co-owner + long-standing 50/50 berry JV partner: Driscoll's Inc. ('coopetition') Co-owner/institutional investor: British Columbia Investment Management Corporation (BCI) Major customers (~75% of produce sales combined): Woolworths, Coles, ALDI, Metcash Auditor: KPMG (NOT PwC) Competitors (lower-credibility source): Perfection Fresh, Mildura Fruit Co, Nutrano/2PH, Berry Exchange; international Dole/Del Monte",
+ "sources": [
+  "https://costagroup.com.au/2022/10/06/statement-cyber-attack/",
+  "https://www.bankinfosecurity.com/australian-firm-costa-group-suffers-phishing-attack-a-20231",
+  "https://costagroup.com.au/2024/02/26/costa-group-enters-new-ownership-phase-as-experienced-consortium-takes-control/"
+ ],
+ "extractor": {
+  "llm_api": "openai",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "endpoint": "https://gfmrag-vllm-olbu7sektq-uc.a.run.app",
+  "seconds": 20.2
+ },
+ "entities": [
+  "ACSC",
+  "ALDI",
+  "Berry Exchange",
+  "British Columbia Investment Management Corporation",
+  "Coles",
+  "Corindi (NSW) berry site",
+  "Del Monte",
+  "Dole",
+  "Driscoll's Inc.",
+  "KPMG",
+  "Metcash",
+  "Mildura Fruit Co",
+  "Nutrano/2PH",
+  "OAIC",
+  "PE",
+  "Paine Schwartz Partners",
+  "Perfection Fresh",
+  "PwC",
+  "Woolworths"
+ ],
+ "triples": [
+  [
+   "Corindi (NSW) berry site",
+   "had a breach",
+   "Aug 2022 phishing attack"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "accessed",
+   "~10% of its file server"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "data",
+   "was encrypted"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "PII",
+   "was potentially exposed"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "notified",
+   "ACSC and OAIC"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "breach",
+   "raised amenability"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "sector",
+   "agriculture/horticulture"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "data",
+   "was not impacted by customer/supplier data"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "incident",
+   "is dated (2022)"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "owned by",
+   "PE"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "PE-owned",
+   "so cyber-insurance decisions sit with the consortium"
+  ],
+  [
+   "Paine Schwartz Partners",
+   "led",
+   "~A$1.5bn equity buyout"
+  ],
+  [
+   "Paine Schwartz Partners",
+   "completed",
+   "Feb 2024"
+  ],
+  [
+   "Paine Schwartz Partners",
+   "delisted"
+  ],
+  [
+   "Driscoll's Inc.",
+   "co-owner",
+   "Corindi (NSW) berry site"
+  ],
+  [
+   "Driscoll's Inc.",
+   "long-standing 50/50 berry JV partner",
+   "Corindi (NSW) berry site"
+  ],
+  [
+   "Driscoll's Inc.",
+   "co-owner/institutional investor",
+   "Corindi (NSW) berry site"
+  ],
+  [
+   "British Columbia Investment Management Corporation",
+   "co-owner/institutional investor",
+   "Corindi (NSW) berry site"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "major customers",
+   "Woolworths"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "major customers",
+   "Coles"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "major customers",
+   "ALDI"
+  ],
+  [
+   "Corindi (NSW) berry site",
+   "major customers",
+   "Metcash"
+  ],
+  [
+   "KPMG",
+   "audited",
+   "Corindi (NSW) berry site"
+  ],
+  [
+   "KPMG",
+   "NOT",
+   "PwC"
+  ],
+  [
+   "Perfection Fresh",
+   "competitor",
+   "Corindi (NSW) berry site"
+  ],
+  [
+   "Perfection Fresh",
+   "international competitor",
+   "Corindi (NSW) berry site"
+  ],
+  [
+   "Dole",
+   "international competitor",
+   "Corindi (NSW) berry site"
+  ],
+  [
+   "Del Monte",
+   "international competitor",
+   "Corindi (NSW) berry site"
+  ]
+ ]
+}

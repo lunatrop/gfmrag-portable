@@ -1,0 +1,130 @@
+{
+ "company": "Pepperstone Group Limited",
+ "amenability": "Medium",
+ "source_passage": "Online forex/CFD brokerage (regulated financial services) with a textbook supply-chain breach: attackers stole an external service provider's credentials via malware and used them to access Pepperstone's CRM, extracting client PII (names, email, phone, address, DOB) in 2020. Trading/financial systems were segregated and not compromised. Persistent brand-impersonation/phishing (clone sites, FCA clone warning) keeps cyber risk live. The 2020 vendor-driven breach is a direct selling point for supply-chain cyber cover; dated incident and segregated financial systems hold it at Medium. 2020 breach via compromised third-party vendor credentials → CRM access; client PII (name/email/phone/address/DOB) extracted; trading systems segregated and unaffected; regulators and clients notified FCA (UK) clone-firm warning over 'Pepperforeign' impersonating the authorised brand (2021) Ongoing brand-impersonation/phishing: CEO says scam sites/fake accounts taken down 'almost daily'; 100+ defensive domains registered (2025) Parent/majority owner: Lock's FX Group Holdings (~60%); principals Fiona Lock, CEO Tamas Szabo, Andrew Defina Former PE owner: CHAMP Private Equity (exited 2018) Trading-platform suppliers: MetaQuotes (MT4/MT5), Spotware Systems (cTrader), TradingView Sponsorship: Aston Martin Aramco F1 Team",
+ "sources": [
+  "https://www.financemagnates.com/forex/brokers/pepperstone-blames-3rd-party-vendor-for-users-data-breach/",
+  "https://www.financemagnates.com/forex/brokers/fake-pepperstone-clone-draws-warning-from-uk-watchdog/",
+  "https://www.financemagnates.com/forex/pepperstone-ceo-having-to-take-down-scam-websites-on-an-almost-daily-basis/",
+  "https://en.wikipedia.org/wiki/Pepperstone"
+ ],
+ "extractor": {
+  "llm_api": "openai",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "endpoint": "https://gfmrag-vllm-olbu7sektq-uc.a.run.app",
+  "seconds": 14.8
+ },
+ "entities": [
+  "Andrew Defina",
+  "Aston Martin Aramco F1 Team",
+  "CHAMP Private Equity",
+  "FCA (UK)",
+  "Fiona Lock",
+  "Lock's FX Group Holdings",
+  "Online forex/CFD brokerage",
+  "Pepperstone",
+  "Tamas Szabo"
+ ],
+ "triples": [
+  [
+   "Online forex/CFD brokerage",
+   "regulated financial services",
+   "Pepperstone"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "supply-chain breach",
+   "2020"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "breach cause",
+   "malware"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "breach access",
+   "Pepperstone's CRM"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "breach outcome",
+   "client PII (names, email, phone, address, DOB) extracted"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "breach impact",
+   "not compromised trading/financial systems"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "breach impact",
+   "clone sites, FCA clone warning"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "breach impact",
+   "Medium risk"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "breach via",
+   "compromised third-party vendor credentials"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "breach outcome",
+   "regulators and clients notified FCA (UK)"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "breach outcome",
+   "clone-firm warning over 'Pepperforeign' impersonating the authorised brand"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "breach ongoing",
+   "ongoing brand-impersonation/phishing"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "breach outcome",
+   "CEO says scam sites/fake accounts taken down 'almost daily'"
+  ],
+  [
+   "Online forex/CFD brokerage",
+   "breach outcome",
+   "100+ defensive domains registered"
+  ],
+  [
+   "Lock's FX Group Holdings",
+   "parent/majority owner",
+   "Online forex/CFD brokerage"
+  ],
+  [
+   "Lock's FX Group Holdings",
+   "percentage",
+   "~60%"
+  ],
+  [
+   "Fiona Lock",
+   "position",
+   "CEO"
+  ],
+  [
+   "Tamas Szabo",
+   "position",
+   "CEO"
+  ],
+  [
+   "Andrew Defina",
+   "position",
+   "principal"
+  ],
+  [
+   "Aston Martin Aramco F1 Team",
+   "sponsoring",
+   "Online forex/CFD brokerage"
+  ]
+ ]
+}

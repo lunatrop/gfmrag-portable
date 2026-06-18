@@ -1,0 +1,62 @@
+#+TITLE: MCP user authorisation — convention + TODOs
+#+AUTHOR: eugene@tautsec.com (generated with Claude)
+#+DATE: 2026-06-14
+#+STARTUP: overview
+#+TODO: TODO DOING BLOCKED | DONE
+
+How team members get authorised to use the gfmrag MCP server (proxy to the
+private =gfmrag-qa= Cloud Run service). Companion: notes/retrieval-mcp.org.
+
+* Convention: per-user identity + run.invoker (via a Google Group)
+A caller is authorised by: (1) authenticating as themselves
+(=gcloud auth login them@tautsec.com=), (2) holding =roles/run.invoker= on the
+=gfmrag-qa= service, (3) the proxy mints an ID token with THEIR identity +
+the service URL as audience.
+- Scalable form: a Google Group (=gfm-users@tautsec.com=) granted run.invoker
+  ONCE on the service; authorise/deauthorise by group membership, one place to
+  audit. Individual bindings fine for a handful.
+- Service-scoped grant (not project-level) = least privilege.
+
+** Two tiers
+- =roles/run.invoker= -> broad (the group): can query.
+- =roles/run.services.update= -> restricted (named individuals): can start/stop
+  the service (the spending lever). NOT in the broad group.
+
+* TODO Fix the proxy: mint with caller identity, not the SA
+The committed =scripts/mcp/gfmrag_server.py= hardcodes
+=gcloud auth print-identity-token --account <gfmrag-terraform SA>=. That requires
+each teammate to impersonate the Terraform/infra SA
+(=roles/iam.serviceAccountTokenCreator=) — WRONG convention:
+- over-privileged (the SA is a powerful infra identity),
+- audit logs show the SA, not the person.
+Fix = drop =--account <SA>= so it uses the caller's own identity. Then
+authorisation is purely "grant the user run.invoker", matching the README.
+One-line change; do BEFORE distributing.
+
+* TODO Create the authorisation group + grant run.invoker
+- [ ] Create Google Group =gfm-users@tautsec.com= (Cloud Identity / Workspace).
+- [ ] Grant it run.invoker on the service:
+  =gcloud run services add-iam-policy-binding gfmrag-qa --region=us-central1=
+  =  --member="group:gfm-users@tautsec.com" --role="roles/run.invoker"=
+- [ ] Add the few lifecycle admins to =roles/run.services.update= individually.
+
+* Manual path (GCP Console) — yes, supported
+run.invoker grant:
+1. Console -> Cloud Run -> =gfmrag-qa= (region us-central1).
+2. Security / Permissions panel -> Add principal.
+3. Principal = user/group email; Role = "Cloud Run Invoker" (=roles/run.invoker=).
+4. Save.
+(Service-scoped, least privilege. CLI equivalent above is preferred for
+reproducibility.)
+
+If the SA-impersonation design were kept (NOT recommended): IAM & Admin ->
+Service Accounts -> gfmrag-terraform -> Permissions -> grant user
+"Service Account Token Creator". Avoid — see the proxy-fix TODO.
+
+* Notes
+- For heavier/enterprise rollout: front the service with IAP or an API gateway.
+  For a dev-team MCP, gcloud ID tokens + run.invoker (via group) is the standard,
+  simplest convention.
+- Pending: the clone/install/auth test (running) confirms whether the current
+  SA-impersonation token mint even succeeds for the admin account — fold result
+  here.

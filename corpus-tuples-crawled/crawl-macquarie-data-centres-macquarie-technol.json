@@ -1,0 +1,205 @@
+{
+ "company": "Macquarie Data Centres (Macquarie Technology Group, ASX:MAQ)",
+ "amenability": "Low",
+ "source_passage": "Data-centre/colocation, cloud and cybersecurity provider — high-data-sensitivity sector and an extreme high-value-target profile (secure internet gateway and cyber provider to ~42% of the Australian Federal Government, the ATO, and Defence-ready workloads). However, NO breach was found (UpGuard 'A', 843/950), and as a cybersecurity provider itself it is likely sophisticated and may self-insure or carry bespoke cover — lowering pitch amenability despite the large blast-radius exposure. The concentration risk is the strongest angle. NOTE: distinct from Macquarie Group/Macquarie Bank (MQG). No data breach/ransomware/OAIC NDB found; UpGuard 'A' (843/950); minor hygiene gaps (DMARC p=none, no DNSSEC/CAA, CSP unsafe-eval) Concentration/high-value-target risk: secure internet gateway + cyber provider for ~42% of the Australian Federal Government and the ATO; hosts sovereign/Defence workloads (medium-severity inherent risk, not an incident) Multi-tenant colocation aggregation risk: hosts two-thirds of global public-cloud hyperscalers and government in shared Intellicentre campuses — concentrated third-party/supply-chain exposure Parent: Macquarie Technology Group Limited (ASX:MAQ; formerly Macquarie Telecom Group) — NOT Macquarie Group/Bank (MQG) Sister units: Macquarie Cloud Services, Macquarie Government, Macquarie Telecom Major government customer: ATO (secure internet gateway/SOC since 2019; renewal Jan 2023; cumulative ~A$86.1m) Partners/tenants: AWS, Microsoft Azure, Google Cloud Tech suppliers: Cisco, VMware, Dell, Fortinet, Red Hat External auditor of parent: PwC (distinct from PwC's audit of Macquarie Group/Bank) Competitors: NEXTDC, Equinix, AirTrunk, Global Switch, CDC",
+ "sources": [
+  "https://www.upguard.com/security-report/macquarie-telecom",
+  "https://www.governmentnews.com.au/ato-renews-cyber-deal-with-macquarie-government/",
+  "https://www.macquariedatacentres.com/",
+  "https://en.wikipedia.org/wiki/Macquarie_Technology_Group"
+ ],
+ "extractor": {
+  "llm_api": "openai",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "endpoint": "https://gfmrag-vllm-olbu7sektq-uc.a.run.app",
+  "seconds": 22.4
+ },
+ "entities": [
+  "ATO",
+  "AirTrunk",
+  "Australian",
+  "Australian Federal Government",
+  "CDC",
+  "Data-centre/colocation",
+  "Defence",
+  "Equinix",
+  "Global Switch",
+  "Intellicentre",
+  "MAQ",
+  "MQG",
+  "Macquarie Bank",
+  "Macquarie Cloud Services",
+  "Macquarie Government",
+  "Macquarie Group",
+  "Macquarie Technology Group Limited",
+  "Macquarie Telecom",
+  "NEXTDC",
+  "PwC",
+  "UpGuard",
+  "cloud",
+  "cyber provider",
+  "cybersecurity",
+  "global public-cloud hyperscalers",
+  "government",
+  "high-data-sensitivity sector",
+  "secure internet gateway",
+  "third-party/supply-chain"
+ ],
+ "triples": [
+  [
+   "Data-centre/colocation",
+   "provides",
+   "cloud and cybersecurity services"
+  ],
+  [
+   "Data-centre/colocation",
+   "targets",
+   "high-data-sensitivity sector"
+  ],
+  [
+   "Data-centre/colocation",
+   "targets",
+   "extreme high-value-target profile"
+  ],
+  [
+   "Data-centre/colocation",
+   "provides",
+   "secure internet gateway"
+  ],
+  [
+   "Data-centre/colocation",
+   "provides",
+   "cybersecurity services"
+  ],
+  [
+   "Data-centre/colocation",
+   "serves",
+   "~42% of the Australian Federal Government"
+  ],
+  [
+   "Data-centre/colocation",
+   "serves",
+   "ATO"
+  ],
+  [
+   "Data-centre/colocation",
+   "serves",
+   "Defence"
+  ],
+  [
+   "Data-centre/colocation",
+   "hosts",
+   "sovereign/Defence workloads"
+  ],
+  [
+   "Data-centre/colocation",
+   "hosts",
+   "two-thirds of global public-cloud hyperscalers"
+  ],
+  [
+   "Data-centre/colocation",
+   "hosts",
+   "government in shared Intellicentre campuses"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "concentration/high-value-target risk"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "multi-tenant colocation aggregation risk"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "concentrated third-party/supply-chain exposure"
+  ],
+  [
+   "Data-centre/colocation",
+   "is",
+   "parent of Macquarie Technology Group Limited"
+  ],
+  [
+   "Data-centre/colocation",
+   "is",
+   "distinct from Macquarie Group/Macquarie Bank"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "major government customer ATO"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "partners/tenants AWS"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "partners/tenants Microsoft Azure"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "partners/tenants Google Cloud"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "tech suppliers Cisco"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "tech suppliers VMware"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "tech suppliers Dell"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "tech suppliers Fortinet"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "tech suppliers Red Hat"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "external auditor PwC"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "competitors NEXTDC"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "competitors Equinix"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "competitors AirTrunk"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "competitors Global Switch"
+  ],
+  [
+   "Data-centre/colocation",
+   "has",
+   "competitors CDC"
+  ]
+ ]
+}

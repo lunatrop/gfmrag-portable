@@ -1,0 +1,993 @@
+{
+ "crawl": "cyber-insurance-network",
+ "date": "2026-06-18",
+ "researched": 14,
+ "method": "14 parallel web-research agents (relationships + cyber-risk signals, source-cited) + synthesis ranking AU cyber-insurance pitch targets; adversarial caveats retained (e.g. Uber AU-HQ flagged false; unconfirmed auditors noted).",
+ "seeds": [
+  "MYOB Australia",
+  "TPG Internet",
+  "Datacom (Australia)",
+  "Macquarie Data Centres",
+  "Iress",
+  "Quantium",
+  "Envato",
+  "Pepperstone",
+  "Altium",
+  "Woolworths Group",
+  "Endeavour Group",
+  "Costa Group",
+  "Nick Scali",
+  "Uber Australia (Rasier Pacific)"
+ ],
+ "report": {
+  "pitch_targets": [
+   {
+    "company": "TPG Internet Pty Ltd / TPG Telecom Limited (ASX:TPG)",
+    "amenability": "High",
+    "rationale": "Telco/ISP holding large volumes of customer PII, with TWO confirmed high-severity breaches: the iiNet order-management breach (identified 16 Aug 2025, disclosed to ASX 19 Aug 2025) exfiltrating ~280,000 active customer email addresses plus landlines, addresses and ~1,700 modem passwords via stolen employee credentials; and the Dec 2022 Hosted Exchange breach affecting up to ~15,000 iiNet/Westnet business customers (identified by Mandiant). Recency (a 2025 incident), severity, the high-data-sensitivity telco sector and group scale make this the single most amenable target. The breaches were notified under the OAIC NDB scheme and worked with ACSC/NOCS.",
+    "cyber_signals": [
+     "iiNet (TPG brand) Aug 2025 breach: ~280k customer emails, ~20k landlines, ~10k usernames+addresses, ~1,700 modem passwords via stolen employee credentials; OAIC/ACSC engaged",
+     "Dec 2022 Hosted Exchange breach affecting up to ~15k iiNet/Westnet business email customers; Mandiant identified the unauthorised access (attacker hunting crypto/financial data)",
+     "Historical regulator scrutiny: ACCC s.87B undertaking against TPG Internet Pty Ltd over misleading FTTN/FTTB broadband speed claims (non-cyber)"
+    ],
+    "key_relationships": [
+     "Parent: TPG Telecom Limited (ASX:TPG), formed by 2020 TPG + Vodafone Hutchison Australia merger",
+     "Substantial shareholders: CK Hutchison/Hutchison Telecommunications Australia (~23.98%), Vodafone Group plc (~23.98%), Washington H. Soul Pattinson (~12.78%)",
+     "Sibling brands: iiNet, Internode, Westnet, AAPT, Lebara, felix, Vodafone (iiNet/Westnet are the breached brands)",
+     "Technology supplier: Ericsson (2023 AI network analytics deal)",
+     "Incident-response adviser: Mandiant (Google)",
+     "Competitors: Telstra, Optus (Optus is also a MOCN network-sharing partner)",
+     "External auditor of parent: KPMG"
+    ],
+    "sources": [
+     "https://ia.acs.org.au/article/2025/iinet-breach-compromises-280-000-customers--data.html",
+     "https://www.bankinfosecurity.com/australian-telecom-giant-tpg-discloses-email-hack-a-20717",
+     "https://en.wikipedia.org/wiki/TPG_Telecom",
+     "https://www.accc.gov.au/public-registers/undertakings-registers/section-87b-undertakings-register/tpg-internet-pty-ltd-s87b-undertaking"
+    ]
+   },
+   {
+    "company": "Iress Limited (ASX:IRE)",
+    "amenability": "High",
+    "rationale": "Financial-services software / fintech (wealth, trading, market data, super administration) — among the highest data-sensitivity sectors. Confirmed high-severity recent breach: a stolen GitHub credential was used to access the OneVue production environment (detected/contained 11 May 2024, reported to ACSC 13 May 2024, disclosed to ASX). Although the investigation found limited data impact (test files, PII of 20 individuals), the incident sits squarely in regulated financial software and Iress is a custodian of ~A$130bn of annual wealth transaction data (FundsFlow). Potential change of control (Blackstone/Thoma Bravo talks) adds an underwriting-relevant transition window.",
+    "cyber_signals": [
+     "May 2024 GitHub credential theft → unauthorised access to OneVue production environment; reported to ACSC, disclosed to ASX",
+     "Investigation completed Jul 2024: PII of 20 individuals (OneVue employees/clients) found in test files; IoCs shared with ACSC; broader production/client data not impacted",
+     "Public incident notifications confirming the GitHub issue reached the OneVue production environment containing client data"
+    ],
+    "key_relationships": [
+     "Former subsidiary / breach environment: OneVue Holdings (fund registry/super admin, acquired ~A$115m 2020/2021); super-registry portion later divested to Praemium",
+     "Data/analytics partner: Quantium (powers the FundsFlow product) — indirect link to Woolworths (Quantium's ~75-80% owner)",
+     "Technology partner: Thoughtworks (May 2026, wealth-platform modernisation)",
+     "Customer/partner: HostPlus with Industry Fund Services (scaled digital advice)",
+     "Prospective acquirers: Blackstone and Thoma Bravo (early-stage buyout talks, no deal confirmed)",
+     "External auditor: Ernst & Young (EY); share registry: Computershare",
+     "Competitors: SS&C, Bloomberg, iPipeline, Intelliflo, Sage (lower-confidence)"
+    ],
+    "sources": [
+     "https://www.cyberdaily.au/security/10568-iress-says-github-data-breach-extends-to-onevue",
+     "https://dailysecurityreview.com/security-spotlight/iress-completes-investigation-into-may-2024-data-breach/",
+     "https://community.iress.com/t5/Iress-Notifications/Iress-GitHub-Issue/ta-p/64514",
+     "https://www.iress.com/media/documents/FINAL_Media_Release_Iress_launches_FundsFlow_data_product.pdf"
+    ]
+   },
+   {
+    "company": "Woolworths Group Limited (ASX:WOW)",
+    "amenability": "High",
+    "rationale": "Australia's largest grocery retailer with a very large consumer attack surface and a confirmed high-severity breach: its MyDeal subsidiary's CRM was accessed via a compromised credential, exposing ~2.2 million customers' PII (Oct 2022), OAIC-notified under the NDB scheme. Recurring human-error exposure (the e-gift-card spreadsheet leak) and a sprawling subsidiary base (Quantium/wiq, Petstock, PFD, PetCulture) compound supply-chain and data-governance risk. Sheer size, multiple consumer-data brands and a real breach history make it highly amenable.",
+    "cyber_signals": [
+     "MyDeal (Woolworths subsidiary) breach: ~2.2M customers' names/emails/phones/addresses (some DOBs) exposed via compromised credential into CRM; data offered for sale (Oct 2022)",
+     "OAIC notified under NDB scheme; OAIC statement confirming engagement on compliance",
+     "Insider/human-error e-gift-card leak (~8,000 cards, >A$1m) emailed to 1,000+ customers (2015; resurfaced as case study 2023)"
+    ],
+    "key_relationships": [
+     "Majority-owned subsidiary: Quantium / wiq (~75-80%), which also serves CBA, Qantas, Flight Centre, Telstra",
+     "Subsidiary: MyDeal.com.au (~80%) — breach source",
+     "Subsidiaries: Petstock (55%), PFD Food Services (100%), PetCulture JV (~60%; pet insurance via PetSure/Hollard)",
+     "Former subsidiary: Endeavour Group (demerged Jul 2021; final stake exited Sep 2024)",
+     "Major supplier: Costa Group (fresh produce)",
+     "Delivery partners: DoorDash (current), Uber Eats (historical)",
+     "External auditor: Deloitte Touche Tohmatsu",
+     "Competitors: Coles, ALDI, Metcash/IGA"
+    ],
+    "sources": [
+     "https://www.securityweek.com/retail-giant-woolworths-discloses-data-breach-impacting-22-million-mydeal-customers/",
+     "https://www.oaic.gov.au/newsroom/oaic-statement-on-mydeal-data-breach",
+     "https://www.cmo.com.au/article/576255/woolworths-apologises-e-gift-card-customer-data-breach",
+     "https://www.itnews.com.au/news/woolworths-to-take-control-of-quantium-for-223m-563582"
+    ]
+   },
+   {
+    "company": "Uber Australia (Rasier Pacific Pty Ltd)",
+    "amenability": "High",
+    "rationale": "Australian operating entity of the Uber group (ridesharing/food delivery; holds Australian driver and customer PII). Subject to a major confirmed breach affecting ~1.2 million Australians (2016, concealed until Nov 2017) and a formal OAIC determination (23 Jul 2021) that Uber breached the Privacy Act, plus the global Lapsus$ 2022 compromise of internal systems the Australian operation runs on. Severe, regulator-confirmed history and high data sensitivity. CAVEAT: the research flags the Australian-HQ status as false (US/Netherlands parents); the OAIC respondents were Uber Technologies, Inc. and Uber B.V., not Rasier Pacific directly. Still ranked High as an Australian-market entity with Australian-specific incidents/regulatory action.",
+    "cyber_signals": [
+     "2016 breach: names + driver's-licence numbers of ~600k drivers and PII of ~1.2M Australians; ransom paid via bug bounty and concealed until Nov 2017",
+     "OAIC determination (23 Jul 2021): Uber Technologies Inc. and Uber B.V. found to have interfered with privacy of ~1.2M Australians; remediation orders",
+     "Sep 2022 Lapsus$ breach of Uber global internal systems (MFA-fatigue on a contractor account) affecting the platform AU operations run on"
+    ],
+    "key_relationships": [
+     "Parent/contracting entity: Uber B.V. (Netherlands)",
+     "Ultimate parent: Uber Technologies, Inc. (USA)",
+     "Sister AU entities: Uber Australia Holdings, Portier Pacific, Uber Pacific, Uber Australia Pty Ltd",
+     "PwC personnel/advisory links (PwC partner Craig Heraghty a director of an AU Uber entity) — NOT confirmed as statutory auditor",
+     "Delivery partner of Woolworths (Uber Eats, historical); competitor Deliveroo (exited AU Nov 2022)"
+    ],
+    "sources": [
+     "https://www.oaic.gov.au/news/media-centre/uber-found-to-have-interfered-with-privacy",
+     "https://www.cnn.com/2022/09/19/tech/uber-lapsus-cybersecurity-incident/index.html",
+     "https://michaelwest.com.au/investigating-uber-more-lawyers-than-drivers/"
+    ]
+   },
+   {
+    "company": "MYOB Australia (MYOB Group)",
+    "amenability": "Medium",
+    "rationale": "Business-management / accounting / payroll SaaS for SMEs and mid-market — high data sensitivity (custodian of payroll, TFNs, bank details for many client businesses). Confirmed high-severity 2019 payroll incident: an AccountRight Live glitch sent/exposed payment summaries and payslips to wrong recipients across employers, exposing salaries, names, addresses, TFNs and bank details; reported to OAIC and ATO. Incident is dated (2019) and was a glitch rather than an external breach, hence Medium rather than High. KKR-owned (private), large user base (~1.2M), and a fresh April 2026 Microsoft AI partnership expanding its tech footprint.",
+    "cyber_signals": [
+     "2019 payroll/payslip data exposure (AccountRight Live glitch): salaries, names, addresses, TFNs, bank details sent to wrong people; OAIC + ATO notified (Notifiable Data Breach)",
+     "2019 incident corroborated by independent media",
+     "UpGuard 'A' rating (825/950) but flags infostealer malware detected on associated systems plus CSP/DNSSEC/HSTS hygiene gaps (low-confidence automated signal)"
+    ],
+    "key_relationships": [
+     "Parent/owner: KKR (acquired ~A$2bn in 2019, delisted from ASX); former PE owners Bain Capital (2011-19), Archer Capital (2009-11)",
+     "Strategic tech partner: Microsoft (five-year AI partnership signed Apr 2026; 'Powered by Microsoft')",
+     "Subsidiaries/brands: Tall Emu (CRM), Flare HR (HR/payroll fintech), Nimbus Portal Solutions (doc mgmt), GreatSoft (practice mgmt)",
+     "Competitors: Xero (market leader ~60%), Intuit QuickBooks, Reckon",
+     "Clarifying finding: the 'Endeavour' MYOB implementation partner is a NZ ERP consultancy, NOT ASX-listed Endeavour Group (name collision)"
+    ],
+    "sources": [
+     "https://ausdatabreach.org/breaches/2019/myob/",
+     "https://au.finance.yahoo.com/news/peoples-salaries-exposed-after-myob-glitch-005414328.html",
+     "https://news.microsoft.com/source/asia/2026/04/08/myob-and-microsoft-sign-five-year-strategic-partnership/",
+     "https://www.upguard.com/security-report/myob"
+    ]
+   },
+   {
+    "company": "Pepperstone Group Limited",
+    "amenability": "Medium",
+    "rationale": "Online forex/CFD brokerage (regulated financial services) with a textbook supply-chain breach: attackers stole an external service provider's credentials via malware and used them to access Pepperstone's CRM, extracting client PII (names, email, phone, address, DOB) in 2020. Trading/financial systems were segregated and not compromised. Persistent brand-impersonation/phishing (clone sites, FCA clone warning) keeps cyber risk live. The 2020 vendor-driven breach is a direct selling point for supply-chain cyber cover; dated incident and segregated financial systems hold it at Medium.",
+    "cyber_signals": [
+     "2020 breach via compromised third-party vendor credentials → CRM access; client PII (name/email/phone/address/DOB) extracted; trading systems segregated and unaffected; regulators and clients notified",
+     "FCA (UK) clone-firm warning over 'Pepperforeign' impersonating the authorised brand (2021)",
+     "Ongoing brand-impersonation/phishing: CEO says scam sites/fake accounts taken down 'almost daily'; 100+ defensive domains registered (2025)"
+    ],
+    "key_relationships": [
+     "Parent/majority owner: Lock's FX Group Holdings (~60%); principals Fiona Lock, CEO Tamas Szabo, Andrew Defina",
+     "Former PE owner: CHAMP Private Equity (exited 2018)",
+     "Trading-platform suppliers: MetaQuotes (MT4/MT5), Spotware Systems (cTrader), TradingView",
+     "Sponsorship: Aston Martin Aramco F1 Team"
+    ],
+    "sources": [
+     "https://www.financemagnates.com/forex/brokers/pepperstone-blames-3rd-party-vendor-for-users-data-breach/",
+     "https://www.financemagnates.com/forex/brokers/fake-pepperstone-clone-draws-warning-from-uk-watchdog/",
+     "https://www.financemagnates.com/forex/pepperstone-ceo-having-to-take-down-scam-websites-on-an-almost-daily-basis/",
+     "https://en.wikipedia.org/wiki/Pepperstone"
+    ]
+   },
+   {
+    "company": "The Quantium Group Pty Limited",
+    "amenability": "Medium",
+    "rationale": "Data-science / analytics / AI firm handling extremely sensitive third-party data (de-identified CBA banking transactions via CommBank iQ, ~A$130bn Iress wealth data, Woolworths loyalty data, health/genomics data). High-data-sensitivity sector and a high-value-target profile, but NO Quantium-specific incident was found. Exposure comes from its parent/sibling (Woolworths MyDeal breach) and the concentration of partner data it holds. The aggregation risk and downstream blast radius (banking, retail, health) make it a strong cyber-cover candidate despite the absence of an own incident.",
+    "cyber_signals": [
+     "No confirmed Quantium-specific breach found in public sources/OAIC NDB publications as of Jun 2026 (treat as 'no incident found', not a clean bill of health)",
+     "Parent/sibling exposure: Woolworths' MyDeal breach (~2.2M customers, 2022) reflects the group's wider attack surface",
+     "Concentration/data-sensitivity risk: custodian of CBA transaction data, Iress wealth data, Woolworths customer data, health/genomics data — outsized downstream impact if breached (inherent-risk indicator, not an incident)"
+    ],
+    "key_relationships": [
+     "Parent/majority owner: Woolworths Group (~75% in 2021 for A$223m; now ~80.4%); combined analytics entity 'wiq'",
+     "JV partners/customers: Commonwealth Bank (CommBank iQ), Telstra (Quantium Telstra JV)",
+     "Partner/customer: Iress (FundsFlow data product)",
+     "Former co-parent link: Endeavour Group (demerged from Woolworths 2021; shared-services link)",
+     "Tech partner: Google Cloud (Gemini Enterprise practice); vendors Cisco/Cohesity",
+     "International clients: Walmart/ASDA",
+     "Auditor via parent: Deloitte (no separate statutory auditor for Quantium confirmed)",
+     "Competitors: Accenture, Deloitte, Fractal, EXL, Tredence, PwC (competitive overlap, not commercial ties)"
+    ],
+    "sources": [
+     "https://www.oaic.gov.au/privacy/notifiable-data-breaches/notifiable-data-breaches-publications",
+     "https://www.securityweek.com/retail-giant-woolworths-discloses-data-breach-impacting-22-million-mydeal-customers/",
+     "https://www.commbank.com.au/articles/newsroom/2021/05/Commbank-quantium-launch-iq.html",
+     "https://www.itnews.com.au/news/woolworths-to-take-control-of-quantium-for-223m-563582"
+    ]
+   },
+   {
+    "company": "Costa Group Holdings Limited",
+    "amenability": "Medium",
+    "rationale": "Confirmed medium-severity breach: an Aug 2022 phishing attack gave an attacker access to a single file server at the Corindi (NSW) berry site, with ~10% of that server's data accessed and encrypted; sensitive employee PII potentially exposed (passports, birth certificates, citizenship certificates, bank/super details, TFNs). Notified to ACSC and OAIC. Confirmed incident and PII exposure raise amenability, but agriculture/horticulture is a lower-data-sensitivity sector, no customer/supplier data was impacted, and the incident is dated (2022) — netting to Medium. PE-owned (delisted), so cyber-insurance decisions sit with the consortium.",
+    "cyber_signals": [
+     "Aug 2022 phishing breach at Corindi (NSW) berry site: ~10% of one file server accessed and encrypted; employee PII (passports, bank, super, TFN, citizenship/birth/travel docs) potentially exposed; notified to ACSC and OAIC; no ransom disclosed",
+     "Independent corroboration (BankInfoSecurity) of the phishing attack, employee-PII exposure and service disruptions; no customer/supplier data breached; no threat group attributed"
+    ],
+    "key_relationships": [
+     "Parent/controlling owner: Paine Schwartz Partners (led ~A$1.5bn equity buyout, completed Feb 2024, delisted)",
+     "Co-owner + long-standing 50/50 berry JV partner: Driscoll's Inc. ('coopetition')",
+     "Co-owner/institutional investor: British Columbia Investment Management Corporation (BCI)",
+     "Major customers (~75% of produce sales combined): Woolworths, Coles, ALDI, Metcash",
+     "Auditor: KPMG (NOT PwC)",
+     "Competitors (lower-credibility source): Perfection Fresh, Mildura Fruit Co, Nutrano/2PH, Berry Exchange; international Dole/Del Monte"
+    ],
+    "sources": [
+     "https://costagroup.com.au/2022/10/06/statement-cyber-attack/",
+     "https://www.bankinfosecurity.com/australian-firm-costa-group-suffers-phishing-attack-a-20231",
+     "https://costagroup.com.au/2024/02/26/costa-group-enters-new-ownership-phase-as-experienced-consortium-takes-control/"
+    ]
+   },
+   {
+    "company": "Endeavour Group Limited (ASX:EDV)",
+    "amenability": "Medium",
+    "rationale": "Alcohol retail (Dan Murphy's, BWS) and hospitality/gaming (ALH) with a real, recent customer-facing cyber event: a coordinated Jan 2024 credential-stuffing campaign hit Dan Murphy's accounts (among ~15,000 accounts across multiple AU retailers), enabling fraudulent purchases. Endeavour states its own systems were not compromised and no card data taken — so this is account-takeover/fraud exposure rather than a system breach, holding it at Medium. The FY2025 annual report names cyber as a key risk with a committed multi-year uplift program, signalling active risk awareness (and buying intent).",
+    "cyber_signals": [
+     "Jan 2024 coordinated credential-stuffing campaign against Dan Murphy's accounts (reused creds from unrelated breaches); ~15,000 accounts across brands incl. THE ICONIC, Event Cinemas, Guzman y Gomez, TVSN, Binge; Endeavour systems not compromised, no card data taken",
+     "Corroborating ACS Information Age coverage (campaign detected by Kasada), naming Dan Murphy's",
+     "FY2025 annual report names data/privacy/cyber as a key risk; discloses multi-year cyber uplift program and a data-breach response plan with crisis exercises"
+    ],
+    "key_relationships": [
+     "Former parent: Woolworths Group (demerged Jun 2021; Woolworths exited final 4.1% stake Sep 2024)",
+     "Largest shareholder + ALH 25% JV partner: Bruce Mathieson Group / Bruce Mathieson",
+     "Subsidiary/JV: Australian Leisure and Hospitality Group (ALH, 75% Endeavour) — ~350 hotels, ~12,000 pokies",
+     "Owned brands: Dan Murphy's, BWS, Cellarmasters, Langton's, Jimmy Brings, Pinnacle Drinks, Paragon Wine Estates",
+     "Auditor: Deloitte Touche Tohmatsu (NOT PwC)"
+    ],
+    "sources": [
+     "https://www.bandt.com.au/guzman-dan-murphys-binge-hit-with-credential-stuffing-cyber-attack/",
+     "https://ia.acs.org.au/article/2024/coordinated-cyberattack-hits-thousands-of-aussies.html",
+     "https://www.endeavourgroup.com.au/wp-content/uploads/2024/08/2024-Endeavour-Group-Annual-Report.pdf",
+     "https://en.wikipedia.org/wiki/Endeavour_Group"
+    ]
+   },
+   {
+    "company": "Macquarie Data Centres (Macquarie Technology Group, ASX:MAQ)",
+    "amenability": "Low",
+    "rationale": "Data-centre/colocation, cloud and cybersecurity provider — high-data-sensitivity sector and an extreme high-value-target profile (secure internet gateway and cyber provider to ~42% of the Australian Federal Government, the ATO, and Defence-ready workloads). However, NO breach was found (UpGuard 'A', 843/950), and as a cybersecurity provider itself it is likely sophisticated and may self-insure or carry bespoke cover — lowering pitch amenability despite the large blast-radius exposure. The concentration risk is the strongest angle. NOTE: distinct from Macquarie Group/Macquarie Bank (MQG).",
+    "cyber_signals": [
+     "No data breach/ransomware/OAIC NDB found; UpGuard 'A' (843/950); minor hygiene gaps (DMARC p=none, no DNSSEC/CAA, CSP unsafe-eval)",
+     "Concentration/high-value-target risk: secure internet gateway + cyber provider for ~42% of the Australian Federal Government and the ATO; hosts sovereign/Defence workloads (medium-severity inherent risk, not an incident)",
+     "Multi-tenant colocation aggregation risk: hosts two-thirds of global public-cloud hyperscalers and government in shared Intellicentre campuses — concentrated third-party/supply-chain exposure"
+    ],
+    "key_relationships": [
+     "Parent: Macquarie Technology Group Limited (ASX:MAQ; formerly Macquarie Telecom Group) — NOT Macquarie Group/Bank (MQG)",
+     "Sister units: Macquarie Cloud Services, Macquarie Government, Macquarie Telecom",
+     "Major government customer: ATO (secure internet gateway/SOC since 2019; renewal Jan 2023; cumulative ~A$86.1m)",
+     "Partners/tenants: AWS, Microsoft Azure, Google Cloud",
+     "Tech suppliers: Cisco, VMware, Dell, Fortinet, Red Hat",
+     "External auditor of parent: PwC (distinct from PwC's audit of Macquarie Group/Bank)",
+     "Competitors: NEXTDC, Equinix, AirTrunk, Global Switch, CDC"
+    ],
+    "sources": [
+     "https://www.upguard.com/security-report/macquarie-telecom",
+     "https://www.governmentnews.com.au/ato-renews-cyber-deal-with-macquarie-government/",
+     "https://www.macquariedatacentres.com/",
+     "https://en.wikipedia.org/wiki/Macquarie_Technology_Group"
+    ]
+   },
+   {
+    "company": "Nick Scali Limited (ASX:NCK)",
+    "amenability": "Low",
+    "rationale": "Specialty furniture retailer with no confirmed breach, ransomware or OAIC NDB found in any reviewed source — a 'no evidence found' result, not a verified clean record. Consumer retail is lower data-sensitivity than IT/telco/financial/health. Residual exposure exists: direct e-commerce plus Plush and UK Fabb brands, ~112 stores processing customer PII, deposits and consumer-finance applications, and lookalike/scam-site complaints. A recent auditor change (EY to KPMG, FY2024→FY2025) is a control-environment signal worth an underwriting question. Lowest amenability of the Australian set.",
+    "cyber_signals": [
+     "No confirmed breach/ransomware/OAIC NDB found as of Jun 2026 ('no evidence found', not a verified clean record)",
+     "Governance signal (not an incident): external auditor changed from EY to KPMG between FY2024 and FY2025; no qualified opinion or breach reported",
+     "Inherent exposure (not an incident): e-commerce + Plush + UK Fabb brands and ~112 stores process PII, deposits and consumer-finance; lookalike/scam-site complaints raise brand-impersonation/phishing risk against customers"
+    ],
+    "key_relationships": [
+     "Subsidiary: Plush-Think Sofas (acquired Nov 2021, ~A$110m from Greenlit Brands)",
+     "Subsidiary: Anglia Home Furnishings / Fabb Furniture UK (acquired May 2024; rebranding to Nick Scali)",
+     "Vendor: Greenlit Brands (sold Plush)",
+     "Former auditor: EY (through FY2023/FY2024); current auditor: KPMG (from FY2025)",
+     "Substantial shareholders: Magellan (~8.2%), Scali Consolidated (~7.9%), Perpetual (~7.5%)",
+     "Competitors: Harvey Norman, Adairs, Temple & Webster"
+    ],
+    "sources": [
+     "https://en.wikipedia.org/wiki/Nick_Scali_Furniture",
+     "https://announcements.asx.com.au/asxpdf/20250808/pdf/06mnncy395wn7x.pdf",
+     "https://www.oaic.gov.au/privacy/notifiable-data-breaches"
+    ]
+   }
+  ],
+  "relationship_edges": [
+   {
+    "a": "KKR (Kohlberg Kravis Roberts)",
+    "relationship": "is the parent/controlling owner of (acquired ~A$2bn in 2019, delisted from ASX)",
+    "b": "MYOB Group",
+    "source_url": "https://en.wikipedia.org/wiki/MYOB_(company)"
+   },
+   {
+    "a": "Bain Capital",
+    "relationship": "was a former private-equity owner of (2011-2019)",
+    "b": "MYOB Group",
+    "source_url": "https://en.wikipedia.org/wiki/MYOB_(company)"
+   },
+   {
+    "a": "Archer Capital",
+    "relationship": "was a former private-equity owner of (2009-2011)",
+    "b": "MYOB Group",
+    "source_url": "https://en.wikipedia.org/wiki/MYOB_(company)"
+   },
+   {
+    "a": "MYOB Group",
+    "relationship": "signed a five-year strategic AI partnership (Apr 2026) with",
+    "b": "Microsoft",
+    "source_url": "https://news.microsoft.com/source/asia/2026/04/08/myob-and-microsoft-sign-five-year-strategic-partnership/"
+   },
+   {
+    "a": "MYOB Group",
+    "relationship": "acquired (2022); operates as a subsidiary/brand",
+    "b": "Tall Emu",
+    "source_url": "https://www.myob.com/nz/legal/modern-slavery-statement-2022"
+   },
+   {
+    "a": "MYOB Group",
+    "relationship": "acquired (2022); operates as a subsidiary/brand",
+    "b": "Flare HR Pty Ltd",
+    "source_url": "https://www.myob.com/nz/legal/modern-slavery-statement-2022"
+   },
+   {
+    "a": "MYOB Group",
+    "relationship": "acquired (2022); operates as a subsidiary/brand",
+    "b": "Nimbus Portal Solutions",
+    "source_url": "https://www.myob.com/nz/legal/modern-slavery-statement-2022"
+   },
+   {
+    "a": "MYOB Group",
+    "relationship": "acquired (~2020-2021); operates as a subsidiary/brand",
+    "b": "GreatSoft",
+    "source_url": "https://www.myob.com/nz/legal/modern-slavery-statement-2022"
+   },
+   {
+    "a": "MYOB Group",
+    "relationship": "competes with",
+    "b": "Xero",
+    "source_url": "https://outbooks.com.au/best-bookkeeping-software-australia/"
+   },
+   {
+    "a": "MYOB Group",
+    "relationship": "competes with",
+    "b": "Intuit QuickBooks",
+    "source_url": "https://www.boxas.com.au/small-business-handbook/myob-vs-xero-and-quickbooks/"
+   },
+   {
+    "a": "MYOB Group",
+    "relationship": "competes with",
+    "b": "Reckon",
+    "source_url": "https://outbooks.com.au/best-bookkeeping-software-australia/"
+   },
+   {
+    "a": "TPG Telecom Limited (ASX:TPG)",
+    "relationship": "is the parent/owner of",
+    "b": "TPG Internet Pty Ltd",
+    "source_url": "https://en.wikipedia.org/wiki/TPG_Telecom"
+   },
+   {
+    "a": "CK Hutchison Holdings (via Hutchison Telecommunications Australia)",
+    "relationship": "is the ultimate substantial shareholder (~23.98% held by Hutchison) of",
+    "b": "TPG Telecom Limited (ASX:TPG)",
+    "source_url": "https://en.wikipedia.org/wiki/TPG_Telecom"
+   },
+   {
+    "a": "Vodafone Group plc",
+    "relationship": "is a substantial shareholder (~23.98%) of, and 'Vodafone' is a core retail brand of",
+    "b": "TPG Telecom Limited (ASX:TPG)",
+    "source_url": "https://en.wikipedia.org/wiki/TPG_Telecom"
+   },
+   {
+    "a": "Washington H. Soul Pattinson",
+    "relationship": "is a substantial shareholder (~12.78%) of",
+    "b": "TPG Telecom Limited (ASX:TPG)",
+    "source_url": "https://en.wikipedia.org/wiki/TPG_Telecom"
+   },
+   {
+    "a": "TPG Telecom Limited (ASX:TPG)",
+    "relationship": "owns the sibling retail/wholesale brands (incl. iiNet and Westnet, the breached brands)",
+    "b": "iiNet / Internode / Westnet / AAPT / Lebara / felix / Vodafone",
+    "source_url": "https://www.tpgtelecom.com.au/about-us/our-brands"
+   },
+   {
+    "a": "KPMG",
+    "relationship": "is the external auditor of",
+    "b": "TPG Telecom Limited (ASX:TPG)",
+    "source_url": "https://www.annualreports.com/HostedData/AnnualReportArchive/T/ASX_TPM_2015.pdf"
+   },
+   {
+    "a": "TPG Telecom Limited (ASX:TPG)",
+    "relationship": "competes with",
+    "b": "Telstra",
+    "source_url": "https://en.wikipedia.org/wiki/TPG_Telecom"
+   },
+   {
+    "a": "TPG Telecom Limited (ASX:TPG)",
+    "relationship": "competes with and is also a network-sharing/MOCN partner of",
+    "b": "Optus (Singtel Optus)",
+    "source_url": "https://telecomlead.com/telecom-services/australia-mobile-services-market-telstra-optus-and-tpg-drive-5g-growth-and-rising-data-revenue-125145"
+   },
+   {
+    "a": "TPG Telecom Limited (ASX:TPG)",
+    "relationship": "signed a multi-year network-analytics deal (2023) with",
+    "b": "Ericsson",
+    "source_url": "https://www.ericsson.com/en/press-releases/7/2023/tpg-telecom-and-ericsson-launch-australian-first-analytics-and-troubleshooting-solution-to-boost-network-performance-for-customers"
+   },
+   {
+    "a": "Mandiant (Google)",
+    "relationship": "is the incident-response adviser that identified the Dec 2022 Hosted Exchange breach for",
+    "b": "TPG Telecom Limited (ASX:TPG)",
+    "source_url": "https://www.bankinfosecurity.com/australian-telecom-giant-tpg-discloses-email-hack-a-20717"
+   },
+   {
+    "a": "Datacom Group Limited",
+    "relationship": "is the parent/owner of",
+    "b": "Datacom Australia Holdings Pty Limited",
+    "source_url": "https://en.wikipedia.org/wiki/Datacom_Group"
+   },
+   {
+    "a": "Evander Management Ltd (Holdsworth family)",
+    "relationship": "is a major shareholder (~54.92%) of",
+    "b": "Datacom Group Limited",
+    "source_url": "https://en.wikipedia.org/wiki/Datacom_Group"
+   },
+   {
+    "a": "New Zealand Superannuation Fund",
+    "relationship": "is a major shareholder (~44.08%) of",
+    "b": "Datacom Group Limited",
+    "source_url": "https://nzsuperfund.nz/news-and-media/new-zealand-superannuation-fund-purchases-35-stake-datacom/"
+   },
+   {
+    "a": "Datacom",
+    "relationship": "is a contracted IT/contact-centre supplier (~A$176m passport deal, 2025) to",
+    "b": "Department of Foreign Affairs and Trade (DFAT)",
+    "source_url": "https://www.itnews.com.au/tag/datacom"
+   },
+   {
+    "a": "Datacom",
+    "relationship": "is a contracted IT supplier (A$175m service desk 2022; A$119m network services 2022) to",
+    "b": "Transport for NSW",
+    "source_url": "https://www.itnews.com.au/tag/datacom"
+   },
+   {
+    "a": "Datacom",
+    "relationship": "displaced as Transport for NSW network services provider (Jul 2022)",
+    "b": "DXC Technology",
+    "source_url": "https://www.itnews.com.au/tag/datacom"
+   },
+   {
+    "a": "Datacom",
+    "relationship": "is a contracted IT outsourcing supplier to",
+    "b": "NSW Health",
+    "source_url": "https://www.itnews.com.au/tag/datacom"
+   },
+   {
+    "a": "Datacom",
+    "relationship": "won an end-to-end IT services contract (Dec 2016, taking over from Fujitsu) for",
+    "b": "Toyota Australia",
+    "source_url": "https://www.crn.com.au/news/datacom-wins-multimillion-dollar-toyota-it-contract-takes-over-from-fujitsu-443565"
+   },
+   {
+    "a": "Datacom",
+    "relationship": "delivered a ~A$100m five-year IT modernisation/cloud-transformation programme for",
+    "b": "Medibank",
+    "source_url": "https://datacom.com/au/en/discover/articles/customer-story-medibank-cloud-transformation"
+   },
+   {
+    "a": "Datacom",
+    "relationship": "is a cited commercial-sector customer relationship with (terms unverified)",
+    "b": "Perpetual",
+    "source_url": "https://datacom.com/au/en/about-us/year-in-review/2022/our-customers"
+   },
+   {
+    "a": "Datacom",
+    "relationship": "is an AWS Managed Service Provider partner of",
+    "b": "Amazon Web Services (AWS)",
+    "source_url": "https://www.channelinsider.com/news-and-trends/datacom-renews-aws-partnership/"
+   },
+   {
+    "a": "Datacom",
+    "relationship": "is an Azure Expert Managed Service Provider partner of",
+    "b": "Microsoft",
+    "source_url": "https://datacom.com/au/en/about-us/awards"
+   },
+   {
+    "a": "Datacom",
+    "relationship": "is a technology partner/customer of",
+    "b": "Dell Technologies",
+    "source_url": "https://datacom.com/au/en/about-us/partners/dell-technologies"
+   },
+   {
+    "a": "Macquarie Technology Group Limited (ASX:MAQ)",
+    "relationship": "is the parent of the business unit",
+    "b": "Macquarie Data Centres",
+    "source_url": "https://en.wikipedia.org/wiki/Macquarie_Technology_Group"
+   },
+   {
+    "a": "Macquarie Technology Group Limited (ASX:MAQ)",
+    "relationship": "is the parent of sibling units Macquarie Cloud Services, Macquarie Government and",
+    "b": "Macquarie Telecom",
+    "source_url": "https://en.wikipedia.org/wiki/Macquarie_Technology_Group"
+   },
+   {
+    "a": "PricewaterhouseCoopers (PwC)",
+    "relationship": "is the external auditor of",
+    "b": "Macquarie Technology Group Limited (ASX:MAQ)",
+    "source_url": "https://www.macquarietechnologygroup.com/wp-content/uploads/2024/09/MAQ-2024-Appendix-4E-Annual-Report.pdf"
+   },
+   {
+    "a": "Macquarie Government (Macquarie Technology Group)",
+    "relationship": "provides secure internet gateway/SOC/cloud (since 2019, ~A$86.1m to 2025) to",
+    "b": "Australian Taxation Office (ATO)",
+    "source_url": "https://www.governmentnews.com.au/ato-renews-cyber-deal-with-macquarie-government/"
+   },
+   {
+    "a": "Macquarie Data Centres",
+    "relationship": "provides on-ramp connectivity and hosting for",
+    "b": "AWS / Microsoft Azure / Google Cloud",
+    "source_url": "https://www.macquariedatacentres.com/our-network/connectivity/"
+   },
+   {
+    "a": "Macquarie Technology Group Limited (ASX:MAQ)",
+    "relationship": "competes with",
+    "b": "NEXTDC / Equinix / AirTrunk / Global Switch / CDC Data Centres",
+    "source_url": "https://datacentremagazine.com/top10/top-10-data-centre-companies-in-anz"
+   },
+   {
+    "a": "Iress Limited",
+    "relationship": "partnered with (to power the FundsFlow data product, Aug 2025)",
+    "b": "Quantium",
+    "source_url": "https://www.iress.com/media/documents/FINAL_Media_Release_Iress_launches_FundsFlow_data_product.pdf"
+   },
+   {
+    "a": "Iress Limited",
+    "relationship": "acquired (~A$115m, 2020/2021) as the OneVue subsidiary; OneVue was the breached environment; super-registry portion later divested to Praemium",
+    "b": "OneVue Holdings Limited",
+    "source_url": "https://en.wikipedia.org/wiki/Iress"
+   },
+   {
+    "a": "Ernst & Young (EY)",
+    "relationship": "is the external auditor of",
+    "b": "Iress Limited",
+    "source_url": "https://www.iress.com/about/investors/corporate-directory/"
+   },
+   {
+    "a": "Computershare Limited",
+    "relationship": "is the share registry provider for",
+    "b": "Iress Limited",
+    "source_url": "https://www.iress.com/about/investors/share-information-and-registry/"
+   },
+   {
+    "a": "Iress Limited",
+    "relationship": "partnered (2023) with HostPlus and Industry Fund Services to offer scaled digital advice; partner/customer",
+    "b": "HostPlus / Industry Fund Services",
+    "source_url": "https://www.investmentmagazine.com.au/2023/04/iress-ties-up-with-hostplus-and-ifs-to-offer-scaled-digital-advice/"
+   },
+   {
+    "a": "Iress Limited",
+    "relationship": "partnered (May 2026) to modernise its wealth platform with",
+    "b": "Thoughtworks",
+    "source_url": "https://fintech.global/2026/05/08/iress-partners-with-thoughtworks-to-modernise-wealth-platform/"
+   },
+   {
+    "a": "Blackstone and Thoma Bravo",
+    "relationship": "were prospective acquirers in early-stage buyout talks (Aug 2025; no deal confirmed) for",
+    "b": "Iress Limited",
+    "source_url": "https://www.privateequitywire.co.uk/iress-shares-rally-amid-fresh-takeover-discussions-with-blackstone-and-thoma-bravo/"
+   },
+   {
+    "a": "Woolworths Group",
+    "relationship": "is the parent/majority owner (~75% in 2021 for A$223m; now ~80.4%) of",
+    "b": "The Quantium Group Pty Limited",
+    "source_url": "https://www.itnews.com.au/news/woolworths-to-take-control-of-quantium-for-223m-563582"
+   },
+   {
+    "a": "Woolworths Group",
+    "relationship": "operates the combined analytics joint-venture entity 'wiq' (Woolies iQ) with",
+    "b": "The Quantium Group Pty Limited",
+    "source_url": "https://www.itnews.com.au/news/woolworths-and-quantium-are-now-calling-their-combined-entity-wiq-582701"
+   },
+   {
+    "a": "Commonwealth Bank of Australia",
+    "relationship": "is a joint-venture partner and customer (CommBank iQ, launched 2021) of",
+    "b": "The Quantium Group Pty Limited",
+    "source_url": "https://www.commbank.com.au/articles/newsroom/2021/05/Commbank-quantium-launch-iq.html"
+   },
+   {
+    "a": "Telstra",
+    "relationship": "is a joint-venture partner and customer ('Quantium Telstra' JV, announced 2021) of",
+    "b": "The Quantium Group Pty Limited",
+    "source_url": "https://quantium.com/quantium-telstra-media-release/"
+   },
+   {
+    "a": "The Quantium Group Pty Limited",
+    "relationship": "has a former co-parent / ongoing shared-services link (demerged from Woolworths Jun 2021) with",
+    "b": "Endeavour Group Limited",
+    "source_url": "https://www.raskmedia.com.au/2021/06/10/deep-dive-woolworths-asxwow-demerger-of-endeavour-group/"
+   },
+   {
+    "a": "The Quantium Group Pty Limited",
+    "relationship": "names as international retail-data-science clients",
+    "b": "Walmart / ASDA",
+    "source_url": "https://quantium.com/"
+   },
+   {
+    "a": "The Quantium Group Pty Limited",
+    "relationship": "is a strategic technology partner (large Google Cloud user; Gemini Enterprise practice) of",
+    "b": "Google Cloud",
+    "source_url": "https://quantium.com/"
+   },
+   {
+    "a": "The Quantium Group Pty Limited",
+    "relationship": "selected for enterprise data management/backup the vendors",
+    "b": "Cisco / Cohesity",
+    "source_url": "https://www.cohesity.com/customers/quantium/"
+   },
+   {
+    "a": "Deloitte Touche Tohmatsu",
+    "relationship": "is the auditor of the parent (Woolworths Group) that consolidates",
+    "b": "The Quantium Group Pty Limited",
+    "source_url": "https://www.woolworthsgroup.com.au/content/dam/wwg/about-us/documents/Woolworths%20Group%20Corporate%20Governance%20Statement%202024.pdf"
+   },
+   {
+    "a": "Shutterstock, Inc. (NYSE:SSTK)",
+    "relationship": "is the parent/owner (acquired 100%, completed Jul 2024, ~US$245m) of",
+    "b": "Envato",
+    "source_url": "https://www.prnewswire.com/news-releases/shutterstock-enters-into-definitive-agreement-to-acquire-envato-featuring-envato-elements-the-unlimited-creative-content-subscription-302134019.html"
+   },
+   {
+    "a": "Shutterstock and Getty Images (proposed merged entity)",
+    "relationship": "would become the ultimate parent (merger announced Jan 2025, pending regulatory clearance) of",
+    "b": "Envato",
+    "source_url": "https://newsroom.gettyimages.com/en/getty-images/getty-images-and-shutterstock-to-merge-creating-a-premier-visual-content-company"
+   },
+   {
+    "a": "PricewaterhouseCoopers LLP (PwC)",
+    "relationship": "is the auditor of the parent (Shutterstock, Inc.) of (parent-level US engagement, not a direct Envato Pty Ltd engagement)",
+    "b": "Envato",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001549346/000154934624000007/a10-k_2023xq4exhibit231.htm"
+   },
+   {
+    "a": "Envato",
+    "relationship": "is a key infrastructure customer of (runs Envato Market on AWS)",
+    "b": "Amazon Web Services (AWS)",
+    "source_url": "https://webuild.envato.com/blog/envato-market-to-the-cloud/"
+   },
+   {
+    "a": "Drake Star Partners",
+    "relationship": "acted as exclusive financial/M&A advisor on the Shutterstock sale of",
+    "b": "Envato",
+    "source_url": "https://www.drakestar.com/news/exclusive-financial-advisor-to-envato-on-sale-to-shutterstock-inc.-nyse-sstk"
+   },
+   {
+    "a": "Goodwin Procter LLP and King & Wood Mallesons",
+    "relationship": "were legal advisors on the Shutterstock acquisition to",
+    "b": "Envato",
+    "source_url": "https://www.prnewswire.com/news-releases/shutterstock-enters-into-definitive-agreement-to-acquire-envato-featuring-envato-elements-the-unlimited-creative-content-subscription-302134019.html"
+   },
+   {
+    "a": "Envato",
+    "relationship": "competes with",
+    "b": "Canva",
+    "source_url": "https://elements.envato.com/learn/envato-alternatives"
+   },
+   {
+    "a": "Envato",
+    "relationship": "competes with",
+    "b": "Adobe Stock",
+    "source_url": "https://elements.envato.com/learn/envato-alternatives"
+   },
+   {
+    "a": "Envato",
+    "relationship": "competes with",
+    "b": "Creative Market",
+    "source_url": "https://elements.envato.com/learn/envato-alternatives"
+   },
+   {
+    "a": "Envato",
+    "relationship": "is a content partner of (3D model kits for subscribers)",
+    "b": "KitBash3D",
+    "source_url": "https://leadiq.com/c/envato/5a1d8e095400005c00746f27"
+   },
+   {
+    "a": "Lock's FX Group Holdings",
+    "relationship": "is the parent/majority owner (~60%) of",
+    "b": "Pepperstone Group Limited",
+    "source_url": "https://en.wikipedia.org/wiki/Pepperstone"
+   },
+   {
+    "a": "CHAMP Private Equity",
+    "relationship": "was a former private-equity majority owner (exited 2018) of",
+    "b": "Pepperstone Group Limited",
+    "source_url": "https://en.wikipedia.org/wiki/Pepperstone"
+   },
+   {
+    "a": "Pepperstone Group Limited",
+    "relationship": "offers client trading on the third-party MT4/MT5 platforms supplied by",
+    "b": "MetaQuotes",
+    "source_url": "https://pepperstone.com/en/platforms/"
+   },
+   {
+    "a": "Pepperstone Group Limited",
+    "relationship": "offers the third-party cTrader platform supplied by",
+    "b": "Spotware Systems",
+    "source_url": "https://pepperstone.com/en/platforms/"
+   },
+   {
+    "a": "Pepperstone Group Limited",
+    "relationship": "integrates the charting/trading platform of",
+    "b": "TradingView",
+    "source_url": "https://pepperstone.com/en/platforms/"
+   },
+   {
+    "a": "Pepperstone Group Limited",
+    "relationship": "is a sponsor of",
+    "b": "Aston Martin Aramco Formula 1 Team",
+    "source_url": "https://en.wikipedia.org/wiki/Pepperstone"
+   },
+   {
+    "a": "Renesas Electronics Corporation",
+    "relationship": "is the parent/owner (acquired ~A$9.1bn, completed 1 Aug 2024) of",
+    "b": "Altium Limited",
+    "source_url": "https://www.renesas.com/en/about/newsroom/renesas-completes-acquisition-altium"
+   },
+   {
+    "a": "Renesas Electronics NSW Pty Ltd",
+    "relationship": "is the immediate acquiring entity (Aug 2024 scheme of arrangement) of",
+    "b": "Altium Limited",
+    "source_url": "https://www.renesas.com/en/about/newsroom/renesas-completes-acquisition-altium"
+   },
+   {
+    "a": "PricewaterhouseCoopers (PwC)",
+    "relationship": "was the external auditor (through delisting on the 2024 Renesas takeover) of",
+    "b": "Altium Limited",
+    "source_url": "https://www.renesas.com/en/document/rep/altium-annual-report-2012"
+   },
+   {
+    "a": "Altium Limited",
+    "relationship": "competes with",
+    "b": "Cadence Design Systems",
+    "source_url": "https://www.ema-eda.com/ema-resources/blog/altium-cadence-mentor-emd/"
+   },
+   {
+    "a": "Altium Limited",
+    "relationship": "competes with",
+    "b": "Siemens EDA (formerly Mentor Graphics)",
+    "source_url": "https://www.ema-eda.com/ema-resources/blog/altium-cadence-mentor-emd/"
+   },
+   {
+    "a": "Altium Limited",
+    "relationship": "competes with",
+    "b": "Zuken",
+    "source_url": "https://www.intellectualmarketinsights.com/blogs/leading-companies-in-the-global-electronic-design-automation-market-2025"
+   },
+   {
+    "a": "Altium Limited",
+    "relationship": "competes with",
+    "b": "Autodesk",
+    "source_url": "https://predictabledesigns.com/pcb-design-software-which-one-is-best/"
+   },
+   {
+    "a": "Woolworths Group",
+    "relationship": "is the parent/majority owner (~80%) of",
+    "b": "Quantium (wiq)",
+    "source_url": "https://www.itnews.com.au/news/woolworths-to-take-control-of-quantium-for-223m-563582"
+   },
+   {
+    "a": "Woolworths Group",
+    "relationship": "was the former parent (demerged Jul 2021; final stake exited Sep 2024) of",
+    "b": "Endeavour Group Limited",
+    "source_url": "https://www.drinkstrade.com.au/news/woolworths-exits-liquor-sells-off-remaining-endeavour-stake/"
+   },
+   {
+    "a": "Woolworths Group",
+    "relationship": "acquired (~80%, 2022) the subsidiary that suffered the 2.2M-customer breach",
+    "b": "MyDeal.com.au",
+    "source_url": "https://www.securityweek.com/retail-giant-woolworths-discloses-data-breach-impacting-22-million-mydeal-customers/"
+   },
+   {
+    "a": "Woolworths Group",
+    "relationship": "operates a pet JV (~60%, pet insurance underwritten via PetSure/Hollard)",
+    "b": "PetCulture / PetSure",
+    "source_url": "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2023-releases/23-174mr-asic-issues-38-ddo-stop-orders-for-pet-insurance-products/"
+   },
+   {
+    "a": "Woolworths Group",
+    "relationship": "acquired a controlling 55% stake (Dec 2023, ACCC undertakings) in",
+    "b": "Petstock Pty Ltd",
+    "source_url": "https://www.accc.gov.au/media-release/woolworths-acquisition-of-controlling-interest-in-petstock-not-opposed-as-petstock-gives-undertakings-relating-to-past-acquisitions"
+   },
+   {
+    "a": "Woolworths Group",
+    "relationship": "acquired (65% in 2020, 100% in 2024) the foodservice distributor",
+    "b": "PFD Food Services Pty Limited",
+    "source_url": "https://en.wikipedia.org/wiki/Woolworths_Group_(Australia)"
+   },
+   {
+    "a": "Deloitte Touche Tohmatsu",
+    "relationship": "is the external auditor of",
+    "b": "Woolworths Group",
+    "source_url": "https://www.woolworthsgroup.com.au/content/dam/wwg/about-us/documents/Woolworths%20Group%20Corporate%20Governance%20Statement%202024.pdf"
+   },
+   {
+    "a": "Woolworths Group",
+    "relationship": "used as grocery-delivery partners Uber Eats (historical) and then (late 2025)",
+    "b": "DoorDash",
+    "source_url": "https://insideretail.com.au/digital/woolworths-joins-doordash-as-coles-sides-with-uber-eats-202512"
+   },
+   {
+    "a": "Woolworths Group",
+    "relationship": "competes with",
+    "b": "Coles / ALDI / Metcash (IGA)",
+    "source_url": "https://www.cascade.app/studies/woolworths-vs-coles-strategy-study"
+   },
+   {
+    "a": "Bruce Mathieson Group",
+    "relationship": "is the largest shareholder (~15%) and 25% ALH JV partner of",
+    "b": "Endeavour Group Limited",
+    "source_url": "https://en.wikipedia.org/wiki/Bruce_Mathieson_(businessman)"
+   },
+   {
+    "a": "Deloitte Touche Tohmatsu",
+    "relationship": "is the external/statutory auditor of",
+    "b": "Endeavour Group Limited",
+    "source_url": "https://www.endeavourgroup.com.au/wp-content/uploads/2024/08/2024-Endeavour-Group-Annual-Report.pdf"
+   },
+   {
+    "a": "Endeavour Group Limited",
+    "relationship": "owns (75%) the hotels/gaming subsidiary/JV",
+    "b": "Australian Leisure and Hospitality Group (ALH)",
+    "source_url": "https://en.wikipedia.org/wiki/Endeavour_Group"
+   },
+   {
+    "a": "Endeavour Group Limited",
+    "relationship": "owns the brands Dan Murphy's, BWS, Cellarmasters, Langton's, Jimmy Brings, Pinnacle Drinks and",
+    "b": "Paragon Wine Estates",
+    "source_url": "https://en.wikipedia.org/wiki/Endeavour_Group"
+   },
+   {
+    "a": "Paine Schwartz Partners",
+    "relationship": "is the parent/controlling owner (led ~A$1.5bn buyout, completed Feb 2024, delisted) of",
+    "b": "Costa Group Holdings Limited",
+    "source_url": "https://costagroup.com.au/2024/02/26/costa-group-enters-new-ownership-phase-as-experienced-consortium-takes-control/"
+   },
+   {
+    "a": "Driscoll's Inc.",
+    "relationship": "is a co-owner (2024 buyout consortium) and 50/50 berry JV partner (since 2010) of",
+    "b": "Costa Group Holdings Limited",
+    "source_url": "https://www.businesswire.com/news/home/20240225330999/en/Driscolls-Takes-Significant-Stake-in-Costa-Group"
+   },
+   {
+    "a": "British Columbia Investment Management Corporation (BCI)",
+    "relationship": "is a co-owner/institutional investor (2024 consortium) in",
+    "b": "Costa Group Holdings Limited",
+    "source_url": "https://costagroup.com.au/2024/02/26/costa-group-enters-new-ownership-phase-as-experienced-consortium-takes-control/"
+   },
+   {
+    "a": "Costa Group Holdings Limited",
+    "relationship": "is a major fresh-produce supplier to",
+    "b": "Woolworths Group",
+    "source_url": "https://www.morningstar.com.au/stocks/morningstar-initiates-coverage-of-costa-group-holdings"
+   },
+   {
+    "a": "Costa Group Holdings Limited",
+    "relationship": "is a major fresh-produce supplier to",
+    "b": "Coles Group",
+    "source_url": "https://www.morningstar.com.au/stocks/morningstar-initiates-coverage-of-costa-group-holdings"
+   },
+   {
+    "a": "Costa Group Holdings Limited",
+    "relationship": "is a major fresh-produce supplier to",
+    "b": "Aldi Australia",
+    "source_url": "https://www.morningstar.com.au/stocks/morningstar-initiates-coverage-of-costa-group-holdings"
+   },
+   {
+    "a": "Costa Group Holdings Limited",
+    "relationship": "is a major fresh-produce supplier to",
+    "b": "Metcash",
+    "source_url": "https://www.morningstar.com.au/stocks/morningstar-initiates-coverage-of-costa-group-holdings"
+   },
+   {
+    "a": "KPMG",
+    "relationship": "is the auditor of",
+    "b": "Costa Group Holdings Limited",
+    "source_url": "https://www.aspecthuntley.com.au/asxdata/20230831/pdf/02705273.pdf"
+   },
+   {
+    "a": "Nick Scali Limited",
+    "relationship": "acquired (Nov 2021, ~A$110m from Greenlit Brands) the subsidiary",
+    "b": "Plush-Think Sofas Pty Ltd",
+    "source_url": "https://en.wikipedia.org/wiki/Nick_Scali_Furniture"
+   },
+   {
+    "a": "Nick Scali Limited",
+    "relationship": "acquired (May 2024) and is rebranding the UK subsidiary",
+    "b": "Anglia Home Furnishings / Fabb Furniture (UK)",
+    "source_url": "https://en.wikipedia.org/wiki/Nick_Scali_Furniture"
+   },
+   {
+    "a": "Greenlit Brands",
+    "relationship": "sold the Plush-Think Sofas business (Nov 2021) to",
+    "b": "Nick Scali Limited",
+    "source_url": "https://en.wikipedia.org/wiki/Nick_Scali_Furniture"
+   },
+   {
+    "a": "Ernst & Young (EY)",
+    "relationship": "was the former external auditor (through FY2024) of",
+    "b": "Nick Scali Limited",
+    "source_url": "https://assets.nickscali.com/media/wysiwyg/pages/Annual_Reports/NS_AnnualReport_2023_WEB.pdf"
+   },
+   {
+    "a": "KPMG",
+    "relationship": "is the current external auditor (from FY2025, replacing EY) of",
+    "b": "Nick Scali Limited",
+    "source_url": "https://announcements.asx.com.au/asxpdf/20250808/pdf/06mnncy395wn7x.pdf"
+   },
+   {
+    "a": "Magellan Asset Management Limited",
+    "relationship": "is the largest shareholder (~8.2%) of",
+    "b": "Nick Scali Limited",
+    "source_url": "https://finance.yahoo.com/news/while-institutions-own-41-nick-203435535.html"
+   },
+   {
+    "a": "Scali Consolidated Pty Ltd",
+    "relationship": "is a substantial shareholder (~7.9%, Scali family vehicle) of",
+    "b": "Nick Scali Limited",
+    "source_url": "https://finance.yahoo.com/news/while-institutions-own-41-nick-203435535.html"
+   },
+   {
+    "a": "Perpetual Limited",
+    "relationship": "is a substantial shareholder (~7.5%) of",
+    "b": "Nick Scali Limited",
+    "source_url": "https://finance.yahoo.com/news/while-institutions-own-41-nick-203435535.html"
+   },
+   {
+    "a": "Nick Scali Limited",
+    "relationship": "competes with",
+    "b": "Harvey Norman Holdings Limited",
+    "source_url": "https://www.ibisworld.com/australia/company/nick-scali-limited/10757/"
+   },
+   {
+    "a": "Nick Scali Limited",
+    "relationship": "competes with",
+    "b": "Adairs Limited",
+    "source_url": "https://www.ibisworld.com/australia/company/nick-scali-limited/10757/"
+   },
+   {
+    "a": "Nick Scali Limited",
+    "relationship": "competes with",
+    "b": "Temple & Webster Group Ltd",
+    "source_url": "https://www.ibisworld.com/australia/company/nick-scali-limited/10757/"
+   },
+   {
+    "a": "Uber B.V. (Netherlands)",
+    "relationship": "is the parent/contracting entity of",
+    "b": "Rasier Pacific Pty Ltd (Uber Australia)",
+    "source_url": "https://uber-regulatory-documents.s3.amazonaws.com/reddog/country/Australia/p2p/Rasier%20Pacific%20Services%20Agreement%201%20Dec%202017.pdf"
+   },
+   {
+    "a": "Uber Technologies, Inc. (USA)",
+    "relationship": "is the ultimate parent of",
+    "b": "Rasier Pacific Pty Ltd (Uber Australia)",
+    "source_url": "https://www.oaic.gov.au/news/media-centre/uber-found-to-have-interfered-with-privacy"
+   },
+   {
+    "a": "Uber Australia Holdings Pty Ltd",
+    "relationship": "is a sister Australian Uber entity of",
+    "b": "Rasier Pacific Pty Ltd (Uber Australia)",
+    "source_url": "https://michaelwest.com.au/investigating-uber-more-lawyers-than-drivers/"
+   },
+   {
+    "a": "PricewaterhouseCoopers (PwC)",
+    "relationship": "has personnel/advisory links (a PwC partner is a director of an Australian Uber entity) with — NOT confirmed as statutory auditor of",
+    "b": "Rasier Pacific Pty Ltd (Uber Australia)",
+    "source_url": "https://michaelwest.com.au/investigating-uber-more-lawyers-than-drivers/"
+   },
+   {
+    "a": "Uber Eats (Uber Australian group)",
+    "relationship": "competes with (Deliveroo exited Australia Nov 2022)",
+    "b": "Deliveroo (Australia)",
+    "source_url": "https://dynamicbusiness.com/topics/news/deliveroo-has-left-australia-following-fierce-competition.html"
+   },
+   {
+    "a": "Quantium",
+    "relationship": "partnered with Iress to build the FundsFlow platform; Quantium is ~75-80% owned by Woolworths, creating an indirect data link between Iress and",
+    "b": "Woolworths Group",
+    "source_url": "https://www.itnews.com.au/news/woolworths-to-take-control-of-quantium-for-223m-563582"
+   }
+  ],
+  "notes": "SCOPE: pitch_targets ranks only companies that operate as Australian entities. Datacom (NZ-headquartered, australian_hq=false) and Altium (australian_hq=false; wholly owned by Japan's Renesas since Aug 2024) were EXCLUDED from the ranked targets despite having Australian operations; their relationship edges are still included in the graph. Envato is Australian-founded but is now a wholly-owned subsidiary of US-listed Shutterstock (and pending Getty/Shutterstock merger), with no confirmed breach of its own systems — so it was not surfaced as a ranked target; its edges are included. Uber Australia (Rasier Pacific) is also flagged australian_hq=false (US/Netherlands parents) but was INCLUDED and ranked High because the incidents and the OAIC determination are Australian-specific; note the OAIC respondents were Uber Technologies Inc. and Uber B.V., not Rasier Pacific directly.\n\nCONFIRMED INCIDENTS (well-sourced): TPG/iiNet Aug 2025 (~280k) and Dec 2022 Hosted Exchange; Iress May 2024 GitHub→OneVue; Woolworths MyDeal Oct 2022 (~2.2M, OAIC-notified); Uber 2016 (~1.2M Australians, OAIC determination 2021) and Lapsus$ 2022; MYOB 2019 payroll glitch (OAIC/ATO); Pepperstone 2020 third-party-vendor CRM breach; Costa Group Aug 2022 phishing (ACSC/OAIC); Endeavour/Dan Murphy's Jan 2024 credential-stuffing (Endeavour's own systems not breached).\n\nUNVERIFIED / WEAKLY-SOURCED items flagged explicitly:\n- UNVERIFIED Envato 11M-email breach claim (Jun 2025, dark-web actor 'WISDOM', API attack, US$2,500): Envato found NO evidence of a breach; data may be fabricated or recycled. Do NOT treat as a confirmed Envato incident.\n- UNVERIFIED 'infostealer malware detected' signals for MYOB and Datacom: these are automated UpGuard continuous-monitoring indicators of potential credential exposure, NOT confirmed breaches, and are undated for Datacom. Both carry overall 'A' security ratings. Treat as low-confidence inference only.\n- NO-INCIDENT-FOUND (not a clean bill of health): Quantium, Macquarie Data Centres/Macquarie Technology Group, and Nick Scali had no confirmed breach/OAIC NDB found as of Jun 2026. This is absence of evidence, not evidence of absence.\n- Costa Group competitor list (Perfection Fresh, Mildura Fruit, Nutrano/2PH, Berry Exchange, Dole/Del Monte) comes from a low-credibility business-model-template site — indicative only.\n- Several competitor edges (Iress vs SS&C/Bloomberg/iPipeline/Intelliflo/Sage; Quantium vs Accenture/Deloitte/Fractal/EXL/Tredence/PwC) are competitive-overlap inferences from third-party profile sites, not confirmed commercial relationships.\n- 'Perpetual' as a Datacom customer is cited by Datacom's own marketing with no verified contract terms.\n\nNAME-COLLISION / PRIORITY-LIST CORRECTIONS:\n- The 'Endeavour' that appears as an MYOB implementation partner is a New Zealand ERP consultancy (founded 1989), NOT ASX-listed Endeavour Group. No verified MYOB–Endeavour Group relationship exists.\n- AUDITOR CORRECTIONS vs the prospecting brief's assumed PwC links: Woolworths' and Endeavour's auditor is Deloitte (not PwC); Costa's is KPMG (not PwC); Nick Scali moved EY→KPMG (FY2025). PwC IS confirmed for Macquarie Technology Group and (historically) Altium, and is the parent-level auditor of Envato's parent Shutterstock (indirect). PwC's Uber link is a director/advisory personnel tie, NOT a confirmed statutory audit engagement.\n- Macquarie Technology Group (ASX:MAQ) is DISTINCT from Macquarie Group/Macquarie Bank (ASX:MQG); do not conflate.\n\nSUPPLY-CHAIN / SHARED-VENDOR CLUSTERS worth noting for cross-sell: (1) AWS is a shared infrastructure dependency of Datacom, Envato and Macquarie Data Centres; Microsoft of MYOB, Datacom and Macquarie; Google Cloud of Quantium/wiq and Macquarie. (2) Quantium sits at a data-aggregation chokepoint holding sensitive data from CBA, Iress, Woolworths and Telstra — a single Quantium compromise would have outsized downstream blast radius. (3) Mandiant (Google) is TPG's incident-response adviser. (4) Multiple targets have third-party/vendor-credential breach patterns (Pepperstone, Uber, iiNet, MyDeal) — a strong recurring theme for supply-chain cyber cover.\n\nNo unsourced cyber incidents have been asserted; every incident statement traces to a source_url in the research data."
+ }
+}

@@ -1,0 +1,230 @@
+{
+ "company": "Nick Scali Limited (ASX:NCK)",
+ "amenability": "Low",
+ "source_passage": "Specialty furniture retailer with no confirmed breach, ransomware or OAIC NDB found in any reviewed source — a 'no evidence found' result, not a verified clean record. Consumer retail is lower data-sensitivity than IT/telco/financial/health. Residual exposure exists: direct e-commerce plus Plush and UK Fabb brands, ~112 stores processing customer PII, deposits and consumer-finance applications, and lookalike/scam-site complaints. A recent auditor change (EY to KPMG, FY2024→FY2025) is a control-environment signal worth an underwriting question. Lowest amenability of the Australian set. No confirmed breach/ransomware/OAIC NDB found as of Jun 2026 ('no evidence found', not a verified clean record) Governance signal (not an incident): external auditor changed from EY to KPMG between FY2024 and FY2025; no qualified opinion or breach reported Inherent exposure (not an incident): e-commerce + Plush + UK Fabb brands and ~112 stores process PII, deposits and consumer-finance; lookalike/scam-site complaints raise brand-impersonation/phishing risk against customers Subsidiary: Plush-Think Sofas (acquired Nov 2021, ~A$110m from Greenlit Brands) Subsidiary: Anglia Home Furnishings / Fabb Furniture UK (acquired May 2024; rebranding to Nick Scali) Vendor: Greenlit Brands (sold Plush) Former auditor: EY (through FY2023/FY2024); current auditor: KPMG (from FY2025) Substantial shareholders: Magellan (~8.2%), Scali Consolidated (~7.9%), Perpetual (~7.5%) Competitors: Harvey Norman, Adairs, Temple & Webster",
+ "sources": [
+  "https://en.wikipedia.org/wiki/Nick_Scali_Furniture",
+  "https://announcements.asx.com.au/asxpdf/20250808/pdf/06mnncy395wn7x.pdf",
+  "https://www.oaic.gov.au/privacy/notifiable-data-breaches"
+ ],
+ "extractor": {
+  "llm_api": "openai",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "endpoint": "https://gfmrag-vllm-olbu7sektq-uc.a.run.app",
+  "seconds": 120.1,
+  "rechunked": true
+ },
+ "entities": [
+  "112 stores",
+  "A$110m",
+  "ASX:NCK",
+  "Adairs",
+  "Anglia Home Furnishings",
+  "EY",
+  "FY2023/FY2024",
+  "FY2024",
+  "FY2025",
+  "Fabb Furniture UK",
+  "Greenlit Brands",
+  "Harvey Norman",
+  "Jun 2026",
+  "KPMG",
+  "Magellan",
+  "May 2024",
+  "Nick Scali",
+  "Nick Scali Limited",
+  "Nov 2021",
+  "Perpetual",
+  "Plush",
+  "Plush-Think Sofas",
+  "Scali Consolidated",
+  "Temple & Webster",
+  "UK Fabb brands",
+  "e-commerce",
+  "lookalike/scam-site complaints",
+  "no evidence found",
+  "not a verified clean record"
+ ],
+ "triples": [
+  [
+   "Nick Scali Limited",
+   "traded_on",
+   "ASX:NCK"
+  ],
+  [
+   "Nick Scali Limited",
+   "had",
+   "external auditor changed"
+  ],
+  [
+   "Nick Scali Limited",
+   "changed",
+   "from EY to KPMG"
+  ],
+  [
+   "Nick Scali Limited",
+   "changed",
+   "between FY2024 and FY2025"
+  ],
+  [
+   "Nick Scali Limited",
+   "did_not_report",
+   "qualified opinion"
+  ],
+  [
+   "Nick Scali Limited",
+   "did_not_report",
+   "breach"
+  ],
+  [
+   "Nick Scali Limited",
+   "had",
+   "inherent exposure"
+  ],
+  [
+   "Nick Scali Limited",
+   "exposed_to",
+   "e-commerce"
+  ],
+  [
+   "Nick Scali Limited",
+   "exposed_to",
+   "Plush"
+  ],
+  [
+   "Nick Scali Limited",
+   "exposed_to",
+   "UK Fabb brands"
+  ],
+  [
+   "Nick Scali Limited",
+   "exposed_to",
+   "112 stores"
+  ],
+  [
+   "Nick Scali Limited",
+   "exposed_to",
+   "PII"
+  ],
+  [
+   "Nick Scali Limited",
+   "exposed_to",
+   "deposits"
+  ],
+  [
+   "Nick Scali Limited",
+   "exposed_to",
+   "consumer-finance"
+  ],
+  [
+   "Nick Scali Limited",
+   "exposed_to",
+   "lookalike/scam-site complaints"
+  ],
+  [
+   "Nick Scali Limited",
+   "found",
+   "no evidence found"
+  ],
+  [
+   "Nick Scali Limited",
+   "found",
+   "not a verified clean record"
+  ],
+  [
+   "Nick Scali Limited",
+   "listed on",
+   "ASX:NCK"
+  ],
+  [
+   "Nick Scali Limited",
+   "has subsidiary",
+   "Plush-Think Sofas"
+  ],
+  [
+   "Plush-Think Sofas",
+   "acquired by",
+   "Nick Scali Limited"
+  ],
+  [
+   "Plush-Think Sofas",
+   "acquired in",
+   "November 2021"
+  ],
+  [
+   "Plush-Think Sofas",
+   "acquisition cost",
+   "A$110m"
+  ],
+  [
+   "Nick Scali Limited",
+   "has subsidiary",
+   "Anglia Home Furnishings / Fabb Furniture UK"
+  ],
+  [
+   "Anglia Home Furnishings / Fabb Furniture UK",
+   "acquired by",
+   "Nick Scali Limited"
+  ],
+  [
+   "Anglia Home Furnishings / Fabb Furniture UK",
+   "rebranded to",
+   "Nick Scali"
+  ],
+  [
+   "Nick Scali Limited",
+   "has vendor",
+   "Greenlit Brands"
+  ],
+  [
+   "Greenlit Brands",
+   "sold",
+   "Plush"
+  ],
+  [
+   "Nick Scali Limited",
+   "trading_symbol",
+   "ASX:NCK"
+  ],
+  [
+   "Nick Scali Limited",
+   "former_auditor",
+   "EY"
+  ],
+  [
+   "Nick Scali Limited",
+   "current_auditor",
+   "KPMG"
+  ],
+  [
+   "Magellan",
+   "is_substantial_shareholder_of",
+   "Nick Scali Limited"
+  ],
+  [
+   "Scali Consolidated",
+   "is_substantial_shareholder_of",
+   "Nick Scali Limited"
+  ],
+  [
+   "Perpetual",
+   "is_substantial_shareholder_of",
+   "Nick Scali Limited"
+  ],
+  [
+   "Nick Scali Limited",
+   "competes_with",
+   "Harvey Norman"
+  ],
+  [
+   "Nick Scali Limited",
+   "competes_with",
+   "Adairs"
+  ],
+  [
+   "Nick Scali Limited",
+   "competes_with",
+   "Temple & Webster"
+  ]
+ ]
+}

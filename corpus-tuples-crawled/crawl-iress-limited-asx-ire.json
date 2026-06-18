@@ -1,0 +1,263 @@
+{
+ "company": "Iress Limited (ASX:IRE)",
+ "amenability": "High",
+ "source_passage": "Financial-services software / fintech (wealth, trading, market data, super administration) — among the highest data-sensitivity sectors. Confirmed high-severity recent breach: a stolen GitHub credential was used to access the OneVue production environment (detected/contained 11 May 2024, reported to ACSC 13 May 2024, disclosed to ASX). Although the investigation found limited data impact (test files, PII of 20 individuals), the incident sits squarely in regulated financial software and Iress is a custodian of ~A$130bn of annual wealth transaction data (FundsFlow). Potential change of control (Blackstone/Thoma Bravo talks) adds an underwriting-relevant transition window. May 2024 GitHub credential theft → unauthorised access to OneVue production environment; reported to ACSC, disclosed to ASX Investigation completed Jul 2024: PII of 20 individuals (OneVue employees/clients) found in test files; IoCs shared with ACSC; broader production/client data not impacted Public incident notifications confirming the GitHub issue reached the OneVue production environment containing client data Former subsidiary / breach environment: OneVue Holdings (fund registry/super admin, acquired ~A$115m 2020/2021); super-registry portion later divested to Praemium Data/analytics partner: Quantium (powers the FundsFlow product) — indirect link to Woolworths (Quantium's ~75-80% owner) Technology partner: Thoughtworks (May 2026, wealth-platform modernisation) Customer/partner: HostPlus with Industry Fund Services (scaled digital advice) Prospective acquirers: Blackstone and Thoma Bravo (early-stage buyout talks, no deal confirmed) External auditor: Ernst & Young (EY); share registry: Computershare Competitors: SS&C, Bloomberg, iPipeline, Intelliflo, Sage (lower-confidence)",
+ "sources": [
+  "https://www.cyberdaily.au/security/10568-iress-says-github-data-breach-extends-to-onevue",
+  "https://dailysecurityreview.com/security-spotlight/iress-completes-investigation-into-may-2024-data-breach/",
+  "https://community.iress.com/t5/Iress-Notifications/Iress-GitHub-Issue/ta-p/64514",
+  "https://www.iress.com/media/documents/FINAL_Media_Release_Iress_launches_FundsFlow_data_product.pdf"
+ ],
+ "extractor": {
+  "llm_api": "openai",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "endpoint": "https://gfmrag-vllm-olbu7sektq-uc.a.run.app",
+  "seconds": 119.0,
+  "rechunked": true
+ },
+ "entities": [
+  "20 individuals",
+  "2020/2021",
+  "ACSC",
+  "ASX",
+  "ASX:IRE",
+  "Blackstone",
+  "Bloomberg",
+  "Computershare",
+  "EY",
+  "Ernst & Young",
+  "GitHub",
+  "GitHub issue",
+  "HostPlus",
+  "IRE",
+  "Industry Fund Services",
+  "Intelliflo",
+  "IoCs",
+  "Iress Limited",
+  "Jul 2024",
+  "May 2024",
+  "May 2026",
+  "OneVue Holdings",
+  "OneVue employees/clients",
+  "OneVue production environment",
+  "PII",
+  "Praemium Data",
+  "Public incident notifications",
+  "Quantium",
+  "SS&C",
+  "Sage",
+  "Thoma Bravo",
+  "Thoughtworks",
+  "Woolworths",
+  "analytics partner",
+  "broader production/client data",
+  "credential theft",
+  "fund registry",
+  "iPipeline",
+  "owner",
+  "super admin",
+  "super-registry portion",
+  "test files",
+  "unauthorised access",
+  "wealth-platform modernisation",
+  "~75-80%",
+  "~A$115m"
+ ],
+ "triples": [
+  [
+   "Iress Limited",
+   "traded_on",
+   "ASX"
+  ],
+  [
+   "Iress Limited",
+   "represented_by",
+   "IRE"
+  ],
+  [
+   "May 2024",
+   "caused",
+   "GitHub credential theft"
+  ],
+  [
+   "May 2024",
+   "led_to",
+   "unauthorised access"
+  ],
+  [
+   "May 2024",
+   "affected",
+   "OneVue production environment"
+  ],
+  [
+   "May 2024",
+   "resulted_in",
+   "report to ACSC"
+  ],
+  [
+   "May 2024",
+   "resulted_in",
+   "disclosure to ASX"
+  ],
+  [
+   "Jul 2024",
+   "completed",
+   "Investigation"
+  ],
+  [
+   "Jul 2024",
+   "revealed",
+   "PII of 20 individuals"
+  ],
+  [
+   "Jul 2024",
+   "revealed",
+   "IoCs shared with ACSC"
+  ],
+  [
+   "Jul 2024",
+   "revealed",
+   "broader production/client data not impacted"
+  ],
+  [
+   "Jul 2024",
+   "confirmed",
+   "Public incident notifications"
+  ],
+  [
+   "May 2024",
+   "affected",
+   "test files"
+  ],
+  [
+   "Iress Limited",
+   "listed_on",
+   "ASX"
+  ],
+  [
+   "Iress Limited",
+   "acquired_by",
+   "OneVue Holdings"
+  ],
+  [
+   "OneVue Holdings",
+   "fund_registry_or_super_admin",
+   "super-registry portion"
+  ],
+  [
+   "OneVue Holdings",
+   "acquired_amount",
+   "~A$115m"
+  ],
+  [
+   "OneVue Holdings",
+   "acquired_year",
+   "2020/2021"
+  ],
+  [
+   "OneVue Holdings",
+   "divested_to",
+   "Praemium Data"
+  ],
+  [
+   "Praemium Data",
+   "analytics_partner",
+   "Quantium"
+  ],
+  [
+   "Quantium",
+   "powers",
+   "FundsFlow product"
+  ],
+  [
+   "Quantium",
+   "indirect_link_to",
+   "Woolworths"
+  ],
+  [
+   "Woolworths",
+   "owner_of",
+   "Quantium"
+  ],
+  [
+   "Iress Limited",
+   "technology_partner",
+   "Thoughtworks"
+  ],
+  [
+   "Thoughtworks",
+   "technology_partner_of",
+   "Iress Limited"
+  ],
+  [
+   "Thoughtworks",
+   "wealth_platform_modernisation_start_year",
+   "May 2026"
+  ],
+  [
+   "Iress Limited",
+   "traded_on",
+   "ASX"
+  ],
+  [
+   "HostPlus",
+   "customer_or_partner_of",
+   "Iress Limited"
+  ],
+  [
+   "HostPlus",
+   "uses_service_of",
+   "Industry Fund Services"
+  ],
+  [
+   "Blackstone",
+   "prospective_acquirer_of",
+   "Iress Limited"
+  ],
+  [
+   "Thoma Bravo",
+   "prospective_acquirer_of",
+   "Iress Limited"
+  ],
+  [
+   "Ernst & Young",
+   "external_auditor_of",
+   "Iress Limited"
+  ],
+  [
+   "Computershare",
+   "share_registry_of",
+   "Iress Limited"
+  ],
+  [
+   "Iress Limited",
+   "trading_as",
+   "ASX:IRE"
+  ],
+  [
+   "Iress Limited",
+   "competitor",
+   "SS&C"
+  ],
+  [
+   "Iress Limited",
+   "competitor",
+   "Bloomberg"
+  ],
+  [
+   "Iress Limited",
+   "competitor",
+   "iPipeline"
+  ],
+  [
+   "Iress Limited",
+   "competitor",
+   "Intelliflo"
+  ],
+  [
+   "Iress Limited",
+   "competitor",
+   "Sage"
+  ]
+ ]
+}

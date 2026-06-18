@@ -1,0 +1,260 @@
+{
+ "company": "The Quantium Group Pty Limited",
+ "amenability": "Medium",
+ "source_passage": "Data-science / analytics / AI firm handling extremely sensitive third-party data (de-identified CBA banking transactions via CommBank iQ, ~A$130bn Iress wealth data, Woolworths loyalty data, health/genomics data). High-data-sensitivity sector and a high-value-target profile, but NO Quantium-specific incident was found. Exposure comes from its parent/sibling (Woolworths MyDeal breach) and the concentration of partner data it holds. The aggregation risk and downstream blast radius (banking, retail, health) make it a strong cyber-cover candidate despite the absence of an own incident. No confirmed Quantium-specific breach found in public sources/OAIC NDB publications as of Jun 2026 (treat as 'no incident found', not a clean bill of health) Parent/sibling exposure: Woolworths' MyDeal breach (~2.2M customers, 2022) reflects the group's wider attack surface Concentration/data-sensitivity risk: custodian of CBA transaction data, Iress wealth data, Woolworths customer data, health/genomics data — outsized downstream impact if breached (inherent-risk indicator, not an incident) Parent/majority owner: Woolworths Group (~75% in 2021 for A$223m; now ~80.4%); combined analytics entity 'wiq' JV partners/customers: Commonwealth Bank (CommBank iQ), Telstra (Quantium Telstra JV) Partner/customer: Iress (FundsFlow data product) Former co-parent link: Endeavour Group (demerged from Woolworths 2021; shared-services link) Tech partner: Google Cloud (Gemini Enterprise practice); vendors Cisco/Cohesity International clients: Walmart/ASDA Auditor via parent: Deloitte (no separate statutory auditor for Quantium confirmed) Competitors: Accenture, Deloitte, Fractal, EXL, Tredence, PwC (competitive overlap, not commercial ties)",
+ "sources": [
+  "https://www.oaic.gov.au/privacy/notifiable-data-breaches/notifiable-data-breaches-publications",
+  "https://www.securityweek.com/retail-giant-woolworths-discloses-data-breach-impacting-22-million-mydeal-customers/",
+  "https://www.commbank.com.au/articles/newsroom/2021/05/Commbank-quantium-launch-iq.html",
+  "https://www.itnews.com.au/news/woolworths-to-take-control-of-quantium-for-223m-563582"
+ ],
+ "extractor": {
+  "llm_api": "openai",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "endpoint": "https://gfmrag-vllm-olbu7sektq-uc.a.run.app",
+  "seconds": 120.0,
+  "rechunked": true
+ },
+ "entities": [
+  "2.2M customers",
+  "ASDA",
+  "Accenture",
+  "CBA",
+  "Cisco",
+  "Cohesity",
+  "CommBank iQ",
+  "Commonwealth Bank",
+  "Deloitte",
+  "EXL",
+  "Endeavour Group",
+  "Fractal",
+  "FundsFlow",
+  "Google Cloud",
+  "Iress",
+  "Jun 2026",
+  "MyDeal",
+  "OAIC NDB",
+  "PwC",
+  "Quantium Group Pty Limited",
+  "Quantium Telstra JV",
+  "Telstra",
+  "The Quantium Group Pty Limited",
+  "Tredence",
+  "Walmart",
+  "Woolworths",
+  "Woolworths Group",
+  "customer",
+  "health/genomics"
+ ],
+ "triples": [
+  [
+   "Quantium Group Pty Limited",
+   "has",
+   "no confirmed breach"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "has",
+   "parent/sibling exposure"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "has",
+   "concentration/data-sensitivity risk"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "has",
+   "custodian of CBA transaction data"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "has",
+   "custodian of Iress wealth data"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "has",
+   "custodian of Woolworths customer data"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "has",
+   "custodian of health/genomics data"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "has",
+   "outsized downstream impact if breached"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "has",
+   "parent/sibling exposure",
+   "Woolworths"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "has",
+   "parent/sibling exposure",
+   "MyDeal"
+  ],
+  [
+   "MyDeal",
+   "affected",
+   "2.2M customers"
+  ],
+  [
+   "MyDeal",
+   "occurred",
+   "2022"
+  ],
+  [
+   "OAIC NDB",
+   "published",
+   "Jun 2026"
+  ],
+  [
+   "OAIC NDB",
+   "published",
+   "no incident found"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "parent/majority owner",
+   "Woolworths Group"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "value in 2021",
+   "A$223m"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "percentage in 2021",
+   "~75%"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "combined analytics entity",
+   "'wiq'"
+  ],
+  [
+   "'wiq'",
+   "JV partners",
+   "Commonwealth Bank"
+  ],
+  [
+   "'wiq'",
+   "customers",
+   "CommBank iQ"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "partner/customer",
+   "Telstra"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "Quantium Telstra JV partner",
+   "Telstra"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "partner/customer",
+   "Iress"
+  ],
+  [
+   "Quantium Group Pty Limited",
+   "FundsFlow data product customer",
+   "Iress"
+  ],
+  [
+   "The Quantium Group Pty Limited",
+   "former co-parent link",
+   "Endeavour Group"
+  ],
+  [
+   "The Quantium Group Pty Limited",
+   "shared-services link",
+   "Woolworths"
+  ],
+  [
+   "Google Cloud",
+   "tech partner",
+   "Quantium Group Pty Limited"
+  ],
+  [
+   "Cisco",
+   "vendor",
+   "Quantium Group Pty Limited"
+  ],
+  [
+   "Cohesity",
+   "vendor",
+   "Quantium Group Pty Limited"
+  ],
+  [
+   "Google Cloud",
+   "tech partner",
+   "Google Cloud"
+  ],
+  [
+   "Google Cloud",
+   "practice",
+   "Gemini Enterprise"
+  ],
+  [
+   "Walmart",
+   "client",
+   "Quantium Group Pty Limited"
+  ],
+  [
+   "ASDA",
+   "client",
+   "Quantium Group Pty Limited"
+  ],
+  [
+   "The Quantium Group Pty Limited",
+   "has",
+   "Auditor via parent",
+   "Deloitte"
+  ],
+  [
+   "The Quantium Group Pty Limited",
+   "has",
+   "competitors",
+   "Accenture"
+  ],
+  [
+   "The Quantium Group Pty Limited",
+   "has",
+   "competitors",
+   "Deloitte"
+  ],
+  [
+   "The Quantium Group Pty Limited",
+   "has",
+   "competitors",
+   "EXL"
+  ],
+  [
+   "The Quantium Group Pty Limited",
+   "has",
+   "competitors",
+   "Fractal"
+  ],
+  [
+   "The Quantium Group Pty Limited",
+   "has",
+   "competitors",
+   "PwC"
+  ],
+  [
+   "The Quantium Group Pty Limited",
+   "has",
+   "competitors",
+   "Tredence"
+  ]
+ ]
+}

@@ -1,0 +1,155 @@
+{
+ "company": "Endeavour Group Limited (ASX:EDV)",
+ "amenability": "Medium",
+ "source_passage": "Alcohol retail (Dan Murphy's, BWS) and hospitality/gaming (ALH) with a real, recent customer-facing cyber event: a coordinated Jan 2024 credential-stuffing campaign hit Dan Murphy's accounts (among ~15,000 accounts across multiple AU retailers), enabling fraudulent purchases. Endeavour states its own systems were not compromised and no card data taken — so this is account-takeover/fraud exposure rather than a system breach, holding it at Medium. The FY2025 annual report names cyber as a key risk with a committed multi-year uplift program, signalling active risk awareness (and buying intent). Jan 2024 coordinated credential-stuffing campaign against Dan Murphy's accounts (reused creds from unrelated breaches); ~15,000 accounts across brands incl. THE ICONIC, Event Cinemas, Guzman y Gomez, TVSN, Binge; Endeavour systems not compromised, no card data taken Corroborating ACS Information Age coverage (campaign detected by Kasada), naming Dan Murphy's FY2025 annual report names data/privacy/cyber as a key risk; discloses multi-year cyber uplift program and a data-breach response plan with crisis exercises Former parent: Woolworths Group (demerged Jun 2021; Woolworths exited final 4.1% stake Sep 2024) Largest shareholder + ALH 25% JV partner: Bruce Mathieson Group / Bruce Mathieson Subsidiary/JV: Australian Leisure and Hospitality Group (ALH, 75% Endeavour) — ~350 hotels, ~12,000 pokies Owned brands: Dan Murphy's, BWS, Cellarmasters, Langton's, Jimmy Brings, Pinnacle Drinks, Paragon Wine Estates Auditor: Deloitte Touche Tohmatsu (NOT PwC)",
+ "sources": [
+  "https://www.bandt.com.au/guzman-dan-murphys-binge-hit-with-credential-stuffing-cyber-attack/",
+  "https://ia.acs.org.au/article/2024/coordinated-cyberattack-hits-thousands-of-aussies.html",
+  "https://www.endeavourgroup.com.au/wp-content/uploads/2024/08/2024-Endeavour-Group-Annual-Report.pdf",
+  "https://en.wikipedia.org/wiki/Endeavour_Group"
+ ],
+ "extractor": {
+  "llm_api": "openai",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "endpoint": "https://gfmrag-vllm-olbu7sektq-uc.a.run.app",
+  "seconds": 119.8,
+  "rechunked": true
+ },
+ "entities": [
+  "12,000 pokies",
+  "350 hotels",
+  "75%",
+  "ALH",
+  "ASX:EDV",
+  "Australian Leisure and Hospitality Group",
+  "BWS",
+  "Binge",
+  "Bruce Mathieson",
+  "Bruce Mathieson Group",
+  "Cellarmasters",
+  "Dan Murphy's",
+  "Dan Murphy's FY2025 annual report",
+  "Deloitte Touche Tohmatsu",
+  "Endeavour Group Limited",
+  "Endeavour systems",
+  "Event Cinemas",
+  "Guzman y Gomez",
+  "Jan 2024",
+  "Jimmy Brings",
+  "Jun 2021",
+  "Langton's",
+  "Paragon Wine Estates",
+  "Pinnacle Drinks",
+  "Sep 2024",
+  "THE ICONIC",
+  "TVSN",
+  "Woolworths Group",
+  "card data",
+  "credential-stuffing campaign",
+  "crisis exercises",
+  "data-breach response plan",
+  "data/privacy/cyber",
+  "multi-year cyber uplift program",
+  "~15,000"
+ ],
+ "triples": [
+  [
+   "Endeavour Group Limited",
+   "listed on",
+   "ASX:EDV"
+  ],
+  [
+   "Woolworths Group",
+   "former parent of",
+   "Endeavour Group Limited"
+  ],
+  [
+   "Woolworths Group",
+   "demerged from",
+   "Jun 2021"
+  ],
+  [
+   "Woolworths Group",
+   "exited stake in",
+   "Sep 2024"
+  ],
+  [
+   "Bruce Mathieson Group",
+   "largest shareholder of",
+   "ALH"
+  ],
+  [
+   "Bruce Mathieson Group",
+   "JV partner of",
+   "ALH"
+  ],
+  [
+   "Australian Leisure and Hospitality Group",
+   "75% owned by",
+   "Endeavour Group Limited"
+  ],
+  [
+   "Australian Leisure and Hospitality Group",
+   "partner of",
+   "Bruce Mathieson Group"
+  ],
+  [
+   "Australian Leisure and Hospitality Group",
+   "350 hotels"
+  ],
+  [
+   "Australian Leisure and Hospitality Group",
+   "12,000 pokies"
+  ],
+  [
+   "Endeavour Group Limited",
+   "trading_symbol",
+   "ASX:EDV"
+  ],
+  [
+   "Endeavour Group Limited",
+   "has_brand",
+   "Dan Murphy's"
+  ],
+  [
+   "Endeavour Group Limited",
+   "has_brand",
+   "BWS"
+  ],
+  [
+   "Endeavour Group Limited",
+   "has_brand",
+   "Cellarmasters"
+  ],
+  [
+   "Endeavour Group Limited",
+   "has_brand",
+   "Langton's"
+  ],
+  [
+   "Endeavour Group Limited",
+   "has_brand",
+   "Jimmy Brings"
+  ],
+  [
+   "Endeavour Group Limited",
+   "has_brand",
+   "Pinnacle Drinks"
+  ],
+  [
+   "Endeavour Group Limited",
+   "has_brand",
+   "Paragon Wine Estates"
+  ],
+  [
+   "Deloitte Touche Tohmatsu",
+   "is",
+   "auditor"
+  ],
+  [
+   "Deloitte Touche Tohmatsu",
+   "not",
+   "PwC"
+  ]
+ ]
+}
