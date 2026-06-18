@@ -1,6 +1,0 @@
-# Normalize all text files to LF — this repo lives in WSL but gets edited
-# from Windows tools too; without this, CRLF writes show up as whole-file
-# phantom diffs (see corpus/* churn).
-* text=auto eol=lf
-*.pt filter=lfs diff=lfs merge=lfs -text
-corpus-shards/**/processed/stage1/edges.csv filter=lfs diff=lfs merge=lfs -text

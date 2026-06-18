@@ -1,11 +1,11 @@
 {
   "mcpServers": {
     "gfmrag": {
-      "command": "wsl.exe",
-      "args": [
-        "-d", "ubuntu", "bash", "-c",
-        "cd $HOME/repo/gfm-rag && export PATH=$HOME/.local/bin:$PATH && export GFMRAG_DATASET=shard-4 && exec .venv/bin/python scripts/mcp/gfmrag_server.py"
-      ]
+      "command": "python",
+      "args": ["scripts/mcp/gfmrag_server.py"],
+      "env": {
+        "GFMRAG_QA_URL": "https://gfmrag-qa-olbu7sektq-uc.a.run.app"
+      }
     }
   }
 }
