@@ -1,37 +1,44 @@
-# GFM-RAG for the Australian Modern Slavery Register
+# GFM-RAG Portable (Australian Modern Slavery Register)
 
-This repository adapts **GFM-RAG** (a Graph Foundation Model for Retrieval-Augmented
-Generation) into a domain knowledge-graph system over the **Australian Modern Slavery
-Register**, built for supply-chain and cyber-insurance risk analysis across Australian
-companies.
+> **Provenance & Portability Note**:  
+> This repository is derived from the upstream [**GFM-RAG**](https://github.com/RManLuo/gfm-rag) project (Graph Foundation Model for Retrieval-Augmented Generation, NeurIPS '25 / ICLR '26 by Linhao Luo & Zicheng Zhao). It has been adapted into a **portable, standalone implementation** designed for local exploration, reproducible evaluation, and domain-specific knowledge graph indexing over corporate registers. It serves as a companion systems repository alongside exploratory notebook studies (such as the [Colab validation suite](https://github.com/lunatrop/colab)).
 
-The upstream project and its general design are documented in
-[`README/ABOUT GFM-RAG.md`](README/ABOUT%20GFM-RAG.md). This file describes what is
-*different* here.
+---
 
-## The core adaptation: the ABN is the primary key
+## What Makes This Fork "Portable"?
 
-The single most important change from generic GFM-RAG is that the **Australian Business
-Number (ABN)** is treated as the **canonical primary key for every reporting entity**.
+The original GFM-RAG framework assumes a generalized academic setup often tied to extensive distributed crawls, remote GPUs, and generic entity linking. This repository refactors and packages the system for high portability:
 
-Generic GFM-RAG links entities by fuzzy text similarity (ColBERT over surface forms).
-That is fine for prose, but it fragments a corporate register, where the same company
-appears under many spellings ("De Bortoli Wines", "DeBortoli WInes", "DE BORTOLI WINES
-PTY LTD"). An ABN is an **exact, government-issued, unique identifier** — so we make it
-the spine of the graph. This threads through every stage:
+1. **Self-Contained Knowledge Graph & Indices**:
+   - Bundles pre-built, unionized graph structures and embeddings (`corpus-shards/union-0-5-canon-eq/` and `graph.pt`).
+   - Allows users to test and query the retriever immediately out-of-the-box without executing a multi-day data crawl or standing up dedicated GPU clusters.
 
-1. **Extraction** — a register-specific prompt profile
-   ([`prompt-profiles/au-register.yaml`](prompt-profiles/au-register.yaml)) instructs the
-   tuple extractor to pull each ABN **verbatim** and emit it first, as an
-   `[entity, "has ABN", <number>]` triple. (Local tests lifted ABN recall from ~41–56%
-   to ~100% on completed docs.)
-2. **Canonicalisation** — [`scripts/eval/canonicalise_abn.py`](scripts/eval/canonicalise_abn.py)
-   merges every node that shares an ABN into one canonical entity, collapsing surface-form
-   variants that text linking leaves split.
-3. **Fact-gating** — because ABNs are exact-match keys, every fact in a generated answer
-   (company name, claimed relationship) can be **programmatically verified** against the
-   register before it reaches a downstream use (e.g. outbound marketing). An ABN either
-   matches the register or it does not.
+2. **Cross-Platform & Low-Resource Runtime**:
+   - Configured with optional backend profiles via Poetry extras (`faiss-cpu` for standard local development on laptops/CPUs vs. `faiss-gpu-cu12` for CUDA-enabled environments).
+   - Includes containerized deployment configurations (`deploy/`) for lightweight local or serverless serving (e.g., Cloud Run / GKE).
+
+3. **Native Model Context Protocol (MCP) Integration**:
+   - Out-of-the-box MCP server support (`.mcp.json` and `scripts/mcp/`) that exposes graph retrieval and question-answering tools (`gfm_retrieve`, `gfm_answer`, `gfm_status`) directly to AI assistants such as Claude Desktop or IDE agents.
+
+4. **Deterministic Domain Grounding (ABN Primary Key)**:
+   - Adapts fuzzy entity extraction into a verifiable, deterministic graph using exact Australian Business Numbers (ABNs) as unique primary keys.
+
+---
+
+## The Core Adaptation: The ABN as Primary Key
+
+Generic GFM-RAG links entities via fuzzy text similarity (ColBERT over surface forms). While suitable for general prose, fuzzy linking fragments corporate registers where entities appear under varying naming conventions (*"De Bortoli Wines"*, *"DeBortoli WInes"*, *"DE BORTOLI WINES PTY LTD"*).
+
+Here, the **Australian Business Number (ABN)** is the canonical primary key for every reporting entity:
+
+1. **Extraction**:
+   - A register-specific prompt profile ([`prompt-profiles/au-register.yaml`](prompt-profiles/au-register.yaml)) directs tuple extractors to pull each ABN verbatim and emit it as an `[entity, "has ABN", <number>]` triple.
+2. **Canonicalisation**:
+   - [`scripts/eval/canonicalise_abn.py`](scripts/eval/canonicalise_abn.py) merges nodes sharing an ABN into a single canonical entity, resolving surface-form variants.
+3. **Fact-Gating**:
+   - Every fact generated in a downstream answer (company name, reported relationships) can be programmatically validated against official register data before dissemination.
+
+---
 
 ## Pipeline
 
@@ -46,39 +53,28 @@ register CSV ──► shards ──► NER + OpenIE ──► per-shard KG ─�
     edge traversal)
 ```
 
-Retrieval favours **document retrieval + edge traversal** over the raw GNN entity-ranking
-path, which exhibits degree bias on this corpus (see `notes/`).
+Retrieval favours **document retrieval + edge traversal** over the raw GNN entity-ranking path, mitigating degree bias on corporate filing corpora.
 
-## Repository layout (this branch, `dev`)
+---
 
-`dev` carries only the **unionised data and products** plus source and tooling; all
-per-shard inputs/sources/products are archived on the
-**`slavery-register-source-shards`** branch.
+## Repository Layout
 
-| Path | What |
-|---|---|
-| `corpus-shards/union-0-5-canon-eq/` | **the final graph** — ABN-canonicalised, equivalence-pruned stage-1 (nodes / edges / relations) |
-| `corpus-shards/union-0-5/` | union doc set (`raw/documents.json`) + the built stage-2 `graph.pt` |
-| `gfmrag/` | the GFM-RAG package (extraction, retriever, models) |
-| `scripts/` | sharding (`prepare_corpus_shards.py`, `prepare_campaign_shards.py`), merge/canonicalise/prune (`scripts/eval/`), and the MCP server (`scripts/mcp/`) — **kept for future corpora** |
-| `prompt-profiles/au-register.yaml` | the register-specific extraction prompt profile |
-| `deploy/` | Terraform + Docker + serving (GKE and Cloud Run variants) |
-| `.mcp.json` | wires the GFM-RAG knowledge graph into Claude as MCP tools (`gfm_retrieve` / `gfm_answer` / `gfm_status`) |
-| `README/` | operational + design docs (local/cloud setup, extractor prompts, fact-gating, campaigns) |
-| `notes/` | strategy and decision notes |
+* `corpus-shards/union-0-5-canon-eq/`: The final graph — ABN-canonicalised, equivalence-pruned stage-1 (nodes, edges, relations).
+* `corpus-shards/union-0-5/`: Union document set (`raw/documents.json`) and the built stage-2 `graph.pt`.
+* `gfmrag/`: Core GFM-RAG Python package (extraction, retriever, models).
+* `scripts/`: Corpus sharding (`prepare_corpus_shards.py`), merge/canonicalise/prune utilities, and the MCP server (`scripts/mcp/`).
+* `prompt-profiles/au-register.yaml`: The register-specific extraction prompt profile.
+* `deploy/`: Terraform, Docker, and serving configurations (GKE and Cloud Run variants).
+* `.mcp.json`: Wires the GFM-RAG knowledge graph into AI agents as MCP tools.
+* `README/`: Operational guides, local/cloud setup walkthroughs, and fact-gating references.
+* `notes/`: Architectural notes and benchmarking observations.
 
-## Purpose
+---
 
-Crawl and structure intelligence about the top Australian companies to infer
-supply-chain dependencies and cyber-security posture — feeding insurance risk
-underwriting and targeted marketing. The register is the structured seed; the graph
-makes multi-hop relationships (joint filings, group structure, shared dependencies)
-queryable.
+## Getting Started
 
-## Getting started
-
-- Run the knowledge graph locally and query it: [`README/LOCAL SETUP.md`](README/LOCAL%20SETUP.md)
-- Cloud deployment: [`README/CLOUD RUN SETUP.md`](README/CLOUD%20RUN%20SETUP.md)
-- Extraction prompt profiles: [`README/EXTRACTOR PROMPTS .md`](README/EXTRACTOR%20PROMPTS%20.md)
-- Verifying generated facts: [`README/FACT GATING FOR STRUCTURED DATA.md`](README/FACT%20GATING%20FOR%20STRUCTURED%20DATA.md)
-- Upstream GFM-RAG: [`README/ABOUT GFM-RAG.md`](README/ABOUT%20GFM-RAG.md)
+- **Local Setup & Querying**: [`README/LOCAL SETUP.md`](README/LOCAL%20SETUP.md)
+- **Cloud Deployment**: [`README/CLOUD RUN SETUP.md`](README/CLOUD%20RUN%20SETUP.md)
+- **Extraction Prompts**: [`README/EXTRACTOR PROMPTS .md`](README/EXTRACTOR%20PROMPTS%20.md)
+- **Fact-Gating Guide**: [`README/FACT GATING FOR STRUCTURED DATA.md`](README/FACT%20GATING%20FOR%20STRUCTURED%20DATA.md)
+- **Original Upstream Documentation**: [`README/ABOUT GFM-RAG.md`](README/ABOUT%20GFM-RAG.md)
