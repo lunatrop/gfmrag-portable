@@ -1,0 +1,32 @@
+diff --git a/scripts/eval/canonicalise_abn.py b/scripts/eval/canonicalise_abn.py
+--- a/scripts/eval/canonicalise_abn.py
++++ b/scripts/eval/canonicalise_abn.py
+@@ -25,12 +25,35 @@
+ 
+ ABN_RELS = {"has abn", "abn"}
++ABN_WEIGHTS = (10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19)
+ 
+ 
+ def norm_abn(s):
+     """Digits only; valid iff exactly 11 digits."""
+     d = re.sub(r"\D", "", s or "")
+     return d if len(d) == 11 else None
+ 
++def validate_abn_checksum(abn_digits: str) -> bool:
++    """Validate an 11-digit ABN using the official ATO Modulus-89 algorithm."""
++    if not isinstance(abn_digits, str) or len(abn_digits) != 11 or not abn_digits.isdigit():
++        return False
++    first_digit = int(abn_digits[0]) - 1
++    total = first_digit * ABN_WEIGHTS[0]
++    for i in range(1, 11):
++        total += int(abn_digits[i]) * ABN_WEIGHTS[i]
++    return (total % 89) == 0
++
++def is_valid_abn(s: str | None, check_checksum: bool = True) -> bool:
++    """Return True if string normalises to 11 digits and satisfies Modulus-89 checksum."""
++    digits = norm_abn(s)
++    if not digits:
++        return False
++    if check_checksum:
++        return validate_abn_checksum(digits)
++    return True
