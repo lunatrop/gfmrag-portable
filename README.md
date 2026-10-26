@@ -57,12 +57,31 @@ Retrieval favours **document retrieval + edge traversal** over the raw GNN entit
 
 ---
 
+## Test-Driven Reasoning, Convex Optimisation & RLVR Pipelines
+
+To advance `G-Reasoner` (`QueryNBFNet` 34M) beyond standard single-corpus retrieval, this repository includes a verification and optimization layer ([`scripts/eval/convex_and_rl_reasoner.py`](scripts/eval/convex_and_rl_reasoner.py)) paired with diagnostic and property-based test suites:
+
+1. **Resource Advantage (`G-Reasoner` vs. Iterative LLM Loops)**:
+   - Evaluates high-fanout $L$-hop contagion blast radius queries (e.g., shared Big-4 auditors or data custodians) in a **single sparse tensor pass** ($\mathcal{O}(L \cdot |E| \cdot d)$, $0$ LLM tokens during graph traversal) versus $\mathcal{O}(b^L)$ iterative LLM agent context expansion (`IRCoT` / ReAct).
+2. **Multi-Anchor Steiner Bridge Discovery**:
+   - Replaces single-mask OR-pooling (`1 x N`) with parallel $m$-channel seed propagation (`m x N`) scored via degree-regularized geometric mean reachability, surfacing hidden systemic bridges (such as *Quantium* connecting *Woolworths*, *CBA*, *Telstra*, and *Iress*).
+3. **Cross-Corpus Disjoint Knowledge Derivation (Sinkhorn Optimal Transport)**:
+   - Aligns unlabelled prose entities from external threat/news corpora to ABN-anchored register entities via Entropic Optimal Transport (`sinkhorn_entity_alignment`), preventing greedy hub collapse across disjoint vocabularies (e.g., linking low-band Australian SPVs like *Rasier Pacific* to global parent cyber incidents).
+4. **Degree-Regularized Convex Subgraph Selection**:
+   - Solves a continuous convex program with Graph Laplacian smoothness and hub-degree regularization to select connected evidence subgraphs strictly within a target LLM token budget $B$.
+5. **Reinforcement Learning with Verifiable Rewards (RLVR / GRPO)**:
+   - Couples [`FactGateOracle`](scripts/eval/fact_gate.py) (deterministic ATO Modulus-89 checksum & register verification) with Group Relative Policy Optimization (`compute_grpo_subgraph_advantages`), rewarding grounded, low-hop reasoning trajectories without human annotation cost.
+
+---
+
 ## Repository Layout
 
 * `corpus-shards/union-0-5-canon-eq/`: The final graph — ABN-canonicalised, equivalence-pruned stage-1 (nodes, edges, relations).
 * `corpus-shards/union-0-5/`: Union document set (`raw/documents.json`) and the built stage-2 `graph.pt`.
 * `gfmrag/`: Core GFM-RAG Python package (extraction, retriever, models).
-* `scripts/`: Corpus sharding (`prepare_corpus_shards.py`), merge/canonicalise/prune utilities, and the MCP server (`scripts/mcp/`).
+* `scripts/`: Corpus sharding (`prepare_corpus_shards.py`), merge/canonicalise/prune utilities, deterministic [`fact_gate.py`](scripts/eval/fact_gate.py), [`convex_and_rl_reasoner.py`](scripts/eval/convex_and_rl_reasoner.py), and the MCP server (`scripts/mcp/`).
+* `tests/`: Unit, Hypothesis property-based, MCP contract, fact-gating, and `G-Reasoner` capability/diagnostic (`@pytest.mark.xfail`) test suites.
+* `benchmarks/swe_bench/`: Reproducible SWE-bench task instances (`task_001_abn_checksum/`) with standalone problem statements, reproduction oracles, and gold patches.
 * `prompt-profiles/au-register.yaml`: The register-specific extraction prompt profile.
 * `deploy/`: Terraform, Docker, and serving configurations (GKE and Cloud Run variants).
 * `.mcp.json`: Wires the GFM-RAG knowledge graph into AI agents as MCP tools.
