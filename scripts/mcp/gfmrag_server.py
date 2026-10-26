@@ -61,9 +61,11 @@ def gfm_retrieve(query: str, top_k: int = 8,
     types = target_types or ["document"]
     res = _post("/retrieve", {"query": query, "top_k": top_k, "target_types": types})
     blocks = []
+    has_results = False
     for t, items in res.items():
-        if not isinstance(items, list):
+        if not isinstance(items, list) or not items:
             continue
+        has_results = True
         lines = [f"## {t} (top {len(items)})"]
         for it in items:
             lines.append(f"[{it.get('score', 0):+.2f}] {it.get('id')}")
@@ -71,7 +73,7 @@ def gfm_retrieve(query: str, top_k: int = 8,
             if attrs:
                 lines.append(f"    {str(attrs)[:600]}")
         blocks.append("\n".join(lines))
-    return "\n\n".join(blocks) if blocks else "(no results)"
+    return "\n\n".join(blocks) if has_results else "(no results)"
 
 
 @mcp.tool()
@@ -98,7 +100,7 @@ def gfm_status() -> str:
         body["configured_dataset"] = DATASET
         return json.dumps(body)
     except Exception as e:  # noqa: BLE001
-        return f"status error: {e}"
+        return json.dumps({"status": "error", "error": str(e), "configured_dataset": DATASET})
 
 
 if __name__ == "__main__":

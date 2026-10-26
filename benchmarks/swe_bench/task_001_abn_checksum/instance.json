@@ -1,0 +1,20 @@
+{
+  "instance_id": "lunatrop__gfmrag-portable-142",
+  "repo": "lunatrop/gfmrag-portable",
+  "base_commit": "c01850381d092aca508fa1ca21757c7007a467d5",
+  "problem_statement": "In scripts/eval/canonicalise_abn.py, norm_abn only validates string length (11 digits) rather than the Australian Taxation Office (ATO) Modulus-89 algorithm. Corrupted ABNs from LLM extraction errors are merged as valid entities. Implement validate_abn_checksum(abn) and is_valid_abn(s, check_checksum=True), and ensure invalid checksums are rejected during canonical map construction.",
+  "FAIL_TO_PASS": [
+    "tests/test_canonicalise_abn.py::test_modulus_89_detects_single_digit_transposition",
+    "tests/test_canonicalise_abn.py::test_real_world_abn_checksum_validity[96004458404-Rio Tinto Limited]"
+  ],
+  "PASS_TO_PASS": [
+    "tests/test_canonicalise_abn.py::test_norm_abn_formatting_variants[49 004 028 077]",
+    "tests/test_canonicalise_abn.py::test_norm_abn_invalid_inputs[12345]",
+    "tests/test_canonicalise_abn.py::test_canonical_map_collapses_variants_to_most_frequent"
+  ],
+  "patch": "benchmarks/swe_bench/task_001_abn_checksum/gold_patch.diff",
+  "test_patch": "tests/test_canonicalise_abn.py",
+  "hints_text": "The ATO weighting vector is [10, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]. Remember to subtract 1 from the first digit before multiplying.",
+  "created_at": "2026-10-26T06:20:00Z",
+  "version": "1.0"
+}
